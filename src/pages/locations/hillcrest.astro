@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Hillcrest Vacation Rental Management | LGBTQ+ Hub & Dining Scene | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Hillcrest<br/><span class="text-orange-600">Rental Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          San Diego's LGBTQ+ cultural hub with world-class dining. Expert management for Hillcrest's vibrant urban vacation rentals.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Free Analysis
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "26+", label: "Hillcrest Properties", icon: "properties" },
+      { value: "$3500", label: "Average Monthly Revenue", icon: "revenue" },
+      { value: "81%", label: "Average Occupancy", icon: "occupancy" },
+      { value: "4.9★", label: "Average Guest Rating", icon: "rating" }
+    ]}
+  />
+
+  <!-- About Hillcrest -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Why Hillcrest<br/><span class="text-orange-600">Attracts Loyal Guests</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">LGBTQ+ Cultural Center</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Hillcrest is San Diego's historic LGBTQ+ neighborhood with Pride flags lining University Avenue, rainbow crosswalks, and inclusive nightlife. This draws diverse travelers seeking welcoming community and authentic local culture.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">San Diego Pride epicenter - July events fill calendars</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">University Avenue - nightlife, restaurants, cafes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Balboa Park - 1200 acres, 15 minutes walk</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Central location - beach, downtown, airport all 15 min</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Dining & Nightlife Scene</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Hillcrest punches above its weight with James Beard-recognized restaurants, dive bars, upscale cocktail lounges, and 24-hour diners. Food-focused travelers and nightlife seekers drive consistent bookings.
+            </p>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Pride Week (July)</p>
+                <p class="text-gray-600 text-sm">$280-450/night | 100% occupancy | 3-night min</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Weekend Nights (Fri-Sat)</p>
+                <p class="text-gray-600 text-sm">$160-280/night | 88% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Midweek (Sun-Thu)</p>
+                <p class="text-gray-600 text-sm">$110-190/night | 72% occupancy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hillcrest Specific Considerations -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Hillcrest<br/><span class="text-orange-600">Market Expertise</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Inclusive Marketing</h4>
+              <p class="text-gray-300 text-sm">
+                We highlight Hillcrest's LGBTQ+ welcoming culture in listings, use inclusive language, and market on platforms where diverse travelers search. Authenticity attracts ideal guests.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Pride Event Pricing</h4>
+              <p class="text-gray-300 text-sm">
+                San Diego Pride (July) fills Hillcrest rentals at 2.5-3x normal rates. We implement 3-night minimums and surge pricing 4 months early when demand spikes.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Repeat Guest Focus</h4>
+              <p class="text-gray-300 text-sm">
+                Hillcrest earns 38% repeat bookings (vs 25% average) - travelers return for the community. We nurture these relationships with loyalty discounts and personalized touches.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hillcrest Expertise -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Our Hillcrest<br/><span class="text-orange-600">Specialized Approach</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Neighborhood Culture Guide</h4>
+              <p class="text-gray-600 mb-4">
+                Custom guidebooks highlighting LGBTQ+ bars, inclusive dining, Balboa Park museums, and local events. Guests feel welcomed and leave glowing reviews about our "insider knowledge."
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Restaurant Partnerships</h4>
+              <p class="text-gray-600 mb-4">
+                Relationships with 12+ Hillcrest restaurants for priority seating. Hash House, Bread & Cie, Urban MO's - guests get VIP treatment, we get mentioned in 5-star reviews.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Pride Week Strategy</h4>
+              <p class="text-gray-600 mb-4">
+                We book Pride week 6 months early at premium rates ($280-450/night). 3-night minimums, refundable deposits, and targeted marketing to LGBTQ+ travel groups maximize revenue.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Balboa Park Access</h4>
+              <p class="text-gray-600 mb-4">
+                Properties near park access command 20% premiums. We create walking maps to museums, Zoo, Botanical Building and highlight "15-minute walk to Balboa Park" in every title.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Services for Hillcrest Properties"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete urban property care", icon: "services" },
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Inclusive marketing & SEO", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Pride event pricing strategy", icon: "services" }
+    ]}
+  />
+
+  <!-- Nearby Neighborhoods -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Also Manage in<br/><span class="text-orange-600">Nearby Urban Neighborhoods</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <a href="/locations/north-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">North Park</h3>
+          <p class="text-gray-600 text-sm">Craft beer & art scene</p>
+        </a>
+        <a href="/locations/university-heights" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">University Heights</h3>
+          <p class="text-gray-600 text-sm">Historic cafes & walkability</p>
+        </a>
+        <a href="/locations/downtown-san-diego" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Downtown</h3>
+          <p class="text-gray-600 text-sm">Gaslamp & conventions</p>
+        </a>
+        <a href="/locations/south-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">South Park</h3>
+          <p class="text-gray-600 text-sm">Craft cocktails & bistros</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Hillcrest Management FAQs"
+    subtitle="Common questions from Hillcrest property owners"
+    faqs={[
+      {
+        question: "How does Pride Week affect Hillcrest rental revenue?",
+        answer: "San Diego Pride (late July) drives 2.5-3x normal rates and fills calendars 4-6 months early. A typical weekend earning $320 jumps to $800-1200 for Pride weekend. We implement 3-night minimums and capture this demand with targeted LGBTQ+ travel marketing."
+      },
+      {
+        question: "What type of guests stay in Hillcrest vacation rentals?",
+        answer: "60% LGBTQ+ travelers seeking welcoming community, 25% foodies/culture seekers visiting Balboa Park area, 15% Airbnb regulars wanting local neighborhoods over hotels. Average age 35, household income $85K+, highly respectful guests with 4.9★ average rating."
+      },
+      {
+        question: "Is Hillcrest's nightlife a problem for vacation rentals?",
+        answer: "Not when marketed correctly. We attract guests who choose Hillcrest FOR the energy - they expect urban nightlife. Clear listing language ('vibrant nightlife district'), white noise machines, and targeting the right guest profile keeps ratings at 4.9★."
+      },
+      {
+        question: "How do you maximize Hillcrest's repeat booking rate?",
+        answer: "Hillcrest earns 38% repeat bookings vs 25% industry average because guests bond with the community. We nurture this with 10% loyalty discounts, personalized welcome notes mentioning previous stays, and curated recommendations that improve each visit."
+      },
+      {
+        question: "What makes Hillcrest different from other San Diego neighborhoods?",
+        answer: "Hillcrest combines LGBTQ+ cultural significance with central location (15 min to beach, downtown, airport, Balboa Park). This unique positioning attracts diverse, respectful travelers year-round - not just seasonal beach crowds. Lower damage risk, higher repeat rates."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Maximize Hillcrest Rental Income?"
+    subtitle="Expert management for San Diego's most welcoming neighborhood."
+    primaryButtonText="Get Free Analysis"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Locations"
+    secondaryButtonLink="/locations"
+  />
+</Layout>

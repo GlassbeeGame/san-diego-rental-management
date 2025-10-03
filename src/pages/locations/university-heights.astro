@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="University Heights Vacation Rental Management | Historic Charm & Cafes | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1543489822-c49534f3271f?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          University Heights<br/><span class="text-orange-600">Rental Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Historic architecture meets walkable village charm. Expert management for University Heights' character-filled vacation rentals.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Free Analysis
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "24+", label: "University Heights Properties", icon: "properties" },
+      { value: "$3300", label: "Average Monthly Revenue", icon: "revenue" },
+      { value: "78%", label: "Average Occupancy", icon: "occupancy" },
+      { value: "4.9★", label: "Average Guest Rating", icon: "rating" }
+    ]}
+  />
+
+  <!-- About University Heights -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Why University Heights<br/><span class="text-orange-600">Charms Every Guest</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Historic Character Village</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              University Heights preserves 1920s-1940s architecture with tree-lined streets, craftsman bungalows, and Spanish colonial charm. This walkable village attracts travelers seeking authentic San Diego character over cookie-cutter condos.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Park & University - village center with cafes & shops</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Trolley Barn Park - community gathering space</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">15-minute walk to Hillcrest, North Park, Balboa Park</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Quiet residential streets with front porch culture</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Quality Guest Experience</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              University Heights attracts architecture enthusiasts, couples seeking quiet charm, and professionals wanting neighborhood living. Lower volume than party beaches, but premium 4.9★ guests who respect historic properties.
+            </p>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Weekend Getaways (Fri-Sat)</p>
+                <p class="text-gray-600 text-sm">$160-280/night | 85% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Midweek Stays (Sun-Thu)</p>
+                <p class="text-gray-600 text-sm">$105-175/night | 70% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Extended Stays (7+ nights)</p>
+                <p class="text-gray-600 text-sm">$95-150/night | 20% of bookings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- University Heights Specific Value -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            University Heights<br/><span class="text-orange-600">Unique Appeal</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Historic Property Premium</h4>
+              <p class="text-gray-300 text-sm">
+                Craftsman bungalows and Spanish colonial homes command 20-25% premiums over generic apartments. We photograph architectural details and highlight "historic charm" to attract design-conscious guests.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Central Location Advantage</h4>
+              <p class="text-gray-300 text-sm">
+                15-minute walk to Hillcrest, North Park, and Balboa Park means guests can explore multiple neighborhoods on foot. This walkability scores command premium rates from car-free travelers.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Extended Stay Market</h4>
+              <p class="text-gray-300 text-sm">
+                20% of bookings are 7-30 days (vs 8% average). Quiet neighborhood + full kitchens attract remote workers and relocating professionals. Lower turnover = higher net income.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- University Heights Expertise -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Our University Heights<br/><span class="text-orange-600">Specialized Services</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Architecture Photography</h4>
+              <p class="text-gray-600 mb-4">
+                We shoot craftsman details, Spanish tile, hardwood floors, and period features that make historic properties shine. Architectural photos earn 30% more clicks than generic interior shots.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Walkability Marketing</h4>
+              <p class="text-gray-600 mb-4">
+                Custom walking maps to Hillcrest dining, North Park breweries, Balboa Park museums - all within 15 minutes. "Central to 3 neighborhoods" positioning attracts car-free travelers who pay premiums.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Historic Property Care</h4>
+              <p class="text-gray-600 mb-4">
+                Specialized maintenance for hardwood floors, original tile, plaster walls. We protect historic features that make properties special while maintaining modern comfort standards.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Extended Stay Optimization</h4>
+              <p class="text-gray-600 mb-4">
+                Weekly/monthly rate structures that attract remote workers and relocating professionals. 20% of our bookings are 7+ nights earning stable income with minimal turnover costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Services for University Heights Properties"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Historic property care", icon: "services" },
+      { title: "Professional Photography", href: "/services/professional-photography", description: "Architectural detail focus", icon: "services" },
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Highlight character & walkability", icon: "services" }
+    ]}
+  />
+
+  <!-- Nearby Neighborhoods -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Also Manage in<br/><span class="text-orange-600">Nearby Urban Neighborhoods</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <a href="/locations/north-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">North Park</h3>
+          <p class="text-gray-600 text-sm">15-min walk, craft beer scene</p>
+        </a>
+        <a href="/locations/hillcrest" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Hillcrest</h3>
+          <p class="text-gray-600 text-sm">15-min walk, dining & culture</p>
+        </a>
+        <a href="/locations/south-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">South Park</h3>
+          <p class="text-gray-600 text-sm">Craft cocktails & bistros</p>
+        </a>
+        <a href="/locations/downtown-san-diego" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Downtown</h3>
+          <p class="text-gray-600 text-sm">10-min drive, conventions</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="University Heights Management FAQs"
+    subtitle="Common questions from University Heights property owners"
+    faqs={[
+      {
+        question: "Do historic properties earn more as vacation rentals?",
+        answer: "Yes! Craftsman bungalows and Spanish colonial homes command 20-25% premiums over generic apartments. Guests pay extra for authentic architecture, original hardwood floors, and vintage charm. We photograph every architectural detail to maximize this advantage."
+      },
+      {
+        question: "What type of guests stay in University Heights?",
+        answer: "70% are couples and professionals (35-55) seeking quiet neighborhood charm over tourist districts. 20% are extended-stay guests (remote workers, relocating professionals). 10% are architecture/design enthusiasts. Average rating 4.9★ - respectful guests who appreciate historic properties."
+      },
+      {
+        question: "How does University Heights compare to beach rentals?",
+        answer: "78% occupancy vs 85% at beaches, but 40% lower operating costs (less damage, fewer turnovers, minimal party risk). Net income is often comparable. Plus 20% of bookings are extended stays (7-30 nights) providing stable revenue beaches can't match."
+      },
+      {
+        question: "Is being between neighborhoods better than being IN a destination?",
+        answer: "Absolutely for the right guest. 'Central to Hillcrest, North Park, and Balboa Park' attracts explorers who want to experience multiple neighborhoods. Car-free travelers pay 15-20% premiums for walkable access to 3+ districts."
+      },
+      {
+        question: "How do you maintain historic properties as vacation rentals?",
+        answer: "Specialized vendors who understand hardwood floor care, original tile preservation, plaster wall repair. Monthly inspections catch small issues before they become expensive. We protect period features while ensuring modern comfort (WiFi, updated kitchens/baths)."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Showcase Your Historic Property?"
+    subtitle="Expert management that highlights University Heights' architectural charm."
+    primaryButtonText="Get Free Analysis"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Locations"
+    secondaryButtonLink="/locations"
+  />
+</Layout>

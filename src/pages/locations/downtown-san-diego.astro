@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Downtown San Diego Vacation Rental Management | Gaslamp & Convention Center | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Downtown San Diego<br/><span class="text-orange-600">Rental Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Gaslamp Quarter nightlife meets convention center business. Expert management for downtown's highest-demand vacation rentals.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Free Analysis
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "47+", label: "Downtown Properties", icon: "properties" },
+      { value: "$4100", label: "Average Monthly Revenue", icon: "revenue" },
+      { value: "86%", label: "Average Occupancy", icon: "occupancy" },
+      { value: "4.7★", label: "Average Guest Rating", icon: "rating" }
+    ]}
+  />
+
+  <!-- About Downtown -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Why Downtown<br/><span class="text-orange-600">Dominates Year-Round</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Convention & Business Hub</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              San Diego Convention Center drives 2.5 million visitors annually. Comic-Con, business conferences, and corporate events fill downtown rentals at premium rates year-round - not just summer beach season.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Convention Center - 300+ events/year</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Gaslamp Quarter - nightlife & dining</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Petco Park - 81 Padres home games</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Little Italy - waterfront dining district</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Dual Revenue Streams</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Downtown uniquely serves business travelers (Mon-Thu) AND leisure guests (Fri-Sun). This creates consistent 86% occupancy with minimal seasonal dips that plague beach rentals.
+            </p>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Convention Weeks</p>
+                <p class="text-gray-600 text-sm">$250-500/night | 100% occupancy | 3-5 night min</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Weekend Leisure (Fri-Sun)</p>
+                <p class="text-gray-600 text-sm">$180-350/night | 92% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Weekday Business (Mon-Thu)</p>
+                <p class="text-gray-600 text-sm">$150-280/night | 75% occupancy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Downtown Specific Challenges -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Downtown<br/><span class="text-orange-600">Management Expertise</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">High-Rise Operations</h4>
+              <p class="text-gray-300 text-sm">
+                Building access codes, parking validation, elevator protocols - we master condo tower logistics. Detailed check-in instructions prevent guest confusion and angry HOA emails.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Noise Management</h4>
+              <p class="text-gray-300 text-sm">
+                Gaslamp nightlife = noise complaints if not managed. We set clear expectations, provide white noise machines, and target business travelers who expect urban energy.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Convention Calendar Pricing</h4>
+              <p class="text-gray-300 text-sm">
+                Comic-Con week earns 3-4x normal rates. We track 300+ convention center events annually and surge pricing 2-6 months in advance when corporate buyers book.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Downtown Expertise -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Our Downtown<br/><span class="text-orange-600">Competitive Advantages</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Convention Calendar Mastery</h4>
+              <p class="text-gray-600 mb-4">
+                We track every convention center event 12 months out. Comic-Con, Biotech Summit, and 50+ major conferences get 200-400% rate premiums booked 6 months early.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Business Traveler Amenities</h4>
+              <p class="text-gray-600 mb-4">
+                High-speed WiFi (mandatory), workspace setup, Keurig coffee, late checkout options. Small touches that earn corporate rebooking and positive Airbnb for Work reviews.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Parking Solutions</h4>
+              <p class="text-gray-600 mb-4">
+                Partnerships with 8 downtown parking garages for discounted guest rates. Properties with parking command $25-40/night premiums - we help you monetize every amenity.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">HOA Compliance</h4>
+              <p class="text-gray-600 mb-4">
+                Many downtown condos restrict STRs. We navigate HOA rules, ensure compliance, handle neighbor relations, and keep your rental license protected from complaints.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Services for Downtown Properties"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete high-rise property care", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Convention calendar pricing", icon: "services" },
+      { title: "STR Compliance", href: "/services/str-compliance", description: "HOA & city permit navigation", icon: "services" }
+    ]}
+  />
+
+  <!-- Nearby Neighborhoods -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Also Manage in<br/><span class="text-orange-600">Nearby Urban Neighborhoods</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <a href="/locations/north-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">North Park</h3>
+          <p class="text-gray-600 text-sm">Craft beer capital</p>
+        </a>
+        <a href="/locations/hillcrest" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Hillcrest</h3>
+          <p class="text-gray-600 text-sm">LGBTQ+ hub & dining</p>
+        </a>
+        <a href="/locations/south-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">South Park</h3>
+          <p class="text-gray-600 text-sm">Craft cocktails & eateries</p>
+        </a>
+        <a href="/locations/university-heights" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">University Heights</h3>
+          <p class="text-gray-600 text-sm">Historic neighborhood charm</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Downtown Management FAQs"
+    subtitle="Common questions from downtown property owners"
+    faqs={[
+      {
+        question: "How much revenue can I expect from a downtown vacation rental?",
+        answer: "Average downtown property earns $4100/month ($49K/year). Convention weeks drive $250-500/night rates. Comic-Con alone can generate $3500-7000 in one week. Year-round business travel maintains 86% occupancy vs 75% at seasonal beach locations."
+      },
+      {
+        question: "Will my HOA allow short-term rentals?",
+        answer: "60% of downtown condos have STR restrictions. We review HOA docs before onboarding, ensure compliance with rules, handle neighbor relations, and have strategies for both permissive and restricted buildings. Many HOAs allow 30+ day rentals as alternative."
+      },
+      {
+        question: "How do you maximize revenue during convention weeks?",
+        answer: "We track the convention center calendar 12 months out and surge pricing when major events are announced. Comic-Con, Biotech Summit, and large conferences get 200-400% premiums. We block dates 6 months early when corporate groups book, ensuring maximum rates."
+      },
+      {
+        question: "What makes downtown rentals different from beach properties?",
+        answer: "Downtown serves business travelers Mon-Thu (75% occupancy) and leisure guests Fri-Sun (92% occupancy). This dual market creates year-round consistency vs seasonal beach rentals. Lower damage risk, professional guests, but requires different amenities (workspace, WiFi, parking)."
+      },
+      {
+        question: "How do you handle parking for downtown guests?",
+        answer: "Properties with dedicated parking charge $25-40/night premiums. For street parking units, we partner with 8 downtown garages for discounted guest rates ($15-25/day vs $40+ walk-up). Clear parking instructions in listing prevent negative reviews."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Dominate Downtown Rental Revenue?"
+    subtitle="Expert high-rise management with convention calendar pricing expertise."
+    primaryButtonText="Get Free Analysis"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Locations"
+    secondaryButtonLink="/locations"
+  />
+</Layout>

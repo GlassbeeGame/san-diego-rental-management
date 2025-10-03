@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="South Park Vacation Rental Management | Craft Cocktails & Local Eateries | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          South Park<br/><span class="text-orange-600">Rental Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Hidden gem neighborhood with craft cocktails and farm-to-table dining. Expert management for South Park's intimate vacation rentals.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Free Analysis
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "19+", label: "South Park Properties", icon: "properties" },
+      { value: "$3400", label: "Average Monthly Revenue", icon: "revenue" },
+      { value: "79%", label: "Average Occupancy", icon: "occupancy" },
+      { value: "4.9★", label: "Average Guest Rating", icon: "rating" }
+    ]}
+  />
+
+  <!-- About South Park -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Why South Park<br/><span class="text-orange-600">Is San Diego's Hidden Gem</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Culinary & Craft Scene</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              South Park is a walkable village with award-winning restaurants, craft cocktail bars, coffee roasters, and Saturday farmers market. This intimate neighborhood attracts sophisticated travelers seeking authentic local experiences over tourist traps.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">30th & Fern - restaurant row & cocktail bars</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Saturday farmers market - local producers & live music</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Walkable to Balboa Park, downtown (10 min drive)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Quiet residential streets with local character</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Quality Over Quantity Market</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              South Park attracts mature travelers (35-50), food/cocktail enthusiasts, and couples seeking neighborhood charm. Lower occupancy than party areas, but premium guests mean higher ratings, less damage, and better reviews.
+            </p>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Weekend Peak (Fri-Sat)</p>
+                <p class="text-gray-600 text-sm">$170-300/night | 90% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Midweek (Sun-Thu)</p>
+                <p class="text-gray-600 text-sm">$110-180/night | 68% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Special Events (Restaurant Week, etc)</p>
+                <p class="text-gray-600 text-sm">$200-350/night | 95%+ occupancy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- South Park Specific Advantages -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            South Park<br/><span class="text-orange-600">Unique Advantages</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Premium Guest Profile</h4>
+              <p class="text-gray-300 text-sm">
+                South Park attracts 35-50 year old professionals who treat properties with respect. Zero party risk, minimal damage, and 4.9★ average ratings from grateful guests who appreciate the curation.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Restaurant Proximity Premium</h4>
+              <p class="text-gray-300 text-sm">
+                Properties within 2 blocks of 30th & Fern command 25-30% premiums. Guests pay extra to stumble home from cocktail bars - we highlight every walkable restaurant in listings.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Repeat Booking Engine</h4>
+              <p class="text-gray-300 text-sm">
+                South Park earns 42% repeat bookings (industry-leading) because guests fall in love with the neighborhood. We nurture this with loyalty programs and personalized local recommendations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- South Park Expertise -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Our South Park<br/><span class="text-orange-600">Local Partnerships</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Curated Dining Guide</h4>
+              <p class="text-gray-600 mb-4">
+                Custom guidebook featuring Hamilton's, Kindred, The Rose, Station Tavern - with insider tips on best dishes, happy hour times, and how to skip the wait. Guests rave about our recommendations.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Reservation Assistance</h4>
+              <p class="text-gray-600 mb-4">
+                Relationships with 10+ South Park restaurants for priority seating. We help guests book hard-to-get tables, they mention it in 5-star reviews, restaurants send us referrals.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Farmers Market Intel</h4>
+              <p class="text-gray-600 mb-4">
+                Saturday morning farmers market drives weekend bookings. We provide market maps, vendor highlights, and "what to buy" guides that turn guests into neighborhood regulars.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Quiet Neighborhood Marketing</h4>
+              <p class="text-gray-600 mb-4">
+                South Park's charm IS the quiet. We attract guests seeking "local neighborhood feel" vs "party scene" - preventing noise complaints and maintaining community relationships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Services for South Park Properties"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete boutique property care", icon: "services" },
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Highlight culinary scene", icon: "services" },
+      { title: "Guest Support", href: "/services/guest-support", description: "Restaurant recs & reservations", icon: "services" }
+    ]}
+  />
+
+  <!-- Nearby Neighborhoods -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Also Manage in<br/><span class="text-orange-600">Nearby Urban Neighborhoods</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <a href="/locations/north-park" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">North Park</h3>
+          <p class="text-gray-600 text-sm">Craft beer capital</p>
+        </a>
+        <a href="/locations/university-heights" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">University Heights</h3>
+          <p class="text-gray-600 text-sm">Historic cafes & architecture</p>
+        </a>
+        <a href="/locations/hillcrest" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Hillcrest</h3>
+          <p class="text-gray-600 text-sm">LGBTQ+ hub & Balboa Park</p>
+        </a>
+        <a href="/locations/downtown-san-diego" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Downtown</h3>
+          <p class="text-gray-600 text-sm">Convention center business</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="South Park Management FAQs"
+    subtitle="Common questions from South Park property owners"
+    faqs={[
+      {
+        question: "Why is South Park occupancy lower than other neighborhoods?",
+        answer: "South Park earns 79% occupancy vs 83-86% at beach/downtown because it's a discovery neighborhood - not first-time tourist destination. BUT guests stay longer (3.8 nights vs 2.6), cause zero damage, and rebook at 42% rate. Net income rivals higher-occupancy areas."
+      },
+      {
+        question: "What type of guests stay in South Park vacation rentals?",
+        answer: "85% are 35-50 year old professionals, foodies, and cocktail enthusiasts. They're done with party beaches and seek authentic neighborhoods. Average household income $105K+, stay duration 3.8 nights, and leave properties spotless with 4.9★ reviews."
+      },
+      {
+        question: "How do you market South Park's restaurant scene?",
+        answer: "We lead with culinary appeal: '50 restaurants within 5-minute walk' in titles, professional food photography, curated dining guides in welcome packets. Properties near 30th & Fern command 25-30% premiums because walkability IS the amenity."
+      },
+      {
+        question: "Does South Park work for business travelers?",
+        answer: "Surprisingly yes - 20% are business travelers avoiding generic hotels. 15-minute drive to downtown/airport, quiet workspace environment, local restaurants for client dinners. We market 'boutique neighborhood alternative to Convention Center hotels.'"
+      },
+      {
+        question: "How do you achieve 42% repeat booking rate in South Park?",
+        answer: "Guests fall in love with the neighborhood and rebook to return. We nurture this with 10% loyalty discounts, personalized notes referencing their last visit, and new restaurant recommendations each stay. Repeat bookings = zero marketing costs."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Unlock South Park's Premium Revenue?"
+    subtitle="Expert management for San Diego's hidden culinary gem."
+    primaryButtonText="Get Free Analysis"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Locations"
+    secondaryButtonLink="/locations"
+  />
+</Layout>
