@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Why Choose Local Property Management San Diego | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Why Choose<br/><span class="text-orange-600">Local Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          National corporate chains vs. San Diego-focused expertise. Discover the local advantage.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Go Local Today
+          </a>
+          <a href="/services/full-service-management" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "100%", label: "San Diego Focus", icon: "properties" },
+      { value: "< 2hr", label: "Emergency Response", icon: "support" },
+      { value: "35%", label: "Higher Revenue vs National", icon: "revenue" },
+      { value: "Real", label: "Local Humans", icon: "rating" }
+    ]}
+  />
+
+  <!-- The Local Advantage -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            The Local<br/><span class="text-orange-600">Advantage</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Why San Diego owners earn 35% more with local management vs. national chains
+          </p>
+        </div>
+
+        <!-- 8 Reasons Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">1</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Deep Neighborhood Knowledge</h3>
+                <p class="text-gray-600">
+                  We know Pacific Beach party risk vs Ocean Beach chill vibe. La Jolla luxury standards vs North Park brewery culture. National chains treat all properties the same - we optimize for YOUR neighborhood's unique guest profile.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">2</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Local Event-Driven Pricing</h3>
+                <p class="text-gray-600">
+                  Comic-Con, Del Mar Racing, Beer Week, Pride - we track 50+ local events and surge pricing 3-6 months early. National algorithms miss these 2-3x revenue opportunities. This alone adds 25-35% annual income.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">3</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">On-Site Emergency Response</h3>
+                <p class="text-gray-600">
+                  Broken AC at 10pm? Our local team is there in < 2 hours. National chains dispatch from call centers in Texas - you wait until morning. We live here, work here, respond HERE.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">4</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Trusted Local Vendors</h3>
+                <p class="text-gray-600">
+                  5+ year relationships with San Diego cleaners, plumbers, HVAC techs who know our properties. National chains use lowest bidders who've never seen your neighborhood. Quality shows in reviews.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">5</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Direct Owner Access</h3>
+                <p class="text-gray-600">
+                  Text your manager directly. Call anytime. No call centers, no ticket systems. National chains hide behind 1-800 numbers and "escalation procedures." We answer our phones.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">6</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Transparent Pricing</h3>
+                <p class="text-gray-600">
+                  18% all-in. No "tech fees," "operational costs," or mysterious deductions. National chains advertise 10-15% then charge 30-40% total. We're honest upfront - San Diegans value transparency.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">7</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Local Guest Guidebooks</h3>
+                <p class="text-gray-600">
+                  Custom guides featuring our favorite taco shops, secret surf spots, brewery walking tours. National chains send generic "San Diego attractions" PDFs. Guests mention our local tips in 5-star reviews.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-8">
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold">8</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Community Relationships</h3>
+                <p class="text-gray-600">
+                  We know your HOA president, your neighbors, local noise ordinances. National chains get surprise violations. We prevent them with community relationships built over years.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Numbers -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            The Revenue<br/><span class="text-orange-600">Difference</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="text-center">
+              <p class="text-gray-400 text-sm uppercase mb-2">National Chain (Vacasa/AvantStay)</p>
+              <p class="text-5xl font-bold mb-2">$4,200</p>
+              <p class="text-gray-400 text-sm mb-4">Average Monthly Net</p>
+              <ul class="text-left space-y-2 text-sm text-gray-300">
+                <li>✗ Generic nationwide pricing</li>
+                <li>✗ 30-40% total fees</li>
+                <li>✗ Missed local events</li>
+                <li>✗ Call center delays</li>
+              </ul>
+            </div>
+            <div class="text-center border-l-4 border-orange-600 pl-8">
+              <p class="text-orange-400 text-sm uppercase mb-2">Local Management (Polaris)</p>
+              <p class="text-5xl font-bold mb-2 text-orange-600">$5,700</p>
+              <p class="text-gray-400 text-sm mb-4">Average Monthly Net</p>
+              <ul class="text-left space-y-2 text-sm text-gray-300">
+                <li>✓ Event-driven pricing</li>
+                <li>✓ 18% transparent fees</li>
+                <li>✓ Local surge expertise</li>
+                <li>✓ < 2hr response</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-center mt-8 text-2xl font-bold text-orange-600">= $1,500/month more = $18,000/year</p>
+        </div>
+
+        <!-- Owner Testimonials -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Why Owners<br/><span class="text-orange-600">Choose Local</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card p-8">
+              <p class="text-gray-600 italic mb-4">
+                "Vacasa's call center couldn't tell me if my Pacific Beach property was clean or not. With Polaris, I text my manager and get photos in 5 minutes. That's the local difference."
+              </p>
+              <p class="font-bold text-orange-600">- Sarah T., Pacific Beach</p>
+            </div>
+            <div class="card p-8">
+              <p class="text-gray-600 italic mb-4">
+                "Polaris knew Comic-Con was coming and surged my downtown condo to $650/night 4 months early. Vacasa's algorithm priced it at $280. One weekend paid for 3 months of management."
+              </p>
+              <p class="font-bold text-orange-600">- Michael R., Downtown</p>
+            </div>
+            <div class="card p-8">
+              <p class="text-gray-600 italic mb-4">
+                "When my La Jolla AC died on a Saturday, Polaris had it fixed in 90 minutes. My neighbor uses Evolve - he waited until Monday and lost $1200 in cancellations. Local wins."
+              </p>
+              <p class="font-bold text-orange-600">- David K., La Jolla</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Experience The Local Advantage"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "100% San Diego focused", icon: "services" },
+      { title: "Switching Property Managers", href: "/services/switching-property-managers", description: "Leave national chains behind", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Local event pricing expertise", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Local Management FAQs"
+    subtitle="Common questions about choosing local vs national"
+    faqs={[
+      {
+        question: "Why does local management earn 35% more revenue?",
+        answer: "(1) Local event knowledge - we surge Comic-Con, Del Mar Racing, Beer Week 3-6 months early for 2-3x rates. National algorithms miss this. (2) Lower fees - 18% vs 30-40% total saves $600-1200/month. (3) Neighborhood optimization - we price La Jolla luxury differently than Pacific Beach party market. Combined = 35% higher net income."
+      },
+      {
+        question: "Can local companies really compete with national tech platforms?",
+        answer: "We USE the same tech (PriceLabs, smart locks, automated messaging) BUT add local human intelligence. Algorithms optimize for 'national average.' Humans know North Park Beer Week drives 40% premiums or that Hillcrest Pride books 4 months early. Tech + local knowledge beats pure algorithm every time."
+      },
+      {
+        question: "What happens in emergencies with local vs national management?",
+        answer: "Local: Broken AC at 10pm, we're on-site in 90 minutes with trusted HVAC partner. Guest stays, you earn $400. National: Call center creates ticket, dispatches unknown contractor 'next business day.' Guest cancels, you lose $400 + bad review. Speed and relationships matter in hospitality."
+      },
+      {
+        question: "Are local companies as reliable as national brands?",
+        answer: "National brands are LESS reliable - when issues arise, you're ticket #4,387 in a call center queue. Local means direct manager access, faster response (we live here), and personal accountability. Our reputation is everything in San Diego. National chains have 50 other markets - you're expendable to them."
+      },
+      {
+        question: "Why should I trust a local company over Vacasa/AvantStay?",
+        answer: "Ask Vacasa owners why they're switching. National companies optimize for THEIR growth (IPO, venture capital), not YOUR revenue. We only succeed if San Diego owners succeed - we have no other markets. 100% alignment. Plus: direct owner access, transparent pricing, and we actually live in the neighborhoods we manage."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready To Go Local?"
+    subtitle="Join 180+ San Diego owners earning 35% more with local expertise."
+    primaryButtonText="Switch To Local"
+    primaryButtonLink="/contact"
+    secondaryButtonText="See Our Services"
+    secondaryButtonLink="/services/full-service-management"
+  />
+</Layout>

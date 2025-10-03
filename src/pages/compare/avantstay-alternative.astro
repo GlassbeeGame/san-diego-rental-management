@@ -1,0 +1,246 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="AvantStay Alternative San Diego | Local vs Tech-First | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          AvantStay<br/><span class="text-orange-600">Alternative</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Tech-first corporate model vs. local hospitality expertise. Discover why San Diego owners choose personal service over algorithms.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Switch From AvantStay
+          </a>
+          <a href="/services/full-service-management" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Local Management
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "Human", label: "First Service", icon: "support" },
+      { value: "100%", label: "Owner Control", icon: "properties" },
+      { value: "18%", label: "Transparent Fees", icon: "revenue" },
+      { value: "Local", label: "San Diego Team", icon: "services" }
+    ]}
+  />
+
+  <!-- Comparison Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Tech-First vs<br/><span class="text-orange-600">People-First</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            AvantStay sells "tech-enabled hospitality." We deliver actual hospitality.
+          </p>
+        </div>
+
+        <!-- Key Differences -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div class="card p-8 border-2 border-orange-600">
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Polaris (Human-First)</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-black">You Own The Guest Relationship</p>
+                  <p class="text-sm text-gray-600">Your listing, your reviews, your repeat guests. We're invisible support.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-black">Local Human Decision-Making</p>
+                  <p class="text-sm text-gray-600">We know when to override the algorithm - humans beat robots.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-black">Transparent 18% All-In</p>
+                  <p class="text-sm text-gray-600">No hidden "tech platform fees" or revenue share surprises.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-black">Your Property, Your Rules</p>
+                  <p class="text-sm text-gray-600">Set your own rates, house rules, and guest standards.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card p-8 bg-gray-50">
+            <h3 class="text-3xl font-bold text-gray-600 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">AvantStay (Tech-First)</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-gray-600">They Own The Guest Relationship</p>
+                  <p class="text-sm text-gray-500">Guests book "AvantStay" not your property. You're invisible.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-gray-600">Algorithm-Driven Everything</p>
+                  <p class="text-sm text-gray-500">Automated pricing misses local nuance. No human override.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-gray-600">25-35% Revenue Share Model</p>
+                  <p class="text-sm text-gray-500">They take percentage of REVENUE, not predictable flat fee.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="font-bold text-gray-600">AvantStay Sets The Rules</p>
+                  <p class="text-sm text-gray-500">Standardized pricing, guest policies - you comply with their brand.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- The Control Problem -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            The AvantStay<br/><span class="text-orange-600">Control Problem</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-900 p-6 border-l-4 border-orange-600">
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">It's THEIR Brand</h4>
+              <p class="text-gray-300 text-sm">
+                Guests book "AvantStay La Jolla" not YOUR property. They control the listing, the photos, the description. You're just the real estate. If you leave, you start brand-building from scratch.
+              </p>
+            </div>
+            <div class="bg-gray-900 p-6 border-l-4 border-orange-600">
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Revenue Share Risk</h4>
+              <p class="text-gray-300 text-sm">
+                25-35% of revenue means when YOU earn more, THEY take more. A $500 surge becomes $175 for them. Our 18% flat fee means surge revenue goes to YOU, not inflated management fees.
+              </p>
+            </div>
+            <div class="bg-gray-900 p-6 border-l-4 border-orange-600">
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Algorithm Blindness</h4>
+              <p class="text-gray-300 text-sm">
+                Tech can't know that North Park Beer Week or Del Mar Racing drive 3x rates. Algorithms optimize for "national average" not local events. We manually surge Comic-Con 6 months early.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Owners Switch -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Why AvantStay Owners<br/><span class="text-orange-600">Switch To Local</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Want Property Control Back</h4>
+              <p class="text-gray-600 mb-4">
+                After 1-2 years building AvantStay's brand, owners realize they have zero equity. Can't access their own listing. Can't see guest reviews of THEIR property. Can't set personalized house rules.
+              </p>
+              <p class="text-sm text-orange-600 font-bold">We build YOUR brand. You own the listing, reviews, and guest relationships forever.</p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Tired Of Revenue Share</h4>
+              <p class="text-gray-600 mb-4">
+                Revenue share sounds fair until you realize: a $6000 month costs $1800-2100 (30-35%). Our 18% flat fee = $1080. You save $700-1000/month on the SAME service quality.
+              </p>
+              <p class="text-sm text-orange-600 font-bold">Predictable 18% fee means YOU keep surge pricing revenue, not us.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Regain Control Of Your Property"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "You own the brand, we provide service", icon: "services" },
+      { title: "Switching Property Managers", href: "/services/switching-property-managers", description: "Reclaim your listing & reviews", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Human + algorithm pricing", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="AvantStay vs Local FAQs"
+    subtitle="Common questions from AvantStay owners considering the switch"
+    faqs={[
+      {
+        question: "Can I get my listing back if I leave AvantStay?",
+        answer: "No - AvantStay owns the listing, photos, and brand. When you leave, you start from ZERO reviews/history. That's the hidden cost of their model. With Polaris, YOU own the Airbnb/Vrbo listing from day one. We're invisible backend support. If you ever leave, you keep 100% of your reviews, guest relationships, and booking history."
+      },
+      {
+        question: "Is AvantStay's tech really better than local management?",
+        answer: "Tech is a TOOL, not a strategy. AvantStay's automated pricing misses local events (Comic-Con, Del Mar Racing, Beer Week). Their chatbots can't handle nuanced guest issues. We use the SAME tech (PriceLabs, smart locks, automated messages) BUT add human oversight that knows when to override the algorithm."
+      },
+      {
+        question: "Why is AvantStay's revenue share worse than a flat fee?",
+        answer: "Revenue share means the more YOU earn, the more THEY take. $6000 month = $1800-2100 fee (30-35%). Our 18% flat = $1080. You save $700-1000/month. Worse: surge pricing benefits THEM proportionally. We charge 18% whether you earn $4K or $8K - surge revenue goes to YOU."
+      },
+      {
+        question: "What happens to my reviews if I switch from AvantStay?",
+        answer: "AvantStay reviews stay with THEIR brand - you lose everything. Switching to Polaris means starting fresh BUT we transfer your existing listings' reviews (if you had your own before AvantStay). Going forward, YOU own the listing - if you ever leave us, you keep all reviews. Never be held hostage again."
+      },
+      {
+        question: "Does local management really beat AvantStay's algorithms?",
+        answer: "Yes! Algorithms optimize for 'national average.' They don't know North Park Beer Week, Hillcrest Pride, or Del Mar Opening Day. We manually surge pricing 3-6 months early when corporate buyers book. This alone adds 20-30% annual revenue. Tech + local human knowledge beats pure algorithm every time."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready To Own Your Property's Brand Again?"
+    subtitle="Keep your reviews, control your listing, earn 18% more net income."
+    primaryButtonText="Reclaim Control"
+    primaryButtonLink="/contact"
+    secondaryButtonText="See Our Approach"
+    secondaryButtonLink="/services/full-service-management"
+  />
+</Layout>

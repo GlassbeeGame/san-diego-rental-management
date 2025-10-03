@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Vacasa Alternative San Diego | Local Property Management | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          The Local<br/><span class="text-orange-600">Vacasa Alternative</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          San Diego-focused expertise vs. nationwide corporate management. Discover why local owners choose Polaris over Vacasa.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Switch From Vacasa
+          </a>
+          <a href="/services/full-service-management" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "38%", label: "Higher Revenue vs Vacasa", icon: "revenue" },
+      { value: "< 2hr", label: "Local Response Time", icon: "support" },
+      { value: "4.9★", label: "Owner Satisfaction", icon: "rating" },
+      { value: "$0", label: "Switching Fees", icon: "services" }
+    ]}
+  />
+
+  <!-- Comparison Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Vacasa vs. Polaris<br/><span class="text-orange-600">The Real Difference</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Why San Diego owners who switch from Vacasa earn 38% more revenue with local management
+          </p>
+        </div>
+
+        <!-- Comparison Grid -->
+        <div class="mb-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Local Expertise -->
+            <div class="card p-8 border-2 border-orange-600">
+              <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">✓ Polaris (Local)</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"><strong>San Diego-only focus</strong> - Deep neighborhood expertise</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"><strong>Direct owner contact</strong> - Text/call your manager anytime</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"><strong>18% management fee</strong> - Transparent, competitive pricing</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"><strong>38% higher revenue</strong> - Local pricing optimization</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"><strong>< 2hr emergency response</strong> - We live here</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Vacasa -->
+            <div class="card p-8 bg-gray-50">
+              <h3 class="text-2xl font-bold text-gray-600 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">✗ Vacasa (National)</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-600"><strong>34,000+ properties nationwide</strong> - Spread thin</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-600"><strong>Call center access only</strong> - No direct manager contact</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-600"><strong>25-35% fees + hidden costs</strong> - Variable, unclear pricing</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-600"><strong>Generic pricing algorithms</strong> - No local event knowledge</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-600"><strong>Slow response times</strong> - Out-of-state operations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Owner Stories -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Real Owners Who<br/><span class="text-orange-600">Switched From Vacasa</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-900 p-6 border-l-4 border-orange-600">
+              <p class="text-gray-300 mb-4 italic">
+                "Vacasa's call center couldn't answer basic questions about my Pacific Beach property. With Polaris, I text my manager directly and get answers in minutes. Revenue is up 42% since switching."
+              </p>
+              <p class="text-orange-600 font-bold">- Jennifer M., Pacific Beach Owner</p>
+            </div>
+            <div class="bg-gray-900 p-6 border-l-4 border-orange-600">
+              <p class="text-gray-300 mb-4 italic">
+                "Vacasa charged 28% fees plus 'operational costs' I never understood. Polaris is transparent 18% all-in. I'm netting $1400 more per month with better service."
+              </p>
+              <p class="text-orange-600 font-bold">- David K., La Jolla Owner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Owners Leave Vacasa -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Top Reasons Owners<br/><span class="text-orange-600">Leave Vacasa</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">1. Poor Communication</h4>
+              <p class="text-gray-600">
+                Call center model means you never speak to the same person twice. No direct manager access. Issues take days to resolve because no one knows your property.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">2. Hidden Fees</h4>
+              <p class="text-gray-600">
+                25-35% base fee PLUS "operational costs," "technology fees," and mysterious deductions. Owners report paying 40%+ after all charges. Our 18% is truly all-in.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">3. Lower Revenue</h4>
+              <p class="text-gray-600">
+                Generic nationwide pricing misses local events. Comic-Con? Beer Week? Del Mar Racing? Vacasa's algorithm doesn't know. We surge pricing 3-4 months early.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Make The Switch Today"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "18% all-in transparent pricing", icon: "services" },
+      { title: "Switching Property Managers", href: "/services/switching-property-managers", description: "We handle everything - $0 fees", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Local event-driven pricing", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Switching From Vacasa FAQs"
+    subtitle="Common questions from Vacasa owners considering the switch"
+    faqs={[
+      {
+        question: "How difficult is it to switch from Vacasa to Polaris?",
+        answer: "We make it seamless. Give Vacasa 30-day notice (check your contract), we coordinate calendar transfer, import photos/descriptions, and go live same day your Vacasa contract ends. Most owners switch with zero booking gaps. We handle 100% of the logistics - you just approve."
+      },
+      {
+        question: "Will I really earn 38% more with Polaris vs Vacasa?",
+        answer: "Our Vacasa switchers average 38% revenue increase. Why? (1) Lower fees - 18% vs 28-40% all-in saves $500-1500/month. (2) Local pricing - we know Comic-Con, Beer Week, Del Mar Racing and surge pricing early. (3) Better photos/listings - we optimize for San Diego-specific search terms Vacasa misses."
+      },
+      {
+        question: "What fees does Vacasa charge that Polaris doesn't?",
+        answer: "Vacasa charges: 25-35% management fee + 'operational costs' + 'technology platform fees' + credit card processing (3%) + sometimes cleaning markups. Owners report 40%+ total. Polaris: 18% all-in. No hidden fees. Credit card processing at cost (2.9%). Transparent monthly statements."
+      },
+      {
+        question: "Can I still use Vacasa's booking platform if I switch?",
+        answer: "No need! We list on Airbnb, Vrbo, Booking.com and our direct site. Vacasa's platform drives <15% of bookings anyway - most come from Airbnb/Vrbo where we already compete. You'll get MORE exposure with multi-platform listing plus our local SEO expertise."
+      },
+      {
+        question: "How quickly can I switch from Vacasa?",
+        answer: "Check your Vacasa contract for notice period (usually 30-60 days). Once you give notice, we prepare everything in parallel: professional photos, optimized listings, local vendor setup. The day your Vacasa contract ends, we go live. Most owners switch in 30-45 days with zero downtime."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Leave Vacasa Behind?"
+    subtitle="Join 47+ San Diego owners earning 38% more with local management."
+    primaryButtonText="Get Free Comparison"
+    primaryButtonLink="/contact"
+    secondaryButtonText="See Our Services"
+    secondaryButtonLink="/services/full-service-management"
+  />
+</Layout>

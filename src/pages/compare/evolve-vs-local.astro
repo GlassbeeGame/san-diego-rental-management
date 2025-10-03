@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Evolve vs Local Management San Diego | Why Local Wins | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Evolve vs<br/><span class="text-orange-600">Local Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Remote marketing-only service vs. full-service local management. See why San Diego owners choose boots-on-the-ground expertise.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Compare Services
+          </a>
+          <a href="/services/full-service-management" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Full-Service Management
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "Full", label: "Local Management", icon: "services" },
+      { value: "24/7", label: "On-Site Response", icon: "support" },
+      { value: "18%", label: "All-In Pricing", icon: "revenue" },
+      { value: "Zero", label: "Owner Tasks", icon: "properties" }
+    ]}
+  />
+
+  <!-- Comparison Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Marketing-Only vs<br/><span class="text-orange-600">Full-Service Local</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Evolve handles marketing. You handle everything else. We handle EVERYTHING.
+          </p>
+        </div>
+
+        <!-- Service Comparison Table -->
+        <div class="mb-16 overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-black text-white">
+              <tr>
+                <th class="p-4 text-left uppercase" style="font-family: 'Bebas Neue', sans-serif;">Service</th>
+                <th class="p-4 text-center uppercase" style="font-family: 'Bebas Neue', sans-serif;">Evolve</th>
+                <th class="p-4 text-center uppercase bg-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Polaris Local</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-white">
+                <td class="p-4 font-semibold">Listing Creation & Marketing</td>
+                <td class="p-4 text-center text-green-600">✓</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-4 font-semibold">Guest Communication</td>
+                <td class="p-4 text-center text-green-600">✓</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="p-4 font-semibold">Cleaning Coordination</td>
+                <td class="p-4 text-center text-red-600">✗ (You arrange)</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓ We Handle</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-4 font-semibold">Maintenance & Repairs</td>
+                <td class="p-4 text-center text-red-600">✗ (You arrange)</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓ 24/7 Response</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="p-4 font-semibold">Linen & Amenity Management</td>
+                <td class="p-4 text-center text-red-600">✗ (You stock)</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓ Auto-Restock</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-4 font-semibold">Local Emergency Response</td>
+                <td class="p-4 text-center text-red-600">✗ (You respond)</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓ < 2hr On-Site</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="p-4 font-semibold">Professional Photography</td>
+                <td class="p-4 text-center text-yellow-600">$ Extra Cost</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓ Included</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-4 font-semibold">Local Pricing Optimization</td>
+                <td class="p-4 text-center text-yellow-600">Algorithm Only</td>
+                <td class="p-4 text-center text-orange-600 bg-orange-50">✓ Event-Driven</td>
+              </tr>
+              <tr class="bg-black text-white">
+                <td class="p-4 font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Management Fee</td>
+                <td class="p-4 text-center">10-15%</td>
+                <td class="p-4 text-center bg-orange-600">18% All-In</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- The Real Cost -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            The Real Cost<br/><span class="text-orange-600">Of "Marketing-Only"</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Evolve "10%" Fee</h4>
+              <ul class="space-y-2 text-gray-300">
+                <li>✗ 10% marketing fee</li>
+                <li>✗ + You pay cleaners directly ($80-150/turnover)</li>
+                <li>✗ + You arrange maintenance (plumber $200, AC $400)</li>
+                <li>✗ + You stock linens/amenities ($50-100/month)</li>
+                <li>✗ + Your time coordinating everything (10+ hrs/month)</li>
+                <li class="text-red-400 font-bold pt-4">= 15-20% PLUS your unpaid labor</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-orange-600 pl-8">
+              <h4 class="text-2xl font-bold mb-4 uppercase text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Polaris 18% All-In</h4>
+              <ul class="space-y-2 text-gray-300">
+                <li>✓ 18% management fee</li>
+                <li>✓ + Professional cleaning (we coordinate)</li>
+                <li>✓ + 24/7 maintenance response (we handle)</li>
+                <li>✓ + Linen auto-restocking (we manage)</li>
+                <li>✓ + Zero owner involvement (you do nothing)</li>
+                <li class="text-orange-400 font-bold pt-4">= 18% truly hands-off</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- What Evolve Doesn't Tell You -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            What Evolve<br/><span class="text-orange-600">Doesn't Tell You</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">You're Still The Manager</h4>
+              <p class="text-gray-600 mb-4">
+                Evolve handles guest messages. But when the AC breaks at 10pm or a cleaner no-shows, YOU get the call. YOU find the vendor. YOU solve the problem.
+              </p>
+              <p class="text-sm text-orange-600 font-bold">We handle emergencies 24/7 - you sleep through them.</p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">No Local Expertise</h4>
+              <p class="text-gray-600 mb-4">
+                Evolve's remote team doesn't know Comic-Con surge pricing, Del Mar racing premiums, or that Hillcrest Pride fills 3 months early. We do - it's our backyard.
+              </p>
+              <p class="text-sm text-orange-600 font-bold">Local knowledge = 30-40% higher revenue during events.</p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Your Reputation At Risk</h4>
+              <p class="text-gray-600 mb-4">
+                When guests find dirty linens or broken appliances (because YOU forgot to restock/repair), YOUR Airbnb rating suffers. Evolve just markets - they don't protect your reputation.
+              </p>
+              <p class="text-sm text-orange-600 font-bold">We maintain 4.9★ average - it's our reputation too.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="True Full-Service Management"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "100% hands-off operation", icon: "services" },
+      { title: "Switching Property Managers", href: "/services/switching-property-managers", description: "Seamless transition from Evolve", icon: "services" },
+      { title: "Emergency Cleaning", href: "/services/emergency-cleaning", description: "We coordinate - you don't", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Evolve vs Local FAQs"
+    subtitle="Common questions about marketing-only vs full-service"
+    faqs={[
+      {
+        question: "Is Evolve really cheaper than full-service local management?",
+        answer: "No! Evolve charges 10-15% but you pay cleaners ($80-150/turnover = $400-900/month), arrange maintenance (plumber $200, HVAC $400), stock linens ($50-100/month), and spend 10+ hours monthly coordinating. Real cost: 15-20% PLUS your unpaid labor. Our 18% truly includes everything."
+      },
+      {
+        question: "What happens when something breaks with Evolve?",
+        answer: "YOU handle it. Evolve sends you a message: 'Guest reports broken AC.' You find the vendor, coordinate access, pay the bill, follow up. At 10pm. On vacation. With Polaris, we dispatch our trusted HVAC partner within 2 hours. You get a text: 'AC fixed, $380, approved per your limit.' Done."
+      },
+      {
+        question: "Can Evolve really optimize pricing for San Diego events?",
+        answer: "No - they use generic nationwide algorithms. They don't know Comic-Con (Downtown $500+/night), Del Mar Racing (3x rates July-Sept), Beer Week (North Park premium), or Pride (Hillcrest surge). We track 50+ local events and surge pricing 3-4 months early. This alone adds 20-30% annual revenue."
+      },
+      {
+        question: "Do I save money doing cleaning/maintenance myself with Evolve?",
+        answer: "You save Polaris's 18% fee but spend 10-15 hours/month coordinating cleaners, restocking supplies, handling maintenance, managing vendors. Your time is worth $50-100/hr = $500-1500/month unpaid labor. Plus stress and 2am emergency calls. Worth it to 'save' 8% vs our all-in service?"
+      },
+      {
+        question: "Why do Evolve owners switch to full-service management?",
+        answer: "Burnout. Evolve markets well, but owners quickly realize they're still THE manager - coordinating cleaners, handling emergencies, stocking supplies, finding contractors. After 6-12 months of 2am panic calls, they want true hands-off service. That's when they call us."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready For True Hands-Off Management?"
+    subtitle="Stop coordinating. Start relaxing. We handle everything."
+    primaryButtonText="Compare Services"
+    primaryButtonLink="/contact"
+    secondaryButtonText="See Full Service"
+    secondaryButtonLink="/services/full-service-management"
+  />
+</Layout>
