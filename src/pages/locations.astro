@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const locations = [
+	{
+		name: 'La Jolla',
+		description: 'Upscale coastal community known for pristine beaches, sea caves, and luxury vacation rentals. High demand year-round with premium pricing potential.',
+		highlights: ['La Jolla Cove', 'Torrey Pines', 'Luxury beachfront properties', 'Fine dining scene'],
+		avgNightly: '$350-800',
+		occupancy: '85%'
+	},
+	{
+		name: 'Pacific Beach',
+		description: 'Vibrant beach town with a lively boardwalk, surf culture, and strong vacation rental demand from young travelers and families.',
+		highlights: ['Ocean Front Walk', 'Crystal Pier', 'Active nightlife', 'Beach volleyball'],
+		avgNightly: '$250-500',
+		occupancy: '88%'
+	},
+	{
+		name: 'Downtown San Diego',
+		description: 'Urban center with convention traffic, Gaslamp Quarter attractions, and year-round business and leisure demand.',
+		highlights: ['Gaslamp Quarter', 'Petco Park', 'Convention Center', 'Harbor views'],
+		avgNightly: '$200-450',
+		occupancy: '82%'
+	},
+	{
+		name: 'Coronado',
+		description: 'Exclusive island community featuring the iconic Hotel del Coronado, pristine beaches, and high-end vacation rentals.',
+		highlights: ['Coronado Beach', 'Hotel del Coronado', 'Village shops', 'Naval history'],
+		avgNightly: '$300-650',
+		occupancy: '83%'
+	},
+	{
+		name: 'Mission Beach',
+		description: 'Classic Southern California beach town with boardwalk access, surf culture, and strong summer rental demand.',
+		highlights: ['Belmont Park', 'Mission Bay', 'Beach boardwalk', 'Water sports'],
+		avgNightly: '$225-475',
+		occupancy: '86%'
+	},
+	{
+		name: 'North Park',
+		description: 'Trendy urban neighborhood with craft breweries, art galleries, and growing demand from cultural tourists.',
+		highlights: ['Craft beer scene', 'Art galleries', 'Local restaurants', 'Music venues'],
+		avgNightly: '$175-350',
+		occupancy: '78%'
+	},
+	{
+		name: 'Ocean Beach',
+		description: 'Laid-back beach community with a bohemian vibe, dog beach, and strong appeal to relaxed vacationers.',
+		highlights: ['Dog Beach', 'OB Pier', 'Sunset Cliffs', 'Farmers Market'],
+		avgNightly: '$200-425',
+		occupancy: '81%'
+	},
+	{
+		name: 'Point Loma',
+		description: 'Scenic peninsula with bay and ocean views, historic sites, and quiet vacation rental opportunities.',
+		highlights: ['Cabrillo Monument', 'Tide pools', 'Sunset views', 'Liberty Station'],
+		avgNightly: '$225-475',
+		occupancy: '79%'
+	}
+];
+---
+
+<Layout
+	title="San Diego Service Areas | Vacation Rental Management Locations"
+	description="Professional short-term rental management across San Diego's top vacation destinations: La Jolla, Pacific Beach, Downtown, Coronado, Mission Beach, and more."
+>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-to-br from-blue-50 to-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					San Diego Service Areas
+				</h1>
+				<p class="text-xl text-gray-600">
+					Expert vacation rental management across San Diego's most desirable neighborhoods—from beachfront properties to urban condos, we maximize your rental income with localized market expertise.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Locations Grid -->
+	<section class="py-16 md:py-24 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+				{locations.map(location => (
+					<div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
+						<div class="p-8">
+							<div class="flex items-start justify-between mb-4">
+								<div>
+									<h2 class="text-2xl font-bold text-gray-900 mb-2">{location.name}</h2>
+									<div class="flex flex-wrap gap-4 text-sm">
+										<div class="flex items-center gap-1 text-blue-600">
+											<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+											</svg>
+											<span class="font-semibold">{location.avgNightly}</span>
+										</div>
+										<div class="flex items-center gap-1 text-green-600">
+											<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+											</svg>
+											<span class="font-semibold">{location.occupancy} avg occupancy</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<p class="text-gray-600 mb-6">
+								{location.description}
+							</p>
+
+							<div class="mb-6">
+								<h3 class="text-sm font-semibold text-gray-900 mb-3">Key Attractions</h3>
+								<div class="flex flex-wrap gap-2">
+									{location.highlights.map(highlight => (
+										<span class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">
+											{highlight}
+										</span>
+									))}
+								</div>
+							</div>
+
+							<a
+								href="/contact"
+								class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
+							>
+								Get {location.name} property evaluation
+								<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Map Section -->
+	<section class="py-16 md:py-24 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+						Comprehensive Coverage Across San Diego County
+					</h2>
+					<p class="text-xl text-gray-600">
+						We manage properties in all of San Diego's prime vacation rental markets
+					</p>
+				</div>
+
+				<div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						<div>
+							<h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+								<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+								</svg>
+								Coastal Communities
+							</h3>
+							<ul class="space-y-2 text-gray-600">
+								<li>• La Jolla</li>
+								<li>• Pacific Beach</li>
+								<li>• Mission Beach</li>
+								<li>• Ocean Beach</li>
+								<li>• Coronado</li>
+								<li>• Point Loma</li>
+								<li>• Del Mar</li>
+								<li>• Encinitas</li>
+							</ul>
+						</div>
+
+						<div>
+							<h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+								<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+								</svg>
+								Urban & Downtown
+							</h3>
+							<ul class="space-y-2 text-gray-600">
+								<li>• Downtown San Diego</li>
+								<li>• Gaslamp Quarter</li>
+								<li>• Little Italy</li>
+								<li>• North Park</li>
+								<li>• Hillcrest</li>
+								<li>• Bankers Hill</li>
+								<li>• East Village</li>
+								<li>• Marina District</li>
+							</ul>
+						</div>
+
+						<div>
+							<h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+								<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+								</svg>
+								Specialty Areas
+							</h3>
+							<ul class="space-y-2 text-gray-600">
+								<li>• Mission Bay waterfront</li>
+								<li>• Bay Park</li>
+								<li>• South Park</li>
+								<li>• Normal Heights</li>
+								<li>• University Heights</li>
+								<li>• Shelter Island</li>
+								<li>• Harbor Island</li>
+								<li>• Sunset Cliffs</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="mt-10 pt-8 border-t border-gray-200 text-center">
+						<p class="text-gray-600 mb-6">
+							Don't see your neighborhood? We're expanding throughout San Diego County.
+						</p>
+						<a
+							href="/contact"
+							class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+						>
+							Contact us about your location
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Local Expertise Matters -->
+	<section class="py-16 md:py-24 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+						Why Localized Expertise Matters
+					</h2>
+					<p class="text-xl text-gray-600">
+						San Diego isn't one market—it's dozens of unique neighborhoods with distinct guest profiles and seasonal patterns
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="bg-gray-50 rounded-xl p-6">
+						<h3 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+							</svg>
+							Neighborhood-Specific Pricing
+						</h3>
+						<p class="text-gray-600">
+							La Jolla luxury vs. Pacific Beach party scene vs. Downtown business travelers—each requires unique pricing strategies based on local demand patterns.
+						</p>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-6">
+						<h3 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+							</svg>
+							Guest Profile Targeting
+						</h3>
+						<p class="text-gray-600">
+							We know Coronado attracts families, North Park draws foodies and culture seekers, while Downtown serves business travelers—optimizing listings accordingly.
+						</p>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-6">
+						<h3 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+							</svg>
+							Seasonal Trend Knowledge
+						</h3>
+						<p class="text-gray-600">
+							From Comic-Con Downtown surges to La Jolla summer premiums and Mission Beach spring break peaks—we optimize for every local event.
+						</p>
+					</div>
+
+					<div class="bg-gray-50 rounded-xl p-6">
+						<h3 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+							Local Vendor Relationships
+						</h3>
+						<p class="text-gray-600">
+							Trusted cleaners, maintenance crews, and service providers in each neighborhood ensure rapid response times and quality service.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl md:text-4xl font-bold mb-6">
+					Ready to Optimize Your San Diego Rental?
+				</h2>
+				<p class="text-xl text-blue-100 mb-8">
+					Get a free, location-specific revenue analysis for your property
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a
+						href="/contact"
+						class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+					>
+						Get Free Property Evaluation
+						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+						</svg>
+					</a>
+					<a
+						href="tel:+19517600070"
+						class="inline-flex items-center justify-center px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors border-2 border-white"
+					>
+						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+						</svg>
+						Call (951) 760-0070
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
