@@ -23,47 +23,19 @@ const navItems = [
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-10">
-        {navItems.map(item => {
-          if (item.label === 'Services') {
-            return (
-              <div class="relative group">
-                <a
-                  href={item.href}
-                  class={`text-sm font-bold uppercase tracking-wider transition-colors ${
-                    currentPath === item.href || currentPath.startsWith('/services/')
-                      ? 'text-orange-600'
-                      : 'text-white hover:text-orange-600'
-                  }`}
-                  style="font-family: 'Poppins', sans-serif;"
-                >
-                  {item.label}
-                </a>
-                <!-- Dropdown Menu -->
-                <div class="absolute left-0 mt-2 w-64 bg-black border-2 border-orange-600 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <a href="/services/full-service-management" class="block px-4 py-3 text-white hover:bg-orange-600 hover:text-black text-sm font-bold transition-colors border-b border-gray-800">Full-Service Management</a>
-                  <a href="/services/airbnb-co-hosting" class="block px-4 py-3 text-white hover:bg-orange-600 hover:text-black text-sm font-bold transition-colors border-b border-gray-800">Airbnb Co-Hosting</a>
-                  <a href="/services/revenue-management" class="block px-4 py-3 text-white hover:bg-orange-600 hover:text-black text-sm font-bold transition-colors border-b border-gray-800">Revenue Management</a>
-                  <a href="/services/guest-support" class="block px-4 py-3 text-white hover:bg-orange-600 hover:text-black text-sm font-bold transition-colors border-b border-gray-800">Guest Support</a>
-                  <a href="/services/property-maintenance" class="block px-4 py-3 text-white hover:bg-orange-600 hover:text-black text-sm font-bold transition-colors border-b border-gray-800">Property Maintenance</a>
-                  <a href="/services" class="block px-4 py-3 text-orange-600 hover:bg-orange-600 hover:text-black text-sm font-bold transition-colors uppercase">View All Services →</a>
-                </div>
-              </div>
-            );
-          }
-          return (
-            <a
-              href={item.href}
-              class={`text-sm font-bold uppercase tracking-wider transition-colors ${
-                currentPath === item.href
-                  ? 'text-orange-600'
-                  : 'text-white hover:text-orange-600'
-              }`}
-              style="font-family: 'Poppins', sans-serif;"
-            >
-              {item.label}
-            </a>
-          );
-        })}
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class={`text-sm font-bold uppercase tracking-wider transition-colors ${
+              currentPath === item.href || (item.href === '/services' && currentPath.startsWith('/services/'))
+                ? 'text-orange-600'
+                : 'text-white hover:text-orange-600'
+            }`}
+            style="font-family: 'Poppins', sans-serif;"
+          >
+            {item.label}
+          </a>
+        ))}
       </div>
 
       <!-- CTA Button -->
