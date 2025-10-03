@@ -1,0 +1,109 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  stats?: Array<{
+    value: string;
+    label: string;
+    icon?: 'properties' | 'rating' | 'revenue' | 'years' | 'occupancy';
+  }>;
+  layout?: 'horizontal' | 'grid';
+  backgroundColor?: 'white' | 'black' | 'gray';
+}
+
+const {
+  title = "Trusted by San Diego Property Owners",
+  subtitle = "Our track record speaks for itself",
+  stats = [
+    { value: "150+", label: "Properties Managed", icon: "properties" },
+    { value: "4.9★", label: "Average Rating", icon: "rating" },
+    { value: "35%", label: "Average Revenue Increase", icon: "revenue" },
+    { value: "82%", label: "Average Occupancy Rate", icon: "occupancy" }
+  ],
+  layout = 'horizontal',
+  backgroundColor = 'white'
+} = Astro.props;
+
+const iconPaths = {
+  properties: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+  rating: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z",
+  revenue: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+  years: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+  occupancy: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+};
+
+const bgClasses = {
+  white: 'bg-white',
+  black: 'bg-black',
+  gray: 'bg-gray-50'
+};
+
+const textClasses = {
+  white: 'text-gray-900',
+  black: 'text-white',
+  gray: 'text-gray-900'
+};
+
+const subtitleClasses = {
+  white: 'text-gray-600',
+  black: 'text-gray-300',
+  gray: 'text-gray-600'
+};
+
+const valueClasses = {
+  white: 'text-gray-900',
+  black: 'text-white',
+  gray: 'text-gray-900'
+};
+
+const labelClasses = {
+  white: 'text-gray-600',
+  black: 'text-gray-400',
+  gray: 'text-gray-600'
+};
+---
+
+<section class={`py-20 md:py-28 ${bgClasses[backgroundColor]}`}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    {title && (
+      <div class="text-center mb-16">
+        <h2 class={`text-5xl md:text-6xl font-bold mb-6 uppercase ${textClasses[backgroundColor]}`} style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          {title}
+        </h2>
+        {subtitle && (
+          <p class={`text-xl ${subtitleClasses[backgroundColor]}`}>
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+
+    <div class={`max-w-6xl mx-auto ${
+      layout === 'grid'
+        ? 'grid grid-cols-2 md:grid-cols-4 gap-8'
+        : 'grid grid-cols-2 md:grid-cols-4 gap-12'
+    }`}>
+      {stats.map((stat) => (
+        <div class="text-center">
+          {stat.icon && (
+            <div class={`inline-flex items-center justify-center w-16 h-16 mb-6 ${
+              backgroundColor === 'black' ? 'bg-orange-600' : 'bg-black'
+            }`}>
+              <svg class={`w-8 h-8 ${
+                backgroundColor === 'black' ? 'text-white' : 'text-orange-600'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[stat.icon]} />
+              </svg>
+            </div>
+          )}
+          <div class={`text-5xl md:text-6xl font-bold mb-2 ${valueClasses[backgroundColor]}`} style="font-family: 'Bebas Neue', sans-serif;">
+            {stat.value}
+          </div>
+          <div class={`text-sm font-semibold uppercase tracking-wider ${labelClasses[backgroundColor]}`}>
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

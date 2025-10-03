@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const faqs = [
+	{
+		question: "How do you handle difficult guests?",
+		answer: "We have extensive experience managing all guest situations with professionalism and clear boundaries. Our 24/7 team de-escalates issues quickly while protecting your property and maintaining positive reviews."
+	},
+	{
+		question: "What if a guest damages my property?",
+		answer: "We document property condition before and after each stay, file damage claims with platforms when necessary, and coordinate repairs immediately. Our security deposit and insurance procedures protect your investment."
+	},
+	{
+		question: "How quickly do you respond to guest issues?",
+		answer: "We maintain 24/7 guest support with response times under 30 minutes. Quick resolution prevents small issues from becoming big problems and negative reviews."
+	},
+	{
+		question: "Do you screen guests before accepting bookings?",
+		answer: "Yes! We review guest profiles, read previous reviews, and use platform verification tools to identify potential problems before they book. Prevention is our first line of defense."
+	},
+	{
+		question: "What about noise complaints from neighbors?",
+		answer: "We set clear house rules, use noise monitoring devices, communicate expectations during check-in, and respond immediately to any complaints to maintain good neighborhood relations."
+	}
+];
+
+const relatedPages = [
+	{
+		title: "Our Services",
+		description: "See how we protect your property",
+		link: "/services",
+		icon: "services"
+	},
+	{
+		title: "Airbnb Management",
+		description: "Professional Airbnb hosting services",
+		link: "/airbnb-management-san-diego",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get professional guest management",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+---
+
+<Layout
+	title="Vacation Rental Guest Problems | 24/7 Support San Diego"
+	description="Professional guest problem resolution for San Diego vacation rentals. 24/7 support, damage protection, and review management. Protect your property."
+>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1920');">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 uppercase leading-tight" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					Solving<br/>
+					<span class="text-orange-600">Guest Problems</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed max-w-2xl">
+					Professional 24/7 guest management that prevents issues, resolves problems quickly, and protects your property and reputation.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Expert Guest Problem Resolution"
+		subtitle="Protecting your property and reputation 24/7"
+		backgroundColor="white"
+		stats={[
+			{ value: "24/7", label: "Guest Support", icon: "years" },
+			{ value: "4.9★", label: "Average Rating", icon: "rating" },
+			{ value: "95%", label: "Issues Resolved Same-Day", icon: "occupancy" },
+			{ value: "99%", label: "5-Star Review Rate", icon: "rating" }
+		]}
+	/>
+
+	<!-- Main Content -->
+	<section class="py-20 md:py-28 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="mb-16">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						24/7 Support
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Common Guest Issues We Handle
+					</h2>
+					<p class="text-xl text-gray-600 mb-8 leading-relaxed">
+						Guest problems can damage your reputation and income. Our experienced team prevents, manages, and resolves every situation professionally.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Property Damage
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							We document all damage, file claims with booking platforms, coordinate repairs immediately, and ensure you're compensated appropriately.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.06m0 0A9 9 0 1017.728 6.343" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Noise Complaints
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Proactive noise monitoring, clear house rules, and immediate intervention protect neighborhood relations and prevent citations.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Unauthorized Guests
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Monitoring systems detect unauthorized parties or extra guests. We address violations immediately to protect your property and insurance.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Guest Complaints
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Quick professional response to any guest concerns prevents escalation and negative reviews. We turn problems into opportunities.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Late Checkout Issues
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Clear policies and proactive communication ensure on-time departures. When needed, we enforce checkout professionally.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Emergency Situations
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							From maintenance emergencies to safety concerns, our 24/7 team responds immediately with appropriate action and vendor coordination.
+						</p>
+					</div>
+				</div>
+
+				<div class="bg-white p-8 md:p-12 border-l-4 border-orange-600 mb-16">
+					<h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Our Guest Management Approach
+					</h3>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Prevention First:</strong> Clear house rules, guest screening, and pre-arrival communication prevent most issues
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>24/7 Availability:</strong> Round-the-clock support means problems get addressed immediately, any time of day
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Professional Resolution:</strong> Experienced team handles difficult situations with professionalism and clear boundaries
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Review Protection:</strong> Strategic communication turns potential negative reviews into positive outcomes
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-black text-white p-8 md:p-12">
+					<h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						The Cost of Poor Guest Management
+					</h3>
+					<div class="space-y-4 text-gray-300">
+						<p class="leading-relaxed">
+							<span class="text-orange-600 font-bold">Negative Reviews:</span> One bad review can cost you hundreds in lost bookings. Our proactive approach maintains your 5-star rating.
+						</p>
+						<p class="leading-relaxed">
+							<span class="text-orange-600 font-bold">Property Damage:</span> Unmonitored guests can cause thousands in damage. Our systems detect and prevent problems early.
+						</p>
+						<p class="leading-relaxed">
+							<span class="text-orange-600 font-bold">Neighbor Complaints:</span> Noise violations and citations can threaten your ability to operate. We maintain excellent community relations.
+						</p>
+						<p class="leading-relaxed">
+							<span class="text-orange-600 font-bold">Platform Penalties:</span> Guest issues can lead to listing suspensions. Our professional management keeps your account in good standing.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Pages -->
+	<RelatedPages
+		title="Learn More"
+		pages={relatedPages}
+	/>
+
+	<!-- FAQ -->
+	<FAQ
+		title="Guest Management FAQs"
+		subtitle="Common questions about handling guest issues"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		title="Protect Your Property with Professional Guest Management"
+		subtitle="24/7 support • Damage protection • Review management"
+		backgroundColor="orange"
+		primaryButtonText="Get Protected Now"
+		primaryButtonLink="/contact"
+		secondaryButtonText="Call (951) 760-0070"
+		secondaryButtonLink="tel:+19517600070"
+	/>
+
+	<Footer />
+</Layout>

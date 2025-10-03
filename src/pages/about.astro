@@ -10,14 +10,15 @@ import Footer from '../components/Footer.astro';
 >
 	<Header />
 
-	<!-- Hero Section -->
-	<section class="pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-to-br from-blue-50 to-white">
+	<!-- Hero Section with Background -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1920');">
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="max-w-4xl mx-auto text-center">
-				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-					San Diego Rental Management Experts
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					San Diego Rental<br/>Management Experts
 				</h1>
-				<p class="text-xl text-gray-600">
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed">
 					We're not just property managers—we're your partners in maximizing rental income through data-driven strategies, localized expertise, and personalized service.
 				</p>
 			</div>
@@ -39,17 +40,17 @@ import Footer from '../components/Footer.astro';
 						<p class="text-gray-600 mb-6">
 							Our consultative service model means we work closely with you to develop personalized strategies—from pricing optimization to guest targeting—tailored to maximize your specific property's potential.
 						</p>
-						<div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
-							<p class="text-blue-900">
+						<div class="bg-gray-50 border-l-4 border-orange-600 p-6 rounded">
+							<p class="text-gray-900">
 								<strong>Our Promise:</strong> We treat your property with the same care and attention we'd give our own investments, focusing on sustainable growth and long-term value.
 							</p>
 						</div>
 					</div>
-					<div class="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl p-8 lg:p-12">
+					<div class="bg-gray-50 border border-gray-200 p-8 lg:p-12">
 						<h3 class="text-2xl font-bold text-gray-900 mb-6">What Sets Us Apart</h3>
 						<div class="space-y-4">
 							<div class="flex gap-3">
-								<svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<div>
@@ -58,7 +59,7 @@ import Footer from '../components/Footer.astro';
 								</div>
 							</div>
 							<div class="flex gap-3">
-								<svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<div>
@@ -67,7 +68,7 @@ import Footer from '../components/Footer.astro';
 								</div>
 							</div>
 							<div class="flex gap-3">
-								<svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<div>
@@ -76,7 +77,7 @@ import Footer from '../components/Footer.astro';
 								</div>
 							</div>
 							<div class="flex gap-3">
-								<svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<div>
@@ -100,8 +101,8 @@ import Footer from '../components/Footer.astro';
 					</div>
 
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-						<div class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
-							<div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+						<div class="bg-white border border-gray-200 border border-gray-100 p-8 hover: transition-shadow">
+							<div class="w-14 h-14 bg-orange-600  flex items-center justify-center mb-6">
 								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 								</svg>
@@ -112,8 +113,8 @@ import Footer from '../components/Footer.astro';
 							</p>
 						</div>
 
-						<div class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
-							<div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+						<div class="bg-white border border-gray-200 border border-gray-100 p-8 hover: transition-shadow">
+							<div class="w-14 h-14 bg-orange-600  flex items-center justify-center mb-6">
 								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 								</svg>
@@ -124,8 +125,8 @@ import Footer from '../components/Footer.astro';
 							</p>
 						</div>
 
-						<div class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
-							<div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+						<div class="bg-white border border-gray-200 border border-gray-100 p-8 hover: transition-shadow">
+							<div class="w-14 h-14 bg-orange-600  flex items-center justify-center mb-6">
 								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
 								</svg>
@@ -139,7 +140,7 @@ import Footer from '../components/Footer.astro';
 				</div>
 
 				<!-- Performance Philosophy -->
-				<div class="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl p-8 lg:p-12">
+				<div class="bg-gray-50 text-white border border-gray-200 p-8 lg:p-12">
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						<div>
 							<h2 class="text-3xl font-bold mb-6">Performance-Driven Management</h2>
@@ -151,19 +152,19 @@ import Footer from '../components/Footer.astro';
 							</p>
 						</div>
 						<div>
-							<div class="bg-white/10 rounded-xl p-6 mb-4">
+							<div class="bg-white/10 border border-gray-100 p-6 mb-4">
 								<h3 class="text-xl font-bold mb-2">Data-Driven Decisions</h3>
 								<p class="text-gray-300 text-sm">
 									Every pricing adjustment, listing optimization, and strategic recommendation is backed by real market data and performance metrics.
 								</p>
 							</div>
-							<div class="bg-white/10 rounded-xl p-6 mb-4">
+							<div class="bg-white/10 border border-gray-100 p-6 mb-4">
 								<h3 class="text-xl font-bold mb-2">Quarterly Reporting</h3>
 								<p class="text-gray-300 text-sm">
 									Detailed performance analytics showing revenue trends, occupancy rates, and competitive positioning in your neighborhood.
 								</p>
 							</div>
-							<div class="bg-white/10 rounded-xl p-6">
+							<div class="bg-white/10 border border-gray-100 p-6">
 								<h3 class="text-xl font-bold mb-2">Proactive Optimization</h3>
 								<p class="text-gray-300 text-sm">
 									We don't wait for problems—we identify opportunities and implement improvements before the competition catches on.
@@ -191,7 +192,7 @@ import Footer from '../components/Footer.astro';
 
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 					<div class="text-center">
-						<div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+						<div class="w-16 h-16 bg-orange-600 text-white  flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-3">Free Consultation</h3>
 						<p class="text-gray-600">
 							We discuss your property, goals, and current performance to understand your needs.
@@ -199,7 +200,7 @@ import Footer from '../components/Footer.astro';
 					</div>
 
 					<div class="text-center">
-						<div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+						<div class="w-16 h-16 bg-orange-600 text-white  flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-3">Property Evaluation</h3>
 						<p class="text-gray-600">
 							Detailed analysis of your property's revenue potential based on location, amenities, and market conditions.
@@ -207,7 +208,7 @@ import Footer from '../components/Footer.astro';
 					</div>
 
 					<div class="text-center">
-						<div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+						<div class="w-16 h-16 bg-orange-600 text-white  flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-3">Custom Strategy</h3>
 						<p class="text-gray-600">
 							Personalized management plan with pricing strategy, guest targeting, and optimization roadmap.
@@ -215,7 +216,7 @@ import Footer from '../components/Footer.astro';
 					</div>
 
 					<div class="text-center">
-						<div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+						<div class="w-16 h-16 bg-orange-600 text-white  flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-3">Ongoing Optimization</h3>
 						<p class="text-gray-600">
 							Continuous monitoring, quarterly reports, and strategic adjustments to maximize performance.
@@ -226,7 +227,7 @@ import Footer from '../components/Footer.astro';
 				<div class="mt-12 text-center">
 					<a
 						href="/contact"
-						class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+						class="inline-flex items-center px-8 py-4 bg-orange-600 text-white font-semibold  hover:bg-orange-700 transition-colors"
 					>
 						Start with a Free Consultation
 						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -260,18 +261,18 @@ import Footer from '../components/Footer.astro';
 					</p>
 				</div>
 
-				<div class="mt-12 bg-blue-50 rounded-xl p-8">
+				<div class="mt-12 bg-gray-50 border border-gray-100 p-8">
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
 						<div>
-							<p class="text-4xl font-bold text-blue-600 mb-2">150+</p>
+							<p class="text-4xl font-bold text-orange-600 mb-2">150+</p>
 							<p class="text-gray-700 font-medium">Properties Managed</p>
 						</div>
 						<div>
-							<p class="text-4xl font-bold text-blue-600 mb-2">4.9★</p>
+							<p class="text-4xl font-bold text-orange-600 mb-2">4.9★</p>
 							<p class="text-gray-700 font-medium">Average Guest Rating</p>
 						</div>
 						<div>
-							<p class="text-4xl font-bold text-blue-600 mb-2">35%</p>
+							<p class="text-4xl font-bold text-orange-600 mb-2">35%</p>
 							<p class="text-gray-700 font-medium">Avg Revenue Increase</p>
 						</div>
 					</div>
@@ -281,19 +282,19 @@ import Footer from '../components/Footer.astro';
 	</section>
 
 	<!-- CTA Section -->
-	<section class="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+	<section class="py-16 md:py-24 bg-gray-50 text-white">
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-4xl mx-auto text-center">
 				<h2 class="text-3xl md:text-4xl font-bold mb-6">
 					Ready to Partner With Us?
 				</h2>
-				<p class="text-xl text-blue-100 mb-8">
+				<p class="text-xl text-orange-100 mb-8">
 					Let's discuss how we can maximize your San Diego rental income
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contact"
-						class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+						class="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-semibold  hover:bg-gray-100 transition-colors"
 					>
 						Schedule Free Consultation
 						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -302,7 +303,7 @@ import Footer from '../components/Footer.astro';
 					</a>
 					<a
 						href="tel:+19517600070"
-						class="inline-flex items-center justify-center px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors border-2 border-white"
+						class="inline-flex items-center justify-center px-8 py-4 bg-orange-700 text-white font-semibold  hover:bg-gray-800 transition-colors border-2 border-white"
 					>
 						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

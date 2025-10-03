@@ -1,0 +1,333 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Revenue Management San Diego | Dynamic Pricing for Vacation Rentals | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Revenue<br/><span class="text-orange-600">Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          AI-powered dynamic pricing that maximizes your revenue. Earn 30-40% more than static pricing strategies.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Increase My Revenue
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "38%", label: "Average Revenue Increase", icon: "revenue" },
+      { value: "$24K", label: "Avg. Additional Annual Income", icon: "revenue" },
+      { value: "Daily", label: "Price Adjustments", icon: "occupancy" },
+      { value: "150+", label: "Properties Optimized", icon: "properties" }
+    ]}
+  />
+
+  <!-- Dynamic Pricing Explained -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Why Dynamic Pricing<br/><span class="text-orange-600">Crushes Static Rates</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center mb-16">
+        <div class="card p-8 bg-gray-50 border-2 border-gray-300">
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            <span class="text-red-600">Static Pricing</span>
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Same price every night, regardless of demand</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Leaves money on the table during high demand</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Priced too high during slow seasons = empty calendar</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Ignores events, holidays, and local trends</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Doesn't respond to competitor pricing changes</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card p-8 bg-orange-50 border-4 border-orange-600">
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            <span class="text-orange-600">Dynamic Pricing</span>
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Prices adjust daily based on real-time demand</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Maximizes revenue during Comic-Con, holidays, events</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Lowers rates strategically to fill empty nights</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Monitors 100+ data points including weather, trends</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Automatically undercuts competitors when needed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Analyze -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          100+ Data Points<br/><span class="text-orange-600">Analyzed Daily</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Our AI pricing engine considers everything that affects your nightly rate.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Market Demand</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Search volume trends</li>
+            <li>• Booking lead times</li>
+            <li>• Seasonality patterns</li>
+            <li>• Day of week variations</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Competitor Analysis</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• 20+ similar properties tracked</li>
+            <li>• Pricing strategies monitored</li>
+            <li>• Occupancy rates analyzed</li>
+            <li>• New listing competition</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Events & Holidays</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Comic-Con, festivals, concerts</li>
+            <li>• Sporting events (Padres, etc.)</li>
+            <li>• Holidays & school breaks</li>
+            <li>• Conference schedules</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Local Factors</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Weather forecasts</li>
+            <li>• Beach conditions</li>
+            <li>• Construction/road closures</li>
+            <li>• Neighborhood trends</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Your Property Data</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Historical booking patterns</li>
+            <li>• Review scores & velocity</li>
+            <li>• Cancellation rates</li>
+            <li>• Guest demographics</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Platform Algorithms</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Airbnb ranking factors</li>
+            <li>• VRBO search positioning</li>
+            <li>• Instant Book impact</li>
+            <li>• Smart Pricing thresholds</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Strategies -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Smart Pricing<br/><span class="text-orange-600">Strategies</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Last-Minute Discounts</h3>
+          <p class="text-gray-600 mb-4">
+            Empty nights within 7 days? We automatically drop prices to fill gaps. Better to earn $150 than $0.
+          </p>
+          <div class="bg-orange-50 p-4 border-l-4 border-orange-600">
+            <p class="text-sm text-gray-700"><strong>Example:</strong> Tonight's rate drops from $250 to $175 at 3pm to capture last-minute travelers.</p>
+          </div>
+        </div>
+
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Event-Based Surges</h3>
+          <p class="text-gray-600 mb-4">
+            Comic-Con weekend? Padres playoffs? Prices automatically surge 2-3x based on historical demand.
+          </p>
+          <div class="bg-orange-50 p-4 border-l-4 border-orange-600">
+            <p class="text-sm text-gray-700"><strong>Example:</strong> Comic-Con Thursday increases from $200 to $495/night automatically.</p>
+          </div>
+        </div>
+
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Gap Night Optimization</h3>
+          <p class="text-gray-600 mb-4">
+            Single night between bookings? We discount it strategically to avoid orphaned nights.
+          </p>
+          <div class="bg-orange-50 p-4 border-l-4 border-orange-600">
+            <p class="text-sm text-gray-700"><strong>Example:</strong> Friday solo night between Thu/Sat bookings drops 20% to secure a 3-night stay.</p>
+          </div>
+        </div>
+
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Length-of-Stay Pricing</h3>
+          <p class="text-gray-600 mb-4">
+            Encourage longer bookings with weekly/monthly discounts while maintaining daily rate flexibility.
+          </p>
+          <div class="bg-orange-50 p-4 border-l-4 border-orange-600">
+            <p class="text-sm text-gray-700"><strong>Example:</strong> 7+ night stays receive 15% discount, but nightly rate still adjusts for demand.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue Guarantee -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-black text-white p-12 border-4 border-orange-600">
+          <h2 class="text-5xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Our <span class="text-orange-600">Revenue Guarantee</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            If our dynamic pricing doesn't increase your revenue by at least <span class="text-orange-600 font-bold text-2xl">25%</span> in the first 90 days compared to your previous strategy, we'll refund our management fee for those 3 months.
+          </p>
+          <p class="text-gray-400">
+            * Minimum 60-day historical data required for comparison. New listings not eligible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Maximize visibility & bookings", icon: "services" },
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete property management", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about revenue management"
+    faqs={[
+      {
+        question: "How much does dynamic pricing increase revenue compared to static pricing?",
+        answer: "Our clients average a 38% revenue increase in their first year compared to static pricing. This varies by property type and location, but we guarantee at minimum a 25% increase or we refund our fees for the first 90 days."
+      },
+      {
+        question: "Can I set price floors and ceilings?",
+        answer: "Absolutely! You set minimum and maximum nightly rates, and our algorithm optimizes within those bounds. Most hosts set a floor 20% below their target rate and let us optimize from there. You can adjust these limits anytime."
+      },
+      {
+        question: "How often do prices change?",
+        answer: "Prices are recalculated and updated daily. During high-demand periods (events, holidays, weekends), we may adjust multiple times per day as we get closer to check-in date. You'll receive weekly summaries of all pricing changes."
+      },
+      {
+        question: "What if I disagree with a price the algorithm sets?",
+        answer: "You have full override control. You can manually set any date's price through your owner portal, and the algorithm will work around it. We also provide detailed reasoning for each price, so you understand our strategy."
+      },
+      {
+        question: "Does this work for both Airbnb and VRBO?",
+        answer: "Yes! Our pricing engine syncs across all platforms - Airbnb, VRBO, Booking.com, and direct bookings. Prices are optimized based on combined demand across all channels while accounting for each platform's fee structure."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Earn 38% More Revenue?"
+    subtitle="Get a free revenue analysis showing how much you're leaving on the table."
+    primaryButtonText="Get Free Analysis"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Services"
+    secondaryButtonLink="/services"
+  />
+</Layout>

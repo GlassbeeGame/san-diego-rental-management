@@ -1,0 +1,78 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  primaryButtonText?: string;
+  primaryButtonLink?: string;
+  secondaryButtonText?: string;
+  secondaryButtonLink?: string;
+  backgroundColor?: 'orange' | 'black' | 'white';
+}
+
+const {
+  title = "Ready to Maximize Your Rental Income?",
+  subtitle = "La Jolla • Pacific Beach • Downtown • Coronado • Mission Beach • North Park • Ocean Beach • Gaslamp Quarter",
+  primaryButtonText = "Get Free Consultation",
+  primaryButtonLink = "/contact",
+  secondaryButtonText = "Call (951) 760-0070",
+  secondaryButtonLink = "tel:+19517600070",
+  backgroundColor = 'orange'
+} = Astro.props;
+
+const bgClasses = {
+  orange: 'bg-orange-600',
+  black: 'bg-black',
+  white: 'bg-white'
+};
+
+const textClasses = {
+  orange: 'text-white',
+  black: 'text-white',
+  white: 'text-gray-900'
+};
+
+const subtitleClasses = {
+  orange: 'text-white/90',
+  black: 'text-gray-300',
+  white: 'text-gray-600'
+};
+---
+
+<section class={`py-20 md:py-28 ${bgClasses[backgroundColor]} ${textClasses[backgroundColor]}`}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-5xl md:text-6xl font-bold mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+      {title}
+    </h2>
+    <p class={`text-xl mb-12 max-w-3xl mx-auto ${subtitleClasses[backgroundColor]}`}>
+      {subtitle}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={primaryButtonLink}
+        class={`btn px-10 py-4 text-base ${
+          backgroundColor === 'orange'
+            ? 'bg-black text-white border-2 border-black hover:bg-white hover:text-black hover:border-white'
+            : backgroundColor === 'black'
+            ? 'bg-orange-600 text-white border-2 border-orange-600 hover:bg-orange-700 hover:border-orange-700'
+            : 'bg-orange-600 text-white border-2 border-orange-600 hover:bg-orange-700'
+        }`}
+      >
+        {primaryButtonText}
+      </a>
+      {secondaryButtonText && (
+        <a
+          href={secondaryButtonLink}
+          class={`btn px-10 py-4 text-base ${
+            backgroundColor === 'orange'
+              ? 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-orange-600'
+              : backgroundColor === 'black'
+              ? 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-black'
+              : 'bg-transparent text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white'
+          }`}
+        >
+          {secondaryButtonText}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

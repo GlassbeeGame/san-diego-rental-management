@@ -1,1 +1,104 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global Typography */
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Bold Professional Aesthetic */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #ff6b35;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: #ff6b35;
+  color: white;
+  border-color: #ff6b35;
+}
+
+.btn-primary:hover {
+  background: #e55527;
+  border-color: #e55527;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #1f2937;
+  border-color: #1f2937;
+}
+
+.btn-secondary:hover {
+  background: #1f2937;
+  color: white;
+}
+
+/* Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e55527;
+}
+
+/* Transitions */
+a, button, input, textarea, select {
+  transition: all 0.2s ease;
+}

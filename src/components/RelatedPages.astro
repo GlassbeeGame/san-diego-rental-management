@@ -1,0 +1,63 @@
+---
+interface Props {
+  title?: string;
+  pages: Array<{
+    title: string;
+    description: string;
+    link: string;
+    icon?: string;
+  }>;
+}
+
+const {
+  title = "Explore More",
+  pages
+} = Astro.props;
+
+// Icon mapping
+const iconPaths = {
+  services: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
+  locations: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
+  about: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+  contact: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+  home: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+  default: "M13 7l5 5m0 0l-5 5m5-5H6"
+};
+---
+
+<section class="py-20 md:py-28 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+        {title}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {pages.map((page) => (
+        <a
+          href={page.link}
+          class="card p-8 hover:border-orange-600 group transition-all"
+        >
+          <div class="w-14 h-14 bg-black flex items-center justify-center mb-6 group-hover:bg-orange-600 transition-colors">
+            <svg class="w-7 h-7 text-orange-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[page.icon || 'default']} />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em;">
+            {page.title}
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            {page.description}
+          </p>
+          <span class="inline-flex items-center text-orange-600 font-bold text-sm uppercase tracking-wider">
+            Learn More
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

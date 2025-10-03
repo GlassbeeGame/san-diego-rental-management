@@ -1,0 +1,274 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="24/7 Guest Support San Diego | Vacation Rental Communication | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          24/7 Guest<br/><span class="text-orange-600">Support Services</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Professional guest communication that earns 5-star reviews while you sleep. We handle everything from booking to checkout.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Guest Support
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "< 5min", label: "Average Response Time", icon: "occupancy" },
+      { value: "4.9★", label: "Guest Satisfaction Rating", icon: "rating" },
+      { value: "97%", label: "Issue Resolution Rate", icon: "rating" },
+      { value: "24/7/365", label: "Always Available", icon: "properties" }
+    ]}
+  />
+
+  <!-- What We Handle -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Handle Every<br/><span class="text-orange-600">Guest Interaction</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From first inquiry to final review, we manage all guest communications professionally.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Pre-Booking Inquiries</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Answer questions about your property, neighborhood, amenities, and policies. Personalized responses that convert browsers into bookers.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Booking Confirmation</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Immediate welcome message with property details, local recommendations, and set expectations for an amazing stay.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Check-In Coordination</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Send access codes, parking instructions, WiFi password, and property walkthrough guide. Available for questions during check-in.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">During-Stay Support</h3>
+          <p class="text-gray-600 leading-relaxed">
+            24/7 availability for questions, issues, or requests. WiFi troubleshooting, appliance instructions, local recommendations, and emergency response.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Check-Out Reminders</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Automated reminders with check-out instructions. Ensure guests follow procedures: lock doors, adjust thermostat, take trash out.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Review Management</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Thank guests, request 5-star reviews, respond to all reviews professionally, and turn complaints into opportunities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communication Channels -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We're Where Your<br/><span class="text-orange-600">Guests Are</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Multi-channel support means faster response times and happier guests.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-orange-600 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Airbnb/VRBO Messaging</h3>
+          <p class="text-gray-300">Platform-native communication</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-orange-600 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">SMS Text</h3>
+          <p class="text-gray-300">Instant mobile communication</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-orange-600 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Phone Support</h3>
+          <p class="text-gray-300">Direct calls for urgent issues</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-orange-600 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Email</h3>
+          <p class="text-gray-300">Detailed responses & documentation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Time Guarantee -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-12 border-4 border-orange-600">
+          <h2 class="text-5xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Our Response Time<br/><span class="text-orange-600">Guarantee</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-600 mb-2" style="font-family: 'Bebas Neue', sans-serif;">< 5 min</div>
+              <p class="text-gray-600">Emergency Issues</p>
+              <p class="text-sm text-gray-500 mt-2">Locked out, no power, flooding, etc.</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-600 mb-2" style="font-family: 'Bebas Neue', sans-serif;">< 15 min</div>
+              <p class="text-gray-600">Urgent Requests</p>
+              <p class="text-sm text-gray-500 mt-2">WiFi issues, appliance help, etc.</p>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-600 mb-2" style="font-family: 'Bebas Neue', sans-serif;">< 1 hr</div>
+              <p class="text-gray-600">General Questions</p>
+              <p class="text-sm text-gray-500 mt-2">Recommendations, directions, etc.</p>
+            </div>
+          </div>
+
+          <p class="text-center text-gray-600 text-lg">
+            If we don't meet these response times, <span class="font-bold text-black">that month's guest support is free</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Airbnb Co-Hosting", href: "/services/airbnb-co-hosting", description: "Full co-hosting support", icon: "services" },
+      { title: "Emergency Cleaning", href: "/services/emergency-cleaning", description: "Same-day cleaning service", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about guest support"
+    faqs={[
+      {
+        question: "How do guests know to contact you instead of me?",
+        answer: "We update your listing's messaging settings and automated messages to direct all communication through us. Guests receive our contact information in their booking confirmation. You can still access all conversations through your owner portal and step in anytime."
+      },
+      {
+        question: "What happens if there's an emergency at 3am?",
+        answer: "Our team monitors all channels 24/7/365. Emergency situations (lockouts, no power, flooding, safety issues) are responded to within 5 minutes. We have on-call maintenance teams and can dispatch help immediately while keeping you informed."
+      },
+      {
+        question: "Can I still communicate with guests if I want to?",
+        answer: "Absolutely! You have full visibility into all conversations and can jump in anytime. Some hosts prefer to send a personal welcome message while we handle all the operational stuff. It's completely flexible based on your preference."
+      },
+      {
+        question: "How do you handle difficult or unreasonable guests?",
+        answer: "Our team is trained in de-escalation and has experience with all types of situations. We protect your property and reputation while finding win-win solutions. If a guest is being unreasonable, we document everything and coordinate with platform support if needed."
+      },
+      {
+        question: "Do you help improve my review rating?",
+        answer: "Yes! Professional guest communication is the #1 factor in getting 5-star reviews. We proactively address issues before they become problems, exceed guest expectations, and strategically request reviews from happy guests. Our clients average 4.9 stars."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Never Miss Another Guest Message"
+    subtitle="24/7 professional support that earns 5-star reviews on autopilot."
+    primaryButtonText="Start Guest Support"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View Pricing"
+    secondaryButtonLink="/services"
+  />
+</Layout>

@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const faqs = [
+	{
+		question: "Do you handle all Airbnb guest communication?",
+		answer: "Yes! We manage all guest messages, from initial inquiries to post-checkout reviews. Our 24/7 response system ensures quick replies that improve your booking rate and maintain Superhost status."
+	},
+	{
+		question: "How do you optimize my Airbnb listing?",
+		answer: "We use professional photography, write compelling descriptions with SEO keywords, set competitive pricing, and continuously test and refine your listing based on performance data to maximize bookings."
+	},
+	{
+		question: "Can you help me become an Airbnb Superhost?",
+		answer: "Absolutely! Our management approach focuses on maintaining high ratings, quick response times, low cancellation rates, and excellent guest reviews—all key to achieving and keeping Superhost status."
+	},
+	{
+		question: "What about Airbnb reviews and ratings?",
+		answer: "We actively manage the guest experience to ensure 5-star reviews. This includes pre-arrival communication, quality checks, addressing issues immediately, and thoughtful post-stay follow-up."
+	},
+	{
+		question: "Do you also list on VRBO and other platforms?",
+		answer: "Yes! While we specialize in Airbnb, we also manage listings on VRBO, Booking.com, and other platforms to maximize your exposure and occupancy rates across all channels."
+	}
+];
+
+const relatedPages = [
+	{
+		title: "Vacation Rental Management",
+		description: "Full-service property management solutions",
+		link: "/san-diego-vacation-rental-management",
+		icon: "services"
+	},
+	{
+		title: "Switching Managers",
+		description: "Make the switch to better management",
+		link: "/switching-property-managers",
+		icon: "about"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free Airbnb evaluation",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+---
+
+<Layout
+	title="Airbnb Management San Diego | Expert Hosting Services"
+	description="Professional Airbnb management in San Diego. Superhost-level service, optimized listings, and 24/7 guest support. Maximize your Airbnb income today."
+>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920');">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 uppercase leading-tight" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					San Diego<br/>
+					<span class="text-orange-600">Airbnb Management</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed max-w-2xl">
+					Expert Airbnb hosting services that deliver Superhost results. Professional management for San Diego's most successful short-term rentals.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Superhost-Level Management for Every Property"
+		subtitle="Proven Airbnb expertise across San Diego"
+		backgroundColor="white"
+		stats={[
+			{ value: "150+", label: "Airbnb Properties", icon: "properties" },
+			{ value: "4.9★", label: "Average Listing Rating", icon: "rating" },
+			{ value: "40%", label: "Avg Revenue Boost", icon: "revenue" },
+			{ value: "90%", label: "5-Star Reviews", icon: "occupancy" }
+		]}
+	/>
+
+	<!-- Main Content -->
+	<section class="py-20 md:py-28 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="mb-16">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						Airbnb Specialists
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Airbnb Management That Gets Results
+					</h2>
+					<p class="text-xl text-gray-600 mb-8 leading-relaxed">
+						Managing an Airbnb successfully requires constant attention, quick responses, and platform expertise. We deliver Superhost-level performance for every property we manage.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Superhost Status
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Our proven approach to guest communication, property quality, and reviews helps achieve and maintain Airbnb Superhost status.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							24/7 Guest Support
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Instant response to Airbnb messages at any hour ensures high booking rates and maintains your response time metrics.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Listing Optimization
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Professional photos, compelling descriptions, and strategic pricing make your listing stand out in San Diego's competitive market.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Smart Pricing
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Dynamic pricing algorithms adjust your rates daily based on Airbnb demand, San Diego events, and competitor analysis.
+						</p>
+					</div>
+				</div>
+
+				<div class="bg-white p-8 md:p-12 border-l-4 border-orange-600">
+					<h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						What Sets Our Airbnb Management Apart
+					</h3>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Airbnb Platform Experts:</strong> Deep understanding of Airbnb's algorithm, search ranking, and best practices
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Review Management:</strong> Strategic guest communication that consistently generates 5-star reviews
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>San Diego Specialization:</strong> Localized knowledge of what Airbnb guests want in each neighborhood
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Proactive Management:</strong> We handle issues before they become problems, protecting your ratings
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Pages -->
+	<RelatedPages
+		title="Explore Our Other Services"
+		pages={relatedPages}
+	/>
+
+	<!-- FAQ -->
+	<FAQ
+		title="Airbnb Management Questions"
+		subtitle="Everything you need to know about our Airbnb hosting services"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		title="Ready to Become a San Diego Airbnb Superhost?"
+		subtitle="Free listing audit • No obligation • Expert recommendations"
+		backgroundColor="orange"
+		primaryButtonText="Get Free Consultation"
+		primaryButtonLink="/contact"
+		secondaryButtonText="Call (951) 760-0070"
+		secondaryButtonLink="tel:+19517600070"
+	/>
+
+	<Footer />
+</Layout>

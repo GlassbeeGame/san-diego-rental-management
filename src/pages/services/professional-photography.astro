@@ -1,0 +1,369 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Professional Airbnb Photography San Diego | Vacation Rental Photos | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Professional<br/><span class="text-orange-600">Photography</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Stunning photos that increase bookings by 40%. First impressions matter - make yours unforgettable.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Book Photo Shoot
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "40%", label: "Average Booking Increase", icon: "revenue" },
+      { value: "200+", label: "Properties Photographed", icon: "properties" },
+      { value: "25-40", label: "Professional Photos", icon: "occupancy" },
+      { value: "48hrs", label: "Delivery Time", icon: "rating" }
+    ]}
+  />
+
+  <!-- Why Professional Photos -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Why Professional Photos<br/><span class="text-orange-600">Are Non-Negotiable</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Your photos are your listing's first impression. Here's what professional photography delivers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
+        <div class="card p-8 bg-gray-50">
+          <h3 class="text-3xl font-bold text-red-600 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            iPhone Photos
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Poor lighting makes rooms look dark and uninviting</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Awkward angles make spaces look cramped and smaller</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Clutter, personal items, unmade beds visible</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Distorted perspectives, blurry images</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Guests scroll past in 2 seconds</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card p-8 bg-orange-50 border-4 border-orange-600">
+          <h3 class="text-3xl font-bold text-orange-600 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Professional Photos
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Perfect lighting makes every room bright, warm, inviting</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Wide-angle lenses showcase full space, make rooms look bigger</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Professional staging - every detail perfectly arranged</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Crisp, sharp, magazine-quality images</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Guests stop scrolling, click "Book Now"</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto bg-black text-white p-12 text-center">
+        <div class="text-6xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">40%</div>
+        <p class="text-2xl mb-4">More Bookings with Professional Photos</p>
+        <p class="text-gray-300">Airbnb's own data shows professional photography increases booking rates by an average of 40%. The $400 investment pays for itself in the first week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          What's Included in<br/><span class="text-orange-600">Every Shoot</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Pre-Shoot Staging</h3>
+          <p class="text-gray-300 mb-4">
+            We arrive 30 minutes early to stage your property: fluff pillows, arrange furniture, hide clutter, open curtains for perfect natural light.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">25-40 Photos</h3>
+          <p class="text-gray-300 mb-4">
+            Full coverage of every room, outdoor spaces, amenities, neighborhood highlights. Multiple angles of hero spaces like living room and bedrooms.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'BebasEnue', sans-serif;">HDR Processing</h3>
+          <p class="text-gray-300 mb-4">
+            High Dynamic Range editing ensures bright windows don't blow out, dark corners are visible, and colors are vibrant and true-to-life.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Wide-Angle Lenses</h3>
+          <p class="text-gray-300 mb-4">
+            Professional ultra-wide lenses capture entire rooms in one shot, making spaces look 30% larger while maintaining straight lines (no fisheye distortion).
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Twilight Exterior</h3>
+          <p class="text-gray-300 mb-4">
+            Optional "golden hour" exterior shots during sunset. Warm, dramatic lighting that makes your property glow on the search results page.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">48-Hour Delivery</h3>
+          <p class="text-gray-300 mb-4">
+            Fully edited, web-optimized photos delivered within 48 hours. We also sequence them in optimal order for maximum booking conversion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Our Photography<br/><span class="text-orange-600">Process</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">1</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Schedule & Prepare</h3>
+              <p class="text-gray-600 leading-relaxed">
+                We coordinate a time when your property is unoccupied. You'll receive a pre-shoot checklist: clean property, remove personal items, turn on all lights.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">2</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Professional Shoot (1.5-2 hours)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Our photographer captures every angle with professional lighting equipment, wide-angle lenses, and attention to detail that makes your property shine.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">3</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Expert Editing (24 hours)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                HDR processing, color correction, brightness optimization, and perspective correction. Every photo is magazine-quality.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">4</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Delivery & Upload (48 hours)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Photos delivered via secure link, already sized for Airbnb/VRBO. We can also upload directly to your listings with optimized sequencing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Photography<br/><span class="text-orange-600">Pricing</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card p-8 text-center">
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Studio/1BR</h3>
+          <div class="text-5xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$299</div>
+          <ul class="text-left space-y-3 text-gray-600 mb-6">
+            <li>• Up to 25 photos</li>
+            <li>• 1-1.5 hour shoot</li>
+            <li>• HDR editing</li>
+            <li>• 48-hour delivery</li>
+          </ul>
+        </div>
+
+        <div class="card p-8 text-center border-4 border-orange-600">
+          <div class="inline-block bg-orange-600 text-white px-4 py-1 text-sm font-bold uppercase mb-4" style="font-family: 'Bebas Neue', sans-serif;">Most Popular</div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">2-3BR</h3>
+          <div class="text-5xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$399</div>
+          <ul class="text-left space-y-3 text-gray-600 mb-6">
+            <li>• Up to 35 photos</li>
+            <li>• 1.5-2 hour shoot</li>
+            <li>• HDR editing</li>
+            <li>• Twilight exterior option</li>
+            <li>• 48-hour delivery</li>
+          </ul>
+        </div>
+
+        <div class="card p-8 text-center">
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">4BR+ or Estate</h3>
+          <div class="text-5xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$549</div>
+          <ul class="text-left space-y-3 text-gray-600 mb-6">
+            <li>• Up to 50 photos</li>
+            <li>• 2-3 hour shoot</li>
+            <li>• HDR editing</li>
+            <li>• Twilight exterior included</li>
+            <li>• Drone aerial (if allowed)</li>
+            <li>• 48-hour delivery</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-4">
+          <strong>Free for Full-Service Management Clients</strong> - Professional photography included with onboarding
+        </p>
+        <p class="text-sm text-gray-500">Re-shoots or seasonal updates available at 50% off regular pricing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Maximize visibility & bookings", icon: "services" },
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Includes free photography", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about professional photography"
+    faqs={[
+      {
+        question: "How long does a photo shoot take?",
+        answer: "Most shoots take 1.5-2 hours including staging and setup. Studio/1BR properties typically take 1-1.5 hours, while larger estates can take 2-3 hours. We schedule during optimal natural light (morning or late afternoon) for best results."
+      },
+      {
+        question: "Do I need to be present during the shoot?",
+        answer: "No, you don't need to be there! Most clients provide access via lockbox or smart lock code. We'll send you a text when we arrive and when we're finished. You can see sample shots immediately after the shoot if you'd like."
+      },
+      {
+        question: "What if I don't like the photos?",
+        answer: "We've never had a client unsatisfied with their photos, but if you're not happy we'll schedule a re-shoot at no charge. We can also do minor editing adjustments (brightness, cropping, etc.) based on your feedback."
+      },
+      {
+        question: "Can you photoshop out that ugly building next door?",
+        answer: "We focus on honest representation of your property - no major alterations or misrepresentation. However, we can do minor touch-ups like removing small clutter items accidentally left in frame, correcting lens distortion, or adjusting angles to minimize unwanted views."
+      },
+      {
+        question: "How often should I update my photos?",
+        answer: "Update photos when you make significant upgrades (new furniture, renovations, etc.) or if your listing performance drops. Many hosts also do seasonal shoots - summer beach gear setup vs. cozy winter vibes - to keep content fresh and relevant."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to 10x Your First Impressions?"
+    subtitle="Professional photography that pays for itself in the first week."
+    primaryButtonText="Book Photo Shoot"
+    primaryButtonLink="/contact"
+    secondaryButtonText="See Our Work"
+    secondaryButtonLink="/services"
+  />
+</Layout>

@@ -1,0 +1,260 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Airbnb Listing Optimization San Diego | Increase Bookings | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Listing<br/><span class="text-orange-600">Optimization</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Transform your listing into a booking machine. Professional optimization that increases visibility and conversion rates.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Optimize My Listing
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "43%", label: "Average Booking Increase", icon: "revenue" },
+      { value: "2.8x", label: "More Profile Views", icon: "properties" },
+      { value: "4.9★", label: "Average Rating After Optimization", icon: "rating" },
+      { value: "72hrs", label: "Typical Turnaround Time", icon: "occupancy" }
+    ]}
+  />
+
+  <!-- What We Optimize -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Complete Listing<br/><span class="text-orange-600">Transformation</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We optimize every element of your listing to maximize bookings and revenue.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Professional Photos</h3>
+          <p class="text-gray-600 leading-relaxed">
+            High-quality photography with proper staging, lighting, and angles. First impressions matter - professional photos increase bookings by 40%.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">SEO Title & Description</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Keyword-optimized titles and descriptions that rank higher in Airbnb search. We target high-value search terms your guests are actually using.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Amenity Highlights</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Strategic amenity selection that appeals to your target guest. We ensure all high-value amenities are properly featured and photographed.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Location Marketing</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Highlight nearby attractions, beaches, restaurants, and points of interest. Help guests visualize their perfect San Diego experience.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Pricing Strategy</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Competitive analysis and dynamic pricing setup. We position your listing to maximize both occupancy and nightly rates.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">House Rules & Policies</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Clear, guest-friendly policies that protect your property while maintaining high conversion rates. Balance flexibility with protection.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optimization Process -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Our Optimization<br/><span class="text-orange-600">Process</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="border-l-4 border-orange-600 pl-8">
+          <div class="text-orange-600 text-5xl font-bold mb-4" style="font-family: 'Bebas Neue', sans-serif;">01</div>
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Competitive Analysis</h3>
+          <p class="text-gray-300 leading-relaxed">
+            We analyze the top 20 listings in your area to identify what's working and find opportunities to differentiate your property.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-8">
+          <div class="text-orange-600 text-5xl font-bold mb-4" style="font-family: 'Bebas Neue', sans-serif;">02</div>
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Keyword Research</h3>
+          <p class="text-gray-300 leading-relaxed">
+            We identify the exact search terms your ideal guests are using and optimize your title and description accordingly.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-8">
+          <div class="text-orange-600 text-5xl font-bold mb-4" style="font-family: 'Bebas Neue', sans-serif;">03</div>
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Content Creation</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Professional copywriting that highlights your unique selling points, appeals to emotions, and converts browsers into bookers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-8">
+          <div class="text-orange-600 text-5xl font-bold mb-4" style="font-family: 'Bebas Neue', sans-serif;">04</div>
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Ongoing Testing</h3>
+          <p class="text-gray-300 leading-relaxed">
+            We monitor performance metrics and continuously test photo order, pricing, and descriptions to maximize bookings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Stats -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Real Results from<br/><span class="text-orange-600">San Diego Hosts</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-8 border-2 border-gray-200 text-center">
+          <div class="text-5xl font-bold text-orange-600 mb-2" style="font-family: 'Bebas Neue', sans-serif;">+43%</div>
+          <div class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">More Bookings</div>
+          <p class="text-gray-600">Average increase in monthly bookings within 90 days of optimization</p>
+        </div>
+
+        <div class="bg-white p-8 border-2 border-gray-200 text-center">
+          <div class="text-5xl font-bold text-orange-600 mb-2" style="font-family: 'Bebas Neue', sans-serif;">2.8x</div>
+          <div class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Profile Views</div>
+          <p class="text-gray-600">Nearly 3x more travelers viewing optimized listings in search results</p>
+        </div>
+
+        <div class="bg-white p-8 border-2 border-gray-200 text-center">
+          <div class="text-5xl font-bold text-orange-600 mb-2" style="font-family: 'Bebas Neue', sans-serif;">+$18K</div>
+          <div class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Annual Revenue</div>
+          <p class="text-gray-600">Average additional revenue per property in first year after optimization</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Professional Photography", href: "/services/professional-photography", description: "High-quality listing photos", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Dynamic pricing optimization", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about listing optimization"
+    faqs={[
+      {
+        question: "How long does listing optimization take?",
+        answer: "Most optimizations are completed within 72 hours. This includes competitive analysis, keyword research, professional copywriting, photo sequencing, and amenity optimization. If professional photography is needed, add 5-7 days for scheduling and editing."
+      },
+      {
+        question: "Will optimization work for my specific property type?",
+        answer: "Yes! We've successfully optimized everything from studio apartments to luxury estates. Each property type requires different strategies - we customize our approach based on your property, neighborhood, and target guest demographics."
+      },
+      {
+        question: "Do I need new photos or can you work with existing ones?",
+        answer: "We can optimize with existing photos if they're high quality. However, professional photography typically increases bookings by 40%. We'll assess your current photos and recommend whether new photography would provide significant ROI."
+      },
+      {
+        question: "How do you measure optimization success?",
+        answer: "We track key metrics including profile views, booking conversion rate, average nightly rate, occupancy percentage, and total revenue. You'll receive a 30-day and 90-day performance report comparing before and after optimization."
+      },
+      {
+        question: "What's included in the optimization service?",
+        answer: "Complete listing overhaul including: SEO title and description, amenity optimization, photo sequencing and captioning, pricing strategy, house rules refinement, and neighborhood guide. One-time fee of $499, or included free with full-service management."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to 3x Your Listing Views?"
+    subtitle="Professional optimization that pays for itself in the first month."
+    primaryButtonText="Get Optimized"
+    primaryButtonLink="/contact"
+    secondaryButtonText="See Our Work"
+    secondaryButtonLink="/services/professional-photography"
+  />
+</Layout>

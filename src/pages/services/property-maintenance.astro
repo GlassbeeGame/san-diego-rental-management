@@ -1,0 +1,366 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Property Maintenance San Diego | 24/7 Vacation Rental Repairs | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Property<br/><span class="text-orange-600">Maintenance</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          24/7 maintenance and repairs that keep your property guest-ready. Preventative care that saves you thousands.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Maintenance Support
+          </a>
+          <a href="tel:+18585551234" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Emergency: (858) 555-1234
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "24/7", label: "Emergency Response", icon: "properties" },
+      { value: "< 2hrs", label: "Average Response Time", icon: "occupancy" },
+      { value: "98%", label: "Same-Day Resolution", icon: "rating" },
+      { value: "$3200", label: "Avg. Annual Savings", icon: "revenue" }
+    ]}
+  />
+
+  <!-- Services Covered -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Fix Everything<br/><span class="text-orange-600">Before Guests Notice</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Comprehensive maintenance services for all property systems and emergencies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Electrical</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Outlet/switch repairs</li>
+            <li>• Light fixture installation</li>
+            <li>• Circuit breaker issues</li>
+            <li>• Power outage response</li>
+            <li>• Smart home troubleshooting</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Plumbing</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Leak detection & repair</li>
+            <li>• Drain clearing</li>
+            <li>• Toilet/faucet fixes</li>
+            <li>• Water heater service</li>
+            <li>• Emergency shutoffs</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">HVAC</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• AC repair & maintenance</li>
+            <li>• Heating system service</li>
+            <li>• Filter replacements</li>
+            <li>• Thermostat programming</li>
+            <li>• Emergency climate control</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Locks & Security</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Smart lock installation</li>
+            <li>• Lock rekeying</li>
+            <li>• Lockout assistance</li>
+            <li>• Security system setup</li>
+            <li>• Door/window repairs</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Appliances</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Refrigerator repairs</li>
+            <li>• Washer/dryer service</li>
+            <li>• Dishwasher fixes</li>
+            <li>• Microwave replacement</li>
+            <li>• Coffee maker setup</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">General Repairs</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Drywall patching</li>
+            <li>• Paint touch-ups</li>
+            <li>• Furniture assembly</li>
+            <li>• Hardware installation</li>
+            <li>• Handyman services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preventative Maintenance -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Preventative Maintenance<br/><span class="text-orange-600">Saves Thousands</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Stop problems before they start with our proactive maintenance program.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="border-2 border-orange-600 p-8">
+            <h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Monthly Inspections</h3>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>HVAC filter checks & replacements</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Smoke & CO detector testing</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Plumbing leak detection</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Appliance performance checks</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Light bulb replacements</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="border-2 border-orange-600 p-8">
+            <h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Seasonal Services</h3>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Pre-summer AC tune-ups</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Gutter cleaning (if applicable)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Window/screen inspections</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Outdoor furniture maintenance</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Pool/spa service (if applicable)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-orange-600 p-8 text-center">
+          <h4 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Average Savings</h4>
+          <div class="text-5xl font-bold mb-2" style="font-family: 'Bebas Neue', sans-serif;">$3,200/year</div>
+          <p class="text-lg">By catching small issues before they become expensive emergencies</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Response -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          24/7 Emergency<br/><span class="text-orange-600">Response Protocol</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">1</div>
+            </div>
+            <div class="card p-6 flex-1">
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Guest Reports Issue</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Guest contacts our 24/7 support line. We assess urgency and dispatch appropriate vendor from our vetted network.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">2</div>
+            </div>
+            <div class="card p-6 flex-1">
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Vendor Dispatch (< 2 hours)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Licensed, insured technician en route with guaranteed response time. You receive real-time updates via text.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">3</div>
+            </div>
+            <div class="card p-6 flex-1">
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Problem Resolution</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Issue fixed, guest happy, photos documented. If repair cost exceeds $500, we get your approval first.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">4</div>
+            </div>
+            <div class="card p-6 flex-1">
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Billing & Documentation</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Itemized invoice added to your monthly statement. All receipts, photos, and work orders in your owner portal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Emergency Cleaning", href: "/services/emergency-cleaning", description: "Same-day cleaning service", icon: "services" },
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete property management", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about property maintenance"
+    faqs={[
+      {
+        question: "How do you handle emergency maintenance at 2am?",
+        answer: "Our 24/7 hotline connects directly to on-call maintenance coordinators who dispatch our network of licensed vendors. For true emergencies (flooding, no power, lockouts), we guarantee a technician onsite within 2 hours, any time of day or night."
+      },
+      {
+        question: "Do I get approval before repairs are made?",
+        answer: "For repairs under $500, we authorize immediately to avoid guest disruption. For repairs over $500, we contact you first with vendor quote and photos. True emergencies (safety issues, preventing further damage) are handled immediately with same-day notification."
+      },
+      {
+        question: "Are your vendors licensed and insured?",
+        answer: "Yes, all vendors in our network are licensed, bonded, and carry general liability insurance. We verify credentials annually and monitor performance with every job. You receive copies of all licenses and insurance certificates in your owner portal."
+      },
+      {
+        question: "What if the same issue keeps happening?",
+        answer: "We identify patterns through our maintenance tracking system. If an issue recurs, we escalate to specialists for permanent fixes rather than temporary patches. Our preventative maintenance program also catches recurring issues before they affect guests."
+      },
+      {
+        question: "Can I use my own preferred vendors?",
+        answer: "Absolutely! You can add preferred vendors to your property profile, and we'll contact them first. Many owners have existing relationships with plumbers or HVAC techs they trust. We coordinate scheduling and follow-up just like our network vendors."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="black"
+    title="Protect Your Property Investment"
+    subtitle="24/7 maintenance and preventative care that saves you thousands."
+    primaryButtonText="Get Maintenance Support"
+    primaryButtonLink="/contact"
+    secondaryButtonText="Emergency Line"
+    secondaryButtonLink="tel:+18585551234"
+  />
+</Layout>

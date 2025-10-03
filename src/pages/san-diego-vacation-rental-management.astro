@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const faqs = [
+	{
+		question: "What's included in full-service vacation rental management?",
+		answer: "Our comprehensive service includes listing optimization, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, maintenance management, and detailed financial reporting. We handle everything so you can enjoy passive income."
+	},
+	{
+		question: "How do you maximize my vacation rental income?",
+		answer: "We use data-driven pricing strategies that adjust based on seasonality, local events, and market demand. Combined with professional listing optimization and excellent guest reviews, we typically increase owner revenue by 35% within the first 6 months."
+	},
+	{
+		question: "Do you manage properties on Airbnb, VRBO, and other platforms?",
+		answer: "Yes! We list and manage your property across all major platforms including Airbnb, VRBO, Booking.com, and more. Our calendar synchronization prevents double bookings while maximizing your exposure."
+	},
+	{
+		question: "What areas of San Diego do you specialize in?",
+		answer: "We specialize in San Diego's most popular vacation rental areas including La Jolla, Pacific Beach, Downtown, Coronado, Mission Beach, and Ocean Beach. Our localized expertise ensures optimal performance in each neighborhood."
+	},
+	{
+		question: "How do you handle guest issues and emergencies?",
+		answer: "We provide 24/7 guest support with a dedicated team ready to handle any situation. From pre-arrival questions to emergency maintenance, we ensure every guest has a 5-star experience while protecting your property."
+	}
+];
+
+const relatedPages = [
+	{
+		title: "Airbnb Management",
+		description: "Specialized Airbnb hosting and management services",
+		link: "/airbnb-management-san-diego",
+		icon: "services"
+	},
+	{
+		title: "Increase Occupancy",
+		description: "Proven strategies to boost your booking rates",
+		link: "/increase-occupancy",
+		icon: "revenue"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free property evaluation",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+---
+
+<Layout
+	title="San Diego Vacation Rental Management | Polaris Rental Group"
+	description="Expert vacation rental management in San Diego. Maximize income with professional hosting, dynamic pricing, and 24/7 guest services. Free consultation."
+>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920');">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 uppercase leading-tight" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					San Diego<br/>
+					<span class="text-orange-600">Vacation Rental Management</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed max-w-2xl">
+					Professional property management that maximizes your rental income while you enjoy completely passive ownership. From La Jolla to Downtown.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="San Diego's Most Trusted Vacation Rental Managers"
+		subtitle="Proven results across all major neighborhoods"
+		backgroundColor="white"
+		stats={[
+			{ value: "150+", label: "Properties Managed", icon: "properties" },
+			{ value: "4.9★", label: "Average Guest Rating", icon: "rating" },
+			{ value: "35%", label: "Avg Revenue Increase", icon: "revenue" },
+			{ value: "82%", label: "Average Occupancy", icon: "occupancy" }
+		]}
+	/>
+
+	<!-- Main Content -->
+	<section class="py-20 md:py-28 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="mb-16">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						Full-Service Management
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Everything You Need to Succeed
+					</h2>
+					<p class="text-xl text-gray-600 mb-8 leading-relaxed">
+						Managing a successful vacation rental in San Diego requires local expertise, constant attention, and proven strategies. We handle every detail while you enjoy the income.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Dynamic Pricing Strategy
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Our data-driven pricing adjusts daily based on San Diego events, seasonal demand, and competitor rates to maximize your revenue.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							24/7 Guest Services
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Professional guest communication from inquiry to checkout ensures 5-star reviews and repeat bookings for your property.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Property Maintenance
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Regular inspections, preventive maintenance, and our network of trusted contractors keep your property in pristine condition.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Professional Cleaning
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Coordinated cleaning between every guest with quality checks ensures consistently excellent guest experiences and reviews.
+						</p>
+					</div>
+				</div>
+
+				<div class="bg-white p-8 md:p-12 border-l-4 border-orange-600">
+					<h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Why Choose Polaris for Your San Diego Vacation Rental
+					</h3>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Local Expertise:</strong> Deep knowledge of San Diego's vacation rental markets, from beach neighborhoods to downtown
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Proven Results:</strong> Average 35% revenue increase within 6 months for new clients
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Technology-Driven:</strong> Advanced pricing algorithms and booking platform integrations
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Full Transparency:</strong> Detailed monthly reports and real-time access to your property performance
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Pages -->
+	<RelatedPages
+		title="Learn More About Our Services"
+		pages={relatedPages}
+	/>
+
+	<!-- FAQ -->
+	<FAQ
+		title="Vacation Rental Management FAQs"
+		subtitle="Common questions about managing vacation rentals in San Diego"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		title="Start Earning More from Your San Diego Vacation Rental"
+		subtitle="Free property evaluation • No obligation • Same-day response"
+		backgroundColor="orange"
+		primaryButtonText="Get Free Consultation"
+		primaryButtonLink="/contact"
+		secondaryButtonText="Call (951) 760-0070"
+		secondaryButtonLink="tel:+19517600070"
+	/>
+
+	<Footer />
+</Layout>

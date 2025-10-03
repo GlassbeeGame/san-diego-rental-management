@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const faqs = [
+	{
+		question: "How difficult is it to switch property managers?",
+		answer: "We make switching seamless. We handle all the transition details including transferring listings, coordinating with your current manager, updating calendars, and ensuring zero booking disruptions. Most transitions complete within 7-10 days."
+	},
+	{
+		question: "Will I lose bookings during the switch?",
+		answer: "No! We carefully coordinate the transition to maintain all existing reservations. Our calendar sync ensures no double bookings, and we communicate with upcoming guests to ensure a smooth handoff."
+	},
+	{
+		question: "What if I'm locked into a contract?",
+		answer: "We can review your current contract and help you understand your options. Many property management contracts have reasonable exit clauses, and we'll work within those terms to facilitate your switch."
+	},
+	{
+		question: "How quickly will I see improvement after switching?",
+		answer: "Most clients see revenue improvements within the first 30-60 days through optimized pricing, better listing performance, and improved guest reviews. Our data-driven approach delivers measurable results fast."
+	},
+	{
+		question: "What do I need to provide for the transition?",
+		answer: "Just access to your current listings and property details. We handle everything else—photography updates, listing optimization, vendor transitions, and guest communication setup."
+	}
+];
+
+const relatedPages = [
+	{
+		title: "Our Services",
+		description: "See what makes our management different",
+		link: "/services",
+		icon: "services"
+	},
+	{
+		title: "Increase Occupancy",
+		description: "Learn how we boost booking rates",
+		link: "/increase-occupancy",
+		icon: "revenue"
+	},
+	{
+		title: "Contact Us",
+		description: "Start your seamless transition today",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+---
+
+<Layout
+	title="Switching Property Managers | Seamless Transition in San Diego"
+	description="Unhappy with your current property manager? Switch to Polaris for better service, higher revenue, and zero disruption. Free transition assistance."
+>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1920');">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 uppercase leading-tight" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					Switching<br/>
+					<span class="text-orange-600">Property Managers?</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed max-w-2xl">
+					Make the switch to better management with zero disruption. We handle everything so you can start earning more immediately.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Trusted by Property Owners Who Made the Switch"
+		subtitle="Real results from San Diego owners who switched to Polaris"
+		backgroundColor="white"
+		stats={[
+			{ value: "100+", label: "Successful Transitions", icon: "properties" },
+			{ value: "42%", label: "Avg Revenue Increase", icon: "revenue" },
+			{ value: "7-10", label: "Days to Complete", icon: "years" },
+			{ value: "0", label: "Booking Disruptions", icon: "occupancy" }
+		]}
+	/>
+
+	<!-- Main Content -->
+	<section class="py-20 md:py-28 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="mb-16">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						Seamless Transition
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Signs It's Time to Switch
+					</h2>
+					<p class="text-xl text-gray-600 mb-8 leading-relaxed">
+						If you're experiencing any of these issues with your current property manager, it's time for a change.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Declining Revenue
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Your income is stagnant or decreasing while comparable properties are thriving. Poor pricing strategy is costing you thousands.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Poor Communication
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Slow responses, missed messages, and lack of transparency. You shouldn't have to chase your property manager for updates.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Maintenance Issues
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Deferred maintenance, slow repairs, or poor vendor quality. Your property's condition is declining and affecting reviews.
+						</p>
+					</div>
+
+					<div class="card p-8">
+						<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
+							<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Low Guest Satisfaction
+						</h3>
+						<p class="text-gray-600 leading-relaxed">
+							Negative reviews piling up due to poor guest experience. Your ratings are suffering and hurting future bookings.
+						</p>
+					</div>
+				</div>
+
+				<div class="bg-white p-8 md:p-12 border-l-4 border-orange-600 mb-16">
+					<h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Our Seamless Transition Process
+					</h3>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-3">
+							<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">1</div>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Free Consultation:</strong> We review your current situation, analyze performance gaps, and show you the potential improvement
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">2</div>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Transition Planning:</strong> We create a detailed transition plan that maintains all bookings and minimizes any disruption
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">3</div>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Listing Transfer:</strong> We coordinate with platforms and your current manager to transfer control smoothly
+							</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white font-bold flex items-center justify-center text-sm">4</div>
+							<span class="text-gray-700 leading-relaxed">
+								<strong>Optimization & Launch:</strong> We immediately optimize pricing, update photos if needed, and start driving better results
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-black text-white p-8 md:p-12">
+					<h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						What Our Switchers Say
+					</h3>
+					<div class="space-y-6">
+						<blockquote class="border-l-4 border-orange-600 pl-6">
+							<p class="text-gray-300 mb-2">"Within 2 months of switching to Polaris, our revenue increased by 38%. The transition was completely seamless and they handled everything professionally."</p>
+							<cite class="text-orange-600 font-semibold">- Pacific Beach Property Owner</cite>
+						</blockquote>
+						<blockquote class="border-l-4 border-orange-600 pl-6">
+							<p class="text-gray-300 mb-2">"Best decision we ever made. Communication is night and day better, and our property has never looked better. Wish we'd switched sooner."</p>
+							<cite class="text-orange-600 font-semibold">- La Jolla Condo Owner</cite>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Pages -->
+	<RelatedPages
+		title="Learn More"
+		pages={relatedPages}
+	/>
+
+	<!-- FAQ -->
+	<FAQ
+		title="Switching Property Managers FAQs"
+		subtitle="Common questions about making the transition"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		title="Ready to Make the Switch?"
+		subtitle="Free property analysis • No obligation • Zero disruption guarantee"
+		backgroundColor="orange"
+		primaryButtonText="Start Your Transition"
+		primaryButtonLink="/contact"
+		secondaryButtonText="Call (951) 760-0070"
+		secondaryButtonLink="tel:+19517600070"
+	/>
+
+	<Footer />
+</Layout>

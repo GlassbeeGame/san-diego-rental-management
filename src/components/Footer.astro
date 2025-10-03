@@ -2,65 +2,65 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-900 text-gray-300">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<footer class="bg-black text-gray-300 border-t-4 border-orange-600">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
       <!-- Company Info -->
       <div class="md:col-span-2">
-        <div class="flex items-center space-x-2 mb-4">
-          <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-xl">SD</span>
+        <div class="mb-6">
+          <div class="flex flex-col">
+            <span class="font-bold text-3xl text-white tracking-wider" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.1em;">POLARIS</span>
+            <span class="text-xs text-orange-600 font-bold tracking-widest -mt-2">RENTAL GROUP</span>
           </div>
-          <span class="font-bold text-xl text-white">San Diego Rentals</span>
         </div>
-        <p class="text-sm text-gray-400 max-w-md">
+        <p class="text-sm text-gray-400 max-w-md mb-6">
           San Diego's premier short-term rental management company. We maximize your rental income with expert property management, optimized pricing strategies, and exceptional guest services.
         </p>
-        <div class="mt-4 space-y-2">
-          <a href="tel:+19517600070" class="text-sm text-gray-400 hover:text-white flex items-center">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        <div class="space-y-3">
+          <a href="tel:+19517600070" class="text-sm text-gray-300 hover:text-orange-600 flex items-center font-semibold transition-colors">
+            <svg class="w-5 h-5 mr-3 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             (951) 760-0070
           </a>
-          <a href="mailto:info@sandiegorentals.com" class="text-sm text-gray-400 hover:text-white flex items-center">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <a href="mailto:info@polarisrentalgroup.com" class="text-sm text-gray-300 hover:text-orange-600 flex items-center font-semibold transition-colors">
+            <svg class="w-5 h-5 mr-3 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            info@sandiegorentals.com
+            info@polarisrentalgroup.com
           </a>
         </div>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h3 class="font-semibold text-white mb-4">Quick Links</h3>
-        <ul class="space-y-2">
-          <li><a href="/" class="text-sm text-gray-400 hover:text-white">Home</a></li>
-          <li><a href="/services" class="text-sm text-gray-400 hover:text-white">Services</a></li>
-          <li><a href="/locations" class="text-sm text-gray-400 hover:text-white">Locations</a></li>
-          <li><a href="/about" class="text-sm text-gray-400 hover:text-white">About</a></li>
-          <li><a href="/contact" class="text-sm text-gray-400 hover:text-white">Contact</a></li>
+        <h3 class="font-bold text-white mb-6 uppercase tracking-wider" style="font-family: 'Bebas Neue', sans-serif;">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="/" class="text-sm text-gray-400 hover:text-orange-600 font-medium transition-colors">Home</a></li>
+          <li><a href="/services" class="text-sm text-gray-400 hover:text-orange-600 font-medium transition-colors">Services</a></li>
+          <li><a href="/locations" class="text-sm text-gray-400 hover:text-orange-600 font-medium transition-colors">Locations</a></li>
+          <li><a href="/about" class="text-sm text-gray-400 hover:text-orange-600 font-medium transition-colors">About</a></li>
+          <li><a href="/contact" class="text-sm text-gray-400 hover:text-orange-600 font-medium transition-colors">Contact</a></li>
         </ul>
       </div>
 
       <!-- Service Areas -->
       <div>
-        <h3 class="font-semibold text-white mb-4">Service Areas</h3>
-        <ul class="space-y-2">
-          <li class="text-sm text-gray-400">La Jolla</li>
-          <li class="text-sm text-gray-400">Pacific Beach</li>
-          <li class="text-sm text-gray-400">Downtown San Diego</li>
-          <li class="text-sm text-gray-400">Coronado</li>
-          <li class="text-sm text-gray-400">Mission Beach</li>
-          <li class="text-sm text-gray-400">North Park</li>
+        <h3 class="font-bold text-white mb-6 uppercase tracking-wider" style="font-family: 'Bebas Neue', sans-serif;">Service Areas</h3>
+        <ul class="space-y-3">
+          <li class="text-sm text-gray-400 font-medium">La Jolla</li>
+          <li class="text-sm text-gray-400 font-medium">Pacific Beach</li>
+          <li class="text-sm text-gray-400 font-medium">Downtown</li>
+          <li class="text-sm text-gray-400 font-medium">Coronado</li>
+          <li class="text-sm text-gray-400 font-medium">Mission Beach</li>
+          <li class="text-sm text-gray-400 font-medium">North Park</li>
         </ul>
       </div>
     </div>
 
-    <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-      <p class="text-sm text-gray-400">
-        &copy; {currentYear} San Diego Rental Management. All rights reserved.
+    <div class="border-t-2 border-gray-800 mt-12 pt-8">
+      <p class="text-sm text-gray-500 text-center font-medium">
+        &copy; {currentYear} Polaris Rental Group. All rights reserved.
       </p>
     </div>
   </div>

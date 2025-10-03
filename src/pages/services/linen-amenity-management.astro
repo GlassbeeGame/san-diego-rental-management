@@ -1,0 +1,375 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Linen & Amenity Management San Diego | Vacation Rental Supplies | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Linen & Amenity<br/><span class="text-orange-600">Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Hotel-quality linens and fully-stocked amenities, every single stay. Never run out, never disappoint guests.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Started
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "Zero", label: "Linen Stockouts", icon: "rating" },
+      { value: "Hotel", label: "Quality Standards", icon: "rating" },
+      { value: "300+", label: "Thread Count Minimum", icon: "properties" },
+      { value: "Auto", label: "Inventory Tracking", icon: "occupancy" }
+    ]}
+  />
+
+  <!-- The Problem -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          The Linen Problem<br/><span class="text-orange-600">Every Host Faces</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card p-8 bg-red-50">
+          <div class="text-4xl mb-4">😱</div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Stockouts</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Towel goes missing. Guest checks in at 3pm. You're scrambling to buy replacements at Target while they wait. This shouldn't happen.
+          </p>
+        </div>
+
+        <div class="card p-8 bg-red-50">
+          <div class="text-4xl mb-4">💸</div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Constant Replacement</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Linens wear out, stain, or disappear. You're constantly ordering new sheets, towels, and amenities. Death by a thousand Amazon orders.
+          </p>
+        </div>
+
+        <div class="card p-8 bg-red-50">
+          <div class="text-4xl mb-4">⭐</div>
+          <h3 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Quality Complaints</h3>
+          <p class="text-gray-600 leading-relaxed">
+            "Towels were thin." "Shampoo was cheap." "Ran out of coffee." These reviews kill your rating and cost you thousands in bookings.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-12 bg-black text-white p-8 text-center">
+        <p class="text-2xl mb-4 font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">We Solve This</p>
+        <p class="text-xl text-gray-300">
+          Hotel-quality linens, automatically replenished amenities, and zero-stockout guarantee. Your property is always guest-ready.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          What's<br/><span class="text-orange-600">Included</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div>
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            <span class="text-orange-600">Hotel-Quality Linens</span>
+          </h3>
+          <div class="space-y-4">
+            <div class="card p-6">
+              <h4 class="font-bold text-black mb-2">Bedding Sets (3 sets per bed)</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• 300+ thread count cotton sheets</li>
+                <li>• Down-alternative duvets & pillows</li>
+                <li>• Mattress protectors (waterproof)</li>
+                <li>• Pillow protectors (allergen-free)</li>
+              </ul>
+            </div>
+
+            <div class="card p-6">
+              <h4 class="font-bold text-black mb-2">Towel Sets (3 sets per bathroom)</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• Bath towels (650 GSM)</li>
+                <li>• Hand towels</li>
+                <li>• Washcloths</li>
+                <li>• Bath mats (non-slip)</li>
+              </ul>
+            </div>
+
+            <div class="card p-6">
+              <h4 class="font-bold text-black mb-2">Kitchen Linens</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• Dish towels (6 per property)</li>
+                <li>• Oven mitts & pot holders</li>
+                <li>• Table linens (if applicable)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            <span class="text-orange-600">Premium Amenities</span>
+          </h3>
+          <div class="space-y-4">
+            <div class="card p-6">
+              <h4 class="font-bold text-black mb-2">Bathroom Essentials</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• Shampoo, conditioner, body wash</li>
+                <li>• Hand soap (pump bottles)</li>
+                <li>• Lotion & facial tissues</li>
+                <li>• Toilet paper (Charmin or equivalent)</li>
+                <li>• Feminine products & cotton swabs</li>
+              </ul>
+            </div>
+
+            <div class="card p-6">
+              <h4 class="font-bold text-black mb-2">Kitchen Supplies</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• Coffee & filters (premium blend)</li>
+                <li>• Tea selection</li>
+                <li>• Sugar, creamer, sweeteners</li>
+                <li>• Cooking oil, salt, pepper</li>
+                <li>• Dish soap, sponges, trash bags</li>
+              </ul>
+            </div>
+
+            <div class="card p-6">
+              <h4 class="font-bold text-black mb-2">Cleaning Supplies</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• Paper towels</li>
+                <li>• All-purpose cleaner</li>
+                <li>• Glass cleaner</li>
+                <li>• Laundry detergent (if W/D)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Automatic<br/><span class="text-orange-600">Inventory System</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Our cleaners track inventory after every turnover. You'll never run out.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="border-l-4 border-orange-600 pl-8">
+          <h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">After Every Checkout</h3>
+          <ol class="space-y-4 text-gray-300">
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">1.</span>
+              <span>Cleaner inspects all linens during turnover</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">2.</span>
+              <span>Removes stained/damaged items from rotation</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">3.</span>
+              <span>Counts amenities (toilet paper, coffee, soap, etc.)</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">4.</span>
+              <span>Updates digital inventory in our system</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-8">
+          <h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Automatic Restocking</h3>
+          <ol class="space-y-4 text-gray-300">
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">1.</span>
+              <span>System triggers restock when inventory drops below threshold</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">2.</span>
+              <span>We order replacements from our bulk suppliers (better pricing)</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">3.</span>
+              <span>Items delivered to property or our warehouse</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-orange-600 font-bold text-xl" style="font-family: 'Bebas Neue', sans-serif;">4.</span>
+              <span>Cleaner stocks items during next turnover</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-orange-600 p-8 text-center max-w-3xl mx-auto">
+        <h4 class="text-3xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Zero-Stockout Guarantee</h4>
+        <p class="text-xl">
+          If a guest checks in and something is missing, we deliver it within 2 hours or comp their first night. It's never happened in 3 years.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Savings -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Better Quality,<br/><span class="text-orange-600">Lower Cost</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div class="card p-8 bg-gray-50">
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">DIY Approach</h3>
+          <div class="space-y-4 text-gray-600">
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Amazon/retail pricing</span>
+              <span class="font-bold">Full Price</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Constant reordering/shipping</span>
+              <span class="font-bold">$50+/mo</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Your time managing inventory</span>
+              <span class="font-bold">5 hrs/mo</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Emergency replacements</span>
+              <span class="font-bold">$100+/incident</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Lost bookings (bad reviews)</span>
+              <span class="font-bold text-red-600">$500-2000</span>
+            </div>
+            <div class="flex justify-between items-center pt-4">
+              <span class="text-xl font-bold text-black uppercase" style="font-family: 'Bebas Neue', sans-serif;">Total Annual Cost</span>
+              <span class="text-2xl font-bold text-red-600" style="font-family: 'Bebas Neue', sans-serif;">$2000-4000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-8 bg-orange-50 border-4 border-orange-600">
+          <h3 class="text-3xl font-bold text-orange-600 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Our Program</h3>
+          <div class="space-y-4 text-gray-600">
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Bulk commercial pricing</span>
+              <span class="font-bold text-green-600">30-40% savings</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Automatic reordering</span>
+              <span class="font-bold text-green-600">Included</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Your time managing inventory</span>
+              <span class="font-bold text-green-600">0 hours</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Emergency replacements</span>
+              <span class="font-bold text-green-600">Never needed</span>
+            </div>
+            <div class="flex justify-between items-center pb-2 border-b">
+              <span>Lost bookings (bad reviews)</span>
+              <span class="font-bold text-green-600">$0</span>
+            </div>
+            <div class="flex justify-between items-center pt-4">
+              <span class="text-xl font-bold text-black uppercase" style="font-family: 'Bebas Neue', sans-serif;">Total Annual Cost</span>
+              <span class="text-2xl font-bold text-green-600" style="font-family: 'Bebas Neue', sans-serif;">$800-1200</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-2xl text-black mb-4">
+          <strong>Save $1200-2800/year</strong> while upgrading to hotel quality
+        </p>
+        <p class="text-gray-600">Plus eliminate the headache of inventory management</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Emergency Cleaning", href: "/services/emergency-cleaning", description: "Same-day cleaning service", icon: "services" },
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Includes linen management", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about linen & amenity management"
+    faqs={[
+      {
+        question: "Do I have to use your linens or can I keep my own?",
+        answer: "You can keep your existing linens if they meet our quality standards (300+ thread count, hotel-grade towels, no stains/damage). We'll audit your current inventory and recommend what to keep vs. replace. Most clients choose to upgrade because our commercial pricing beats retail."
+      },
+      {
+        question: "What happens if linens are damaged or stolen?",
+        answer: "We maintain 3 sets of linens per bed/bath, so damage or theft doesn't cause stockouts. Damaged items are removed from rotation and automatically reordered. Theft is rare but covered by our damage protection program. You're never stuck without linens."
+      },
+      {
+        question: "Can I customize the amenities offered?",
+        answer: "Absolutely! Our standard package covers the essentials, but you can upgrade to premium brands (Aveda toiletries, Lavazza coffee, etc.) or add special touches (welcome snacks, local craft beer, beach towels). We source whatever you want at commercial pricing."
+      },
+      {
+        question: "How do you handle different bed sizes across properties?",
+        answer: "Each property has a custom inventory profile in our system. Queen in bedroom 1, king in master, twin bunk beds in kids room - all tracked separately. Cleaners receive specific restocking lists for each property. It's all automated."
+      },
+      {
+        question: "What if I manage multiple properties?",
+        answer: "Perfect use case! We centralize inventory across your portfolio for maximum efficiency. If Property A has extra towels and Property B is low, we redistribute during cleanings. Bulk ordering across multiple properties saves even more money (40-50% vs retail)."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Upgrade to Hotel-Quality Linens"
+    subtitle="Better guest experience, lower costs, zero headaches."
+    primaryButtonText="Get Started"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Services"
+    secondaryButtonLink="/services"
+  />
+</Layout>

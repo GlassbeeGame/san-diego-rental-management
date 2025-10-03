@@ -1,0 +1,90 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const {
+  title = "Frequently Asked Questions",
+  subtitle = "Get answers to common questions about our rental management services",
+  faqs
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+          FAQ
+        </div>
+        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          {title}
+        </h2>
+        <p class="text-xl text-gray-600">
+          {subtitle}
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="card faq-item">
+            <button
+              class="w-full px-8 py-6 text-left flex justify-between items-center gap-4 faq-button"
+              data-index={index}
+            >
+              <span class="text-lg font-bold text-gray-900 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em;">
+                {faq.question}
+              </span>
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer px-8 pb-0 overflow-hidden max-h-0 transition-all duration-300">
+              <div class="pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-200">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ Accordion functionality
+  document.querySelectorAll('.faq-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const answer = item?.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item').forEach((otherItem) => {
+        if (otherItem !== item) {
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherAnswer?.classList.remove('max-h-96');
+          otherAnswer?.classList.add('max-h-0');
+          otherIcon?.classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current FAQ
+      if (answer?.classList.contains('max-h-0')) {
+        answer.classList.remove('max-h-0');
+        answer.classList.add('max-h-96');
+        icon?.classList.add('rotate-180');
+      } else {
+        answer?.classList.remove('max-h-96');
+        answer?.classList.add('max-h-0');
+        icon?.classList.remove('rotate-180');
+      }
+    });
+  });
+</script>

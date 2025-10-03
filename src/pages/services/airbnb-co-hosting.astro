@@ -1,0 +1,332 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Airbnb Co-Hosting San Diego | Professional Host Support | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Airbnb<br/><span class="text-orange-600">Co-Hosting Services</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Let us handle your Airbnb while you keep control. Perfect for hosts who want help without giving up ownership.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Become a Co-Host
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "85+", label: "Airbnb Hosts Supported", icon: "properties" },
+      { value: "4.95★", label: "Average Listing Rating", icon: "rating" },
+      { value: "38%", label: "Revenue Increase", icon: "revenue" },
+      { value: "Superhost", label: "Status Maintained", icon: "rating" }
+    ]}
+  />
+
+  <!-- Co-Hosting Options -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Choose Your<br/><span class="text-orange-600">Co-Hosting Level</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Flexible support options that match your needs and budget.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card p-8">
+          <h3 class="text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Guest Communication</h3>
+          <div class="text-4xl font-bold text-orange-600 mb-6" style="font-family: 'Bebas Neue', sans-serif;">10%</div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">24/7 guest messaging</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Booking inquiries</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Check-in coordination</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Issue resolution</span>
+            </li>
+          </ul>
+          <p class="text-sm text-gray-500">You handle: Pricing, cleaning, maintenance</p>
+        </div>
+
+        <div class="card p-8 border-orange-600 border-4">
+          <div class="inline-block bg-orange-600 text-white px-4 py-1 text-sm font-bold uppercase mb-4" style="font-family: 'Bebas Neue', sans-serif;">Most Popular</div>
+          <h3 class="text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Operations Support</h3>
+          <div class="text-4xl font-bold text-orange-600 mb-6" style="font-family: 'Bebas Neue', sans-serif;">15%</div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Everything in Guest Communication</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Cleaning coordination</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Maintenance scheduling</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Quality inspections</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Linen management</span>
+            </li>
+          </ul>
+          <p class="text-sm text-gray-500">You handle: Pricing strategy</p>
+        </div>
+
+        <div class="card p-8">
+          <h3 class="text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Full Co-Hosting</h3>
+          <div class="text-4xl font-bold text-orange-600 mb-6" style="font-family: 'Bebas Neue', sans-serif;">20%</div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Everything in Operations</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Dynamic pricing</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Revenue optimization</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Listing optimization</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Performance analytics</span>
+            </li>
+          </ul>
+          <p class="text-sm text-gray-500">Hands-off hosting experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Co-Hosting -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Why Choose<br/><span class="text-orange-600">Co-Hosting?</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div>
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Perfect For:</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">First-Time Hosts</h4>
+                <p class="text-gray-600">Learn the ropes while earning maximum revenue from day one.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Busy Professionals</h4>
+                <p class="text-gray-600">Keep your property active without sacrificing your career.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Out-of-Town Owners</h4>
+                <p class="text-gray-600">Manage your San Diego property from anywhere in the world.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Scaling Hosts</h4>
+                <p class="text-gray-600">Grow your portfolio without drowning in operations.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">You Maintain:</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Full Ownership</h4>
+                <p class="text-gray-600">Your listing stays under your Airbnb account and profile.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Superhost Status</h4>
+                <p class="text-gray-600">Build and maintain your own hosting reputation.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Direct Payouts</h4>
+                <p class="text-gray-600">Airbnb pays you directly, we invoice monthly for our services.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-black mb-2">Full Control</h4>
+                <p class="text-gray-600">Cancel anytime, block calendar, adjust house rules as needed.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Guest Support", href: "/services/guest-support", description: "24/7 guest communication", icon: "services" },
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Maximize visibility & bookings", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about Airbnb co-hosting"
+    faqs={[
+      {
+        question: "How is co-hosting different from full-service management?",
+        answer: "With co-hosting, you maintain ownership of your Airbnb listing, account, and Superhost status. You receive payouts directly from Airbnb, and we invoice you monthly for our services. With full-service management, we control the listing and handle all financials. Co-hosting is perfect if you want to maintain your host profile while getting professional support."
+      },
+      {
+        question: "Can I maintain my Superhost status with a co-host?",
+        answer: "Absolutely! Since the listing stays under your account, all positive reviews and ratings contribute to your Superhost status. Our professional service actually helps you achieve and maintain Superhost by ensuring consistently excellent guest experiences."
+      },
+      {
+        question: "What access do you need to my Airbnb account?",
+        answer: "We need to be added as a co-host through Airbnb's official co-host feature. This gives us permission to manage your calendar, communicate with guests, and handle bookings - but you remain the primary host and account owner. You can remove our access anytime."
+      },
+      {
+        question: "How do payments work with co-hosting?",
+        answer: "Airbnb pays you directly as usual. At the end of each month, we send you an itemized invoice for our co-hosting percentage plus any reimbursable expenses (cleaning, maintenance, etc.). You can pay via ACH, check, or credit card."
+      },
+      {
+        question: "Can I switch between co-hosting tiers?",
+        answer: "Yes! You can upgrade or downgrade your co-hosting tier anytime with 30 days notice. Many hosts start with Guest Communication and upgrade to Operations Support as they get busier. We make it easy to scale support as your needs change."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Level Up Your Airbnb Hosting?"
+    subtitle="Join 85+ San Diego hosts who trust us to manage their properties."
+    primaryButtonText="Start Co-Hosting"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View Pricing"
+    secondaryButtonLink="/services"
+  />
+</Layout>

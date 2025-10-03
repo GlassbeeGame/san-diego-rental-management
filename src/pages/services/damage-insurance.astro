@@ -1,0 +1,346 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Vacation Rental Damage Protection San Diego | Guest Insurance | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Damage Protection<br/><span class="text-orange-600">& Insurance</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Comprehensive protection against guest damage, parties, and theft. Sleep easy knowing your investment is covered.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Protected
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "$3M", label: "Total Coverage Available", icon: "revenue" },
+      { value: "98%", label: "Claims Approved Rate", icon: "rating" },
+      { value: "24hrs", label: "Claim Processing Time", icon: "occupancy" },
+      { value: "$127K", label: "Paid Out in 2024", icon: "revenue" }
+    ]}
+  />
+
+  <!-- Coverage Types -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Multi-Layer<br/><span class="text-orange-600">Protection Strategy</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We combine three layers of protection to ensure you're covered in every scenario.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card p-8">
+          <div class="bg-orange-600 text-white px-4 py-2 inline-block mb-6">
+            <span class="font-bold text-xl uppercase" style="font-family: 'Bebas Neue', sans-serif;">Layer 1</span>
+          </div>
+          <h3 class="text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Security Deposits</h3>
+          <div class="text-4xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$500-$1500</div>
+          <p class="text-gray-600 mb-6">
+            Held via Airbnb/VRBO or Stripe. Covers minor damage, missing items, extra cleaning. Released automatically if no issues.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Deters careless behavior</li>
+            <li>• Covers small incidents instantly</li>
+            <li>• No claim filing needed</li>
+          </ul>
+        </div>
+
+        <div class="card p-8 border-4 border-orange-600">
+          <div class="bg-orange-600 text-white px-4 py-2 inline-block mb-6">
+            <span class="font-bold text-xl uppercase" style="font-family: 'Bebas Neue', sans-serif;">Layer 2</span>
+          </div>
+          <h3 class="text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Damage Waiver</h3>
+          <div class="text-4xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">Up to $5K</div>
+          <p class="text-gray-600 mb-6">
+            Guest pays $49 fee instead of deposit. Covers accidental damage up to $5,000. No deductible. 24-hour claim approval.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Increases booking conversion</li>
+            <li>• Fast claim processing</li>
+            <li>• Guests prefer over deposits</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <div class="bg-orange-600 text-white px-4 py-2 inline-block mb-6">
+            <span class="font-bold text-xl uppercase" style="font-family: 'Bebas Neue', sans-serif;">Layer 3</span>
+          </div>
+          <h3 class="text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Liability Insurance</h3>
+          <div class="text-4xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">Up to $2M</div>
+          <p class="text-gray-600 mb-6">
+            Commercial STR insurance policy. Covers major damage, theft, guest injuries, liability claims. Full replacement coverage.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Catastrophic incident protection</li>
+            <li>• Guest injury liability</li>
+            <li>• Business income loss coverage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Covered -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          What's<br/><span class="text-orange-600">Covered</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Property Damage</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Broken furniture, TVs, appliances</li>
+            <li>• Stained carpets, bedding, linens</li>
+            <li>• Holes in walls, damaged doors</li>
+            <li>• Broken windows, mirrors</li>
+            <li>• Damaged countertops, fixtures</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Theft & Loss</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Stolen electronics, artwork</li>
+            <li>• Missing kitchenware, linens</li>
+            <li>• Removed amenities (speakers, etc.)</li>
+            <li>• Burglary during guest stay</li>
+            <li>• Key/access device theft</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Unauthorized Events</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Party damage and cleanup</li>
+            <li>• Noise complaints & fines</li>
+            <li>• Excessive guest violations</li>
+            <li>• Lost income from bad reviews</li>
+            <li>• Neighbor complaint settlements</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Liability Claims</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Guest slip/fall injuries</li>
+            <li>• Medical expenses</li>
+            <li>• Legal defense costs</li>
+            <li>• Third-party property damage</li>
+            <li>• Wrongful eviction claims</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Business Interruption</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Lost income during repairs</li>
+            <li>• Cancellation of future bookings</li>
+            <li>• Revenue loss from damage</li>
+            <li>• Alternative accommodation costs</li>
+            <li>• Emergency relocation expenses</li>
+          </ul>
+        </div>
+
+        <div class="border-l-4 border-orange-600 pl-6">
+          <h3 class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Deep Cleaning</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Biohazard cleanup (bodily fluids)</li>
+            <li>• Smoke/odor removal</li>
+            <li>• Pet damage & odor treatment</li>
+            <li>• Hoarder situation cleanup</li>
+            <li>• Extreme mess remediation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Claims Process -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Simple Claims<br/><span class="text-orange-600">Process</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We handle everything. You just provide photos and receipts.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">1</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Document Damage (Day 1)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Take photos/videos of all damage immediately after checkout. Document pre-existing condition with check-in photos for comparison. Text us or submit via owner portal.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">2</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Get Repair Estimates (Day 2-3)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                We dispatch vendors for repair quotes. Professional estimates submitted to insurance provider with damage photos and documentation.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">3</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Claim Approval (Day 3-5)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Insurance reviews and approves claim (98% approval rate). Guest is notified and given opportunity to pay directly or let insurance handle it.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">4</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Repairs & Payment (Day 5-10)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Vendors complete repairs. Insurance pays out directly or reimburses you. Property back online and earning revenue.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-orange-600 text-white p-8 text-center">
+          <div class="text-5xl font-bold mb-4" style="font-family: 'Bebas Neue', sans-serif;">5-10 Days</div>
+          <p class="text-xl">Average time from damage to full reimbursement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Examples -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          Real Claims<br/><span class="text-orange-600">We've Handled</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card p-8">
+          <div class="text-4xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$12,400</div>
+          <h3 class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Unauthorized Party</h3>
+          <p class="text-gray-600 leading-relaxed">
+            50+ person party caused extensive damage: broken TV, stained carpets, holes in walls, broken furniture. Full reimbursement in 8 days.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="text-4xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$8,700</div>
+          <h3 class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Water Damage</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Guest left bathtub running, flooded bathroom and bedroom below. New flooring, drywall, paint. Plus 14 days lost income covered.
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <div class="text-4xl font-bold text-orange-600 mb-4" style="font-family: 'Bebas Neue', sans-serif;">$4,200</div>
+          <h3 class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Theft & Missing Items</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Stolen 65" TV, Sonos speakers, artwork, all linens. Guest disappeared. Insurance replaced everything within 7 days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Related Services"
+    pages={[
+      { title: "Guest Support", href: "/services/guest-support", description: "24/7 guest communication", icon: "services" },
+      { title: "Property Maintenance", href: "/services/property-maintenance", description: "Fast repair response", icon: "services" },
+      { title: "All Services", href: "/services", description: "View all our services", icon: "services" }
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about damage protection"
+    faqs={[
+      {
+        question: "Should I collect security deposits or use damage waiver?",
+        answer: "We recommend damage waiver for most properties. Guests prefer paying a $49 non-refundable fee over tying up $500-1500 in a deposit, which increases booking conversion by 15-20%. Deposits are better for ultra-luxury properties where damage could exceed $5K."
+      },
+      {
+        question: "Does Airbnb Host Guarantee cover me?",
+        answer: "Airbnb Host Guarantee provides up to $3M coverage, but it's notoriously difficult to collect. Claims take 30-90 days, require extensive documentation, and many claims are denied. Our commercial insurance has 98% approval rate and pays out in 5-10 days. We handle all claim filing."
+      },
+      {
+        question: "What if the guest refuses to pay?",
+        answer: "That's why we have insurance. If guest disputes or refuses to pay, insurance covers the damage (after any applicable deductible). We also pursue reimbursement from the guest on your behalf, but you're never stuck with the bill."
+      },
+      {
+        question: "Are there any exclusions or limits?",
+        answer: "Standard exclusions apply: intentional damage by you, wear and tear, pre-existing damage, acts of war/terrorism. Damage from pets is covered if pets were allowed. We review full policy details before you sign up so there are no surprises."
+      },
+      {
+        question: "How much does damage protection cost?",
+        answer: "Damage waiver ($49 per booking) is paid by guests, zero cost to you. Commercial STR insurance runs $800-2000/year depending on property value and coverage limits. For full-service clients, we include basic coverage and offer upgraded policies at our negotiated group rates (typically 30% less than retail)."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="black"
+    title="Protect Your Investment"
+    subtitle="Comprehensive damage protection that actually pays out when you need it."
+    primaryButtonText="Get Protected Today"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Services"
+    secondaryButtonLink="/services"
+  />
+</Layout>
