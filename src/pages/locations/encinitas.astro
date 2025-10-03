@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Layout title="Encinitas Vacation Rental Management | Surf Culture & Wellness Retreat | Polaris">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1920');">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+          Encinitas<br/><span class="text-orange-600">Rental Management</span>
+        </h1>
+        <div class="w-24 h-1 bg-orange-600 mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+          Where surf culture meets wellness. Expert management for Encinitas' laid-back coastal vacation rentals.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+            Get Free Analysis
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals
+    stats={[
+      { value: "29+", label: "Encinitas Properties", icon: "properties" },
+      { value: "$5800", label: "Average Monthly Revenue", icon: "revenue" },
+      { value: "84%", label: "Average Occupancy", icon: "occupancy" },
+      { value: "4.8★", label: "Average Guest Rating", icon: "rating" }
+    ]}
+  />
+
+  <!-- About Encinitas -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+            Why Encinitas<br/><span class="text-orange-600">Attracts Wellness Seekers</span>
+          </h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Surf & Wellness Culture</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Encinitas is California's surf capital meets yoga/wellness retreat. Swami's surf break, Self-Realization Fellowship meditation gardens, and 30+ yoga studios attract health-conscious travelers seeking authentic coastal living without resort crowds.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Swami's Beach - world-class surf break</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Self-Realization Fellowship - meditation gardens</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Downtown 101 - farm-to-table restaurants & cafes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Moonlight Beach - family-friendly with fire pits</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Yoga & Surf Retreat Market</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Encinitas attracts wellness-focused travelers, surf enthusiasts, and families seeking authentic beach town vibes. Lower party risk, longer stays (4.1 nights avg), and high repeat booking rates create stable revenue.
+            </p>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Summer Peak (Jun-Sep)</p>
+                <p class="text-gray-600 text-sm">$350-650/night | 92% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Spring/Fall (Mar-May, Oct-Nov)</p>
+                <p class="text-gray-600 text-sm">$280-500/night | 80% occupancy</p>
+              </div>
+              <div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+                <p class="font-bold text-black mb-1">Winter Surf Season (Dec-Feb)</p>
+                <p class="text-gray-600 text-sm">$250-450/night | 72% occupancy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Encinitas Specific Advantages -->
+        <div class="bg-black text-white p-12 mb-16">
+          <h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Encinitas<br/><span class="text-orange-600">Market Positioning</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Wellness Guest Profile</h4>
+              <p class="text-gray-300 text-sm">
+                Yoga retreats, surf camps, and wellness seekers treat properties with care. Zero party risk, minimal damage, extended stays (4.1 nights vs 2.8 beach average). Premium guests justify premium service.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Year-Round Surf Demand</h4>
+              <p class="text-gray-300 text-sm">
+                Winter swells bring international surfers when other beaches slow. December-February maintains 72% occupancy vs 55-60% at seasonal beach towns. Consistent revenue year-round.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Repeat Booking Engine</h4>
+              <p class="text-gray-300 text-sm">
+                35% repeat rate (vs 25% average) because guests return for annual surf/yoga trips. We nurture these relationships with loyalty pricing and personalized local guides.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Encinitas Expertise -->
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+            Our Encinitas<br/><span class="text-orange-600">Specialized Services</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Surf & Wellness Guidebooks</h4>
+              <p class="text-gray-600 mb-4">
+                Custom guides featuring surf break reports, yoga studio recommendations, meditation gardens access, farm-to-table restaurants. Guests love our "local insider" knowledge and mention it in 5-star reviews.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Surf Gear Amenities</h4>
+              <p class="text-gray-600 mb-4">
+                Beach cruisers, surfboard racks, outdoor showers, wetsuit storage - amenities surfers expect. Properties with surf gear command 20-25% premiums and earn consistent bookings from surf travelers.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Wellness Partnerships</h4>
+              <p class="text-gray-600 mb-4">
+                Relationships with yoga studios, surf schools, and wellness spas for guest discounts. We create "Encinitas wellness itineraries" that transform stays into retreats guests rave about.
+              </p>
+            </div>
+            <div class="card p-8">
+              <h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">Extended Stay Optimization</h4>
+              <p class="text-gray-600 mb-4">
+                25% of bookings are 7+ nights (yoga retreats, surf trips, digital nomads). Weekly/monthly discounts that fill calendars while earning higher total revenue than nightly turnover.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <RelatedPages
+    title="Services for Encinitas Properties"
+    pages={[
+      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete coastal property care", icon: "services" },
+      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Highlight surf & wellness culture", icon: "services" },
+      { title: "Revenue Management", href: "/services/revenue-management", description: "Seasonal surf demand pricing", icon: "services" }
+    ]}
+  />
+
+  <!-- Adjacent Coastal Areas -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+          We Also Manage in<br/><span class="text-orange-600">Adjacent Coastal Communities</span>
+        </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <a href="/locations/carlsbad" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Carlsbad</h3>
+          <p class="text-gray-600 text-sm">Family beaches & LEGOLAND</p>
+        </a>
+        <a href="/locations/solana-beach" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Solana Beach</h3>
+          <p class="text-gray-600 text-sm">Coastal cliffs & village dining</p>
+        </a>
+        <a href="/locations/del-mar" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">Del Mar</h3>
+          <p class="text-gray-600 text-sm">Racing village & luxury</p>
+        </a>
+        <a href="/locations/la-jolla" class="card p-6 hover:border-orange-600 transition-all group">
+          <h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">La Jolla</h3>
+          <p class="text-gray-600 text-sm">Luxury coves & fine dining</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Encinitas Management FAQs"
+    subtitle="Common questions from Encinitas property owners"
+    faqs={[
+      {
+        question: "How does Encinitas' wellness culture affect rental demand?",
+        answer: "Encinitas attracts health-conscious travelers year-round. Yoga retreats, surf camps, and wellness seekers book 7-14 night stays (vs 2-3 nights at party beaches). 35% repeat booking rate as guests return for annual wellness trips. Lower turnover = higher net income despite 84% vs 90% occupancy."
+      },
+      {
+        question: "What type of guests stay in Encinitas vacation rentals?",
+        answer: "45% wellness seekers (yoga, meditation, healthy living), 35% surf enthusiasts, 20% families seeking authentic beach town. Average age 38, household income $110K+, stay duration 4.1 nights. Respectful guests who treat properties with care - minimal damage risk."
+      },
+      {
+        question: "Does Encinitas stay booked during winter months?",
+        answer: "Yes! Winter swells (December-February) bring international surfers maintaining 72% occupancy when other beaches drop to 55-60%. Surf season + year-round wellness appeal creates consistent revenue. Off-season rates ($250-450/night) still exceed most San Diego neighborhoods."
+      },
+      {
+        question: "How do you market Encinitas' surf culture to maximize bookings?",
+        answer: "We lead with 'Walk to Swami's surf break' in titles, provide surf report guides, include surfboard racks/outdoor showers in photos, and partner with local surf schools for guest discounts. Properties with surf amenities command 20-25% premiums from dedicated surf travelers."
+      },
+      {
+        question: "What makes Encinitas different from other North County beach towns?",
+        answer: "Encinitas combines world-class surf with wellness culture (30+ yoga studios, meditation gardens, organic cafes). This unique positioning attracts premium, respectful guests year-round vs seasonal family crowds (Carlsbad) or luxury seekers (Del Mar). Lower party risk, higher repeat rates, stable revenue."
+      }
+    ]}
+  />
+
+  <!-- CTA Banner -->
+  <CTABanner
+    backgroundColor="orange"
+    title="Ready to Tap Encinitas' Wellness Market?"
+    subtitle="Expert management for surf culture & yoga retreat properties."
+    primaryButtonText="Get Free Analysis"
+    primaryButtonLink="/contact"
+    secondaryButtonText="View All Locations"
+    secondaryButtonLink="/locations"
+  />
+</Layout>
