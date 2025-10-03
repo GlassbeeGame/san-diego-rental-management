@@ -318,63 +318,97 @@ import Footer from '../components/Footer.astro';
 					</div>
 				</div>
 
-				<!-- Additional Services -->
-				<div class="bg-gray-50 border border-gray-200 p-8 lg:p-12">
-					<h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Additional Strategic Services</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-						<div class="bg-white border border-gray-100 p-6">
-							<h3 class="text-xl font-bold text-gray-900 mb-3">Rental Design Consultation</h3>
-							<p class="text-gray-600 mb-4">
-								Expert recommendations on furnishings, amenities, and property upgrades that attract guests and justify premium pricing in the San Diego market.
-							</p>
-							<ul class="space-y-2 text-sm text-gray-700">
-								<li class="flex items-center gap-2">
-									<svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-									Interior design optimization
-								</li>
-								<li class="flex items-center gap-2">
-									<svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-									High-ROI amenity recommendations
-								</li>
-								<li class="flex items-center gap-2">
-									<svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-									Photography and staging guidance
-								</li>
-							</ul>
-						</div>
+				<!-- All Services Grid -->
+				<div class="bg-black text-white p-8 lg:p-12 mb-20">
+					<h2 class="text-5xl md:text-6xl font-bold mb-4 text-center uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						All Our <span class="text-orange-600">Services</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-12"></div>
 
-						<div class="bg-white border border-gray-100 p-6">
-							<h3 class="text-xl font-bold text-gray-900 mb-3">Property Performance Analytics</h3>
-							<p class="text-gray-600 mb-4">
-								Comprehensive quarterly reports with market insights, competitive analysis, and strategic recommendations to continuously improve your rental performance.
-							</p>
-							<ul class="space-y-2 text-sm text-gray-700">
-								<li class="flex items-center gap-2">
-									<svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-									Revenue & occupancy tracking
-								</li>
-								<li class="flex items-center gap-2">
-									<svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-									Market competitive insights
-								</li>
-								<li class="flex items-center gap-2">
-									<svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-									Custom growth strategies
-								</li>
-							</ul>
-						</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+						<!-- Full-Service Management -->
+						<a href="/services/full-service-management" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Full-Service Management</h3>
+							<p class="text-gray-300 text-sm mb-4">Complete end-to-end property management. We handle everything.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Airbnb Co-Hosting -->
+						<a href="/services/airbnb-co-hosting" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Airbnb Co-Hosting</h3>
+							<p class="text-gray-300 text-sm mb-4">Keep control, get expert help. Perfect for DIY hosts.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Listing Optimization -->
+						<a href="/services/listing-optimization" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Listing Optimization</h3>
+							<p class="text-gray-300 text-sm mb-4">SEO-optimized listings that convert browsers into bookers.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Revenue Management -->
+						<a href="/services/revenue-management" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Revenue Management</h3>
+							<p class="text-gray-300 text-sm mb-4">AI-powered dynamic pricing. Earn 38% more revenue.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Guest Support -->
+						<a href="/services/guest-support" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">24/7 Guest Support</h3>
+							<p class="text-gray-300 text-sm mb-4">Professional guest communication that earns 5-star reviews.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Property Maintenance -->
+						<a href="/services/property-maintenance" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Property Maintenance</h3>
+							<p class="text-gray-300 text-sm mb-4">24/7 maintenance and emergency repairs. Always guest-ready.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Emergency Cleaning -->
+						<a href="/services/emergency-cleaning" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Emergency Cleaning</h3>
+							<p class="text-gray-300 text-sm mb-4">Same-day turnover cleaning when you need it most.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Professional Photography -->
+						<a href="/services/professional-photography" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Professional Photography</h3>
+							<p class="text-gray-300 text-sm mb-4">Stunning photos that increase bookings by 40%.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Damage & Insurance -->
+						<a href="/services/damage-insurance" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Damage Protection</h3>
+							<p class="text-gray-300 text-sm mb-4">Multi-layer protection against guest damage and theft.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- STR Compliance -->
+						<a href="/services/str-compliance" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">STR Compliance</h3>
+							<p class="text-gray-300 text-sm mb-4">Navigate San Diego's regulations. Avoid $5K-10K fines.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Linen & Amenity Management -->
+						<a href="/services/linen-amenity-management" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Linen & Amenities</h3>
+							<p class="text-gray-300 text-sm mb-4">Hotel-quality linens. Zero-stockout guarantee.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
+
+						<!-- Portfolio Management -->
+						<a href="/services/portfolio-management" class="bg-gray-900 border-2 border-gray-700 hover:border-orange-600 p-6 transition-all group">
+							<h3 class="text-2xl font-bold mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">Portfolio Management</h3>
+							<p class="text-gray-300 text-sm mb-4">Scale to 5, 10, 20+ properties. Volume pricing available.</p>
+							<span class="text-orange-600 text-sm font-bold uppercase">Learn More →</span>
+						</a>
 					</div>
 				</div>
 			</div>
