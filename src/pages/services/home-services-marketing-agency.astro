@@ -1,0 +1,557 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Home Services Marketing Agency That Delivers Real Local Results | Glassbee Solutions";
+const pageDescription = "Glassbee Solutions helps home service companies dominate their markets with proven digital marketing systems that turn online searches into booked jobs. AI-driven, no-risk, month-to-month.";
+
+// Schema.org structured data for SEO
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Home Services Marketing Agency",
+	"provider": {
+		"@type": "Organization",
+		"name": "Glassbee Solutions",
+		"telephone": "+1-951-760-0070",
+		"address": {
+			"@type": "PostalAddress",
+			"addressRegion": "CA",
+			"addressLocality": "San Diego"
+		}
+	},
+	"serviceType": "Digital Marketing for Home Service Companies",
+	"areaServed": {
+		"@type": "State",
+		"name": "California"
+	},
+	"description": "AI-driven marketing systems for home service businesses including SEO, website optimization, and local listing management.",
+	"offers": {
+		"@type": "Offer",
+		"availability": "https://schema.org/InStock",
+		"priceSpecification": {
+			"@type": "PriceSpecification",
+			"priceCurrency": "USD"
+		}
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Home Services Marketing",
+	titleHighlight: "That Drives Real Growth",
+	description: "Turn online searches into booked jobs with proven digital marketing systems built for home service companies.",
+	backgroundImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920",
+	primaryButton: {
+		text: "Get Your Free Marketing Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "All Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Day", label: "Results Guarantee", icon: "properties" },
+	{ value: "AI-Driven", label: "Optimization", icon: "revenue" },
+	{ value: "Hands-Free", label: "Management", icon: "rating" },
+	{ value: "No Lock-In", label: "Month-to-Month", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const textContentSection = {
+	title: "Home Services Marketing",
+	titleHighlight: "That Drives Real Growth",
+	paragraphs: [
+		"If you're running a home service business — whether you're a roofer, landscaper, plumber, or HVAC pro — your customers are already searching for you online. The problem? They're finding your competitors first.",
+		"At Glassbee Solutions, we specialize in home services marketing that gets you found, trusted, and chosen. Our AI-driven systems combine smart SEO, optimized websites, and high-performing local listings to help your business dominate your service area — not just rank, but convert."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Home Service Businesses",
+	titleHighlight: "Choose Glassbee",
+	features: [
+		{
+			heading: "AI-Driven Optimization",
+			description: `Our proprietary system identifies high-intent local searches in your city — whether that's "HVAC near me" or "roof repair in San Diego." We focus on the exact keywords that bring in paying customers.`,
+			icon: "lightbulb"
+		},
+		{
+			heading: "30-Day Results Guarantee",
+			description: "We know what works. If you don't see measurable improvement in calls or inquiries within the first 30 days, you don't pay until you do.",
+			icon: "dollar"
+		},
+		{
+			heading: "Hands-Free Management",
+			description: "No complicated dashboards or confusing reports. We handle your entire marketing system — SEO, listings, reviews, analytics — while you handle your jobs.",
+			icon: "settings"
+		},
+		{
+			heading: "Transparent Reporting",
+			description: "Track your progress with live dashboards that show exactly how your visibility, traffic, and calls are increasing over time.",
+			icon: "chart"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included in Our",
+	titleHighlight: "Home Services Marketing Package",
+	subtitle: "",
+	features: [
+		{
+			heading: "1. Local SEO & Website Optimization",
+			description: "We start by optimizing your entire online foundation: Keyword targeting for digital marketing for home service companies and local SEO for home services. On-page SEO, meta tags, headers, and schema data. Fast, mobile-first websites that pass PageSpeed tests with near-perfect scores. Conversion-optimized service pages and contact forms.",
+			icon: "chart"
+		},
+		{
+			heading: "2. Google Business Profile Optimization",
+			description: "Your GBP is the single most powerful tool for home service visibility. We optimize your categories, description, and service areas. Add high-quality, geo-tagged photos. Improve review frequency and response strategies. Track calls, messages, and engagement.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "3. Content & Authority Building",
+			description: "AI-assisted blog posts and service content targeting phrases like home services marketing, digital marketing for contractors, and internet marketing for home services. We position your business as the trusted local authority — so when customers Google your service, you're always at the top.",
+			icon: "document"
+		},
+		{
+			heading: "4. Review & Reputation Growth",
+			description: "We help build trust with a strong review system — driving steady growth across Google, Yelp, and industry directories.",
+			icon: "settings"
+		},
+		{
+			heading: "5. Monthly Reporting & Growth Analysis",
+			description: "Real-time data on what's working, what's not, and how to improve. You'll see traffic, leads, and ROI clearly — no fluff.",
+			icon: "calendar"
+		}
+	]
+};
+
+// Who We Help Section
+const whoWeHelpSection = {
+	title: "Who",
+	titleHighlight: "We Help",
+	description: "Our marketing system is built for local, service-based businesses ready to grow fast:",
+	industries: [
+		"Roofers",
+		"HVAC Companies",
+		"Landscapers",
+		"Electricians",
+		"Plumbers",
+		"Cleaners",
+		"Pest Control",
+		"Painters"
+	],
+	footer: "If your business depends on local calls and booked appointments — this was built for you."
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common Problems",
+	titleHighlight: "We Solve",
+	problems: [
+		{
+			heading: `"We're not showing up on Google."`,
+			description: "We fix your visibility gaps across maps, search, and directories — so local customers can actually find you.",
+			icon: "chart"
+		},
+		{
+			heading: `"We get clicks but no calls."`,
+			description: "Our landing pages and call-tracking systems are designed to turn visitors into booked jobs.",
+			icon: "lightbulb"
+		},
+		{
+			heading: `"Competitors are stealing our leads."`,
+			description: "We reverse-engineer what they're doing and outperform them — with better targeting and stronger local presence.",
+			icon: "settings"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Free Audit",
+			description: "We review your website, SEO, and Google presence."
+		},
+		{
+			number: "2",
+			heading: "Quick Start (24 hours)",
+			description: "Immediate optimization begins."
+		},
+		{
+			number: "3",
+			heading: "First 30 Days",
+			description: "Expect measurable lift in search visibility and lead flow."
+		},
+		{
+			number: "4",
+			heading: "Month-to-Month",
+			description: "Continue only if results make sense for your business."
+		}
+	]
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO Services",
+		description: "Dominate local search results",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business Profile",
+		description: "Optimize your GBP for visibility",
+		link: "/services/google-business-profile-management",
+		icon: "services"
+	},
+	{
+		title: "All Services",
+		description: "View all our services",
+		link: "/services",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can you start?",
+		answer: "Within 24 hours. We start optimizing immediately after you provide access."
+	},
+	{
+		question: "What results can I expect in the first 30 days?",
+		answer: "Most home service businesses see measurable improvement in local search visibility, Google Maps ranking, and lead flow within the first 30 days."
+	},
+	{
+		question: "What if I don't see results?",
+		answer: "You don't pay until you do. Our 30-day guarantee means if you don't see measurable improvement in calls or inquiries, you don't pay until you do."
+	},
+	{
+		question: "Do you work with all types of home service businesses?",
+		answer: "Yes — roofers, HVAC companies, landscapers, electricians, plumbers, cleaners, pest control, painters, and more. If your business depends on local calls and booked appointments, we can help."
+	},
+	{
+		question: "What makes your approach different?",
+		answer: "We use AI-driven systems to identify high-intent local searches specific to your service area. We focus on conversion, not just traffic — turning searches into booked jobs."
+	},
+	{
+		question: "Do I need to sign a long-term contract?",
+		answer: "No. We operate month-to-month. Continue only if results make sense for your business."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Grow?",
+	subtitle: "Stop losing jobs to competitors. With Glassbee Solutions, your business gets a done-for-you marketing system that builds visibility, trust, and steady calls — fast. Serving home service companies across San Diego County and beyond.",
+	primaryButton: {
+		text: "Get Your Free Marketing Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema.org structured data -->
+	<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{textContentSection.title}<br/><span class="text-orange-600">{textContentSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{textContentSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{whyChooseSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Who We Help Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{whoWeHelpSection.title}<br/><span class="text-orange-600">{whoWeHelpSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+					<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+						{whoWeHelpSection.description}
+					</p>
+				</div>
+
+				<!-- Industry Tags -->
+				<div class="flex flex-wrap justify-center gap-3 mb-8">
+					{whoWeHelpSection.industries.map((industry) => (
+						<span class="bg-orange-600 text-white px-4 py-2 text-sm md:text-base font-semibold uppercase tracking-wide">
+							{industry}
+						</span>
+					))}
+				</div>
+
+				<p class="text-base md:text-lg text-gray-600 text-center leading-relaxed font-semibold">
+					{whoWeHelpSection.footer}
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{problem.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{problem.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{problem.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{problem.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						<div class="flex gap-6">
+							<div class="flex-shrink-0">
+								<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+							</div>
+							<div>
+								<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+								<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+									{step.description}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about home services marketing"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
