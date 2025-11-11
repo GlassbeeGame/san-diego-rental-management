@@ -1,0 +1,651 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Landscaping SEO & Marketing Agency | SEO for Landscaping Companies | Glassbee Solutions";
+const pageDescription = "Expert landscaping SEO and marketing agency helping landscapers dominate Google. Custom-coded sites, near-100% PageSpeed, and proven lead generation strategies.";
+const pageKeywords = "Landscaping SEO, SEO for landscaping companies, Landscaper SEO services, Landscaping marketing agency, Marketing a landscaping business, Landscaping digital marketing agency, Local SEO for landscapers, Landscaping marketing company";
+
+// Hero Section
+const hero = {
+	title: "Landscaping SEO",
+	titleHighlight: "& Marketing",
+	description: "Get More Landscaping Leads — Without Paying for Ads",
+	backgroundImage: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920",
+	primaryButton: {
+		text: "Get Free Landscaping SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "View All Industries",
+		link: "/industries"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Day", label: "Results Guarantee", icon: "properties" },
+	{ value: "AI-Driven", label: "Optimization", icon: "revenue" },
+	{ value: "24 Hour", label: "Quick Start", icon: "rating" },
+	{ value: "No Lock-In", label: "Month-to-Month", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "Landscaping SEO That",
+	titleHighlight: "Drives Real Results",
+	paragraphs: [
+		"When homeowners search \"landscaper near me\" or \"lawn care services in [city],\" do they find you — or your competitors?",
+		"At Glassbee Solutions, we specialize in Landscaping SEO and digital marketing designed to turn local searches into booked jobs. Whether you run a small lawn care business or manage a full-service landscape company, we help you dominate Google's local results — increasing your visibility, trust, and inbound calls month after month.",
+		"We don't just tweak your old site — we rebuild it entirely in clean, fast, SEO-optimized code that converts traffic into real clients."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions",
+	features: [
+		{
+			heading: "We Build Your Site in Code (Not WordPress)",
+			description: "We hand-code every landscaping website for maximum speed, SEO, and control. No clunky plugins, no security risks, no bloat — just clean, fast, search-optimized code.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "We're a Landscaping Marketing Agency That Understands Local SEO",
+			description: "We know how homeowners search for landscape services. We know what makes them choose you over your competitor. Our SEO and marketing strategies are built specifically for landscaping companies.",
+			icon: "chart"
+		},
+		{
+			heading: "Near-100% PageSpeed Scores",
+			description: "Google rewards fast sites — and so do your customers. Our landscaping websites consistently score 95-100% on Google PageSpeed Insights, leading to better rankings and higher conversions.",
+			icon: "settings"
+		},
+		{
+			heading: "Transparent Reporting",
+			description: "You'll always know where your money is going. We provide clear, detailed reports on keyword rankings, traffic, conversions, and ROI — no smoke and mirrors.",
+			icon: "document"
+		},
+		{
+			heading: "We Build for Conversions, Not Just Traffic",
+			description: "A beautiful site means nothing if it doesn't generate leads. Every design decision, every page layout, and every CTA is optimized to turn visitors into paying customers.",
+			icon: "dollar"
+		},
+		{
+			heading: "We're With You for the Long Haul",
+			description: "Landscaping SEO isn't a one-and-done job. We're your long-term marketing partner — continuously optimizing, refining, and growing your online presence as your business scales.",
+			icon: "calendar"
+		}
+	]
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common Problems We Solve",
+	titleHighlight: "for Landscaping Companies",
+	problems: [
+		{
+			heading: "Low Local Visibility",
+			description: "Not showing up for \"landscaping near me\" or \"lawn care [city].\" Most landscapers rely on word-of-mouth or ads — but without a strong SEO foundation, you're missing consistent organic leads.",
+			icon: "chart"
+		},
+		{
+			heading: "Slow, Outdated Websites",
+			description: "Poor design killing your conversion rate. Your site takes too long to load, doesn't work on mobile, and looks unprofessional compared to competitors.",
+			icon: "settings"
+		},
+		{
+			heading: "Generic Content",
+			description: "Missing service-specific keywords and local intent. Your pages don't speak to what customers are actually searching for, resulting in low rankings and zero traffic.",
+			icon: "document"
+		},
+		{
+			heading: "Inconsistent Online Presence",
+			description: "Mismatched NAP data hurting rankings. Few reviews or outdated photos decreasing Google trust. No clear marketing strategy — wasting time on ineffective campaigns.",
+			icon: "lightbulb"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included",
+	titleHighlight: "In Our Landscaping SEO & Marketing Services",
+	subtitle: "Full-Service SEO for Landscaping Companies",
+	features: [
+		{
+			heading: "Full-Service SEO",
+			description: "Comprehensive website and Google Business Profile audit. Custom-coded rebuild (no WordPress or template systems). Keyword targeting for \"landscaping SEO,\" \"SEO for landscaping companies,\" and \"local SEO for landscapers\". On-page optimization (metadata, headings, internal linking, schema).",
+			icon: "chart"
+		},
+		{
+			heading: "Google Business & Local SEO",
+			description: "Google Business Profile optimization for top-3 Map Pack rankings. Citation cleanup and NAP consistency across directories. Review generation and response strategy to boost credibility.",
+			icon: "settings"
+		},
+		{
+			heading: "Digital Marketing for Landscapers",
+			description: "Competitor and keyword analysis to build a landscaping marketing plan. Targeted content campaigns for search and social channels. Copy optimized for conversion, not fluff — so your traffic turns into calls. Guidance on landscape marketing ideas and advertising landscaping business effectively. Integration with tracking tools for calls, form submissions, and Google Analytics.",
+			icon: "document"
+		},
+		{
+			heading: "Performance Optimization",
+			description: "As close to 100% PageSpeed as possible. 99%+ SEMrush site optimization score. Mobile-first, responsive design for better ranking and user experience. Lightweight image compression and Core Web Vitals compliance.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Content & Authority Growth",
+			description: "Monthly content plan focused on high-intent searches (design, hardscaping, irrigation, lawn maintenance, etc.). High-impact blog posts and location pages that strengthen topical authority.",
+			icon: "calendar"
+		},
+		{
+			heading: "Full Performance Tracking",
+			description: "Monthly visibility reports. Ongoing optimization and reporting showing rankings, leads, calls, and overall visibility gains — proving ROI clearly and quickly.",
+			icon: "dollar"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "SEO Audit & Competitor Analysis",
+			description: "We analyze your current site, GBP, and competitors. We identify gaps, ranking opportunities, and the keywords driving traffic to your competitors. We also map out content and technical improvements for immediate impact."
+		},
+		{
+			number: "2",
+			heading: "Custom Site Rebuild",
+			description: "We don't patch up WordPress templates. We rebuild your site from scratch using clean, custom code optimized for SEO, speed, and lead conversions. Every page is designed to convert clicks into booked jobs."
+		},
+		{
+			number: "3",
+			heading: "Keyword Targeting & Content Strategy",
+			description: "We target keywords like \"landscaping SEO,\" \"landscaping marketing,\" \"landscaper near me,\" and location-based terms like \"lawn care [city].\" Every page is built to rank and convert."
+		},
+		{
+			number: "4",
+			heading: "Google Business Profile Optimization",
+			description: "We fully optimize your GBP: service categories, service areas, posts, photos, Q&A, and review generation. We ensure you dominate the Local Map Pack for high-intent searches in your area."
+		},
+		{
+			number: "5",
+			heading: "Content & Authority Growth",
+			description: "We create landscaping blog content, service pages, and location-specific pages to establish topical authority. We build backlinks from local directories, business organizations, and industry sites to increase your domain authority."
+		},
+		{
+			number: "6",
+			heading: "Full Performance Tracking",
+			description: "We track keyword rankings, organic traffic, conversions, and ROI. You'll get clear reports showing exactly how your investment is paying off — and where we're growing your visibility next."
+		}
+	]
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Rank top-3 in Maps",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Industries",
+		description: "View all industries we serve",
+		link: "/industries",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How long does landscaping SEO take to work?",
+		answer: "Most landscaping companies start seeing improvements in rankings and traffic within 30–60 days. Significant organic lead growth typically happens within 3–6 months. SEO is a long-term investment — but once your site ranks, you're no longer paying for every click like you do with ads."
+	},
+	{
+		question: "Do you only do SEO, or do you offer full landscaping marketing services?",
+		answer: "We offer full-service landscaping marketing, including SEO, Google Business Profile optimization, content creation, paid ads setup (if needed), and reputation management. We're a complete digital marketing partner for landscaping companies."
+	},
+	{
+		question: "Will I own my website?",
+		answer: "Yes. You own 100% of your website, content, images, and code. If you ever decide to move on, everything transfers to you — no strings attached."
+	},
+	{
+		question: "What makes your landscaping marketing agency different?",
+		answer: "We custom-code every site (no WordPress or templates), focus on speed and performance (near-100% PageSpeed scores), and prioritize conversions over just traffic. We're also transparent — you'll always know what we're doing and what results we're driving."
+	},
+	{
+		question: "Do you work with landscaping companies outside San Diego?",
+		answer: "Yes! While we specialize in San Diego landscaping SEO, we work with lawn care and landscaping companies across the U.S. who want a serious competitive edge in their local markets."
+	}
+];
+
+// Service Areas
+const serviceAreas = [
+	"Downtown San Diego",
+	"La Jolla",
+	"Pacific Beach",
+	"Mission Beach",
+	"Ocean Beach",
+	"Point Loma",
+	"Coronado",
+	"North Park",
+	"South Park",
+	"Hillcrest",
+	"University Heights",
+	"Del Mar",
+	"Encinitas",
+	"Carlsbad",
+	"Solana Beach"
+];
+
+// Emergency Availability Section
+const emergencySection = {
+	title: "Ready to Grow Your",
+	titleHighlight: "Landscaping Business?",
+	text: "Stop losing leads to competitors who rank higher on Google. Whether you're a solo landscaper or a full-service lawn care company, we'll build you a marketing system that drives consistent, organic leads — without relying on expensive ads."
+};
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Dominate Landscaping Search Results?",
+	subtitle: "Get your free landscaping SEO audit and see how we can help you outrank competitors and get more landscaping leads.",
+	primaryButton: {
+		text: "Get Free Landscaping SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+	<Header />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Landscaping SEO Services",
+		"name": "Landscaping SEO Services San Diego",
+		"description": pageDescription,
+		"provider": {
+			"@type": "LocalBusiness",
+			"name": "Glassbee Solutions",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "San Diego",
+				"addressRegion": "CA",
+				"addressCountry": "US"
+			},
+			"telephone": "+19517600070",
+			"email": "info@glassbeesolutions.org"
+		},
+		"areaServed": {
+			"@type": "City",
+			"name": "San Diego"
+		}
+	})} />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Proven Landscaping SEO Results"
+		subtitle="Results-driven SEO that builds trust and drives landscaping leads"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							paragraph && (
+								<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+									{paragraph}
+								</p>
+							)
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					problem.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{problem.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{problem.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+								{problem.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{problem.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{problem.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						step.heading && (
+							<div class="flex gap-6">
+								<div class="flex-shrink-0">
+									<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+								</div>
+								<div>
+									<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+									<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+										{step.description}
+									</p>
+								</div>
+							</div>
+						)
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Emergency Availability Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10 text-center">
+						<svg class="w-20 h-20 text-white mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+
+						<h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{emergencySection.title}<br/><span class="opacity-90">{emergencySection.titleHighlight}</span>
+						</h2>
+
+						<p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-white/95">
+							{emergencySection.text}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Service <span class="text-orange-600">Area</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-lg md:text-xl text-gray-600 mb-8">
+						We provide landscaping SEO & marketing services for:
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+					{serviceAreas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+
+				<div class="text-center">
+					<p class="text-base md:text-lg text-gray-600 mb-4">
+						Serving clients across:
+					</p>
+					<p class="text-sm md:text-base text-gray-500">
+						Residential landscaping companies • Commercial landscape maintenance • Lawn care services • Hardscape installers • Irrigation & sprinkler specialists • Tree trimming & removal • Landscape design & build firms
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about landscaping SEO"
+		faqs={faqs.filter(faq => faq.question)}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

@@ -1,0 +1,657 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Local SEO for San Diego Businesses | Glassbee Solutions";
+const pageDescription = "AI-powered local SEO services that deliver measurable growth. Dominate San Diego local search with our no-risk guarantee. Results in 30 days or you don't pay.";
+
+// Hero Section
+const hero = {
+	title: "Local SEO",
+	titleHighlight: "for San Diego Businesses",
+	description: "AI-Driven Local SEO That Delivers Measurable Growth. Glassbee Solutions helps San Diego businesses dominate local search and turn online visibility into real-world results.",
+	backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920",
+	primaryButton: {
+		text: "Get Started Today",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "All Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Day", label: "Results Guarantee", icon: "properties" },
+	{ value: "AI-Driven", label: "Optimization", icon: "revenue" },
+	{ value: "24 Hour", label: "Quick Start", icon: "rating" },
+	{ value: "No Lock-In", label: "Month-to-Month", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "Local SEO That",
+	titleHighlight: "Drives Real Results",
+	paragraphs: [
+		"Our AI-powered local SEO strategies combine automation, data analysis, and hands-on expertise to generate high-intent organic leads fast.",
+		"Whether you're a contractor, med spa, or home-service company, we'll make sure your business is the first one customers find when they search for what you offer.",
+		"And our promise stands: if you don't see new business from our work within 30 days, you don't pay until you do."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions",
+	features: [
+		{
+			heading: "AI-Driven Optimization",
+			description: "Our proprietary AI system analyzes search behavior across San Diego to discover opportunities competitors miss.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Local SEO Expertise",
+			description: "We specialize in local SEO San Diego, giving you an edge in Google's Map Pack and organic results.",
+			icon: "chart"
+		},
+		{
+			heading: "No-Risk Guarantee",
+			description: "If you don't see measurable results in the first 30 days, you don't pay until you do.",
+			icon: "dollar"
+		},
+		{
+			heading: "Immediate Start",
+			description: "We can begin optimizing your website and Google Business Profile within 24 hours.",
+			icon: "calendar"
+		},
+		{
+			heading: "Transparent Reporting",
+			description: "You'll get access to real-time dashboards and clear monthly reports.",
+			icon: "document"
+		},
+		{
+			heading: "No Long-Term Contracts",
+			description: "Month-to-month flexibility and full control of your marketing budget.",
+			icon: "settings"
+		}
+	]
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common Problems",
+	titleHighlight: "We Solve",
+	problems: [
+		{
+			heading: "We're invisible on Google",
+			description: 'Your site and Google Business Profile aren\'t showing for key searches like "SEO company San Diego CA" or "local SEO services San Diego." We fix that.',
+			icon: "lightbulb"
+		},
+		{
+			heading: "We get traffic but no calls",
+			description: "Our conversion-focused landing pages and call-tracking systems turn visitors into paying customers.",
+			icon: "chart"
+		},
+		{
+			heading: "Competitors outrank us",
+			description: "We reverse-engineer their strategy, build stronger content, and outperform them with better optimization.",
+			icon: "settings"
+		},
+		{
+			heading: "We don't know what's working",
+			description: "Our live dashboards track rankings, leads, and ROI so you can see progress in real time.",
+			icon: "document"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included",
+	titleHighlight: "In Our Service",
+	subtitle: "Local SEO for San Diego Businesses",
+	features: [
+		{
+			heading: "Local SEO Audit & Strategy",
+			description: "We begin with a deep audit of your site, keywords, backlinks, and competitors. Using real search data, we develop a custom plan targeting phrases like seo services san diego, local seo san diego ca, and affordable seo san diego.",
+			icon: "chart"
+		},
+		{
+			heading: "On-Page Optimization",
+			description: "Meta titles, descriptions, and headers tailored to San Diego searches. Schema markup and structured data for local relevance. Page-speed improvements, mobile-first design, and internal link structure.",
+			icon: "settings"
+		},
+		{
+			heading: "Google Business Optimization",
+			description: "Complete profile setup or refinement. Category selection, description optimization, and photo geo-tagging. Review-growth and reputation management to improve local authority.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Content & Authority Building",
+			description: "AI-assisted blog posts, location pages, and service copy that position you as a top seo agency san diego. We also secure local backlinks and citations that strengthen your search presence.",
+			icon: "document"
+		},
+		{
+			heading: "Local Citations & Backlinks",
+			description: "Consistent business listings across trusted directories and industry sites. Our outreach team acquires context-relevant links from reputable San Diego sources to boost authority.",
+			icon: "calendar"
+		},
+		{
+			heading: "Reporting & Continuous Optimization",
+			description: "Live ranking dashboards, monthly performance reviews, and ongoing updates to maintain top placement for target keywords like seo san diego ca and search engine optimization company san diego.",
+			icon: "dollar"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Free Visibility Audit",
+			description: "We analyze your current rankings and identify immediate opportunities."
+		},
+		{
+			number: "2",
+			heading: "Instant Onboarding",
+			description: "Once we get access, we start optimization the same day."
+		},
+		{
+			number: "3",
+			heading: "Launch & Optimization (Week 1)",
+			description: "We implement fixes, citations, and local keyword targeting."
+		},
+		{
+			number: "4",
+			heading: "Growth & Results (Weeks 2–4)",
+			description: "Expect rising rankings, more calls, and new business—if not, you don't pay."
+		}
+	]
+};
+
+// Service Areas Section
+const serviceAreasSection = {
+	title: "Service Areas",
+	titleHighlight: "We Serve",
+	paragraphs: [
+		"Glassbee Solutions provides local SEO services across San Diego County, including North County, La Jolla, Mission Valley, Pacific Beach, Encinitas, Chula Vista, and Carlsbad.",
+		"Whether you're searching for an seo agency san diego, an seo consultant san diego, or an affordable seo san diego solution, we're ready to help your business grow."
+	]
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Google Business SEO",
+		description: "Optimize your GBP for local visibility",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Website Maintenance",
+		description: "Keep your site fast, updated, and secure",
+		link: "/services/website-maintenance-updates",
+		icon: "services"
+	},
+	{
+		title: "All Services",
+		description: "View all our services",
+		link: "/services",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can you start?",
+		answer: "We can begin optimization immediately after onboarding—no waiting period."
+	},
+	{
+		question: "What results can I expect?",
+		answer: "Our focus is on generating measurable leads through high-intent searches. We aim to get you ranking in Google's Map Pack and organic results within 30 days."
+	},
+	{
+		question: "What if I don't see results?",
+		answer: "If you don't see clear ranking improvements or new business, you don't pay until you do."
+	},
+	{
+		question: "Do you work with all industries?",
+		answer: "We specialize in service-based businesses across San Diego—contractors, med spas, real-estate professionals, and local trades—but we can adapt our local SEO packages to nearly any niche."
+	},
+	{
+		question: "Is there a long-term contract?",
+		answer: "No. Our month-to-month structure gives you complete flexibility."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Dominate Local Search?",
+	subtitle: "Let's make your business the one customers find first. Schedule your free SEO audit for San Diego businesses today.",
+	primaryButton: {
+		text: "Get Started Today",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Why Choose Glassbee Solutions"
+		subtitle="Proven results that drive real business growth"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{problem.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{problem.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{problem.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{problem.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{problem.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						<div class="flex gap-6">
+							<div class="flex-shrink-0">
+								<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+							</div>
+							<div>
+								<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+								<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+									{step.description}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Our Promise Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<!-- Main Promise Card -->
+				<div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<!-- Background Pattern -->
+					<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10">
+						<div class="flex items-start gap-6 mb-8">
+							<div class="flex-shrink-0">
+								<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+								</svg>
+							</div>
+							<div>
+								<h2 class="text-4xl md:text-5xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+									Our 30-Day Guarantee
+								</h2>
+								<div class="w-24 h-1 bg-white mb-6"></div>
+							</div>
+						</div>
+
+						<div class="space-y-6 text-lg md:text-xl leading-relaxed">
+							<p class="text-white/95">
+								We're here to generate organic, high-intent leads as quickly as possible. Every niche performs differently, but our goal is to have your business ranking in Google's Map Pack and top local search results within the first 30 days.
+							</p>
+
+							<div class="bg-black/20 backdrop-blur-sm border-2 border-white/30 rounded-none p-6 md:p-8">
+								<p class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wide" style="font-family: 'Bebas Neue', sans-serif;">
+									If you don't get new business from our work, you don't pay until you do.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					Service Areas<br/><span class="text-orange-600">We Serve</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+					Providing expert local SEO services across San Diego County
+				</p>
+			</div>
+
+			<div class="max-w-6xl mx-auto">
+				<!-- Location Grid -->
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">North County</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">La Jolla</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">Mission Valley</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">Pacific Beach</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">Encinitas</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">Chula Vista</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">Carlsbad</p>
+					</div>
+
+					<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+						<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="font-bold text-black text-sm md:text-base">Downtown</p>
+					</div>
+				</div>
+
+				<!-- Bottom CTA Text -->
+				<div class="text-center max-w-3xl mx-auto">
+					<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+						Whether you're looking for an <span class="font-semibold text-black">SEO agency San Diego</span>, an <span class="font-semibold text-black">SEO consultant San Diego</span>, or <span class="font-semibold text-black">affordable SEO San Diego</span> solutions, we're ready to help your business dominate local search.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about this service"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

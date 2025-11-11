@@ -1,0 +1,633 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Med Spa SEO San Diego | Medical Spa SEO & Digital Marketing | Glassbee Solutions";
+const pageDescription = "Rank higher and attract more clients. Glassbee Solutions provides expert SEO for med spas with full rebuilds, 99%+ SEMrush scores, and near-100% PageSpeed performance.";
+const pageKeywords = "med spa SEO, SEO for med spas, medical spa SEO company, medical spa digital marketing agency, med spa lead generation, best med spa marketing company";
+
+// Hero Section
+const hero = {
+	title: "Med Spa SEO in",
+	titleHighlight: "San Diego",
+	description: "Get Found. Get Booked. Grow Your Med Spa.",
+	backgroundImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920",
+	primaryButton: {
+		text: "Get Free Med Spa SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "View All Industries",
+		link: "/industries"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Day", label: "Results Guarantee", icon: "properties" },
+	{ value: "AI-Driven", label: "Optimization", icon: "revenue" },
+	{ value: "24 Hour", label: "Quick Start", icon: "rating" },
+	{ value: "No Lock-In", label: "Month-to-Month", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "Med Spa SEO That",
+	titleHighlight: "Drives Real Results",
+	paragraphs: [
+		"When people search \"Botox near me,\" \"lip filler San Diego,\" or \"laser facial treatment,\" are they finding you — or your competitors?",
+		"At Glassbee Solutions, we help med spas dominate Google search and local map results through powerful, data-driven Med Spa SEO strategies that convert browsers into paying clients.",
+		"Whether you're a new boutique med spa or an established aesthetic clinic, we position your brand where it matters most — in front of high-intent local clients actively looking for your services."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions for Med Spa SEO",
+	features: [
+		{
+			heading: "Custom Code. No Templates.",
+			description: "We rebuild every med spa website from the ground up — engineered for both luxury design and SEO precision.",
+			icon: "settings"
+		},
+		{
+			heading: "As Close to 100% as Possible PageSpeed",
+			description: "Our builds consistently achieve near-perfect Google PageSpeed scores and 99%+ SEMrush optimization.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "30-Day Results Window",
+			description: "You'll begin seeing measurable visibility, traffic, and appointment growth within 30 days or sooner.",
+			icon: "calendar"
+		},
+		{
+			heading: "No Long-Term Contracts",
+			description: "Our partnerships are month-to-month — you stay because the results are real.",
+			icon: "document"
+		},
+		{
+			heading: "AI-Driven SEO & Tracking",
+			description: "We use advanced analytics and AI insights to fine-tune campaigns for consistent med spa lead generation.",
+			icon: "chart"
+		},
+		{
+			heading: "Medical Spa Industry Expertise",
+			description: "We understand HIPAA-safe marketing, aesthetic keyword strategy, and brand tone for medical spas.",
+			icon: "dollar"
+		}
+	]
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common Med Spa SEO",
+	titleHighlight: "Problems We Solve",
+	problems: [
+		{
+			heading: "Low Visibility on Google Maps",
+			description: "You're not showing up when clients search \"med spa near me.\" Your competitors are capturing the high-intent local traffic instead of you.",
+			icon: "chart"
+		},
+		{
+			heading: "Slow-Loading Websites",
+			description: "Poor PageSpeed kills user trust and conversions. Beautiful design means nothing if visitors leave before your page loads.",
+			icon: "settings"
+		},
+		{
+			heading: "No SEO Structure",
+			description: "Unoptimized service pages missing essential medical spa keywords. Weak local signals — inconsistent business listings or outdated Google Business Profiles.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Low-Quality Leads & Agency Dependence",
+			description: "Traffic that doesn't convert due to poor targeting or content gaps. Locked into long contracts with minimal ROI or unclear reporting.",
+			icon: "document"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included",
+	titleHighlight: "In Our Med Spa SEO Service",
+	subtitle: "Complete SEO & Digital Optimization for Medical Spas",
+	features: [
+		{
+			heading: "Complete SEO & Digital Optimization",
+			description: "In-depth website and Google Business Profile audit. Full site rebuild with custom, clean code — no templates or builders. Keyword targeting for top-performing aesthetic terms like \"Botox San Diego,\" \"HydraFacial near me,\" \"lip filler experts,\" and \"med spa SEO\".",
+			icon: "chart"
+		},
+		{
+			heading: "Technical On-Page Optimization",
+			description: "Technical on-page optimization (metadata, alt tags, structured schema, internal linking). Google Business Profile optimization for top-3 Map Pack rankings. Local citation management and cleanup across business directories.",
+			icon: "settings"
+		},
+		{
+			heading: "Review & Content Management",
+			description: "Review response and reputation management system. Monthly content publishing — service pages, blogs, and city pages for consistent visibility.",
+			icon: "document"
+		},
+		{
+			heading: "Performance Optimization",
+			description: "Websites rebuilt for near-100% PageSpeed Insights scores and 99%+ SEMrush optimization. Clean, mobile-first code built for user experience and conversion tracking. Optimized Core Web Vitals for lightning-fast load times on mobile and desktop.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Conversion & Lead Generation Systems",
+			description: "Integrated lead forms and analytics tracking. AI-driven call tracking to measure ROI. Built-in conversion funnels designed to turn web visitors into scheduled appointments.",
+			icon: "calendar"
+		},
+		{
+			heading: "Emergency Support",
+			description: "If your Google Business Profile gets flagged, your site crashes, or your ranking suddenly drops — we respond within 24 hours. Your med spa's online visibility won't skip a beat.",
+			icon: "dollar"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "SEO & Visibility Audit",
+			description: "We evaluate your med spa's current site structure, Google visibility, and local keyword rankings. Then, we benchmark your competitors across San Diego."
+		},
+		{
+			number: "2",
+			heading: "Full Rebuild & Technical SEO",
+			description: "We rebuild your website from scratch using clean, optimized code designed for search engine performance and aesthetics — blending design and function perfectly."
+		},
+		{
+			number: "3",
+			heading: "Keyword Targeting & On-Page Optimization",
+			description: "We identify and implement high-intent keywords like \"med spa SEO,\" \"SEO for med spas,\" \"medical spa SEO company,\" \"medical spa digital marketing agency,\" \"med spa lead generation,\" and \"best med spa marketing company.\" Each service page is structured to rank for a specific offering — Botox, laser resurfacing, fillers, facials, body contouring, etc."
+		},
+		{
+			number: "4",
+			heading: "Google Business Optimization",
+			description: "We optimize your profile with updated service categories, professional images, and keyword-rich descriptions — improving your chances of ranking in Google's Map Pack for key aesthetic searches."
+		},
+		{
+			number: "5",
+			heading: "Authority & Content Growth",
+			description: "We create ongoing blog posts, FAQs, and educational pages that establish your med spa as a trusted local authority while naturally boosting keyword rankings."
+		},
+		{
+			number: "6",
+			heading: "Reporting & Refinement",
+			description: "Monthly reports outline keyword gains, call volume, and conversion data — so you can see exactly how your med spa SEO is performing."
+		}
+	]
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Rank top-3 in Maps",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Industries",
+		description: "View all industries we serve",
+		link: "/industries",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How long until we see SEO results?",
+		answer: "Most med spas start seeing increased visibility and calls within the first 30 days, with stronger ranking growth over the next 60–90 days."
+	},
+	{
+		question: "Do you use platforms like WordPress or Wix?",
+		answer: "No. We fully rebuild each site using clean, custom code for speed, performance, and scalability."
+	},
+	{
+		question: "Can you help us with ads and lead generation too?",
+		answer: "Yes — while our core service is SEO, we also provide med spa lead generation support through Google Ads and conversion-optimized landing pages."
+	},
+	{
+		question: "What's the benefit of SEO for med spas?",
+		answer: "SEO increases your visibility on Google Maps and organic search results, attracting clients searching for treatments you offer. The higher you rank, the more likely you are to book appointments."
+	},
+	{
+		question: "What makes you different from a typical med spa marketing agency?",
+		answer: "We're not a design agency — we're a performance-first SEO firm. We deliver technical excellence, not templates."
+	}
+];
+
+// Service Areas
+const serviceAreas = [
+	"San Diego County",
+	"Orange County",
+	"Los Angeles",
+	"Riverside",
+	"Inland Empire",
+	"Nationwide"
+];
+
+// Emergency Availability Section
+const emergencySection = {
+	title: "Emergency",
+	titleHighlight: "Availability",
+	text: "If your Google Business Profile gets flagged, your site crashes, or your ranking suddenly drops — we respond within 24 hours. Your med spa's online visibility won't skip a beat."
+};
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Grow Your Med Spa?",
+	subtitle: "Let's make your medical spa the top result clients see when they search for your services.",
+	primaryButton: {
+		text: "Get Free Med Spa SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+	<Header />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Med Spa SEO Services",
+		"name": "Med Spa SEO Services San Diego",
+		"description": pageDescription,
+		"provider": {
+			"@type": "LocalBusiness",
+			"name": "Glassbee Solutions",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "San Diego",
+				"addressRegion": "CA",
+				"addressCountry": "US"
+			},
+			"telephone": "+19517600070",
+			"email": "info@glassbeesolutions.org"
+		},
+		"areaServed": {
+			"@type": "City",
+			"name": "San Diego"
+		}
+	})} />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Proven Med Spa SEO Results"
+		subtitle="Results-driven SEO that builds trust and drives med spa leads"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							paragraph && (
+								<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+									{paragraph}
+								</p>
+							)
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					problem.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{problem.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{problem.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+								{problem.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{problem.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{problem.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						step.heading && (
+							<div class="flex gap-6">
+								<div class="flex-shrink-0">
+									<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+								</div>
+								<div>
+									<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+									<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+										{step.description}
+									</p>
+								</div>
+							</div>
+						)
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Emergency Availability Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10 text-center">
+						<svg class="w-20 h-20 text-white mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+
+						<h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{emergencySection.title}<br/><span class="opacity-90">{emergencySection.titleHighlight}</span>
+						</h2>
+
+						<p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-white/95">
+							{emergencySection.text}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Service <span class="text-orange-600">Area</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-lg md:text-xl text-gray-600">
+						We proudly serve med spas and aesthetic clinics in:
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+					{serviceAreas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about med spa SEO"
+		faqs={faqs.filter(faq => faq.question)}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

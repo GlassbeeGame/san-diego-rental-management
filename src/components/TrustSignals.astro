@@ -67,11 +67,12 @@ const labelClasses = {
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     {title && (
       <div class="text-center mb-16">
-        <h2 class={`text-5xl md:text-6xl font-bold mb-6 uppercase ${textClasses[backgroundColor]}`} style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+        <h2 class={`text-3xl md:text-4xl font-bold mb-4 uppercase ${textClasses[backgroundColor]}`} style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
           {title}
         </h2>
+        <div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
         {subtitle && (
-          <p class={`text-xl ${subtitleClasses[backgroundColor]}`}>
+          <p class={`text-base md:text-lg ${subtitleClasses[backgroundColor]}`}>
             {subtitle}
           </p>
         )}
@@ -84,9 +85,9 @@ const labelClasses = {
         : 'grid grid-cols-2 md:grid-cols-4 gap-12'
     }`}>
       {stats.map((stat) => (
-        <div class="text-center">
+        <div class="flex flex-col items-center text-center">
           {stat.icon && (
-            <div class={`inline-flex items-center justify-center w-16 h-16 mb-6 ${
+            <div class={`flex items-center justify-center w-16 h-16 mb-4 flex-shrink-0 ${
               backgroundColor === 'black' ? 'bg-orange-600' : 'bg-black'
             }`}>
               <svg class={`w-8 h-8 ${
@@ -96,10 +97,10 @@ const labelClasses = {
               </svg>
             </div>
           )}
-          <div class={`text-5xl md:text-6xl font-bold mb-2 ${valueClasses[backgroundColor]}`} style="font-family: 'Bebas Neue', sans-serif;">
+          <div class={`text-4xl md:text-5xl font-bold mb-3 leading-none ${valueClasses[backgroundColor]}`} style="font-family: 'Bebas Neue', sans-serif;">
             {stat.value}
           </div>
-          <div class={`text-sm font-semibold uppercase tracking-wider ${labelClasses[backgroundColor]}`}>
+          <div class={`text-xs md:text-sm font-semibold uppercase tracking-wider ${labelClasses[backgroundColor]}`}>
             {stat.label}
           </div>
         </div>

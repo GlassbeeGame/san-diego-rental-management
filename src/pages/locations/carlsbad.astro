@@ -1,12 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import TrustSignals from '../../components/TrustSignals.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
 import FAQ from '../../components/FAQ.astro';
 import CTABanner from '../../components/CTABanner.astro';
 ---
 
-<Layout title="Carlsbad Vacation Rental Management | Family Beaches & LEGOLAND | Polaris">
+<Layout title="Carlsbad Local SEO Services | Family Beaches & LEGOLAND SEO | Glassbee Solutions">
+  <Header />
   <!-- Hero Section -->
   <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
     style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920');">
@@ -175,9 +178,9 @@ import CTABanner from '../../components/CTABanner.astro';
   <RelatedPages
     title="Services for Carlsbad Properties"
     pages={[
-      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete family property care", icon: "services" },
-      { title: "Linen & Amenity Management", href: "/services/linen-amenity-management", description: "Kid-friendly amenities & gear", icon: "services" },
-      { title: "Listing Optimization", href: "/services/listing-optimization", description: "Highlight LEGOLAND proximity", icon: "services" }
+      { title: "Local SEO for San Diego Businesses", href: "/services/local-seo-for-san-diego-businesses", description: "Complete family property care", icon: "services" },
+      { title: "Google Business SEO", href: "/services/google-business-seo", description: "Kid-friendly amenities & gear", icon: "services" },
+      { title: "Website Maintenance", href: "/services/website-maintenance-updates", description: "Highlight LEGOLAND proximity", icon: "services" }
     ]}
   />
 
@@ -249,4 +252,6 @@ import CTABanner from '../../components/CTABanner.astro';
     secondaryButtonText="View All Locations"
     secondaryButtonLink="/locations"
   />
+  <Footer />
+
 </Layout>

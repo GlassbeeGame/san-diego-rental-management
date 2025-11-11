@@ -1,0 +1,633 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Plumbing SEO San Diego | Local SEO for Plumbers | Glassbee Solutions";
+const pageDescription = "Rank higher and get more plumbing calls. Expert SEO for plumbers with full code rebuilds, 99%+ SEMrush scores, and near-100% PageSpeed results.";
+const pageKeywords = "plumbing SEO, local SEO for plumbers, plumbing search engine optimization, best SEO for plumbing companies, SEO for plumbing contractors";
+
+// Hero Section
+const hero = {
+	title: "Plumbing SEO in",
+	titleHighlight: "San Diego",
+	description: "Rank Higher. Get More Plumbing Calls.",
+	backgroundImage: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1920",
+	primaryButton: {
+		text: "Get Free Plumbing SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "View All Industries",
+		link: "/industries"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Day", label: "Results Guarantee", icon: "properties" },
+	{ value: "AI-Driven", label: "Optimization", icon: "revenue" },
+	{ value: "24 Hour", label: "Quick Start", icon: "rating" },
+	{ value: "No Lock-In", label: "Month-to-Month", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "Plumber SEO That",
+	titleHighlight: "Drives Real Results",
+	paragraphs: [
+		"When someone searches \"plumber near me,\" are you showing up at the top — or buried under competitors?",
+		"At Glassbee Solutions, we specialize in SEO for plumbers that drives phone calls, booked jobs, and real growth. Whether you're a solo plumber or managing a multi-truck operation, we'll help you dominate local Google search and keep your calendar full with high-intent customers ready to hire.",
+		"We don't just tweak websites — we rebuild them entirely with clean, optimized code that loads instantly and ranks higher."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions for Plumbing SEO",
+	features: [
+		{
+			heading: "We Rebuild, Not Patch",
+			description: "Every plumbing site we touch is rebuilt with clean, efficient code for superior SEO performance.",
+			icon: "settings"
+		},
+		{
+			heading: "PageSpeed Perfection",
+			description: "Our sites test as close to 100% as possible in Google PageSpeed and maintain 99%+ Site Health in SEMrush.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Real Results Within 30 Days or Sooner",
+			description: "You'll start seeing measurable growth in calls, clicks, and search impressions in the first month.",
+			icon: "calendar"
+		},
+		{
+			heading: "No Long-Term Contracts",
+			description: "We work month-to-month. Stay only if you're getting results.",
+			icon: "document"
+		},
+		{
+			heading: "Local SEO Experts",
+			description: "We specialize in service-based industries like plumbing, HVAC, and construction — not generic SEO.",
+			icon: "chart"
+		},
+		{
+			heading: "Emergency Support",
+			description: "If your site crashes or rankings drop, we respond within 24 hours.",
+			icon: "dollar"
+		}
+	]
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common Plumbing SEO",
+	titleHighlight: "Problems We Solve",
+	problems: [
+		{
+			heading: "Not Appearing in Google Map Pack",
+			description: "You're invisible to ready-to-hire customers. Your plumbing business isn't showing up in the top 3 map results where customers are clicking.",
+			icon: "chart"
+		},
+		{
+			heading: "Slow or Outdated Website",
+			description: "Visitors leave before calling. Your website is built on WordPress templates or outdated platforms that load slowly and don't convert mobile traffic.",
+			icon: "settings"
+		},
+		{
+			heading: "Weak Local Keyword Strategy",
+			description: "Missing critical terms like \"plumber San Diego\" or \"toilet repair near me.\" Low authority content — no optimized blog or service pages targeting real searches.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Inconsistent Business Listings & Poor Reviews",
+			description: "Mismatched name, address, and phone number data across directories. Too few or low-quality Google reviews impacting rankings. No lead tracking — you don't know which calls are coming from SEO.",
+			icon: "document"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included",
+	titleHighlight: "In Our Plumbing SEO Service",
+	subtitle: "Complete Local SEO Optimization for Plumbing Companies",
+	features: [
+		{
+			heading: "Complete Local SEO Optimization",
+			description: "Full audit of your website and Google Business Profile. Custom-coded rebuild (no WordPress or templates) engineered for performance and SEO ranking. Keyword targeting for high-intent plumbing search terms like \"emergency plumber San Diego,\" \"water heater repair,\" and \"drain cleaning near me.\"",
+			icon: "chart"
+		},
+		{
+			heading: "On-Page SEO & GBP Optimization",
+			description: "On-page SEO including title tags, meta descriptions, schema, and internal linking. Google Business Profile optimization for top-3 Map Pack visibility. Citation cleanup and local directory submissions.",
+			icon: "settings"
+		},
+		{
+			heading: "Review & Content Management",
+			description: "Review management strategy to increase credibility and ranking signals. Monthly content creation (service and location pages targeting your specific plumbing services).",
+			icon: "document"
+		},
+		{
+			heading: "Performance & Speed Optimization",
+			description: "Rebuilt from scratch for 99%+ SEMrush Site Health and near-100% PageSpeed. Minified code, image compression, and Core Web Vitals optimization. Fully responsive mobile-first design for faster conversions.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Ongoing SEO Maintenance",
+			description: "Monthly SEO reports with rank tracking, call data, and visibility growth. Keyword refinement based on competitive search trends. Google algorithm monitoring and adjustments.",
+			icon: "calendar"
+		},
+		{
+			heading: "Emergency Response",
+			description: "Emergency response for technical or ranking issues. If your site crashes or rankings drop, we respond within 24 hours to restore your visibility.",
+			icon: "dollar"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Discovery & SEO Audit",
+			description: "We start with a deep analysis of your current plumbing website, Google Business Profile, and competitors across San Diego."
+		},
+		{
+			number: "2",
+			heading: "Full Code Rebuild",
+			description: "Unlike typical SEO agencies, we rebuild your plumbing website entirely with clean code — optimized for SEO and PageSpeed performance."
+		},
+		{
+			number: "3",
+			heading: "Keyword Strategy & Optimization",
+			description: "We use real search data to target terms like \"plumbing SEO,\" \"local SEO for plumbers,\" \"plumbing search engine optimization,\" \"best SEO for plumbing companies,\" and \"SEO for plumbing contractors.\" These keywords are built into your site structure, metadata, and content flow."
+		},
+		{
+			number: "4",
+			heading: "Google Business Optimization",
+			description: "We optimize your Google Business Profile to dominate the Map Pack — adding real photos, service areas, descriptions, and review strategies that attract more local customers."
+		},
+		{
+			number: "5",
+			heading: "Content & Authority Growth",
+			description: "We create optimized service pages, blogs, and local city pages to help you rank for every plumbing-related keyword your customers are searching."
+		},
+		{
+			number: "6",
+			heading: "Reporting & Refinement",
+			description: "You'll receive monthly visibility reports, keyword tracking, and conversion insights so you know exactly how your SEO investment is performing."
+		}
+	]
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Rank top-3 in Maps",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Industries",
+		description: "View all industries we serve",
+		link: "/industries",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How long does plumbing SEO take to work?",
+		answer: "It depends on your competition and current site status, but most plumbing companies see visible ranking and call increases within 30 days or sooner."
+	},
+	{
+		question: "Do you use website builders or templates?",
+		answer: "No. Every site we build is custom-coded — no WordPress, Wix, or Squarespace."
+	},
+	{
+		question: "Can you help me rank for multiple service areas?",
+		answer: "Yes. We create unique location pages targeting different San Diego neighborhoods or nearby cities to expand your reach."
+	},
+	{
+		question: "What effect does SEO have on your search?",
+		answer: "SEO determines whether Google recognizes your plumbing business as trusted and relevant. Strong SEO boosts your visibility in maps, organic listings, and local search results — which directly increases booked calls."
+	},
+	{
+		question: "What if I already have a marketing agency?",
+		answer: "We often collaborate with existing agencies — handling the technical SEO and rebuild side while they manage ads or social media."
+	}
+];
+
+// Service Areas
+const serviceAreas = [
+	"San Diego County",
+	"Orange County",
+	"Los Angeles",
+	"Riverside",
+	"Inland Empire",
+	"Remote Nationwide"
+];
+
+// Emergency Availability Section
+const emergencySection = {
+	title: "Emergency",
+	titleHighlight: "Availability",
+	text: "When your plumbing business relies on calls, every lost ranking costs you real money. If your website crashes, your listing gets flagged, or your traffic drops suddenly — we'll step in fast. Our 24-hour emergency SEO support keeps your visibility and revenue flowing."
+};
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Grow Your Plumbing Business?",
+	subtitle: "Let's turn your plumbing website into a lead-generation engine that ranks, loads instantly, and converts.",
+	primaryButton: {
+		text: "Get Free Plumbing SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+	<Header />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Plumber SEO Services",
+		"name": "Plumber SEO Services San Diego",
+		"description": pageDescription,
+		"provider": {
+			"@type": "LocalBusiness",
+			"name": "Glassbee Solutions",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "San Diego",
+				"addressRegion": "CA",
+				"addressCountry": "US"
+			},
+			"telephone": "+19517600070",
+			"email": "info@glassbeesolutions.org"
+		},
+		"areaServed": {
+			"@type": "City",
+			"name": "San Diego"
+		}
+	})} />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Proven Plumber SEO Results"
+		subtitle="Results-driven SEO that builds trust and drives plumbing leads"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							paragraph && (
+								<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+									{paragraph}
+								</p>
+							)
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					problem.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{problem.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{problem.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+								{problem.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{problem.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{problem.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						step.heading && (
+							<div class="flex gap-6">
+								<div class="flex-shrink-0">
+									<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+								</div>
+								<div>
+									<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+									<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+										{step.description}
+									</p>
+								</div>
+							</div>
+						)
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Emergency Availability Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10 text-center">
+						<svg class="w-20 h-20 text-white mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+
+						<h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{emergencySection.title}<br/><span class="opacity-90">{emergencySection.titleHighlight}</span>
+						</h2>
+
+						<p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-white/95">
+							{emergencySection.text}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Service <span class="text-orange-600">Area</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-lg md:text-xl text-gray-600">
+						We provide Plumber SEO services across:
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+					{serviceAreas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about plumbing SEO"
+		faqs={faqs.filter(faq => faq.question)}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

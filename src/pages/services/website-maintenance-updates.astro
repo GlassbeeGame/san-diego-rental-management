@@ -1,0 +1,610 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Website Optimization & Maintenance | Code Rebuilds | Glassbee Solutions";
+const pageDescription = "Full code rebuilds with zero compromise. Achieve PageSpeed scores near 100% and SEMrush Site Health at 99%+. No templates, no bloat—just elite performance.";
+
+// Hero Section
+const hero = {
+	title: "Website Optimization",
+	titleHighlight: "& Maintenance",
+	description: "Full Code Rebuilds. Zero Compromise. PageSpeed as close to 100% as possible. We rebuild websites fully with code for elite performance, clean architecture, and durable SEO gains.",
+	backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920",
+	primaryButton: {
+		text: "Request Free Optimization Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "All Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "~100%", label: "PageSpeed Target", icon: "properties" },
+	{ value: "99%", label: "SEMrush Site Health", icon: "rating" },
+	{ value: "Code-First", label: "No Templates", icon: "revenue" },
+	{ value: "2-3 Weeks", label: "Typical Rebuild", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "We Don't Patch",
+	titleHighlight: "We Reconstruct",
+	paragraphs: [
+		"At Glassbee Solutions, we don't \"tune up\" old sites or push templates. We rebuild your website fully with code for elite performance, clean architecture, and durable SEO gains.",
+		"The result: faster load times, higher rankings, and a site that actually converts.",
+		"Our rebuilds routinely achieve SEMrush Site Health scores in the 99% range and Google PageSpeed results as close to 100% as possible (mobile and desktop), because we engineer every layer—HTML, CSS, JS, assets, server—to meet modern standards.",
+		"If your website is slow, bloated, or underperforming, we won't patch it. We'll reconstruct it—cleaner, faster, smarter."
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's",
+	titleHighlight: "Included",
+	subtitle: "Complete code-level website rebuilds engineered for performance",
+	features: [
+		{
+			heading: "Code-Level Website Rebuild",
+			description: "From-scratch, standards-based HTML/CSS/JS (no page builders, no bloat). Mobile-first architecture aligned to Core Web Vitals. Minimal, modular JS with preloading, deferring, and lazy-loading. Semantic markup, ARIA/accessibility, and structured data (schema). Conversion-oriented UX: clear hierarchy, CTAs, forms, and trust signals.",
+			icon: "settings"
+		},
+		{
+			heading: "Technical Performance Engineering",
+			description: "Image pipelines (next-gen formats, responsive srcset, compression). CSS/JS bundling & minification, critical CSS, HTTP/2 optimization. Caching strategy (browser & server), preconnect/prefetch where relevant. Server-side tuning to reduce TTFB; CDN configuration (if applicable). Lighthouse/PageSpeed verification to push scores as close to 100% as possible.",
+			icon: "chart"
+		},
+		{
+			heading: "SEO Alignment & On-Page Optimization",
+			description: "Keyword-to-page mapping and search-intent alignment. Titles, metas, H1–H3 structure, internal linking strategy. Schema types for your business and key pages (LocalBusiness, Service, FAQ). Sitemap/robots configuration and clean URL strategy.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Maintenance & Monitoring",
+			description: "Ongoing performance checks and Core Web Vitals tracking. Security hardening and routine codebase upkeep. Uptime monitoring and issue triage. Monthly report: speed metrics, errors, SEO health, action items.",
+			icon: "document"
+		}
+	]
+};
+
+// Common Problems Section
+const problemsSection = {
+	title: "Common Problems",
+	titleHighlight: "We Eliminate",
+	problems: [
+		{
+			heading: "Bloated Legacy Code",
+			description: "Slow page views caused by outdated, inefficient code. We strip it all out and rebuild from scratch.",
+			icon: "settings"
+		},
+		{
+			heading: "Low PageSpeed & Poor Core Web Vitals",
+			description: "Penalizing rankings and conversions. We engineer every element to hit performance benchmarks.",
+			icon: "chart"
+		},
+		{
+			heading: "Clunky Mobile Experience",
+			description: "Losing users before the fold. Our mobile-first rebuilds ensure seamless experiences on all devices.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Messy On-Page SEO",
+			description: "Weak titles, metas, headers, internal links. We structure everything for maximum search visibility.",
+			icon: "document"
+		},
+		{
+			heading: "Script Conflicts & Render-Blocking",
+			description: "Resources that slow down load times. We optimize and streamline all assets.",
+			icon: "calendar"
+		},
+		{
+			heading: "Confusing Layouts & Weak CTAs",
+			description: "That kill conversion. We design clear hierarchies that guide users to action.",
+			icon: "dollar"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Deep Technical Audit",
+			description: "We benchmark your current site with PageSpeed, Lighthouse, and SEMrush to expose code, content, and infrastructure bottlenecks."
+		},
+		{
+			number: "2",
+			heading: "Rebuild Strategy (No Platforms, Just Code)",
+			description: "We plan a clean, modular codebase, improved IA (information architecture), and a conversion-first layout. Your brand/look stays—your performance and SEO do not."
+		},
+		{
+			number: "3",
+			heading: "Full Code Rebuild",
+			description: "From scratch, we implement semantic HTML, lean CSS, and minimal JS. We optimize assets, routing, and server behavior to meet Core Web Vitals."
+		},
+		{
+			number: "4",
+			heading: "Speed Testing & Validation",
+			description: "We iterate until PageSpeed and Lighthouse scores are as close to 100% as possible across devices. Then we cross-check SEMrush Site Health (targeting 99%+)."
+		},
+		{
+			number: "5",
+			heading: "SEO Integration & Launch",
+			description: "We launch with best-practice metadata, schema, sitemaps, and internal links so Google can crawl, understand, and reward the new build."
+		},
+		{
+			number: "6",
+			heading: "Maintenance & Support",
+			description: "We monitor uptime and vitals, handle updates safely, and keep the codebase lean as you grow."
+		}
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions",
+	features: [
+		{
+			heading: "Code-First Rebuilds",
+			description: "No templates, no builders, no bloat. Clean code that screams.",
+			icon: "settings"
+		},
+		{
+			heading: "Elite Performance Targets",
+			description: "We push PageSpeed as close to 100% as possible and SEMrush Site Health in the 99% range.",
+			icon: "chart"
+		},
+		{
+			heading: "SEO Engineered",
+			description: "Structure, copy, and schema aligned to search intent—not just speed.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Immediate Impact",
+			description: "Speed and UX gains are visible at launch; SEO lift follows fast.",
+			icon: "calendar"
+		},
+		{
+			heading: "Clear Reporting",
+			description: "You'll see precisely what changed and why it matters.",
+			icon: "document"
+		},
+		{
+			heading: "Emergency Availability",
+			description: "We prioritize urgent break-fix and critical issues.",
+			icon: "dollar"
+		}
+	]
+};
+
+// Performance Callout Section
+const performanceSection = {
+	title: "Curious About",
+	titleHighlight: "Performance?",
+	text: "Interested in our PageSpeed score? Add our sample URL to Google PageSpeed Insights and see the results. If you're curious, paste this site's URL in too and compare before/after once we launch your rebuild. We aim for results as close to 100% as possible."
+};
+
+// Service Areas Grid
+const serviceAreas = [
+	"San Diego County",
+	"Orange County",
+	"Los Angeles",
+	"Riverside",
+	"Inland Empire",
+	"National Remote",
+	"California",
+	"Code-First Anywhere"
+];
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete local SEO optimization",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Rank top-3 in Maps and convert more calls",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Services",
+		description: "View all our services",
+		link: "/services",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How long does a full rebuild take?",
+		answer: "Most single-location business sites are rebuilt and optimized in 2–3 weeks, depending on page count and content coordination."
+	},
+	{
+		question: "How soon will we see SEO visibility improvements?",
+		answer: "It depends, but many projects see movement within 30 days or sooner as Google re-crawls the new architecture and Core Web Vitals improve."
+	},
+	{
+		question: "Do you use WordPress/Webflow/Shopify?",
+		answer: "No. We do not work with platforms or page builders. We rebuild fully with code to guarantee speed, stability, and clean SEO."
+	},
+	{
+		question: "Will the old site stay live during the rebuild?",
+		answer: "Yes. We build in a private staging environment. Your current site stays live until the new site is tested and approved."
+	},
+	{
+		question: "What effect does SEO have on your search?",
+		answer: "SEO determines how clearly Google can find, understand, and trust your pages. Strong technical health + on-page relevance leads to better rankings, more impressions, higher CTR, and compounding organic traffic."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready for a Rebuild That Actually Performs?",
+	subtitle: "Stop paying for \"optimizations\" that never move the needle. Let's launch a code-clean, SEO-ready site that loads instantly and converts.",
+	primaryButton: {
+		text: "Request Free Optimization Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Elite Performance Standards"
+		subtitle="Code-first rebuilds engineered for speed, SEO, and conversions"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{featuresSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Eliminate Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{problem.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{problem.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{problem.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{problem.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{problem.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{problem.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{problem.description}
+						</p>
+					</div>
+				))}
+			</div>
+
+			<!-- Tagline -->
+			<div class="text-center mt-12 max-w-3xl mx-auto">
+				<p class="text-lg md:text-xl text-gray-700 font-semibold">
+					After a Glassbee rebuild, your site loads in a snap, ranks cleaner, and communicates value instantly.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						<div class="flex gap-6">
+							<div class="flex-shrink-0">
+								<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+							</div>
+							<div>
+								<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+								<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+									{step.description}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Performance Callout Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<!-- Background Pattern -->
+					<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10 text-center">
+						<div class="mb-6">
+							<svg class="w-20 h-20 text-white mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+							<h2 class="text-4xl md:text-5xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								{performanceSection.title}<br/><span class="opacity-90">{performanceSection.titleHighlight}</span>
+							</h2>
+							<div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+						</div>
+
+						<p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-white/95">
+							{performanceSection.text}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					Service<br/><span class="text-orange-600">Area</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+					Based in San Diego, we handle national rebuilds remotely with the same code-first workflow
+				</p>
+			</div>
+
+			<div class="max-w-5xl mx-auto">
+				<!-- Location Grid -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+					{serviceAreas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about our code rebuilds"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

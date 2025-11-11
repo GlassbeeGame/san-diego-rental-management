@@ -71,7 +71,7 @@ A complete, production-ready website for a San Diego short-term rental managemen
 
 ## 📊 Content Source
 
-All content was extracted and adapted from **polarisrentalgroup.com**:
+All content was extracted and adapted from **glassbeesolutions.org**:
 - Real service descriptions
 - Actual value propositions
 - Proven business model

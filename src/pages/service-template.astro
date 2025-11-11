@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// ============================================
+// PAGE CONTENT DATA - UPDATE THIS SECTION
+// ============================================
+//
+// IMPORTANT: QUOTE HANDLING
+// --------------------------
+// When using quotes inside strings, you have 3 options:
+//
+// 1. Escape inner quotes with backslash:
+//    description: "We appear in \"near me\" searches"
+//
+// 2. Use single quotes for outer string:
+//    description: 'We appear in "near me" searches'
+//
+// 3. Use template literals (backticks):
+//    description: `We appear in "near me" searches`
+//
+// AVOID: Double quotes inside double-quoted strings (breaks syntax)
+//    description: "We appear in "near me" searches"  ❌ WRONG
+//
+// ============================================
+//
+// TEMPLATE USAGE NOTES
+// --------------------
+// This template is for SERVICE DETAIL PAGES:
+// - Copy this file to create new service pages
+// - Update all data variables below with your service-specific content
+// - The HTML structure will render automatically
+//
+// ============================================
+
+// SEO & Page Info
+const pageTitle = "Service Template | Glassbee Solutions";
+const pageDescription = "This is a template page for creating service detail pages.";
+
+// Hero Section
+const hero = {
+	title: "Service Name",
+	titleHighlight: "Service Type",
+	description: "Brief description of what this service offers and why it's valuable.",
+	backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920",
+	primaryButton: {
+		text: "Get Started Today",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "All Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "150+", label: "Clients Served", icon: "properties" },
+	{ value: "35%", label: "Average Improvement", icon: "revenue" },
+	{ value: "4.9★", label: "Client Satisfaction", icon: "rating" },
+	{ value: "92%", label: "Success Rate", icon: "occupancy" }
+];
+
+// Traditional Text Content Section (Optional - set to null to hide)
+const textContentSection = {
+	title: "About This Service",
+	titleHighlight: "Why It Matters",
+	paragraphs: [
+		"This is where you can add traditional paragraph text content about your service. Use this section to provide detailed information, explain the value proposition, or tell a story about how this service helps clients.",
+		"You can add multiple paragraphs here. Each paragraph will be displayed with proper spacing and styling. This is perfect for SEO content, detailed explanations, or any narrative content that doesn't fit into the structured feature cards.",
+		"Feel free to customize this section with as many paragraphs as needed. The text will be styled consistently with the rest of your site's design."
+	]
+};
+// Set to null to hide this section: const textContentSection = null;
+
+// Features/What's Included Section
+const featuresSection = {
+	title: "Everything You Need",
+	titleHighlight: "Nothing You Don't",
+	subtitle: "What's included in this service",
+	features: [
+		{
+			heading: "Feature One",
+			description: "Description of feature one and how it benefits the client.",
+			icon: "dollar"
+		},
+		{
+			heading: "Feature Two",
+			description: "Description of feature two and how it benefits the client.",
+			icon: "calendar"
+		},
+		{
+			heading: "Feature Three",
+			description: "Description of feature three and how it benefits the client.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Feature Four",
+			description: "Description of feature four and how it benefits the client.",
+			icon: "settings"
+		},
+		{
+			heading: "Feature Five",
+			description: "Description of feature five and how it benefits the client.",
+			icon: "document"
+		},
+		{
+			heading: "Feature Six",
+			description: "Description of feature six and how it benefits the client.",
+			icon: "chart"
+		}
+	]
+};
+
+// How It Works Section (Optional - set to null to hide)
+const howItWorksSection = {
+	title: "How It Works",
+	steps: [
+		{
+			number: "1",
+			heading: "Step One",
+			description: "Description of the first step in the process."
+		},
+		{
+			number: "2",
+			heading: "Step Two",
+			description: "Description of the second step in the process."
+		},
+		{
+			number: "3",
+			heading: "Step Three",
+			description: "Description of the third step in the process."
+		},
+		{
+			number: "4",
+			heading: "Step Four",
+			description: "Description of the fourth step in the process."
+		}
+	]
+};
+// Set to null to hide this section: const howItWorksSection = null;
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Related Service One",
+		description: "Brief description of related service",
+		link: "/services/service-one",
+		icon: "services"
+	},
+	{
+		title: "Related Service Two",
+		description: "Brief description of related service",
+		link: "/services/service-two",
+		icon: "services"
+	},
+	{
+		title: "All Services",
+		description: "View all our services",
+		link: "/services",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Question one?",
+		answer: "Answer to question one."
+	},
+	{
+		question: "Question two?",
+		answer: "Answer to question two."
+	},
+	{
+		question: "Question three?",
+		answer: "Answer to question three."
+	},
+	{
+		question: "Question four?",
+		answer: "Answer to question four."
+	},
+	{
+		question: "Question five?",
+		answer: "Answer to question five."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Get Started?",
+	subtitle: "Get a free consultation and see how we can help",
+	primaryButton: {
+		text: "Get Free Consultation",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black" // Options: "black", "orange"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- Traditional Text Content Section (Optional) -->
+	{textContentSection && (
+		<section class="py-20 bg-white">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="max-w-4xl mx-auto">
+					<div class="text-center mb-12">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{textContentSection.title}<br/><span class="text-orange-600">{textContentSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					</div>
+
+					<div class="prose prose-lg max-w-none text-gray-600">
+						{textContentSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg mb-6 leading-relaxed">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- Features/What's Included Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section (Optional) -->
+	{howItWorksSection && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{howItWorksSection.title}
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="max-w-4xl mx-auto">
+					<div class="space-y-8">
+						{howItWorksSection.steps.map((step) => (
+							<div class="flex gap-6">
+								<div class="flex-shrink-0">
+									<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+								</div>
+								<div>
+									<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+									<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+										{step.description}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about this service"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

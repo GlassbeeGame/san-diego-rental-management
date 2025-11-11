@@ -1,0 +1,644 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Moving Company SEO | Hyper-Local SEO for Movers | Glassbee Solutions";
+const pageDescription = "Expert SEO for moving companies. Custom-coded sites, near-100% PageSpeed, and fast hyper-local visibility that drives leads within 30 days.";
+const pageKeywords = "SEO for moving companies, SEO for movers, moving company SEO services, moving company local SEO, local SEO for movers, moving company SEO experts, moving company marketing ideas, how to get clients for moving company";
+
+// Hero Section
+const hero = {
+	title: "SEO for Moving",
+	titleHighlight: "Companies",
+	description: "Get Found by People Who Are Ready to Move",
+	backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920",
+	primaryButton: {
+		text: "Get Free Moving Company SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "View All Industries",
+		link: "/industries"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Day", label: "Results Guarantee", icon: "properties" },
+	{ value: "AI-Driven", label: "Optimization", icon: "revenue" },
+	{ value: "24 Hour", label: "Quick Start", icon: "rating" },
+	{ value: "No Lock-In", label: "Month-to-Month", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "SEO for Moving Companies",
+	titleHighlight: "Get Found by People Who Are Ready to Move",
+	paragraphs: [
+		"When someone searches \"movers near me\" or \"best moving company in [city],\" are they finding you — or your competitors?",
+		"At Glassbee Solutions, we specialize exclusively in SEO for moving companies. No paid ads. No generic marketing fluff. Just hyper-local, code-driven SEO that helps you dominate Google's local results and convert searches into booked jobs — fast.",
+		"We rebuild your site from scratch, optimize every page for performance and visibility, and make sure your business appears first in the map pack when customers are ready to move."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions",
+	features: [
+		{
+			heading: "SEO-Only Specialists",
+			description: "No paid ads, no PPC, just real organic ranking. We focus exclusively on getting you found organically on Google.",
+			icon: "chart"
+		},
+		{
+			heading: "Code-First Rebuilds",
+			description: "We don't \"optimize\" templates — we engineer your site from the ground up. Every site is custom-coded for maximum performance and SEO.",
+			icon: "settings"
+		},
+		{
+			heading: "As Close to 100% PageSpeed as Possible",
+			description: "Google rewards speed; we make sure you're the fastest in your area. Our sites consistently achieve near-perfect PageSpeed scores.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Results in 30 Days or Sooner",
+			description: "Hyper-local SEO brings visibility quicker than national strategies. Most movers see measurable improvements within the first month.",
+			icon: "calendar"
+		},
+		{
+			heading: "No Long-Term Contracts",
+			description: "Stay because it's working, not because you're locked in. We work month-to-month.",
+			icon: "document"
+		},
+		{
+			heading: "Emergency Support",
+			description: "If your site drops or listing gets flagged, we respond fast. We're available 24/7 for critical issues.",
+			icon: "dollar"
+		}
+	]
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common SEO Problems",
+	titleHighlight: "Moving Companies Face",
+	problems: [
+		{
+			heading: "Invisible in Google Maps for Local Searches",
+			description: "You're not showing up when people search for \"movers near me\" or \"moving company in [city].\" Without strong local SEO, you're invisible to customers ready to book.",
+			icon: "chart"
+		},
+		{
+			heading: "Poorly Structured, Slow, or Outdated Websites",
+			description: "Your site takes too long to load, isn't mobile-friendly, or looks unprofessional. Google penalizes slow sites, and customers bounce before they even see your services.",
+			icon: "settings"
+		},
+		{
+			heading: "Generic Content That Doesn't Match Moving-Related Search Terms",
+			description: "Your pages don't target the right keywords. You're missing phrases like \"office movers,\" \"packing services in [city],\" or \"local SEO for moving companies.\"",
+			icon: "document"
+		},
+		{
+			heading: "Weak Keyword Targeting & Inconsistent Citations",
+			description: "Inconsistent citations hurting credibility. Few reviews or no GBP posts. Your NAP (name, address, phone) data is inconsistent across directories, confusing Google and hurting your rankings.",
+			icon: "lightbulb"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included",
+	titleHighlight: "In Our Moving Company SEO Services",
+	subtitle: "",
+	features: [
+		{
+			heading: "Full Local SEO Rebuild",
+			description: "Clean, custom-coded website rebuild (no templates or builders). On-page SEO tuned for high-intent terms like SEO for movers, moving company SEO services, and local SEO for moving companies. Google Business Profile optimization for top-3 Map Pack rankings. Geo-targeted content for each city or service area. Citation consistency (accurate NAP across directories). Schema markup for movers and local business categories. Review strategy and response templates to build trust.",
+			icon: "chart"
+		},
+		{
+			heading: "Performance Optimization",
+			description: "Built for as close to 100% PageSpeed as possible. 99%+ SEMrush optimization — every technical issue resolved. Mobile-first, lightning-fast design. Compressed images, optimized structure, and Core Web Vitals compliance. Conversion tracking for calls, quotes, and directions.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Ongoing Organic Growth",
+			description: "Monthly reporting (rankings, calls, and clicks). Continuous keyword tracking and competitor analysis. Fresh content built around moving company marketing ideas and how to get clients for moving company — positioned for SEO, not ads. Quick refinements as algorithms change.",
+			icon: "calendar"
+		}
+	]
+};
+
+// Why Our Approach Works Faster Section
+const whyWorksSection = {
+	title: "Why Our Approach",
+	titleHighlight: "Works Faster",
+	text: "Most agencies chase broad keywords or national SEO. We focus on hyper-local SEO — ranking you in your specific neighborhoods, service zones, and nearby cities. Because we target smaller, intent-rich local areas with clean site architecture and fully optimized Google Business Profiles, you can often start seeing results within 2–4 weeks, not months."
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Audit & Strategy",
+			description: "We identify your strongest local opportunities by analyzing how people in your city search for movers — e.g., how to get clients for moving company or moving company advertising ideas — and map that intent to SEO, not ads."
+		},
+		{
+			number: "2",
+			heading: "Rebuild from Code",
+			description: "We rebuild your site entirely in clean, lightweight code. No builders, no bloat. Just speed and structure."
+		},
+		{
+			number: "3",
+			heading: "Hyper-Local Optimization",
+			description: "We target high-intent keywords: SEO for moving companies, SEO for movers, moving company SEO services, local SEO for movers, moving company SEO experts, and moving company marketing ideas (for organic visibility)."
+		},
+		{
+			number: "4",
+			heading: "Google Business Profile Optimization",
+			description: "We refine every detail — categories, service list, description, posts, and photos — to secure top-3 placement in Google Maps."
+		},
+		{
+			number: "5",
+			heading: "Authority & Tracking",
+			description: "We build trust signals through reviews, optimized content, and visibility tracking, with monthly reports showing leads and rankings."
+		},
+		{
+			number: "6",
+			heading: "Tracking & Refinement",
+			description: "We provide detailed analytics each month showing growth in rankings, calls, and leads — so you see exactly what's working."
+		}
+	]
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Rank top-3 in Maps",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Industries",
+		description: "View all industries we serve",
+		link: "/industries",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How long does moving company SEO take to work?",
+		answer: "Because we focus on hyper-local SEO, most movers see measurable growth — views, calls, and quote requests — within 30 days or even sooner."
+	},
+	{
+		question: "Do you run paid ads or social campaigns?",
+		answer: "No. We're an SEO-only agency. Everything we do is designed to rank you organically and lower your dependency on paid advertising."
+	},
+	{
+		question: "What's the best way to get clients for a moving company without ads?",
+		answer: "A fully optimized Google Business Profile, location-specific pages, and fast-loading code-based websites. These bring in consistent leads without ongoing ad spend."
+	},
+	{
+		question: "What effect does SEO have on a moving business?",
+		answer: "SEO builds long-term visibility and brand trust — so when people in your area search for movers, they find you first."
+	}
+];
+
+// Service Areas
+const serviceAreas = [
+	"San Diego County",
+	"Orange County",
+	"Los Angeles",
+	"Riverside / Inland Empire",
+	"Nationwide (remote rebuilds available)"
+];
+
+// Emergency Availability Section
+const emergencySection = {
+	title: "Emergency",
+	titleHighlight: "Availability",
+	text: "If your website goes down, your listings disappear, or your rankings drop overnight, we're available 24/7. We know downtime means lost bookings — we'll get you visible again fast."
+};
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Move Up in the Rankings?",
+	subtitle: "Let's turn your website into a fast, optimized lead generator — built to dominate local search.",
+	primaryButton: {
+		text: "Get Your Free Moving Company SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+	<Header />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"serviceType": "Mover SEO Services",
+		"name": "Mover SEO Services San Diego",
+		"description": pageDescription,
+		"provider": {
+			"@type": "LocalBusiness",
+			"name": "Glassbee Solutions",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "San Diego",
+				"addressRegion": "CA",
+				"addressCountry": "US"
+			},
+			"telephone": "+19517600070",
+			"email": "info@glassbeesolutions.org"
+		},
+		"areaServed": {
+			"@type": "City",
+			"name": "San Diego"
+		}
+	})} />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Proven Mover SEO Results"
+		subtitle="Results-driven SEO that builds trust and drives moving leads"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							paragraph && (
+								<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+									{paragraph}
+								</p>
+							)
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					problem.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{problem.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{problem.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+								{problem.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{problem.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{problem.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					feature.heading && (
+						<div class="card p-8">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+								{feature.icon === "dollar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+									</svg>
+								)}
+								{feature.icon === "calendar" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "lightbulb" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+									</svg>
+								)}
+								{feature.icon === "settings" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+									</svg>
+								)}
+								{feature.icon === "document" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+									</svg>
+								)}
+								{feature.icon === "chart" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								)}
+							</div>
+							<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+							<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>
+					)
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Our Approach Works Faster Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyWorksSection.title}<br/><span class="text-orange-600">{whyWorksSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				<p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+					{whyWorksSection.text}
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						step.heading && (
+							<div class="flex gap-6">
+								<div class="flex-shrink-0">
+									<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+								</div>
+								<div>
+									<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+									<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+										{step.description}
+									</p>
+								</div>
+							</div>
+						)
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Emergency Availability Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10 text-center">
+						<svg class="w-20 h-20 text-white mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+
+						<h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{emergencySection.title}<br/><span class="opacity-90">{emergencySection.titleHighlight}</span>
+						</h2>
+
+						<p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-white/95">
+							{emergencySection.text}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Service <span class="text-orange-600">Area</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-lg md:text-xl text-gray-600 mb-8">
+						We provide Moving Company SEO services for:
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+					{serviceAreas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+
+				<div class="text-center">
+					<p class="text-base md:text-lg text-gray-600 mb-4">
+						Serving:
+					</p>
+					<p class="text-sm md:text-base text-gray-500">
+						Local and long-distance moving companies • Residential, commercial, and storage movers
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about moving company SEO"
+		faqs={faqs.filter(faq => faq.question)}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

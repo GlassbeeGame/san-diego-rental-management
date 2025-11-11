@@ -1,0 +1,294 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Industries We Serve | San Diego SEO Services | Glassbee Solutions";
+const pageDescription = "Expert local SEO services for contractors, med spas, home services, real estate, and more. Glassbee Solutions helps San Diego businesses dominate local search results.";
+const pageKeywords = "San Diego SEO, contractor SEO, med spa SEO, home service SEO, real estate SEO, local business SEO, San Diego SEO agency";
+
+// Industries Data
+const industries = [
+	{
+		name: "HVAC SEO",
+		description: "Dominate local search results for heating and cooling services. Get more HVAC leads with expert SEO strategies.",
+		link: "/industries/hvac-seo",
+		icon: "hvac"
+	},
+	{
+		name: "Plumbers SEO",
+		description: "Rank first for emergency plumbing searches. Get more plumbing leads and grow your San Diego plumbing business.",
+		link: "/industries/plumbers-seo",
+		icon: "plumbing"
+	},
+	{
+		name: "Med Spa SEO",
+		description: "Stand out in competitive aesthetic treatment searches. Get more med spa leads with targeted local SEO.",
+		link: "/industries/med-spa-seo",
+		icon: "med-spa"
+	},
+	{
+		name: "Roofing SEO",
+		description: "Rank for emergency repairs, replacements, and seasonal maintenance searches. Get more roofing leads.",
+		link: "/industries/roofing-seo",
+		icon: "roofing"
+	},
+	{
+		name: "Electrician SEO",
+		description: "Build trust and local presence for electrical services. Get more electrical leads with expert SEO strategies.",
+		link: "/industries/electrician-seo",
+		icon: "electrical"
+	},
+	{
+		name: "Junk Removal SEO",
+		description: "Dominate local search results for junk removal services. Get more junk removal leads and grow your business.",
+		link: "/industries/junk-removal-seo",
+		icon: "junk-removal"
+	},
+	{
+		name: "Landscaping SEO",
+		description: "Help homeowners find you for regular maintenance and landscape design. Get more landscaping leads.",
+		link: "/industries/landscaping-seo",
+		icon: "landscaping"
+	},
+	{
+		name: "Personal Injury Lawyer SEO",
+		description: "Dominate local search results for personal injury legal services. Get more case leads for your law practice.",
+		link: "/industries/personal-injury-lawyer-seo",
+		icon: "legal"
+	},
+	{
+		name: "SEO for Family Law",
+		description: "Rank for family law searches and get more case leads. Grow your San Diego family law practice with expert SEO.",
+		link: "/industries/seo-for-family-law",
+		icon: "legal"
+	},
+	{
+		name: "SEO for Movers",
+		description: "Dominate local search results for moving services. Get more moving leads and grow your moving company.",
+		link: "/industries/seo-for-movers",
+		icon: "moving"
+	}
+];
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your industry",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Rank top-3 in Maps for your industry",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Website Maintenance",
+		description: "Keep your site optimized and secure",
+		link: "/services/website-maintenance-updates",
+		icon: "services"
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Dominate Your Industry's Search Results?",
+	subtitle: "Get a free SEO audit tailored to your industry. See where you rank and how we can help you outrank competitors.",
+	primaryButton: {
+		text: "Get Free Industry Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout 
+	title={pageTitle} 
+	description={pageDescription}
+	keywords={pageKeywords}
+>
+	<Header />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": pageTitle,
+		"description": pageDescription,
+		"url": "https://glassbeesolutions.org/industries",
+		"mainEntity": {
+			"@type": "ItemList",
+			"itemListElement": industries.map((industry, index) => ({
+				"@type": "ListItem",
+				"position": index + 1,
+				"item": {
+					"@type": "Service",
+					"name": industry.name,
+					"description": industry.description,
+					"provider": {
+						"@type": "LocalBusiness",
+						"name": "Glassbee Solutions",
+						"address": {
+							"@type": "PostalAddress",
+							"addressLocality": "San Diego",
+							"addressRegion": "CA",
+							"addressCountry": "US"
+						}
+					}
+				}
+			}))
+		}
+	})} />
+
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920');">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					Industries We Serve<br/><span class="text-orange-600">San Diego</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed">
+					Expert Local SEO Services Tailored to Your Industry
+				</p>
+				<p class="text-lg text-gray-300 mt-4 leading-relaxed">
+					From contractors to med spas, we help San Diego businesses dominate local search results with industry-specific SEO strategies.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto text-center">
+				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					Industry-Specific SEO That<br/><span class="text-orange-600">Drives Results</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				<p class="text-xl text-gray-600 mb-6 leading-relaxed">
+					Every industry has unique search patterns, customer behaviors, and competitive landscapes. We don't use a one-size-fits-all approach.
+				</p>
+				<p class="text-lg text-gray-600 leading-relaxed">
+					Our SEO strategies are customized to your industry's specific needs, from emergency service optimization for plumbers to seasonal content for landscapers.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Industries Grid -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{industries.map((industry) => (
+						<a href={industry.link} class="card p-8 bg-white hover:shadow-xl transition-all hover:border-orange-600 border-2 border-transparent group">
+							<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6 group-hover:bg-orange-700 transition-colors">
+								{industry.icon === "hvac" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+									</svg>
+								)}
+								{industry.icon === "plumbing" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+									</svg>
+								)}
+								{industry.icon === "med-spa" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+									</svg>
+								)}
+								{industry.icon === "roofing" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+									</svg>
+								)}
+								{industry.icon === "electrical" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+									</svg>
+								)}
+								{industry.icon === "junk-removal" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+									</svg>
+								)}
+								{industry.icon === "landscaping" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+									</svg>
+								)}
+								{industry.icon === "legal" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+									</svg>
+								)}
+								{industry.icon === "moving" && (
+									<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+									</svg>
+								)}
+							</div>
+							<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">
+								{industry.name}
+							</h3>
+							<p class="text-gray-600 mb-6 leading-relaxed">
+								{industry.description}
+							</p>
+							<span class="text-orange-600 text-sm font-bold uppercase group-hover:text-orange-700 transition-colors">Learn More →</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Industry-Specific SEO Matters -->
+	<section class="py-20 bg-black text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto text-center">
+				<h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					Why Industry-Specific SEO<br/><span class="text-orange-600">Matters</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				<p class="text-xl text-gray-300 mb-6 leading-relaxed">
+					Every industry has unique search patterns, customer behaviors, and competitive landscapes. A plumber's SEO strategy differs dramatically from a med spa's.
+				</p>
+				<p class="text-lg text-gray-300 leading-relaxed">
+					We don't use a one-size-fits-all approach. Our strategies are customized to your industry's specific needs, from emergency service optimization to seasonal content strategies.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Our SEO Services"
+		pages={relatedServices}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

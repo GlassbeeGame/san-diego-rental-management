@@ -1,12 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import TrustSignals from '../../components/TrustSignals.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
 import FAQ from '../../components/FAQ.astro';
 import CTABanner from '../../components/CTABanner.astro';
 ---
 
-<Layout title="Mission Beach Vacation Rental Management | Airbnb & VRBO | Polaris">
+<Layout title="Mission Beach Local SEO Services | SEO & Local Listings | Glassbee Solutions">
+  <Header />
   <!-- Hero Section -->
   <section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
     style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920');">
@@ -175,9 +178,9 @@ import CTABanner from '../../components/CTABanner.astro';
   <RelatedPages
     title="Services for Mission Beach Properties"
     pages={[
-      { title: "Emergency Cleaning", href: "/services/emergency-cleaning", description: "Same-day beach property turnover", icon: "services" },
-      { title: "Full-Service Management", href: "/services/full-service-management", description: "Complete hands-off management", icon: "services" },
-      { title: "Linen & Amenities", href: "/services/linen-amenity-management", description: "Beach gear & hotel linens", icon: "services" }
+      { title: "Local SEO for San Diego Businesses", href: "/services/local-seo-for-san-diego-businesses", description: "Same-day beach property turnover", icon: "services" },
+      { title: "Google Business SEO", href: "/services/google-business-seo", description: "Complete hands-off management", icon: "services" },
+      { title: "Website Maintenance", href: "/services/website-maintenance-updates", description: "Beach gear & hotel linens", icon: "services" }
     ]}
   />
 
@@ -249,4 +252,6 @@ import CTABanner from '../../components/CTABanner.astro';
     secondaryButtonText="View All Locations"
     secondaryButtonLink="/locations"
   />
+  <Footer />
+
 </Layout>

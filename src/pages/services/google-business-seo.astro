@@ -1,0 +1,619 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Google Business SEO San Diego | Local SEO | Glassbee Solutions";
+const pageDescription = "Transform your Google Business Profile into a lead machine. AI-driven optimization, review management & local SEO. 30-day guarantee. Start ranking higher today.";
+
+// Hero Section
+const hero = {
+	title: "",
+	titleHighlight: "Google Business SEO",
+	description: "Dominate Local Search and Turn Visibility Into Revenue. We help local businesses transform their Google Business Profile into a steady stream of qualified leads.",
+	backgroundImage: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1920",
+	primaryButton: {
+		text: "Get Free Visibility Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "All Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30-Day", label: "No-Risk Guarantee", icon: "properties" },
+	{ value: "Same Day", label: "Optimization Start", icon: "rating" },
+	{ value: "AI-Driven", label: "Ranking Strategy", icon: "revenue" },
+	{ value: "24/7", label: "Emergency Support", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "We Don't Just Optimize",
+	titleHighlight: "We Engineer Growth",
+	paragraphs: [
+		"At Glassbee Solutions, we help local businesses transform their Google Business Profile (formerly Google My Business) into a steady stream of qualified leads.",
+		"Our approach blends technical SEO precision with proven local ranking strategies — built to get you found, trusted, and chosen."
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's",
+	titleHighlight: "Included",
+	subtitle: "Every piece of your local presence is refined for maximum impact",
+	features: [
+		{
+			heading: "Comprehensive GBP Optimization",
+			description: "Profile claim/verification, category & attribute setup, keyword-optimized business description, geo-tagged photos & videos, messaging/booking/CTA setup, and Q&A optimization.",
+			icon: "settings"
+		},
+		{
+			heading: "Review & Reputation Management",
+			description: "Review system setup (manual or software-assisted), response templates in your brand voice, and ongoing review monitoring and response.",
+			icon: "chart"
+		},
+		{
+			heading: "Local SEO Alignment",
+			description: "NAP consistency across the web, high-authority citation building and duplicate cleanup, and local landing page recommendations.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Activity & Posting Strategy",
+			description: "Weekly GBP posts (offers, updates, events), seasonal photo refreshes, and product/service highlights to keep your profile active.",
+			icon: "calendar"
+		},
+		{
+			heading: "Reporting & Support",
+			description: "Monthly performance dashboard: calls, clicks, directions, searches. Keyword ranking updates and recommendations for continued growth.",
+			icon: "document"
+		},
+		{
+			heading: "Emergency Listing Support",
+			description: "Fast resolution for suspensions, duplicates, verification issues, and hijacked listings. Priority access when you need it most.",
+			icon: "dollar"
+		}
+	]
+};
+
+// Common Problems Section
+const problemsSection = {
+	title: "Common Problems",
+	titleHighlight: "We Solve",
+	problems: [
+		{
+			heading: "Low Visibility",
+			description: "You're not showing up in the top 3-pack (Map Pack) for high-intent searches. We get you ranked where customers are looking.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Incomplete or Inaccurate Info",
+			description: "Old addresses, missing hours, wrong categories — these kill trust and rankings. We clean it all up.",
+			icon: "settings"
+		},
+		{
+			heading: "Weak Engagement",
+			description: "Your listing gets views, but no one's clicking or calling. We optimize for conversions, not just impressions.",
+			icon: "chart"
+		},
+		{
+			heading: "Few or Inconsistent Reviews",
+			description: "A few 5-stars won't help if they're old or unanswered. We build systems that generate and manage reviews consistently.",
+			icon: "document"
+		},
+		{
+			heading: "No Posting Activity",
+			description: "Stale profiles fall behind competitors that stay active. We keep your profile fresh with regular updates and content.",
+			icon: "calendar"
+		},
+		{
+			heading: "Duplicate or Suspended Listings",
+			description: "We restore and consolidate your digital presence fast, resolving issues that most agencies can't handle.",
+			icon: "dollar"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Discovery & Audit",
+			description: "We start with a complete audit of your Google Business Profile, local citations, and keyword visibility. You'll see exactly where your current profile stands and what's holding it back."
+		},
+		{
+			number: "2",
+			heading: "Strategy Session",
+			description: "We align your business goals, service area, and target keywords (google business seo, local seo san diego, etc.)."
+		},
+		{
+			number: "3",
+			heading: "Optimization & Setup",
+			description: "We rebuild and fully optimize your profile — from categories and services to keyword-rich copy, photos, and conversion-ready CTAs."
+		},
+		{
+			number: "4",
+			heading: "Local Consistency Cleanup",
+			description: "We standardize your NAP info across directories, remove duplicates, and build high-authority citations."
+		},
+		{
+			number: "5",
+			heading: "Review & Engagement Systems",
+			description: "We activate your review flow, implement response templates, and monitor engagement metrics daily."
+		},
+		{
+			number: "6",
+			heading: "Content & Posting Rhythm",
+			description: "We keep your GBP active through ongoing updates, seasonal posts, and photo refreshes — all tied to search intent."
+		},
+		{
+			number: "7",
+			heading: "Tracking & Reporting",
+			description: "Each month, we deliver a transparent performance report showing calls, searches, and website visits — with our next-step action plan."
+		},
+		{
+			number: "8",
+			heading: "Emergency & Ongoing Support",
+			description: "If your listing is ever suspended, hijacked, or merged incorrectly, we step in immediately to restore it."
+		}
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why Choose",
+	titleHighlight: "Glassbee Solutions",
+	features: [
+		{
+			heading: "AI-Driven Optimization",
+			description: "Every profile is enhanced using data-driven keyword targeting and engagement insights.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "No-Risk Guarantee",
+			description: "If you don't start seeing measurable improvement within 30 days, you don't pay until you do.",
+			icon: "dollar"
+		},
+		{
+			heading: "Immediate Action",
+			description: "We can start optimizing the same day you sign up — no waiting weeks for progress.",
+			icon: "calendar"
+		},
+		{
+			heading: "Proven Process",
+			description: "Backed by measurable results across multiple service-based industries.",
+			icon: "chart"
+		},
+		{
+			heading: "Local Focus, Global Skill",
+			description: "Based in San Diego, but our systems scale for any market.",
+			icon: "settings"
+		},
+		{
+			heading: "Emergency Availability",
+			description: "We're available for urgent listing issues, suspension recovery, or rapid fixes.",
+			icon: "document"
+		}
+	]
+};
+
+// Service Areas Grid
+const serviceAreas = [
+	"San Diego County",
+	"Orange County",
+	"Los Angeles",
+	"Riverside",
+	"Inland Empire",
+	"Multi-Location",
+	"National Brands",
+	"California"
+];
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete local SEO optimization",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Website Maintenance",
+		description: "Keep your site fast, updated, and secure",
+		link: "/services/website-maintenance-updates",
+		icon: "services"
+	},
+	{
+		title: "All Services",
+		description: "View all our services",
+		link: "/services",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How long until we see results?",
+		answer: "It depends on your current visibility and competition — but many clients start seeing early traction (views, calls, and clicks) within the first week or two after optimization. Stronger ranking improvements in the Google Map Pack typically compound over 30–90 days as Google indexes changes and engagement grows."
+	},
+	{
+		question: "Do I have to change my existing profile?",
+		answer: "Not necessarily. If your current Google Business Profile is already claimed and verified, we optimize it. If it's in rough shape, we'll advise whether a rebuild or duplicate merge is best."
+	},
+	{
+		question: "Will I still own my listing?",
+		answer: "Yes. 100%. You keep full ownership and control. We simply act as your optimization and management partner."
+	},
+	{
+		question: "Can you also help with my website SEO?",
+		answer: "Absolutely. Our Local SEO package integrates perfectly with on-site optimization to build domain authority and ranking power."
+	},
+	{
+		question: "What if my listing gets suspended or flagged?",
+		answer: "We specialize in GBP reinstatement and issue resolution. You'll have priority access to emergency support until the problem is fully resolved."
+	},
+	{
+		question: "How much does it cost?",
+		answer: "Packages start at $500 per month for single-location businesses and scale depending on service scope, frequency of updates, and geographic coverage."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Rank Higher and Get More Calls?",
+	subtitle: "Join dozens of local business owners who've transformed their Google Business SEO into lead machines.",
+	primaryButton: {
+		text: "Request Free Visibility Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title && `${hero.title}<br/>`}<span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Proven Google Business SEO"
+		subtitle="Results-driven local SEO that builds trust and drives calls"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{featuresSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuresSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+					Most local businesses don't realize their Google Business Profile SEO is underperforming — even if it looks "fine"
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{problem.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{problem.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{problem.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{problem.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{problem.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{problem.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{problem.description}
+						</p>
+					</div>
+				))}
+			</div>
+
+			<!-- Tagline -->
+			<div class="text-center mt-12 max-w-3xl mx-auto">
+				<p class="text-lg md:text-xl text-gray-700 font-semibold">
+					When we take over, your business starts looking real to Google — and even more real to customers.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						<div class="flex gap-6">
+							<div class="flex-shrink-0">
+								<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+							</div>
+							<div>
+								<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+								<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+									{step.description}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+					We build trust through transparency, speed, and real outcomes — not empty SEO jargon
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{whyChooseSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "dollar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					Service<br/><span class="text-orange-600">Area</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+					We're proudly based in San Diego, serving businesses across California and beyond
+				</p>
+			</div>
+
+			<div class="max-w-5xl mx-auto">
+				<!-- Location Grid -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+					{serviceAreas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+
+				<!-- Bottom Text -->
+				<div class="text-center max-w-3xl mx-auto">
+					<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+						Local SEO isn't one-size-fits-all. We customize your optimization strategy to fit your market density, competitor footprint, and search demand in your area.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about Google Business SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

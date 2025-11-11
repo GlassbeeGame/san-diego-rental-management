@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// ============================================
+// PAGE CONTENT DATA - UPDATE THIS SECTION
+// ============================================
+//
+// IMPORTANT: QUOTE HANDLING
+// --------------------------
+// When using quotes inside strings, you have 3 options:
+//
+// 1. Escape inner quotes with backslash:
+//    description: "We appear in \"near me\" searches"
+//
+// 2. Use single quotes for outer string:
+//    description: 'We appear in "near me" searches'
+//
+// 3. Use template literals (backticks):
+//    description: `We appear in "near me" searches`
+//
+// AVOID: Double quotes inside double-quoted strings (breaks syntax)
+//    description: "We appear in "near me" searches"  ❌ WRONG
+//
+// ============================================
+
+// SEO & Page Info
+const pageTitle = "Page Template | Glassbee Solutions";
+const pageDescription = "This is a template page showing all reusable components.";
+
+// Hero Section
+const hero = {
+	title: "Page Template",
+	titleHighlight: "Example",
+	description: "This is a template page showcasing all reusable components. Use this structure for creating new pages with consistent design.",
+	backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920",
+	primaryButton: {
+		text: "Get Free Analysis",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Our Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "150+", label: "Properties Managed", icon: "properties" },
+	{ value: "4.9★", label: "Average Rating", icon: "rating" },
+	{ value: "35%", label: "Revenue Increase", icon: "revenue" },
+	{ value: "82%", label: "Occupancy Rate", icon: "occupancy" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Your Content Section Title",
+	titleHighlight: "Subtitle",
+	leftColumn: {
+		heading: "Left Column Heading",
+		description: "Description text for the left column.",
+		bullets: [
+			"Bullet point one",
+			"Bullet point two",
+			"Bullet point three",
+			"Bullet point four"
+		]
+	},
+	rightColumn: {
+		heading: "Right Column Heading",
+		description: "Description text for the right column.",
+		revenueSeasons: [
+			{ season: "Peak Season (May-September)", price: "$350-600/night", occupancy: "95%+ occupancy" },
+			{ season: "Shoulder Season (Mar-Apr, Oct-Nov)", price: "$250-400/night", occupancy: "80-90% occupancy" },
+			{ season: "Off-Season (Dec-Feb)", price: "$180-300/night", occupancy: "65-75% occupancy" }
+		]
+	}
+};
+
+// Black Box Section (Challenges/Requirements)
+const blackBoxSection = {
+	title: "Section Title",
+	titleHighlight: "Highlight",
+	items: [
+		{
+			heading: "Item One",
+			description: "Description for item one."
+		},
+		{
+			heading: "Item Two",
+			description: "Description for item two."
+		},
+		{
+			heading: "Item Three",
+			description: "Description for item three."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Expertise One",
+		description: "Description for expertise card one. Use \"escaped quotes\" or 'single quotes' when needed."
+	},
+	{
+		heading: "Expertise Two",
+		description: "Description for expertise card two."
+	},
+	{
+		heading: "Expertise Three",
+		description: "Description for expertise card three."
+	},
+	{
+		heading: "Expertise Four",
+		description: "Description for expertise card four."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Our Services",
+		description: "Explore our comprehensive property management solutions",
+		link: "/services",
+		icon: "services"
+	},
+	{
+		title: "Service Areas",
+		description: "See all San Diego neighborhoods we serve",
+		link: "/locations",
+		icon: "locations"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free consultation and quote",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations (for location pages)
+const nearbyLocations = [
+	{ name: "Location One", description: "Description", href: "/locations/location-one" },
+	{ name: "Location Two", description: "Description", href: "/locations/location-two" },
+	{ name: "Location Three", description: "Description", href: "/locations/location-three" },
+	{ name: "Location Four", description: "Description", href: "/locations/location-four" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Question one?",
+		answer: "Answer to question one."
+	},
+	{
+		question: "Question two?",
+		answer: "Answer to question two."
+	},
+	{
+		question: "Question three?",
+		answer: "Answer to question three."
+	},
+	{
+		question: "Question four?",
+		answer: "Answer to question four."
+	},
+	{
+		question: "Question five?",
+		answer: "Answer to question five."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Get Started?",
+	subtitle: "Contact us today for a free consultation and property evaluation",
+	primaryButton: {
+		text: "Get Free Consultation",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-3">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Our<br/><span class="text-orange-600">Expertise</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations (Optional - for location pages) -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Manage in<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Common questions"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
