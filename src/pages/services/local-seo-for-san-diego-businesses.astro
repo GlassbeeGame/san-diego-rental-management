@@ -16,7 +16,7 @@ const hero = {
 	title: "Local SEO for",
 	titleHighlight: "San Diego Businesses",
 	description: "Real Growth. Real Leads. Real Results.",
-	backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920",
+	backgroundImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1920",
 	primaryButton: {
 		text: "Get Your Free SEO Audit",
 		link: "/contact"
@@ -37,12 +37,14 @@ const trustStats = [
 
 // Intro Text Content Section
 const introSection = {
-	title: "Local SEO for",
-	titleHighlight: "San Diego Businesses",
+	title: "San Diego Local",
+	titleHighlight: "SEO Experts",
+	subtitle: "Affordable, Data-Driven SEO That Gets You Found Fast",
 	paragraphs: [
-		"If people in San Diego are searching for what you offer but your business isn't showing up, you're losing money every single day.",
-		"At Glassbee Solutions, we help local businesses get found — not with ads, gimmicks, or long contracts, but with data-driven Local SEO that turns searches into calls, bookings, and real revenue.",
-		"We specialize in helping San Diego businesses dominate Google Maps and local search results. Whether you're a contractor in North County, a med spa in La Jolla, or a law firm downtown, our job is simple: get you visible and make you money."
+		"We're not just SEO specialists — we're your partners in visibility, growth, and long-term success. At Glassbee Solutions, we combine data-driven optimization, hyperlocal targeting, and transparent communication to help San Diego businesses rise above the noise — without breaking the bank.",
+		"Every business is unique — your SEO should be too. That's why we start with a deep dive into your business, goals, and the San Diego market. From La Jolla to North Park, every neighborhood has its own search behavior and competitive landscape.",
+		"Our consultative model means we work with you, not just for you — crafting a personalized SEO strategy that includes local keyword targeting that converts, Google Business Profile optimization, on-page and off-page improvements, and competitive and data-driven performance tracking.",
+		"We treat your online presence like our own — built for sustainable growth, not short-term hype."
 	]
 };
 
@@ -276,7 +278,7 @@ const ctaBanner = {
 		text: "Call (951) 760-0070",
 		link: "tel:+19517600070"
 	},
-	backgroundColor: "black"
+	backgroundColor: "orange"
 };
 ---
 
@@ -323,12 +325,15 @@ const ctaBanner = {
 						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
 							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
 						</h2>
-						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+						<div class="w-24 h-1 bg-orange-600 mx-auto mb-4"></div>
+						<p class="text-xl md:text-2xl font-semibold text-gray-800 mb-8">
+							{introSection.subtitle}
+						</p>
 					</div>
 
-					<div class="space-y-6 text-center">
+					<div class="space-y-6 text-left">
 						{introSection.paragraphs.map((paragraph) => (
-							<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed">
 								{paragraph}
 							</p>
 						))}

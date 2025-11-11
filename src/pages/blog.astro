@@ -12,6 +12,24 @@ const pageDescription = "Expert SEO tips, local marketing strategies, and digita
 // Blog posts data - You can add more posts here
 const blogPosts = [
 	{
+		title: "Location SEO: How to Rank in Every City You Serve (and Scale Like a Local Giant)",
+		excerpt: "Learn how multi-location SEO helps service businesses dominate multiple markets. Turn a single business into a regional brand that ranks in every city you serve.",
+		slug: "location-seo-how-to-rank-in-every-city-you-serve-and-scale-like-a-local-giant",
+		date: new Date("2024-01-30"),
+		category: "SEO Tips",
+		readTime: "9 min read",
+		image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800"
+	},
+	{
+		title: "What Effect Does SEO Have on Your Search? (And Why Half of It Happens on Google Business)",
+		excerpt: "Roughly half of your local SEO performance doesn't happen on your website — it happens inside your Google Business Profile. Learn why optimizing your GBP is half the battle for local dominance.",
+		slug: "what-effect-does-seo-have-on-your-search-and-why-half-of-it-happens-on-google-business",
+		date: new Date("2024-01-25"),
+		category: "Google Business",
+		readTime: "7 min read",
+		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+	},
+	{
 		title: "Local SEO vs National SEO: Why Going Local Wins Faster, Cheaper, and Smarter",
 		excerpt: "Understand the difference — and why most businesses should start local before scaling nationwide. Local SEO produces faster results with far less competition.",
 		slug: "local-seo-vs-national-seo-why-going-local-wins",
@@ -66,7 +84,7 @@ const ctaBanner = {
 		text: "Call (951) 760-0070",
 		link: "tel:+19517600070"
 	},
-	backgroundColor: "black"
+	backgroundColor: "black" as const
 };
 
 // Format date helper
@@ -160,7 +178,8 @@ function formatDate(date: Date): string {
 		</div>
 	</section>
 
-	<!-- Categories Section -->
+	<!-- Categories Section - Hidden for now until we have more blog posts -->
+	<!--
 	<section class="py-20 bg-gray-50">
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-6xl mx-auto">
@@ -208,6 +227,7 @@ function formatDate(date: Date): string {
 			</div>
 		</div>
 	</section>
+	-->
 
 	<!-- Related Services -->
 	<RelatedPages
@@ -217,7 +237,7 @@ function formatDate(date: Date): string {
 
 	<!-- CTA Banner -->
 	<CTABanner
-		backgroundColor={ctaBanner.backgroundColor}
+		backgroundColor={ctaBanner.backgroundColor as "black" | "orange" | "white"}
 		title={ctaBanner.title}
 		subtitle={ctaBanner.subtitle}
 		primaryButtonText={ctaBanner.primaryButton.text}
