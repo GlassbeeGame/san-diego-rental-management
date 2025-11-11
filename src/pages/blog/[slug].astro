@@ -1,0 +1,548 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// Blog post data - In a real app, you'd fetch this from a CMS or markdown files
+// For now, we'll use a simple data structure
+const blogPosts: Record<string, {
+	title: string;
+	excerpt: string;
+	content: string;
+	date: Date;
+	category: string;
+	readTime: string;
+	image: string;
+	author: string;
+	metaDescription: string;
+}> = {
+	"local-seo-vs-national-seo-why-going-local-wins": {
+		title: "Local SEO vs National SEO: Why Going Local Wins Faster, Cheaper, and Smarter",
+		excerpt: "Understand the difference — and why most businesses should start local before scaling nationwide. Local SEO produces faster results with far less competition.",
+		content: `
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Search engine optimization isn't one-size-fits-all. The SEO strategy that helps Amazon dominate national results is completely different from the one that helps a junk removal company in San Diego show up when someone searches "junk removal near me."
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				If you've ever wondered whether your business should focus on local SEO or national SEO, this guide breaks it down — and shows exactly why local is almost always the smarter, faster, and more profitable move for service-based businesses.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				What's the Difference Between Local SEO and National SEO?
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">Local SEO</strong> focuses on helping your business rank for location-based searches such as:
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>"roof repair near me"</li>
+				<li>"med spa in La Jolla"</li>
+				<li>"best junk removal San Diego"</li>
+			</ul>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				It's designed to capture nearby customers who are actively searching for what you offer.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">National SEO</strong>, on the other hand, targets broad, non-location-specific keywords like:
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>"roof repair company"</li>
+				<li>"junk removal services"</li>
+				<li>"digital marketing agency"</li>
+			</ul>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				It's built for companies competing across multiple states or nationwide.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Both matter — but for most small and medium businesses, local SEO produces faster results with far less competition.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				Why Local SEO Is Easier (and Smarter) to Win
+			</h2>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				1. Far Less Competition
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				When you compete locally, you're up against a handful of businesses — not thousands of nationwide competitors with massive ad budgets.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Ranking for "SEO services Los Angeles" might take months. Ranking for "SEO services Silver Lake" or "SEO agency Echo Park" can happen in weeks with focused optimization.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				That's the difference precision makes.
+			</p>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				2. Google's Algorithm Favors Local Businesses
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Google prioritizes local intent. When someone searches "near me," the algorithm pushes verified, nearby businesses to the top — often over larger national chains.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				That means small, well-optimized local businesses can outperform national brands daily.
+			</p>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				3. Local SEO Converts Better
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Local searchers are closer to taking action.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				When someone searches "plumber near me," they're not browsing — they're hiring.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Local search leads convert up to 80% more often than national organic traffic.
+			</p>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				4. You Can Build Authority Quickly
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Local backlinks, neighborhood press, consistent reviews, and service area pages build authority faster than any national campaign.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Google sees you as the go-to provider in your city, and that visibility compounds.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				When National SEO Makes Sense
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				National SEO works best for:
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>E-commerce and SaaS brands serving customers nationwide.</li>
+				<li>Franchises or businesses with multiple locations across states.</li>
+				<li>Established companies ready to invest long-term in content and backlinks.</li>
+			</ul>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				But for everyone else — especially service-based businesses — local SEO is the more efficient, higher-ROI approach.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				Key Strategy Differences: Local SEO vs. National SEO
+			</h2>
+			<div class="overflow-x-auto my-8">
+				<table class="w-full border-collapse border border-gray-300">
+					<thead>
+						<tr class="bg-black text-white">
+							<th class="px-6 py-4 text-left font-bold uppercase border border-gray-300" style="font-family: 'Bebas Neue', sans-serif;">Feature</th>
+							<th class="px-6 py-4 text-left font-bold uppercase border border-gray-300" style="font-family: 'Bebas Neue', sans-serif;">Local SEO</th>
+							<th class="px-6 py-4 text-left font-bold uppercase border border-gray-300" style="font-family: 'Bebas Neue', sans-serif;">National SEO</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b border-gray-300">
+							<td class="px-6 py-4 font-bold border border-gray-300">Target Audience</td>
+							<td class="px-6 py-4 border border-gray-300">Customers within a specific city or region</td>
+							<td class="px-6 py-4 border border-gray-300">Users across the country</td>
+						</tr>
+						<tr class="border-b border-gray-300 bg-gray-50">
+							<td class="px-6 py-4 font-bold border border-gray-300">Keywords</td>
+							<td class="px-6 py-4 border border-gray-300">"near me," city-based terms (e.g. "junk removal in San Diego")</td>
+							<td class="px-6 py-4 border border-gray-300">Broad, non-geographic terms</td>
+						</tr>
+						<tr class="border-b border-gray-300">
+							<td class="px-6 py-4 font-bold border border-gray-300">Competition Level</td>
+							<td class="px-6 py-4 border border-gray-300">Low to medium</td>
+							<td class="px-6 py-4 border border-gray-300">Very high</td>
+						</tr>
+						<tr class="border-b border-gray-300 bg-gray-50">
+							<td class="px-6 py-4 font-bold border border-gray-300">ROI Timeline</td>
+							<td class="px-6 py-4 border border-gray-300">2–3 months</td>
+							<td class="px-6 py-4 border border-gray-300">6–12 months minimum</td>
+						</tr>
+						<tr class="border-b border-gray-300">
+							<td class="px-6 py-4 font-bold border border-gray-300">Ranking Factors</td>
+							<td class="px-6 py-4 border border-gray-300">Google Business Profile, reviews, proximity, citations</td>
+							<td class="px-6 py-4 border border-gray-300">Content depth, backlinks, domain authority</td>
+						</tr>
+						<tr class="border-b border-gray-300 bg-gray-50">
+							<td class="px-6 py-4 font-bold border border-gray-300">Best For</td>
+							<td class="px-6 py-4 border border-gray-300">Contractors, med spas, real estate, local pros</td>
+							<td class="px-6 py-4 border border-gray-300">SaaS, e-commerce, national firms</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				How to Win in Local SEO (Even If You're New)
+			</h2>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				1. Optimize Your Google Business Profile
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Your GBP is your digital storefront.
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>Fill out every field completely</li>
+				<li>Add service areas, photos, and posts weekly</li>
+				<li>Ask every happy client to leave a review</li>
+			</ul>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				2. Use Geo-Targeted Keywords
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Integrate your city or service area naturally across your pages.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">Example:</strong>
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Instead of "Professional SEO Services" → "Professional SEO Services in Pacific Beach, San Diego."
+			</p>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				3. Get Local Citations
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				List your business on directories like Yelp, Angi, BBB, and niche directories.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Citations boost your local trustworthiness.
+			</p>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				4. Earn Reviews & Respond Promptly
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Every review builds credibility and helps your map rankings.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Google favors businesses with consistent review activity.
+			</p>
+
+			<h3 class="text-2xl font-bold text-black mb-4 mt-8" style="font-family: 'Bebas Neue', sans-serif;">
+				5. Publish Localized Content
+			</h3>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Create service and location pages for the areas you serve.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">Example blog topics:</strong>
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>"How to Choose a Med Spa in Hillcrest"</li>
+				<li>"Top 5 Junk Removal Tips for San Diego Homeowners"</li>
+				<li>"Why Local SEO is the Hidden Advantage for Contractors"</li>
+			</ul>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Each piece strengthens your authority for that specific area.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				The Hidden Advantage: Hyperlocal Targeting
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Most businesses stop at city-level SEO.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				The real magic happens when you zoom in — optimizing for neighborhood-level and suburb-based searches.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">Think:</strong>
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>"Junk removal in North Park San Diego"</li>
+				<li>"Pressure washing in Point Loma"</li>
+				<li>"Med spa in Ocean Beach"</li>
+			</ul>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Each micro-page captures new map-pack placements and increases your local grid visibility.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Done right, you don't just rank — you dominate your map area.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				A Real-World Example
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				A local junk removal company in San Diego came to us completely invisible online — no Google presence, no rankings, and no consistent local footprint.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">In just two weeks, we:</strong>
+			</p>
+			<ul class="list-disc list-inside text-lg text-gray-700 mb-6 space-y-2 ml-4">
+				<li>Built and fully optimized their Google Business Profile</li>
+				<li>Designed and launched a custom website with 45+ unique service and location pages</li>
+				<li>Published localized, keyword-rich content targeting terms like "junk removal near me," "furniture disposal in [city]," and "appliance hauling San Diego"</li>
+				<li>Ensured consistent NAP data across major directories</li>
+				<li>Helped them collect authentic customer reviews to boost credibility</li>
+			</ul>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				<strong class="text-black">Result?</strong>
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				They now rank in the top 10 search results across dozens of high-intent local keywords — driving a steady stream of qualified inbound leads every week.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				That's the compounding power of local SEO done right.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				Why Most Agencies Get This Wrong
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Many agencies use generic, national SEO templates that ignore local intent.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				They focus on traffic volume instead of real leads — so businesses end up invisible in their own city.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				The difference with a data-driven local approach is precision.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				You target what your ideal customers are actually typing into Google in your area — and that's where the magic happens.
+			</p>
+
+			<h2 class="text-3xl font-bold text-black mb-4 mt-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				Local SEO: The Shortcut to Dominating Your Market
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				If you're a local business owner, local SEO isn't just another marketing tactic — it's your fastest route to becoming the go-to name in your market.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				It's faster to deploy, more cost-effective, and infinitely more aligned with real-world customer behavior than national SEO.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Once you've built dominance in your area, scaling regionally or nationally becomes exponentially easier.
+			</p>
+
+			<div class="bg-orange-600 text-white p-8 my-12">
+				<h2 class="text-3xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					Ready to Dominate Your Local Market?
+				</h2>
+				<p class="text-lg mb-6 leading-relaxed">
+					📍 At Glassbee Solutions, we help businesses like yours rank higher, attract more customers, and build lasting visibility through proven local SEO strategies.
+				</p>
+				<p class="text-lg mb-6 leading-relaxed">
+					If you're tired of watching competitors get the calls you should be getting — it's time to change that.
+				</p>
+				<div class="mt-6">
+					<a href="/contact" class="inline-block bg-black text-white px-8 py-4 font-bold uppercase hover:bg-gray-800 transition-colors">
+						Book Your Free Local SEO Audit Today
+					</a>
+				</div>
+				<p class="text-sm mt-4 opacity-90">
+					We'll show you where your business stands, uncover growth opportunities, and outline exactly how to get to the top of Google's local results.
+				</p>
+			</div>
+		`,
+		date: new Date("2024-01-20"),
+		category: "SEO Tips",
+		readTime: "8 min read",
+		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+		author: "Glassbee Solutions Team",
+		metaDescription: "Learn why local SEO beats national SEO for most businesses. Faster results, less competition, and higher conversion rates. Expert guide to dominating your local market."
+	},
+	"welcome-to-our-blog": {
+		title: "Welcome to Our Blog",
+		excerpt: "Stay tuned for expert SEO tips, local marketing strategies, and insights to help your San Diego business grow.",
+		content: `
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Welcome to the Glassbee Solutions blog! We're excited to share our expertise in local SEO, digital marketing, and helping San Diego businesses grow their online presence.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Here, you'll find practical tips, strategies, and insights that you can implement right away to improve your search rankings, attract more local customers, and grow your business.
+			</p>
+			<h2 class="text-3xl font-bold text-black mb-4 mt-8 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+				What You Can Expect
+			</h2>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Our blog covers everything from Google Business Profile optimization to local citation building, content marketing, and conversion optimization. Each article is written with San Diego businesses in mind, providing actionable advice you can use immediately.
+			</p>
+			<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+				Stay tuned for regular updates, and don't hesitate to reach out if you have questions or topics you'd like us to cover!
+			</p>
+		`,
+		date: new Date("2024-01-15"),
+		category: "SEO Tips",
+		readTime: "2 min read",
+		image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+		author: "Glassbee Solutions Team",
+		metaDescription: "Welcome to the Glassbee Solutions blog. Expert SEO tips and local marketing strategies for San Diego businesses."
+	}
+};
+
+// Export getStaticPaths to generate all blog post pages
+export async function getStaticPaths() {
+	// Define blog post slugs here so they're accessible to getStaticPaths
+	const blogPostSlugs = [
+		"local-seo-vs-national-seo-why-going-local-wins",
+		"welcome-to-our-blog"
+	];
+	
+	return blogPostSlugs.map((slug) => ({
+		params: { slug },
+	}));
+}
+
+// Get the slug from the URL
+const { slug } = Astro.params;
+
+// Get the post data
+const post = blogPosts[slug || ''];
+
+// If post doesn't exist, return 404
+if (!post) {
+	return Astro.redirect('/blog');
+}
+
+// Format date helper
+function formatDate(date: Date): string {
+	return new Intl.DateTimeFormat('en-US', { 
+		year: 'numeric', 
+		month: 'long', 
+		day: 'numeric' 
+	}).format(date);
+}
+
+// SEO & Page Info
+const pageTitle = `${post.title} | Glassbee Solutions Blog`;
+const pageDescription = post.metaDescription || post.excerpt;
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Blog Posts",
+		description: "View all our blog articles",
+		link: "/blog",
+		icon: "services"
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Grow Your Business?",
+	subtitle: "Get your free SEO consultation and see how we can improve your local visibility",
+	primaryButton: {
+		text: "Get Free SEO Consultation",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black" as const
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${post.image}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl mx-auto text-white">
+				<div class="mb-4">
+					<a href="/blog" class="inline-flex items-center text-orange-600 hover:text-orange-500 font-bold uppercase text-sm">
+						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+						</svg>
+						Back to Blog
+					</a>
+				</div>
+				<div class="mb-4">
+					<span class="bg-orange-600 text-white px-4 py-2 text-sm font-bold uppercase">
+						{post.category}
+					</span>
+				</div>
+				<h1 class="text-5xl md:text-6xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{post.title}
+				</h1>
+				<div class="flex items-center gap-4 text-gray-300 text-sm">
+					<time datetime={post.date.toISOString()}>
+						{formatDate(post.date)}
+					</time>
+					<span>•</span>
+					<span>{post.readTime}</span>
+					<span>•</span>
+					<span>By {post.author}</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog Content -->
+	<article class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="prose prose-lg max-w-none">
+					<div set:html={post.content}></div>
+				</div>
+
+				<!-- Share Section -->
+				<div class="mt-12 pt-8 border-t border-gray-200">
+					<div class="flex items-center gap-4">
+						<span class="text-gray-700 font-bold uppercase text-sm">Share:</span>
+						<a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(Astro.url.href)}`} 
+						   target="_blank" 
+						   rel="noopener noreferrer"
+						   class="text-gray-600 hover:text-orange-600 transition-colors">
+							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+							</svg>
+						</a>
+						<a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`} 
+						   target="_blank" 
+						   rel="noopener noreferrer"
+						   class="text-gray-600 hover:text-orange-600 transition-colors">
+							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+							</svg>
+						</a>
+						<a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`} 
+						   target="_blank" 
+						   rel="noopener noreferrer"
+						   class="text-gray-600 hover:text-orange-600 transition-colors">
+							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Our SEO Services"
+		pages={relatedServices}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

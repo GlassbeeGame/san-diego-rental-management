@@ -1,0 +1,444 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Ocean Beach SEO Experts — Local Visibility for Laid-Back Businesses | Glassbee Solutions";
+const pageDescription = "Data-driven SEO for Ocean Beach businesses. Dominate local search for cafés, contractors, med spas & real estate. Hyper-local targeting + AI strategy.";
+
+// Schema Markup
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Ocean Beach SEO",
+	"description": "Professional SEO and digital marketing services for Ocean Beach businesses",
+	"url": "https://glassbee.solutions/locations/ocean-beach",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Ocean Beach",
+		"addressRegion": "CA",
+		"addressCountry": "US"
+	},
+	"areaServed": [
+		"Ocean Beach",
+		"Point Loma",
+		"Sunset Cliffs",
+		"Mission Beach",
+		"Pacific Beach"
+	],
+	"serviceArea": {
+		"@type": "GeoCircle",
+		"geoMidpoint": {
+			"@type": "GeoCoordinates",
+			"latitude": "32.7513",
+			"longitude": "-117.2494"
+		}
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Ocean Beach SEO Experts — Local Visibility",
+	titleHighlight: "for Laid-Back Businesses",
+	description: "Grow Your Local Reach With Data-Driven SEO",
+	backgroundImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Our Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30+", label: "Ocean Beach Businesses", icon: "properties" },
+	{ value: "200%", label: "Growth in Calls & Traffic", icon: "revenue" },
+	{ value: "Top 3", label: "Google Map Pack Placement", icon: "occupancy" },
+	{ value: "24hr", label: "Average Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Ocean Beach Businesses Choose",
+	titleHighlight: "Glassbee Solutions",
+	leftColumn: {
+		heading: "Word-of-Mouth Meets Modern SEO",
+		description: "At Glassbee Solutions, we help Ocean Beach businesses get found by the people who actually live and spend here. Whether you're a café on Newport Ave, a contractor serving the coast, or a local med spa near Sunset Cliffs, our Ocean Beach SEO services make sure you're showing up — everywhere your customers are searching.",
+		bullets: [
+			"Hyper-Local Targeting: Built around real Ocean Beach search data and competitor analysis",
+			"AI-Driven Strategy: Keywords with actual buying intent and low competition for your niche",
+			"Full Optimization: Google Business, citations, content, backlinks, and on-page SEO",
+			"Results That Matter: Measurable growth in calls, leads, and rankings — not just traffic charts",
+			"Zero-Risk Start: If you don't see results within 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "The Ocean Beach SEO Landscape",
+		description: "OB's business community is diverse — a mix of hospitality, wellness, real estate, and local trades — but most companies still rely on outdated sites or zero optimization. We change that.",
+		revenueSeasons: [
+			{ season: "Growth in Calls & Traffic", price: "+200%", occupancy: "Within 30-60 days" },
+			{ season: "Google Map Pack", price: "Top 3 Placement", occupancy: "Core OB keywords" },
+			{ season: "Expanded Visibility", price: "All Districts", occupancy: "Newport to Sunset Cliffs" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const serviceAreas = {
+	title: "Local Service Areas",
+	titleHighlight: "We Cover",
+	items: [
+		{
+			heading: "Newport Ave & Voltaire St",
+			description: "Restaurants, retail, med spas — the heart of Ocean Beach"
+		},
+		{
+			heading: "Sunset Cliffs & Point Loma Ave",
+			description: "Contractors, wellness, real estate, and coastal services"
+		},
+		{
+			heading: "OB Pier & Cable Street Area",
+			description: "Hospitality, services, and local shops near the waterfront"
+		}
+	]
+};
+
+// Local Insights Section
+const localInsights = {
+	title: "Local Insights &",
+	titleHighlight: "Seasonal Search Trends",
+	description: "OB's traffic patterns are seasonal, but your rankings don't have to be. We tailor your SEO to capture search surges from both residents and visitors.",
+	trends: [
+		"Tourist searches (\"best coffee Ocean Beach,\" \"things to do near OB Pier\")",
+		"Home-service cycles (roofing, landscaping, window cleaning before summer)",
+		"Wellness and lifestyle trends (med spas, salons, yoga studios)"
+	]
+};
+
+// Industries We Serve
+const industries = [
+	{
+		heading: "Home Services & Contractors",
+		description: "From junk removal to landscaping, cleaning, and pressure washing — OB homeowners search locally first. We make sure you're found."
+	},
+	{
+		heading: "Restaurants, Cafés & Local Shops",
+		description: "Newport Ave has one of San Diego's most vibrant small business scenes. We help you show up when locals and tourists search."
+	},
+	{
+		heading: "Med Spas, Salons & Fitness Studios",
+		description: "Ocean Beach has a strong wellness community. We help you attract local clients searching for OB beauty and fitness services."
+	},
+	{
+		heading: "Real Estate & Property Management",
+		description: "OB's real estate market is competitive and community-driven. Dominate \"Ocean Beach homes for sale\" and neighborhood-specific search terms."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free SEO audit",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Point Loma", description: "SEO for Point Loma businesses", href: "/locations/point-loma" },
+	{ name: "Pacific Beach", description: "SEO for Pacific Beach businesses", href: "/locations/pacific-beach" },
+	{ name: "Mission Beach", description: "SEO for Mission Beach businesses", href: "/locations/mission-beach" },
+	{ name: "La Jolla", description: "SEO for La Jolla businesses", href: "/locations/la-jolla" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Why do Ocean Beach businesses need SEO?",
+		answer: "OB thrives on community trust and word-of-mouth — but today, that means ranking on Google just as much as reputation. If you're not showing up in the top 3 for neighborhood-specific searches, you're losing business to competitors who are."
+	},
+	{
+		question: "How long does it take to see results?",
+		answer: "Most Ocean Beach businesses see improvements in local rankings within 30-60 days. Full results — top 3 rankings, consistent leads, and +200% growth in calls and web traffic — typically show within 90 days."
+	},
+	{
+		question: "What industries do you work with in Ocean Beach?",
+		answer: "We specialize in home services, restaurants, cafés, med spas, salons, fitness studios, and real estate. Ocean Beach has unique search patterns based on tourism, local lifestyle, and seasonal cycles — we know how to dominate them."
+	},
+	{
+		question: "Do you work with businesses outside of Ocean Beach?",
+		answer: "Yes — we serve businesses across San Diego, from Carlsbad to Coronado. But we tailor every strategy to your specific neighborhood and audience."
+	},
+	{
+		question: "What makes your SEO different?",
+		answer: "We don't use templates or generic strategies. Every campaign is built on real Ocean Beach search data, competitor analysis, and neighborhood-specific buyer behavior. We focus on rankings that drive revenue — not vanity metrics."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Ocean Beach Today",
+	subtitle: "Book your free SEO audit — we'll show you where you're losing local traffic and how to capture it fast",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-3">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Areas Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{serviceAreas.title}<br/><span class="text-orange-600">{serviceAreas.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{serviceAreas.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Local Insights Section -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{localInsights.title}<br/><span class="text-orange-600">{localInsights.titleHighlight}</span>
+					</h3>
+					<p class="text-gray-600 mb-6 text-center max-w-3xl mx-auto">
+						{localInsights.description}
+					</p>
+					<div class="bg-gray-50 p-8 max-w-3xl mx-auto">
+						<p class="font-bold text-black mb-4">We optimize around:</p>
+						<ul class="space-y-3">
+							{localInsights.trends.map((trend) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{trend}</span>
+								</li>
+							))}
+						</ul>
+						<p class="text-gray-600 mt-6 italic">We continuously adjust your campaign to keep you visible, no matter the season.</p>
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Compares</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-black text-white">
+									<th class="px-6 py-4 text-left font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Feature</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Ocean Beach search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-400">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-400">One-size-fits-all templates</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-400">Partial implementation</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-400">Vanity metrics and impressions</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-400">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Industries Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{industries.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Common questions"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

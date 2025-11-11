@@ -1,0 +1,483 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Pacific Beach SEO Experts — Stand Out, Get Found, Grow Fast | Glassbee Solutions";
+const pageDescription = "Local SEO that brings real leads in PB & Coastal San Diego. From boardwalk cafés to local contractors, we help Pacific Beach businesses dominate Google search results.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Pacific Beach SEO",
+	"description": "Local SEO services for Pacific Beach businesses. We help PB businesses dominate Google search results and attract more local customers.",
+	"url": "https://www.glassbeesolutions.com/locations/pacific-beach",
+	"areaServed": {
+		"@type": "City",
+		"name": "Pacific Beach",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"Pacific Beach",
+		"Mission Beach",
+		"Mission Bay",
+		"La Jolla",
+		"Ocean Beach",
+		"Clairemont"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Pacific Beach SEO Experts",
+	titleHighlight: "Stand Out, Get Found, Grow Fast",
+	description: "Local SEO That Brings Real Leads in PB & Coastal San Diego",
+	backgroundImage: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200%+", label: "Traffic Growth", icon: "properties" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "revenue" },
+	{ value: "2 Weeks", label: "Launch Timeline", icon: "occupancy" },
+	{ value: "24 Hours", label: "Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Pacific Beach Businesses",
+	titleHighlight: "Choose Glassbee Solutions",
+	leftColumn: {
+		heading: "The SEO Edge That Cuts Through the Noise",
+		description: "Pacific Beach is saturated — every bar, gym, and service company wants the same attention. We give you the SEO edge that cuts through the noise.",
+		bullets: [
+			"Hyper-Local Focus: We specialize in Pacific Beach & North County SEO, optimizing your presence across the entire coastal corridor",
+			"AI-Backed Keyword Strategy: We use advanced data to target the exact search phrases PB locals use — the ones that actually convert",
+			"Risk-Free Promise: If you don't see meaningful results in 30 days, you don't pay until you do",
+			"Two-Week Launch Window: Our setup and full SEO optimization take about two weeks, followed by continuous local growth and monthly reporting"
+		]
+	},
+	rightColumn: {
+		heading: "The Pacific Beach SEO Landscape",
+		description: "Pacific Beach is a fast-moving market — where lifestyle, service, and tourism collide. Businesses here compete with both local and downtown San Diego brands, meaning visibility matters more than ever.",
+		revenueSeasons: [
+			{ season: "Our Typical Client Results", price: "+200% growth", occupancy: "In calls and web traffic" },
+			{ season: "Google Map Pack", price: "Top-3 rankings", occupancy: "For high-intent searches" },
+			{ season: "Local Visibility", price: "Improved presence", occupancy: "Mission Bay to La Jolla Blvd" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas",
+	items: [
+		{
+			heading: "Mission Boulevard & Garnet Avenue",
+			description: "Bars, restaurants, retail shops, and local businesses in the heart of PB"
+		},
+		{
+			heading: "Crown Point & Sail Bay",
+			description: "Vacation rentals, fitness studios, and waterfront businesses"
+		},
+		{
+			heading: "North PB & La Jolla Border",
+			description: "Contractors, med spas, real estate, and professional services"
+		},
+		{
+			heading: "Mission Beach & Mission Bay",
+			description: "Hospitality, tourism businesses, and boardwalk services"
+		},
+		{
+			heading: "Adjacent Markets",
+			description: "We also serve La Jolla, Clairemont, and Ocean Beach"
+		},
+		{
+			heading: "Response Time & Meetings",
+			description: "24 hours or less for all Pacific Beach clients. We frequently meet near Garnet Avenue, Mission Boulevard, and Crown Point."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Home-Service Industries",
+		description: "Get more calls for cleaning, HVAC, landscaping, plumbing, and other home services. We optimize for neighborhood-specific searches that drive booked jobs in Pacific Beach and surrounding areas."
+	},
+	{
+		heading: "Hospitality & Tourism",
+		description: "Fill tables and book reservations for restaurants, vacation rentals, bars, and other hospitality businesses. We target both locals and tourists searching for PB experiences."
+	},
+	{
+		heading: "Fitness Studios & Wellness Centers",
+		description: "Stand out in PB's active lifestyle market. We optimize for searches like \"gym Pacific Beach,\" \"yoga studio PB,\" and \"personal trainer near me.\""
+	},
+	{
+		heading: "Med Spas & Beauty Professionals",
+		description: "Attract clients searching for med spas, salons, barbers, and beauty services. We target high-intent searches like \"barber near Garnet Avenue\" and \"med spa Pacific Beach.\""
+	},
+	{
+		heading: "Local Real Estate & Property Management",
+		description: "Get found by buyers, sellers, and renters in Pacific Beach. We optimize for neighborhood-specific real estate searches and vacation rental queries."
+	},
+	{
+		heading: "Businesses Near Local Landmarks",
+		description: "We also support businesses near Mission Bay Aquatic Center, Kate Sessions Park, and the PB Boardwalk."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Mission Beach", description: "Boardwalk and beach SEO", href: "/locations/mission-beach" },
+	{ name: "La Jolla", description: "Luxury coastal community SEO", href: "/locations/la-jolla" },
+	{ name: "Ocean Beach", description: "Laid-back beach community SEO", href: "/locations/ocean-beach" },
+	{ name: "Downtown San Diego", description: "Urban business district SEO", href: "/locations/downtown-san-diego" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from Pacific Beach SEO services?",
+		answer: "Most clients see meaningful results within 30 days, including improved rankings and increased traffic. Our setup and full SEO optimization take about two weeks, followed by continuous local growth. You can expect +200% growth in calls and web traffic, plus Top-3 Google Map Pack rankings for high-intent searches."
+	},
+	{
+		question: "What makes your Pacific Beach SEO different from other agencies?",
+		answer: "We're 100% focused on Pacific Beach and Coastal San Diego with hyper-local expertise. We use AI-backed keyword strategy to target the exact search phrases PB locals use — the ones that actually convert. Plus, we offer a risk-free promise — if you don't see meaningful results in 30 days, you don't pay until you do."
+	},
+	{
+		question: "Do you optimize for specific Pacific Beach neighborhoods?",
+		answer: "Yes! We create custom strategies for Mission Boulevard, Garnet Avenue, Crown Point, Sail Bay, North PB, and the La Jolla border area. Each neighborhood has unique search patterns that require tailored approaches."
+	},
+	{
+		question: "What industries do you specialize in for Pacific Beach?",
+		answer: "We specialize in home-service industries (cleaning, HVAC, landscaping), hospitality & tourism (restaurants, rentals, bars), fitness studios & wellness centers, med spas & beauty professionals, and local real estate & property management firms."
+	},
+	{
+		question: "How do seasonal patterns affect Pacific Beach SEO?",
+		answer: 'Pacific Beach\'s tourism cycle and coastal weather mean SEO performance shifts with the seasons. We time campaigns to align with tourist peaks ("best brunch Pacific Beach"), home-service spikes before/after summer storms, and event traffic during PB Street Fest, summer concerts, and beach clean-ups.'
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Pacific Beach Today",
+	subtitle: "Let's make your business the first thing PB locals see when they search. 📍 Serving Pacific Beach, Mission Beach, La Jolla, and all of Coastal San Diego.",
+	primaryButton: {
+		text: "Book Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help Pacific Beach businesses rise to the top of Google — and stay there. From boardwalk cafés to local contractors and fitness studios, our Pacific Beach SEO services are designed to turn search traffic into paying customers.
+					</p>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+						Whether you run a surf-inspired brand, manage rentals, or operate a home-service business along Mission Boulevard, we'll make sure your company dominates local searches in PB and the greater North County area.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Driving Directions -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Driving Directions &<br/><span class="text-orange-600">Local Meetings</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed">
+							Our team frequently meets clients near Garnet Avenue, Mission Boulevard, and Crown Point. Whether you're in PB, Mission Beach, or La Jolla, we're just minutes away — or one Zoom call if you prefer remote strategy sessions.
+						</p>
+					</div>
+				</div>
+
+				<!-- Local Insights -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Local Insights &<br/><span class="text-orange-600">Seasonal Search Patterns</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed mb-4">
+							Pacific Beach's tourism cycle and coastal weather mean SEO performance shifts with the seasons. We time your campaigns to align with:
+						</p>
+						<ul class="space-y-3">
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Tourist peaks ("best brunch Pacific Beach," "PB surf lessons," "barber near Garnet Avenue")</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Home-service spikes before and after summer storms</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Event traffic during PB Street Fest, summer concerts, and beach clean-ups</span>
+							</li>
+						</ul>
+						<p class="text-gray-600 text-lg leading-relaxed mt-4">
+							By anticipating these patterns, we keep your site visible year-round.
+						</p>
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Pacific Beach search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About Pacific Beach SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

@@ -6,6 +6,7 @@ const navItems = [
   { href: '/services', label: 'Services' },
   { href: '/industries', label: 'Industries' },
   { href: '/locations', label: 'Locations' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -30,7 +31,8 @@ const navItems = [
             class={`text-sm font-bold uppercase tracking-wider transition-colors ${
               currentPath === item.href || 
               (item.href === '/services' && currentPath.startsWith('/services/')) ||
-              (item.href === '/industries' && currentPath.startsWith('/industries/'))
+              (item.href === '/industries' && currentPath.startsWith('/industries/')) ||
+              (item.href === '/blog' && currentPath.startsWith('/blog/'))
                 ? 'text-orange-600'
                 : 'text-white hover:text-orange-600'
             }`}
@@ -74,7 +76,8 @@ const navItems = [
           class={`block py-4 px-4 text-sm font-bold uppercase tracking-wider ${
             currentPath === item.href ||
             (item.href === '/services' && currentPath.startsWith('/services/')) ||
-            (item.href === '/industries' && currentPath.startsWith('/industries/'))
+            (item.href === '/industries' && currentPath.startsWith('/industries/')) ||
+            (item.href === '/blog' && currentPath.startsWith('/blog/'))
               ? 'text-orange-600 bg-black'
               : 'text-white hover:text-orange-600 hover:bg-black'
           }`}

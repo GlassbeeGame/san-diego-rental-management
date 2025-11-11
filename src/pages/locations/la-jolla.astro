@@ -1,0 +1,483 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "La Jolla SEO Experts — Local Visibility That Drives Results | Glassbee Solutions";
+const pageDescription = "Grow your business with search engine optimization built for La Jolla & North County. From boutique shops to luxury real estate, we help La Jolla businesses dominate local search.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - La Jolla SEO",
+	"description": "Local SEO services for La Jolla businesses. We help La Jolla businesses dominate local search through precise keyword targeting, Google Map Pack domination, and on-page optimization.",
+	"url": "https://www.glassbeesolutions.com/locations/la-jolla",
+	"areaServed": {
+		"@type": "City",
+		"name": "La Jolla",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"La Jolla",
+		"La Jolla Village",
+		"Bird Rock",
+		"Torrey Pines",
+		"UTC",
+		"La Jolla Heights",
+		"Del Mar",
+		"Solana Beach",
+		"Carmel Valley"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "La Jolla SEO Experts",
+	titleHighlight: "Local Visibility That Drives Results",
+	description: "Grow Your Business With Search Engine Optimization Built for La Jolla & North County",
+	backgroundImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200%+", label: "Traffic Increase", icon: "properties" },
+	{ value: "Top 3", label: "Map Pack Placement", icon: "revenue" },
+	{ value: "48 Hours", label: "Campaign Launch", icon: "occupancy" },
+	{ value: "24 Hours", label: "Audit Response", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why La Jolla Businesses",
+	titleHighlight: "Choose Glassbee Solutions",
+	leftColumn: {
+		heading: "Premium SEO for a Premium Market",
+		description: "La Jolla's high-income, coastal market demands premium SEO that delivers measurable ROI — not vague metrics. That's where we stand out.",
+		bullets: [
+			'Local Expertise in La Jolla & North County: We know how residents search — from "home remodel La Jolla" to "best med spa near Bird Rock"',
+			"AI-Driven Optimization: We use AI-powered keyword analysis to uncover profitable local searches that competing agencies miss",
+			"Risk-Free Guarantee: If you don't see new business within 30 days, you don't pay until you do",
+			"Immediate Launch: Most campaigns go live within 48 hours"
+		]
+	},
+	rightColumn: {
+		heading: "The La Jolla SEO Landscape",
+		description: "Competition in La Jolla is fierce — with real-estate brokerages, home-service companies, and wellness brands all fighting for limited top-of-page space. Our mission: put you in those top 3 spots.",
+		revenueSeasons: [
+			{ season: "Typical Results", price: "+200% increase", occupancy: "In organic traffic and calls" },
+			{ season: "Google Map Pack", price: "Consistent Top-3", occupancy: "Placement in 30 days" },
+			{ season: "Local Presence", price: "Village, Bird Rock, Torrey Pines", occupancy: "& UTC coverage" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas We Cover",
+	items: [
+		{
+			heading: "La Jolla Village",
+			description: "Retail & boutique businesses along Prospect Street and Girard Avenue"
+		},
+		{
+			heading: "Bird Rock",
+			description: "Home services, restaurants, and local neighborhood businesses"
+		},
+		{
+			heading: "Torrey Pines",
+			description: "Luxury real estate, golf resorts, and high-end professional services"
+		},
+		{
+			heading: "UTC & La Jolla Heights",
+			description: "Professional firms, medical offices, and corporate services"
+		},
+		{
+			heading: "Surrounding Cities",
+			description: "We also serve Del Mar, Solana Beach, and Carmel Valley"
+		},
+		{
+			heading: "Response Time & Meetings",
+			description: "24 hours for new client audits — faster than any other La Jolla SEO agency. We often meet clients near Girard Avenue, La Jolla Cove, or the UTC district off I-5."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Luxury Real Estate Teams & Brokerages",
+		description: "Dominate high-value searches like \"La Jolla real estate,\" \"Torrey Pines homes for sale,\" and \"luxury condos Bird Rock.\" We help agents and brokerages get found by qualified buyers and sellers."
+	},
+	{
+		heading: "Med Spas & Aesthetic Clinics",
+		description: "Stand out in La Jolla's competitive wellness market with SEO optimized for \"med spa La Jolla,\" \"botox near me,\" and \"aesthetic treatments UTC.\""
+	},
+	{
+		heading: "Home Service Contractors",
+		description: "Get more calls for plumbing, roofing, cleaning, landscaping, and remodeling services. We optimize for neighborhood-specific searches that drive booked jobs."
+	},
+	{
+		heading: "Professional Services",
+		description: "Law firms, accountants, consultants, and other professional services — we help you rank for high-intent local searches and capture quality leads."
+	},
+	{
+		heading: "Boutique Shops & Hospitality Brands",
+		description: "Drive foot traffic and online discovery for retail shops, restaurants, and hospitality businesses in La Jolla Village and Bird Rock."
+	},
+	{
+		heading: "Businesses Near Major Employers",
+		description: "We also support businesses serving major La Jolla employers like UC San Diego, Scripps Health, and The Salk Institute."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Del Mar", description: "Upscale racing village SEO", href: "/locations/del-mar" },
+	{ name: "Solana Beach", description: "Coastal cliffs and village SEO", href: "/locations/solana-beach" },
+	{ name: "Pacific Beach", description: "Beach community SEO services", href: "/locations/pacific-beach" },
+	{ name: "Downtown San Diego", description: "Urban business district SEO", href: "/locations/downtown-san-diego" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from La Jolla SEO services?",
+		answer: "Most clients see measurable improvements within 30 days, including consistent Top-3 Google Map Pack placement and increased calls. Full organic ranking dominance typically occurs within 90 days, with a +200% increase in organic traffic."
+	},
+	{
+		question: "What makes your La Jolla SEO different from other agencies?",
+		answer: "We're 100% focused on La Jolla and North County with deep knowledge of how locals search. We use AI-powered keyword analysis to find profitable searches competitors miss, and we offer a risk-free guarantee — if you don't see new business within 30 days, you don't pay until you do."
+	},
+	{
+		question: "Do you optimize for specific La Jolla neighborhoods?",
+		answer: "Yes! We create custom content and keyword strategies for La Jolla Village, Bird Rock, Torrey Pines, UTC, and La Jolla Heights. Each neighborhood has unique search patterns and customer demographics that require tailored approaches."
+	},
+	{
+		question: "What industries do you specialize in for La Jolla?",
+		answer: "We specialize in luxury real estate teams, med spas & aesthetic clinics, home service contractors (plumbing, roofing, cleaning), professional services (law firms, accountants, consultants), and boutique shops & hospitality brands."
+	},
+	{
+		question: "How do seasonal patterns affect La Jolla SEO?",
+		answer: 'La Jolla\'s coastal weather and tourism cycles shape local search demand. We adjust campaigns around summer tourist booms ("best restaurant La Jolla"), seasonal home maintenance keywords (roofing, landscaping, remodeling), and real-estate market trends driven by Torrey Pines and UTC growth.'
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Get Found in La Jolla Search Results Today",
+	subtitle: "Ready to dominate Google Maps and organic search? 📍 Serving La Jolla, Del Mar, Solana Beach, and all North County San Diego.",
+	primaryButton: {
+		text: "Schedule Free La Jolla SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help La Jolla businesses stand out across San Diego's competitive local market. From boutique shops along Prospect Street to luxury real estate offices near the Cove, our La Jolla SEO services are engineered to attract high-value clients through precise keyword targeting, Google Map Pack domination, and on-page optimization.
+					</p>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+						Whether you're a med spa, real estate team, home service company, or professional firm, we'll position you as the go-to business in La Jolla search results.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Driving Directions -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Driving Directions &<br/><span class="text-orange-600">Local Meeting Spots</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed">
+							We often meet clients near Girard Avenue, La Jolla Cove, or the UTC district off I-5. Whether you're coming from UC San Diego, Del Mar, or Downtown San Diego, our team is a 10-minute drive away. Remote strategy calls are available for businesses across La Jolla and North County.
+						</p>
+					</div>
+				</div>
+
+				<!-- Local Insights -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Local Insights &<br/><span class="text-orange-600">Seasonal Search Patterns</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed mb-4">
+							La Jolla's coastal weather and tourism cycles shape local search demand. We adjust SEO campaigns around:
+						</p>
+						<ul class="space-y-3">
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Summer tourist booms ("best restaurant La Jolla," "things to do in La Jolla")</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Seasonal home maintenance keywords (roofing, landscaping, remodeling)</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Real-estate market trends driven by Torrey Pines and UTC growth</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve in La Jolla</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real La Jolla search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About La Jolla SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

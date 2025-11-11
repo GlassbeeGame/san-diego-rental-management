@@ -1,0 +1,488 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Point Loma SEO Experts — Local Visibility That Brings Real Results | Glassbee Solutions";
+const pageDescription = "Get found first by the customers that matter. We help Point Loma businesses turn search traffic into real leads with data-driven local SEO that drives calls and customers.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Point Loma SEO",
+	"description": "Local SEO services for Point Loma businesses. We combine deep keyword data, AI-powered optimization, and full-service local SEO management to help businesses rank higher and attract more customers.",
+	"url": "https://www.glassbeesolutions.com/locations/point-loma",
+	"areaServed": {
+		"@type": "City",
+		"name": "Point Loma",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"Point Loma",
+		"Liberty Station",
+		"Roseville",
+		"Fleetridge",
+		"Shelter Island",
+		"Marina District",
+		"Loma Portal",
+		"Point Loma Heights",
+		"Ocean Beach",
+		"Mission Hills"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Point Loma SEO Experts",
+	titleHighlight: "Local Visibility That Brings Real Results",
+	description: "Get Found First by the Customers That Matter",
+	backgroundImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200%+", label: "Traffic & Calls Growth", icon: "properties" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "revenue" },
+	{ value: "30 Days", label: "Risk-Free Results", icon: "occupancy" },
+	{ value: "24 Hours", label: "Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Point Loma Businesses",
+	titleHighlight: "Choose Glassbee Solutions",
+	leftColumn: {
+		heading: "Custom-Tailored SEO for Local Competition",
+		description: "Point Loma is home to some of San Diego's most competitive local industries — home services, hospitality, real estate, and professional trades. You need SEO that's custom-tailored to the way locals actually search.",
+		bullets: [
+			"Hyper-Local Targeting: We build campaigns using real Point Loma search data and competitor analysis, not broad county-level targeting",
+			"AI-Driven Keyword Strategy: We use machine learning insights to pinpoint what your audience is searching for — and make sure you appear first",
+			"Full Optimization: From your Google Business profile and citations to on-page and content optimization, we handle it all",
+			"Results-Focused Delivery: We don't just boost traffic — we grow calls, leads, and paying customers",
+			"Zero-Risk Start: If you don't see measurable traction in 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "The Point Loma SEO Landscape",
+		description: "Point Loma's local market moves fast. Contractors compete with downtown firms, restaurants battle for tourists, and service businesses need steady local leads to stay ahead. Our campaigns are designed to cut through that competition — quickly and sustainably.",
+		revenueSeasons: [
+			{ season: "Typical Client Results", price: "+200% growth", occupancy: "In calls & web traffic (30-60 days)" },
+			{ season: "Google Map Pack", price: "Consistent top-3", occupancy: "For high-intent keywords" },
+			{ season: "Local Visibility", price: "Noticeable lift", occupancy: "Liberty Station, Shelter Island, Roseville" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas We Cover",
+	items: [
+		{
+			heading: "Liberty Station",
+			description: "Restaurants, contractors, creative businesses, and professional services in this thriving district"
+		},
+		{
+			heading: "Roseville & Fleetridge",
+			description: "Home services, med spas, real estate offices, and local professionals"
+		},
+		{
+			heading: "Shelter Island & Marina District",
+			description: "Hospitality, charters, waterfront businesses, and local tourism services"
+		},
+		{
+			heading: "Loma Portal & Point Loma Heights",
+			description: "Local professionals, trades, and residential service businesses"
+		},
+		{
+			heading: "Surrounding Areas",
+			description: "We also serve Ocean Beach, Mission Hills, and Old Town"
+		},
+		{
+			heading: "Response Time & Meetings",
+			description: "Within 24 hours for all Point Loma clients. We regularly meet clients near Liberty Station, Shelter Island Drive, and Rosecrans Street."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Home-Service Businesses",
+		description: "Get more calls for roofing, landscaping, junk removal, cleaning, HVAC, and other home services. We optimize for Point Loma neighborhoods that drive booked jobs and recurring business year-round."
+	},
+	{
+		heading: "Restaurants, Coffee Shops & Boutique Retail",
+		description: "Drive foot traffic and online discovery for Liberty Station restaurants, Shelter Island dining, and boutique shops. We target both locals and tourists searching for Point Loma experiences."
+	},
+	{
+		heading: "Real Estate Agents & Property Management Firms",
+		description: "Dominate local real estate searches in Point Loma, Ocean Beach, and coastal neighborhoods. We optimize for buyer, seller, and rental searches that generate qualified leads."
+	},
+	{
+		heading: "Med Spas, Wellness Centers & Salons",
+		description: "Stand out in Point Loma's competitive wellness market. We target high-intent searches like \"med spa Point Loma,\" \"massage near Liberty Station,\" and wellness services that attract loyal clients."
+	},
+	{
+		heading: "Local Professionals",
+		description: "Consultants, contractors, and small business owners — we help you rank for high-intent local searches and capture quality leads throughout Point Loma and coastal San Diego."
+	},
+	{
+		heading: "Businesses Near Local Landmarks",
+		description: "We also support businesses near Liberty Station, Shelter Island Marina, and Cabrillo National Monument."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Ocean Beach", description: "Laid-back beach community SEO", href: "/locations/ocean-beach" },
+	{ name: "Mission Beach", description: "Boardwalk and beach SEO", href: "/locations/mission-beach" },
+	{ name: "Downtown San Diego", description: "Urban business district SEO", href: "/locations/downtown-san-diego" },
+	{ name: "La Jolla", description: "Premium coastal business SEO", href: "/locations/la-jolla" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from Point Loma SEO services?",
+		answer: "Most clients see +200% growth in calls and website traffic within 30-60 days. You'll achieve consistent top-3 rankings in Google's Map Pack for high-intent keywords and noticeable local visibility across Liberty Station, Shelter Island, and Roseville. We offer a zero-risk start — if you don't see measurable traction in 30 days, you don't pay until you do."
+	},
+	{
+		question: "What makes your Point Loma SEO different from other agencies?",
+		answer: "We build campaigns using real Point Loma search data and competitor analysis, not broad county-level targeting. Our AI-driven keyword strategy uses machine learning insights to pinpoint what your audience is searching for. We handle full optimization — from your Google Business profile and citations to on-page and content optimization — with a results-focused approach that grows calls, leads, and paying customers."
+	},
+	{
+		question: "Do you optimize for specific Point Loma neighborhoods?",
+		answer: "Yes! We create hyper-local campaigns for Liberty Station, Roseville, Fleetridge, Shelter Island, Marina District, Loma Portal, and Point Loma Heights. Each area has unique search patterns and customer behaviors that require tailored approaches."
+	},
+	{
+		question: "What industries do you specialize in for Point Loma?",
+		answer: "We specialize in home-service businesses (roofing, landscaping, junk removal, cleaning), restaurants, coffee shops & boutique retail brands, real estate agents & property management firms, med spas, wellness centers & salons, and local professionals (consultants, contractors, small business owners)."
+	},
+	{
+		question: "How do seasonal patterns affect Point Loma SEO?",
+		answer: "Point Loma search patterns shift with both local demand and tourism flow. We continuously adjust campaigns around tourism-driven searches (restaurants, boat rentals), seasonal home-service demand (roof repair, junk removal, cleaning before/after coastal weather shifts), and professional visibility for real estate, med spas, and contracting services. Our adaptive approach ensures you stay visible in every season."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Point Loma Today",
+	subtitle: "Let's make your business the one locals — and visitors — find first. 📍 Serving Point Loma, Ocean Beach, Liberty Station, and Coastal San Diego.",
+	primaryButton: {
+		text: "Book Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help Point Loma businesses turn search traffic into real leads. Whether you run a contracting company in Liberty Station, a boutique along Rosecrans, or a waterfront service near the marina, our Point Loma SEO services are built to make your business visible, trusted, and profitable.
+					</p>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+						We combine deep keyword data, AI-powered optimization, and full-service local SEO management to help you rank higher and attract more of the customers already searching for you.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Driving Directions -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Driving Directions &<br/><span class="text-orange-600">Local Meetings</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed">
+							We regularly meet clients near Liberty Station, Shelter Island Drive, and Rosecrans Street. Whether you're based near the harbor or up the hill, we're always within reach — or one quick strategy call away.
+						</p>
+					</div>
+				</div>
+
+				<!-- Local Insights -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Local Insights &<br/><span class="text-orange-600">Seasonal Search Trends</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed mb-4">
+							Point Loma search patterns shift with both local demand and tourism flow. We continuously adjust your campaign to match how and when your audience searches. We optimize around:
+						</p>
+						<ul class="space-y-3">
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Tourism-driven searches ("best restaurants Point Loma," "boat rentals near me")</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Seasonal home-service demand (roof repair, junk removal, and cleaning before/after coastal weather shifts)</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Professional visibility for real estate, med spas, and contracting services</span>
+							</li>
+						</ul>
+						<p class="text-gray-600 text-lg leading-relaxed mt-4">
+							Our adaptive approach ensures you stay visible in every season — and ahead of every competitor.
+						</p>
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Point Loma search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About Point Loma SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

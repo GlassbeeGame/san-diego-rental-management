@@ -1,0 +1,436 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "North Park SEO Experts — Visibility That Converts | Glassbee Solutions";
+const pageDescription = "Data-driven local SEO for creative and service businesses. We help North Park businesses dominate local search with tailored strategies that turn clicks into customers.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - North Park SEO",
+	"description": "Local SEO services for North Park businesses. We help creative and service businesses dominate local search with tailored SEO strategies that deliver real, measurable growth.",
+	"url": "https://www.glassbeesolutions.com/locations/north-park",
+	"areaServed": {
+		"@type": "Neighborhood",
+		"name": "North Park",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"North Park",
+		"University Avenue",
+		"30th Street",
+		"El Cajon Boulevard",
+		"Normal Heights",
+		"University Heights",
+		"South Park",
+		"Hillcrest"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "North Park SEO Experts",
+	titleHighlight: "Visibility That Converts",
+	description: "Data-Driven Local SEO for Creative and Service Businesses",
+	backgroundImage: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200%+", label: "Traffic & Calls Growth", icon: "properties" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "revenue" },
+	{ value: "30 Days", label: "Risk-Free Results", icon: "occupancy" },
+	{ value: "24 Hours", label: "Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why North Park Businesses",
+	titleHighlight: "Choose Glassbee Solutions",
+	leftColumn: {
+		heading: "SEO as Sharp as Your Business",
+		description: "North Park's scene is creative, competitive, and constantly evolving. You need local SEO that's just as sharp.",
+		bullets: [
+			"Hyper-Local Targeting: Campaigns built with North Park-specific search data and competitor analysis",
+			"AI-Powered Strategy: Combines real search behavior insights with AI-driven keyword research",
+			"Full Optimization: Google Business, citations, on-page, and content — handled start to finish",
+			"Results-Driven Approach: Expect a minimum +200% growth in calls and organic traffic",
+			"Zero-Risk Start: No results, no payment — simple as that"
+		]
+	},
+	rightColumn: {
+		heading: "The North Park SEO Landscape",
+		description: "With dozens of small businesses competing for local visibility, ranking in the top 3 map results is crucial.",
+		revenueSeasons: [
+			{ season: "Typical Client Results", price: "+200% growth", occupancy: "In calls & web traffic (30-60 days)" },
+			{ season: "Google Map Pack", price: "Top-3 placement", occupancy: "Consistent local visibility" },
+			{ season: "Keyword Rankings", price: "Improved presence", occupancy: "30th St, University Ave, El Cajon Blvd" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas We Cover",
+	items: [
+		{
+			heading: "University Avenue Corridor",
+			description: "Cafés, bars, restaurants, and retail shops along North Park's main commercial strip"
+		},
+		{
+			heading: "30th Street District",
+			description: "Boutique businesses, creative studios, and professional services in this vibrant area"
+		},
+		{
+			heading: "El Cajon Boulevard",
+			description: "Service businesses, contractors, wellness centers, and local professionals"
+		},
+		{
+			heading: "Surrounding Neighborhoods",
+			description: "We also serve Normal Heights, University Heights, South Park, and Hillcrest"
+		},
+		{
+			heading: "Response Time",
+			description: "Within 24 hours for all North Park clients"
+		},
+		{
+			heading: "Local Meetings",
+			description: "We meet clients throughout North Park — from University Avenue to 30th Street. Remote strategy sessions also available."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Contractors & Home Services",
+		description: "Get more calls for roofing, landscaping, cleaning, HVAC, plumbing, and other home services. We optimize for North Park and surrounding neighborhoods that drive booked jobs year-round."
+	},
+	{
+		heading: "Real Estate Agents & Property Managers",
+		description: "Dominate local real estate searches in North Park, Normal Heights, and University Heights. We optimize for buyer, seller, and rental searches that generate qualified leads."
+	},
+	{
+		heading: "Cafés, Bars & Boutique Restaurants",
+		description: "Drive foot traffic and reservations for University Avenue cafés, 30th Street bars, and neighborhood restaurants. We optimize for both locals and visitors exploring North Park's food scene."
+	},
+	{
+		heading: "Creative Studios & Professional Offices",
+		description: "Design studios, photographers, consultants, and professional services — we help you rank for high-intent local searches and capture quality leads in North Park's creative hub."
+	},
+	{
+		heading: "Med Spas & Beauty Professionals",
+		description: "Stand out in North Park's wellness and beauty market. We target high-intent searches like \"med spa North Park,\" \"hair salon 30th Street,\" and beauty services that attract loyal clients."
+	},
+	{
+		heading: "Wellness Brands & Fitness Studios",
+		description: "Yoga studios, gyms, wellness centers, and holistic health businesses — we help you rank for neighborhood searches and build a loyal local following."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "University Heights", description: "Historic neighborhood SEO", href: "/locations/university-heights" },
+	{ name: "South Park", description: "Trendy neighborhood SEO", href: "/locations/south-park" },
+	{ name: "Hillcrest", description: "Vibrant urban district SEO", href: "/locations/hillcrest" },
+	{ name: "Downtown San Diego", description: "Urban business district SEO", href: "/locations/downtown-san-diego" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from North Park SEO services?",
+		answer: "Most clients see +200% growth in calls and web traffic within 30-60 days. You'll achieve Top-3 Google Map Pack placement and improved keyword rankings across 30th Street, University Avenue, and El Cajon Boulevard. We offer a zero-risk start — no results, no payment — simple as that."
+	},
+	{
+		question: "What makes your North Park SEO different from other agencies?",
+		answer: "We build campaigns with North Park-specific search data and competitor analysis, not generic city-wide targeting. Our AI-powered strategy combines real search behavior insights with AI-driven keyword research. We handle full optimization — Google Business, citations, on-page, and content — with a results-driven approach that expects minimum +200% growth in calls and organic traffic."
+	},
+	{
+		question: "Do you optimize for specific North Park areas?",
+		answer: "Yes! We create hyper-local campaigns for University Avenue Corridor, 30th Street District, and El Cajon Boulevard. Each area has unique search patterns — from craft beer and food scene searches to home services and creative professional queries."
+	},
+	{
+		question: "What industries do you specialize in for North Park?",
+		answer: "We specialize in contractors & home services, real estate agents & property managers, cafés, bars & boutique restaurants, creative studios & professional offices, med spas & beauty professionals, and wellness brands & fitness studios."
+	},
+	{
+		question: "Why is local SEO important for North Park businesses?",
+		answer: "North Park is creative, competitive, and constantly evolving. With dozens of small businesses competing for local visibility, ranking in the top 3 map results is crucial. Most customers search for \"near me\" services or specific North Park neighborhoods, so local SEO directly impacts your foot traffic, calls, and bookings."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in North Park Today",
+	subtitle: "📍 Serving North Park, Normal Heights, and University Heights.",
+	primaryButton: {
+		text: "Book Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help North Park businesses dominate local search with tailored SEO strategies that turn clicks into customers. Whether you run a café on University Avenue, a design studio off 30th, or a home-service business serving the neighborhood, our North Park SEO services are built to deliver real, measurable growth.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real North Park search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About North Park SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

@@ -1,0 +1,483 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Solana Beach SEO Experts — Real Growth for Coastal Businesses | Glassbee Solutions";
+const pageDescription = "Bring in more local leads with SEO that actually delivers. We help Solana Beach businesses generate consistent calls, traffic, and loyal customers with data-driven local SEO.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Solana Beach SEO",
+	"description": "Local SEO services for Solana Beach businesses. We use real search data, advanced AI optimization, and full-service local SEO management to help coastal businesses dominate local search.",
+	"url": "https://www.glassbeesolutions.com/locations/solana-beach",
+	"areaServed": {
+		"@type": "City",
+		"name": "Solana Beach",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"Solana Beach",
+		"Cedros Avenue",
+		"Lomas Santa Fe",
+		"Fletcher Cove",
+		"Solana Hills",
+		"Del Mar",
+		"Cardiff-by-the-Sea",
+		"Encinitas"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Solana Beach SEO Experts",
+	titleHighlight: "Real Growth for Coastal Businesses",
+	description: "Bring in More Local Leads with SEO That Actually Delivers",
+	backgroundImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200%+", label: "Traffic & Calls Growth", icon: "properties" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "revenue" },
+	{ value: "30 Days", label: "Risk-Free Results", icon: "occupancy" },
+	{ value: "24 Hours", label: "Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Solana Beach Businesses",
+	titleHighlight: "Choose Glassbee Solutions",
+	leftColumn: {
+		heading: "Local-First SEO That Delivers Results",
+		description: "Solana Beach may be small, but it's one of the most competitive pockets of North County — filled with local-first businesses that thrive on reputation and visibility. That's where we come in.",
+		bullets: [
+			"Hyper-Local Targeting: We optimize using real Solana Beach search data and competitor insights for total local precision",
+			"AI-Driven Strategy: Our AI tools uncover the keywords your competitors miss — and our team turns them into leads",
+			"Full Optimization: From on-page and citations to your Google Business profile, we handle everything that gets you ranked",
+			"Results-Driven Approach: We don't chase vanity metrics — only calls, web traffic, and new customers that grow your business",
+			"Zero-Risk Start: If you don't see results within 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "The Solana Beach SEO Landscape",
+		description: "Solana Beach's search market is driven by local discovery — from home services and salons to hospitality and design studios. The challenge? Most businesses never appear in the top 3 of Google Maps or search results.",
+		revenueSeasons: [
+			{ season: "Typical Client Results", price: "+200% growth", occupancy: "In calls & web traffic (30-60 days)" },
+			{ season: "Google Map Pack", price: "Top-3 placement", occupancy: "For high-intent local searches" },
+			{ season: "Local Visibility", price: "Major lift", occupancy: "Cedros, Lomas Santa Fe, Hwy 101" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas We Cover",
+	items: [
+		{
+			heading: "Cedros Avenue Design District",
+			description: "Retail, galleries, salons, and boutiques in Solana Beach's premier shopping destination"
+		},
+		{
+			heading: "Lomas Santa Fe & Highway 101",
+			description: "Contractors, med spas, restaurants, and professional services along these main corridors"
+		},
+		{
+			heading: "Fletcher Cove & Solana Hills",
+			description: "Hospitality, home services, real estate, and coastal businesses"
+		},
+		{
+			heading: "Surrounding Markets",
+			description: "We also serve Del Mar, Cardiff-by-the-Sea, and Encinitas"
+		},
+		{
+			heading: "Response Time",
+			description: "Within 24 hours for all North County clients"
+		},
+		{
+			heading: "Local Meetings",
+			description: "We often meet clients near Cedros Avenue, Lomas Santa Fe Drive, and the Solana Beach Train Station. Available remotely for instant strategy sessions."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Home-Service Contractors",
+		description: "Get more calls for junk removal, roofing, landscaping, cleaning, HVAC, and other home services. We optimize for Solana Beach neighborhoods that drive booked jobs and recurring business."
+	},
+	{
+		heading: "Med Spas, Salons & Wellness Centers",
+		description: "Stand out in Solana Beach's competitive wellness market. We target searches like \"med spa Solana Beach,\" \"best salon near Cedros,\" and wellness services that attract loyal, high-value clients."
+	},
+	{
+		heading: "Restaurants, Boutiques & Retail Shops",
+		description: "Drive foot traffic and online discovery for Cedros Avenue shops, restaurants, and retail businesses. We optimize for both locals and tourists searching for Solana Beach experiences."
+	},
+	{
+		heading: "Real Estate Agents & Property Managers",
+		description: "Dominate local real estate searches in Solana Beach, Del Mar, and Cardiff. We optimize for buyer, seller, and rental searches that generate qualified leads."
+	},
+	{
+		heading: "Local Creative Professionals & Design Studios",
+		description: "Architects, designers, photographers, and creative professionals — we help you rank for high-intent local searches and capture quality leads in North County."
+	},
+	{
+		heading: "Businesses Near Local Landmarks",
+		description: "We also work with businesses near Cedros Avenue, Fletcher Cove Park, and the Solana Beach Station."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Del Mar", description: "Luxury coastal community SEO", href: "/locations/del-mar" },
+	{ name: "Encinitas", description: "Surf culture and wellness SEO", href: "/locations/encinitas" },
+	{ name: "Cardiff-by-the-Sea", description: "Beach community SEO", href: "/locations/cardiff" },
+	{ name: "La Jolla", description: "Premium coastal business SEO", href: "/locations/la-jolla" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from Solana Beach SEO services?",
+		answer: "Most clients see +200% growth in calls and organic web traffic within 30-60 days. You'll achieve Top-3 placement in Google's Map Pack for high-intent local searches and major visibility lift across Cedros Avenue, Lomas Santa Fe, and Coast Highway 101. We offer a zero-risk start — if you don't see results within 30 days, you don't pay until you do."
+	},
+	{
+		question: "What makes your Solana Beach SEO different from other agencies?",
+		answer: "We optimize using real Solana Beach search data and competitor insights for total local precision. Our AI tools uncover keywords your competitors miss, and we handle full optimization — from on-page and citations to your Google Business profile. We focus on results-driven approach: calls, web traffic, and new customers, not vanity metrics."
+	},
+	{
+		question: "Do you optimize for specific Solana Beach neighborhoods?",
+		answer: "Yes! We create hyper-local campaigns for Cedros Avenue Design District, Lomas Santa Fe, Highway 101, Fletcher Cove, and Solana Hills. Each area has unique search patterns and customer behaviors that require tailored approaches."
+	},
+	{
+		question: "What industries do you specialize in for Solana Beach?",
+		answer: "We specialize in home-service contractors (junk removal, roofing, landscaping, cleaning), med spas, salons & wellness centers, restaurants, boutiques & retail shops, real estate agents & property managers, and local creative professionals & design studios."
+	},
+	{
+		question: "How do seasonal patterns affect Solana Beach SEO?",
+		answer: "Solana Beach's economy runs on both locals and visitors — meaning search behavior shifts with the seasons. We tailor campaigns for tourism peaks (restaurants, shops, activities), home-service demand (roofing, window cleaning, landscaping), and lifestyle growth (med spas, salons, fitness studios) to keep you visible year-round."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Solana Beach Today",
+	subtitle: "Let's make your business the one locals — and visitors — see first. 📍 Serving Solana Beach, Del Mar, Cardiff-by-the-Sea, and all of North County San Diego.",
+	primaryButton: {
+		text: "Book Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help Solana Beach businesses go from hidden to high-performing. Whether you're a contractor, med spa, restaurant, or boutique on Cedros Avenue, our Solana Beach SEO services are built to generate consistent calls, traffic, and loyal customers.
+					</p>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+						We use real search data, advanced AI optimization, and full-service local SEO management to make your business the one people find first — and trust the most.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Driving Directions -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Driving Directions &<br/><span class="text-orange-600">Local Meetings</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed">
+							We often meet clients near Cedros Avenue, Lomas Santa Fe Drive, and the Solana Beach Train Station. Whether you're in Del Mar or Encinitas, we're a few minutes away — or available instantly via remote meeting.
+						</p>
+					</div>
+				</div>
+
+				<!-- Local Insights -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Local Insights &<br/><span class="text-orange-600">Seasonal Search Trends</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed mb-4">
+							Solana Beach's economy runs on both locals and visitors — meaning search behavior shifts with the seasons. We tailor your campaigns to capture attention year-round:
+						</p>
+						<ul class="space-y-3">
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Tourism Peaks: Optimizing for "best restaurants," "shops," and "things to do in Solana Beach"</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Home-Service Demand: Seasonal maintenance keywords like "roofing," "window cleaning," and "landscaping near me"</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Lifestyle Growth: Med spas, salons, and fitness studios see recurring search surges — we make sure you appear first</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Solana Beach search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About Solana Beach SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

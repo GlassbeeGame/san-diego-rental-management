@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "SEO Blog & Marketing Insights | Glassbee Solutions";
+const pageDescription = "Expert SEO tips, local marketing strategies, and digital marketing insights for San Diego businesses. Learn how to improve your online visibility and grow your business.";
+
+// Blog posts data - You can add more posts here
+const blogPosts = [
+	{
+		title: "Local SEO vs National SEO: Why Going Local Wins Faster, Cheaper, and Smarter",
+		excerpt: "Understand the difference — and why most businesses should start local before scaling nationwide. Local SEO produces faster results with far less competition.",
+		slug: "local-seo-vs-national-seo-why-going-local-wins",
+		date: new Date("2024-01-20"),
+		category: "SEO Tips",
+		readTime: "8 min read",
+		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+	},
+	{
+		title: "Welcome to Our Blog",
+		excerpt: "Stay tuned for expert SEO tips, local marketing strategies, and insights to help your San Diego business grow.",
+		slug: "welcome-to-our-blog",
+		date: new Date("2024-01-15"),
+		category: "SEO Tips",
+		readTime: "2 min read",
+		image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
+	}
+	// Add more blog posts here as you create them
+];
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free SEO consultation",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Grow Your Business?",
+	subtitle: "Get your free SEO consultation and see how we can improve your local visibility",
+	primaryButton: {
+		text: "Get Free SEO Consultation",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+
+// Format date helper
+function formatDate(date: Date): string {
+	return new Intl.DateTimeFormat('en-US', { 
+		year: 'numeric', 
+		month: 'long', 
+		day: 'numeric' 
+	}).format(date);
+}
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920');">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl text-white">
+				<h1 class="text-6xl md:text-7xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					SEO Blog &<br/><span class="text-orange-600">Marketing Insights</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-200 leading-relaxed">
+					Expert tips, strategies, and insights to help your San Diego business dominate local search and grow online.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog Posts Grid -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Latest Articles
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto">
+						Stay updated with the latest SEO trends, local marketing strategies, and digital growth tips.
+					</p>
+				</div>
+
+				{blogPosts.length > 0 ? (
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{blogPosts.map((post) => (
+							<article class="card bg-white border-2 border-gray-200 hover:border-orange-600 transition-all group overflow-hidden">
+								<a href={`/blog/${post.slug}`} class="block">
+									<div class="relative h-48 overflow-hidden bg-gray-200">
+										<img 
+											src={post.image} 
+											alt={post.title}
+											class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+										/>
+										<div class="absolute top-4 left-4">
+											<span class="bg-orange-600 text-white px-3 py-1 text-xs font-bold uppercase">
+												{post.category}
+											</span>
+										</div>
+									</div>
+									<div class="p-6">
+										<div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+											<time datetime={post.date.toISOString()}>
+												{formatDate(post.date)}
+											</time>
+											<span>•</span>
+											<span>{post.readTime}</span>
+										</div>
+										<h3 class="text-2xl font-bold text-black mb-3 uppercase group-hover:text-orange-600 transition-colors" style="font-family: 'Bebas Neue', sans-serif;">
+											{post.title}
+										</h3>
+										<p class="text-gray-600 mb-4 leading-relaxed">
+											{post.excerpt}
+										</p>
+										<span class="text-orange-600 font-bold uppercase text-sm group-hover:underline">
+											Read More →
+										</span>
+									</div>
+								</a>
+							</article>
+						))}
+					</div>
+				) : (
+					<div class="text-center py-16">
+						<p class="text-xl text-gray-600 mb-4">No blog posts yet.</p>
+						<p class="text-gray-500">Check back soon for expert SEO tips and marketing insights!</p>
+					</div>
+				)}
+			</div>
+		</div>
+	</section>
+
+	<!-- Categories Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						Browse by Topic
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+					<a href="/blog?category=seo-tips" class="card p-6 text-center hover:border-orange-600 transition-all group">
+						<svg class="w-12 h-12 text-orange-600 mx-auto mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+						</svg>
+						<h3 class="font-bold text-black uppercase mb-2" style="font-family: 'Bebas Neue', sans-serif;">SEO Tips</h3>
+						<p class="text-sm text-gray-600">Optimization strategies</p>
+					</a>
+
+					<a href="/blog?category=local-marketing" class="card p-6 text-center hover:border-orange-600 transition-all group">
+						<svg class="w-12 h-12 text-orange-600 mx-auto mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<h3 class="font-bold text-black uppercase mb-2" style="font-family: 'Bebas Neue', sans-serif;">Local Marketing</h3>
+						<p class="text-sm text-gray-600">San Diego focused</p>
+					</a>
+
+					<a href="/blog?category=google-business" class="card p-6 text-center hover:border-orange-600 transition-all group">
+						<svg class="w-12 h-12 text-orange-600 mx-auto mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+						</svg>
+						<h3 class="font-bold text-black uppercase mb-2" style="font-family: 'Bebas Neue', sans-serif;">Google Business</h3>
+						<p class="text-sm text-gray-600">GBP optimization</p>
+					</a>
+
+					<a href="/blog?category=case-studies" class="card p-6 text-center hover:border-orange-600 transition-all group">
+						<svg class="w-12 h-12 text-orange-600 mx-auto mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+						</svg>
+						<h3 class="font-bold text-black uppercase mb-2" style="font-family: 'Bebas Neue', sans-serif;">Case Studies</h3>
+						<p class="text-sm text-gray-600">Real results</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Our SEO Services"
+		pages={relatedServices}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
+

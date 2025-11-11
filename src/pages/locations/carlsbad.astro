@@ -1,0 +1,448 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Carlsbad SEO & Local Marketing Experts | Glassbee Solutions";
+const pageDescription = "Dominate North County search results with proven SEO that brings real leads. We help Carlsbad businesses - from home services to med spas - capture local customers through targeted SEO.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Carlsbad SEO",
+	"description": "Local SEO services for Carlsbad businesses. We help North County businesses dominate search results and capture real, local customers through targeted SEO strategies.",
+	"url": "https://www.glassbeesolutions.com/locations/carlsbad",
+	"areaServed": {
+		"@type": "City",
+		"name": "Carlsbad",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"Carlsbad",
+		"Encinitas",
+		"Oceanside",
+		"Vista",
+		"San Marcos",
+		"Carlsbad Village",
+		"La Costa",
+		"Bressi Ranch",
+		"Aviara"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Carlsbad SEO & Local",
+	titleHighlight: "Marketing Experts",
+	description: "Dominate North County Search Results with Proven SEO That Brings Real Leads",
+	backgroundImage: "https://images.unsplash.com/photo-1581975822259-89eea0a3f050?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "30 Days", label: "Top-3 Map Pack", icon: "properties" },
+	{ value: "200%+", label: "Traffic Growth", icon: "revenue" },
+	{ value: "48 Hours", label: "Campaign Launch", icon: "occupancy" },
+	{ value: "100%", label: "Local Focus", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Carlsbad Businesses",
+	titleHighlight: "Choose Our SEO Agency",
+	leftColumn: {
+		heading: "Local Expertise That Delivers Results",
+		description: "Carlsbad is competitive — from coastal service companies to downtown storefronts, everyone's fighting for top Google spots. We make sure you win.",
+		bullets: [
+			"100% Local Focus: We specialize in Carlsbad and North County SEO, understanding local search patterns, coastal service areas, and community-based keywords",
+			"AI-Driven Optimization: Our campaigns combine AI keyword analysis with human strategy to find the lowest-competition, highest-intent searches your competitors ignore",
+			"Zero-Risk Promise: If you don't see measurable growth in the first 30 days, you don't pay until you do",
+			"Immediate Start: Get your campaign launched within 48 hours — no waiting weeks to see progress"
+		]
+	},
+	rightColumn: {
+		heading: "Carlsbad's Local SEO Landscape",
+		description: "Most Carlsbad businesses rank below the fold on Google — meaning potential customers never see them. We change that.",
+		revenueSeasons: [
+			{ season: "Average Local Ranking Lift", price: "Top-3 Map Pack", occupancy: "Under 30 days" },
+			{ season: "Organic Traffic Growth", price: "200%+ increase", occupancy: "In calls & form submissions" },
+			{ season: "Service Area Reach", price: "Village, Aviara, Bressi Ranch", occupancy: "La Costa & North County" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas",
+	items: [
+		{
+			heading: "Carlsbad Village & Tamarack",
+			description: "Downtown businesses, restaurants, retail, and service companies in the heart of Carlsbad"
+		},
+		{
+			heading: "La Costa & Bressi Ranch",
+			description: "Home services, med spas, wellness studios, and real estate in these upscale neighborhoods"
+		},
+		{
+			heading: "Aviara & Poinsettia",
+			description: "Luxury businesses and services in these premium coastal communities"
+		},
+		{
+			heading: "Adjacent North County Cities",
+			description: "We also serve Oceanside, Vista, Encinitas, and San Marcos"
+		},
+		{
+			heading: "Response Time",
+			description: "Average turnaround within 24 hours for local clients — faster than any competing Carlsbad SEO company"
+		},
+		{
+			heading: "Driving Directions",
+			description: "Our team operates remotely across San Diego County but frequently meets clients in downtown Carlsbad near the Village Station and Carlsbad Premium Outlets. If you're near Interstate 5 or Palomar Airport Road, you're less than 10 minutes away from our main meeting area."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Home Service Contractors",
+		description: "Dominate local search for roofing, landscaping, junk removal, HVAC, plumbing, and other home services. We help contractors get more calls and booked jobs."
+	},
+	{
+		heading: "Med Spas & Wellness Studios",
+		description: "Stand out in Carlsbad's competitive wellness market. We optimize for high-value searches like \"med spa Carlsbad\" and \"botox near me.\""
+	},
+	{
+		heading: "Real Estate Agents & Brokerages",
+		description: "Get found by buyers and sellers in La Costa, Aviara, and throughout North County with hyper-local real estate SEO strategies."
+	},
+	{
+		heading: "Cleaning & Maintenance Companies",
+		description: "Rank for \"house cleaning Carlsbad,\" \"office cleaning,\" and related local searches that drive steady, recurring business."
+	},
+	{
+		heading: "Local Restaurants & Event Venues",
+		description: "Fill tables and book events with SEO that targets Carlsbad locals and tourists searching for dining and entertainment."
+	},
+	{
+		heading: "Businesses Near Major Employers",
+		description: "We also partner with businesses near major Carlsbad employers like Viasat, Thermo Fisher, and LEGOLAND California."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Encinitas", description: "Surf culture and wellness SEO", href: "/locations/encinitas" },
+	{ name: "Oceanside", description: "Coastal business SEO services", href: "/locations/oceanside" },
+	{ name: "Vista", description: "Inland North County SEO", href: "/locations/vista" },
+	{ name: "San Marcos", description: "College town local SEO", href: "/locations/san-marcos" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from Carlsbad SEO services?",
+		answer: "Most clients see measurable improvements within 30 days, including higher rankings in Google's Map Pack and increased calls. Full organic ranking dominance typically occurs within 90 days."
+	},
+	{
+		question: "What makes your Carlsbad SEO different from other agencies?",
+		answer: "We're 100% focused on Carlsbad and North County, we use AI-driven keyword targeting to find opportunities competitors miss, and we offer a 30-day results guarantee — if you don't see growth, you don't pay until you do."
+	},
+	{
+		question: "Do you work with businesses in specific Carlsbad neighborhoods?",
+		answer: "Yes! We optimize for specific neighborhoods like Carlsbad Village, La Costa, Bressi Ranch, Aviara, and Poinsettia. We understand each area's unique search patterns and customer demographics."
+	},
+	{
+		question: "What industries do you specialize in for Carlsbad SEO?",
+		answer: "We specialize in home service contractors (roofing, landscaping, junk removal), med spas & wellness studios, real estate agents & brokerages, cleaning companies, and local restaurants & event venues."
+	},
+	{
+		question: "How does coastal weather and tourism affect Carlsbad SEO?",
+		answer: "Carlsbad's coastal humidity, seasonal tourism, and high-income demographic make keyword seasonality crucial. We tailor campaigns to match seasonal search spikes — like \"roof repair after winter storms\" or \"summer cleaning services Carlsbad\" — so you always rank when customers are looking."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Carlsbad Today",
+	subtitle: "Let's make your business the one locals see first. 📍 Serving Carlsbad, Encinitas, Oceanside, and all of North County San Diego.",
+	primaryButton: {
+		text: "Schedule Free Carlsbad SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help North County businesses — from Carlsbad to Encinitas, Oceanside, and Vista — rise above the noise and capture real, local customers through targeted SEO strategies. Whether you run a home service business, med spa, or professional firm, our Carlsbad SEO services are built to drive visibility, calls, and booked jobs.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Local Insights -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Local Insights &<br/><span class="text-orange-600">Weather Impact</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed">
+							Carlsbad's coastal humidity, seasonal tourism, and high-income demographic make keyword seasonality crucial. We tailor campaigns to match seasonal search spikes — like "roof repair after winter storms" or "summer cleaning services Carlsbad" — so you always rank when customers are looking.
+						</p>
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries &<br/><span class="text-orange-600">Employers We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Carlsbad search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About Carlsbad SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

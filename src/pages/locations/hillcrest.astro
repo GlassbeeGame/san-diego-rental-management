@@ -1,0 +1,413 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Hillcrest SEO Experts — Visibility That Drives Real Results | Glassbee Solutions";
+const pageDescription = "Data-backed SEO for Hillcrest businesses. Dominate local search for med spas, restaurants, home services & real estate. Results-driven digital marketing.";
+
+// Schema Markup
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Hillcrest SEO",
+	"description": "Professional SEO and digital marketing services for Hillcrest businesses",
+	"url": "https://glassbee.solutions/locations/hillcrest",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Hillcrest",
+		"addressRegion": "CA",
+		"addressCountry": "US"
+	},
+	"areaServed": [
+		"Hillcrest",
+		"Bankers Hill",
+		"Mission Hills",
+		"University Heights",
+		"North Park"
+	],
+	"serviceArea": {
+		"@type": "GeoCircle",
+		"geoMidpoint": {
+			"@type": "GeoCoordinates",
+			"latitude": "32.7488",
+			"longitude": "-117.1636"
+		}
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Hillcrest SEO Experts — Visibility",
+	titleHighlight: "That Drives Real Results",
+	description: "Data-Backed SEO for San Diego's Most Competitive Market",
+	backgroundImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Analysis",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Our Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "25+", label: "Hillcrest Businesses", icon: "properties" },
+	{ value: "$3200", label: "Average Monthly Leads", icon: "revenue" },
+	{ value: "78%", label: "Ranking Improvement", icon: "occupancy" },
+	{ value: "4.8★", label: "Client Satisfaction", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Hillcrest SEO Services Built for",
+	titleHighlight: "San Diego's Most Competitive Market",
+	leftColumn: {
+		heading: "Why Hillcrest Businesses Choose Glassbee",
+		description: "Hillcrest is one of San Diego's most competitive local markets — high foot traffic, diverse audiences, and year-round demand mean visibility is everything. From University Ave to Fifth Ave, your business needs to show up when locals search — or you lose to competitors who do.",
+		bullets: [
+			"University Ave, Fifth Ave, and Washington St search dominance",
+			"Built for med spas, salons, restaurants, bars, and home service businesses",
+			"Local-first SEO designed for San Diego's most vibrant neighborhood",
+			"Data-driven campaigns that drive foot traffic, bookings, and revenue"
+		]
+	},
+	rightColumn: {
+		heading: "Local SEO Performance",
+		description: "Our clients see measurable improvements in local search visibility and lead generation.",
+		revenueSeasons: [
+			{ season: "Google Business SEO", price: "Top 3 Rankings", occupancy: "Within 90 days" },
+			{ season: "Local Citation Building", price: "50+ Directories", occupancy: "Consistent NAP listings" },
+			{ season: "Review Management", price: "4.5+ Star Average", occupancy: "Response rate 95%+" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const serviceAreas = {
+	title: "We Serve Hillcrest's",
+	titleHighlight: "Top Business Corridors",
+	items: [
+		{
+			heading: "University Ave",
+			description: "From Uptown to Mission Hills — Hillcrest's busiest commercial street"
+		},
+		{
+			heading: "Fifth Ave",
+			description: "The dining and nightlife hub — high competition, high reward"
+		},
+		{
+			heading: "Washington St",
+			description: "Commercial services, med spas, and professional offices"
+		}
+	]
+};
+
+// Industries We Serve
+const industries = [
+	{
+		heading: "Med Spas & Salons",
+		description: "From skincare clinics to boutique salons, we help you attract local clients searching for Hillcrest beauty and wellness services."
+	},
+	{
+		heading: "Restaurants & Bars",
+		description: "Hillcrest has one of San Diego's most competitive dining scenes. We help you show up in searches, dominate reviews, and fill tables."
+	},
+	{
+		heading: "Home Services",
+		description: "Whether it's HVAC, plumbing, or landscaping, Hillcrest homeowners search locally first. We make sure you're found."
+	},
+	{
+		heading: "Real Estate Agents",
+		description: "Hillcrest's housing market is fast-moving and competitive. Dominate \"Hillcrest homes for sale\" and neighborhood-specific search terms."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free SEO consultation",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "North Park", description: "SEO for North Park businesses", href: "/locations/north-park" },
+	{ name: "University Heights", description: "SEO for University Heights businesses", href: "/locations/university-heights" },
+	{ name: "South Park", description: "SEO for South Park businesses", href: "/locations/south-park" },
+	{ name: "Point Loma", description: "SEO for Point Loma businesses", href: "/locations/point-loma" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Why do Hillcrest businesses need SEO?",
+		answer: "Hillcrest is one of San Diego's most competitive local markets. If you're not ranking in the top 3 for neighborhood-specific searches, you're losing business to competitors who are. SEO ensures you're found when locals search for what you offer."
+	},
+	{
+		question: "How long does it take to see results?",
+		answer: "Most Hillcrest businesses see improvements in local rankings within 30-60 days. Full results — top 3 rankings, consistent leads, and optimized conversions — typically show within 90 days."
+	},
+	{
+		question: "What industries do you work with in Hillcrest?",
+		answer: "We specialize in med spas, salons, restaurants, bars, home services, and real estate. Hillcrest has unique search patterns based on foot traffic and local intent — we know how to dominate them."
+	},
+	{
+		question: "Do you work with businesses outside of Hillcrest?",
+		answer: "Yes — we serve businesses across San Diego, from North Park to La Jolla. But we tailor every strategy to your specific neighborhood and audience."
+	},
+	{
+		question: "What makes your SEO different?",
+		answer: "We don't use templates or generic strategies. Every campaign is built on real Hillcrest search data, competitor analysis, and neighborhood-specific buyer behavior. We focus on rankings that drive revenue — not vanity metrics."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Dominate Hillcrest Search Results?",
+	subtitle: "Get your free SEO consultation and see how we can improve your local visibility",
+	primaryButton: {
+		text: "Get Free Consultation",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-3">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Areas Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{serviceAreas.title}<br/><span class="text-orange-600">{serviceAreas.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{serviceAreas.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Why Hillcrest Businesses<br/><span class="text-orange-600">Choose Glassbee</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-black text-white">
+									<th class="px-6 py-4 text-left font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">What You Get</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Glassbee</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">DIY SEO</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Generic Agencies</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Hillcrest search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-400">Guesswork</td>
+									<td class="px-6 py-4 text-center text-gray-400">Generic templates</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Search trends, foot traffic, and buying behavior analysis</td>
+									<td class="px-6 py-4 text-center text-gray-400">None</td>
+									<td class="px-6 py-4 text-center text-gray-400">Basic keyword research</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">Google Business, citations, reviews, content, and technical SEO</td>
+									<td class="px-6 py-4 text-center text-gray-400">Incomplete</td>
+									<td class="px-6 py-4 text-center text-gray-400">Partial coverage</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">Revenue, leads, bookings — not vanity metrics</td>
+									<td class="px-6 py-4 text-center text-gray-400">Trial and error</td>
+									<td class="px-6 py-4 text-center text-gray-400">Traffic reports only</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Transparent reporting, direct access, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-400">Solo effort</td>
+									<td class="px-6 py-4 text-center text-gray-400">Ticket-based support</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Industries Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{industries.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Common questions"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

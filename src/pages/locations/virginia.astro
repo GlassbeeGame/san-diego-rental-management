@@ -1,0 +1,437 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "SEO Services Virginia — Data-Driven Growth | Glassbee Solutions";
+const pageDescription = "Expert SEO & digital marketing for Virginia businesses. Dominate search in Richmond, Virginia Beach, Norfolk & Northern VA. AI-powered strategy + transparent results.";
+
+// Schema Markup
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Virginia SEO Services",
+	"description": "Expert SEO and digital marketing services for Virginia businesses statewide",
+	"url": "https://glassbee.solutions/locations/virginia",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "VA",
+		"addressCountry": "US"
+	},
+	"areaServed": [
+		"Virginia",
+		"Richmond",
+		"Virginia Beach",
+		"Norfolk",
+		"Chesapeake",
+		"Northern Virginia",
+		"Arlington",
+		"Alexandria",
+		"Fairfax"
+	],
+	"serviceArea": {
+		"@type": "State",
+		"name": "Virginia"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "SEO Services Virginia — Data-Driven Growth",
+	titleHighlight: "",
+	description: "Expert SEO & Digital Marketing Solutions Built for Virginia Businesses",
+	backgroundImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Our Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "100+", label: "Virginia Businesses", icon: "properties" },
+	{ value: "200%", label: "Average Traffic Growth", icon: "revenue" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "occupancy" },
+	{ value: "24hr", label: "Average Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Businesses Across Virginia Choose",
+	titleHighlight: "Glassbee Solutions",
+	leftColumn: {
+		heading: "Turn Online Visibility Into Revenue",
+		description: "At Glassbee Solutions, we help Virginia businesses dominate Google search — whether you're a contractor in Richmond, a med spa in Virginia Beach, or a professional firm in Northern Virginia. Our SEO services for Virginia companies combine AI-powered keyword analysis, on-page and off-page optimization, and data-driven strategy to increase your traffic, leads, and revenue.",
+		bullets: [
+			"Comprehensive SEO Services: Keyword research, on-page optimization, link building, technical SEO, and local map rankings",
+			"AI + Human Expertise: Machine learning insights blended with in-depth manual optimization for maximum ROI",
+			"Industry-Specific Strategy: Tailored campaigns for home-service, legal, medical, real estate, and e-commerce clients",
+			"Transparent Reporting: Every lead, ranking, and conversion tracked — no fluff, no mystery metrics",
+			"Zero-Risk Engagement: If you don't see results in the first 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "Virginia's Competitive Digital Market",
+		description: "Virginia is one of the most competitive digital markets in the U.S. — from Richmond's startup scene to Virginia Beach's hospitality hubs. We've built an SEO system that cuts through the noise and delivers results.",
+		revenueSeasons: [
+			{ season: "Average Traffic Growth", price: "+200%", occupancy: "Within 60-90 days" },
+			{ season: "Virginia Map Pack", price: "Top 3 Rankings", occupancy: "City-specific targeting" },
+			{ season: "Statewide Coverage", price: "All Regions", occupancy: "Northern to Coastal VA" }
+		]
+	}
+};
+
+// Virginia SEO Services
+const seoServices = {
+	title: "Virginia SEO &",
+	titleHighlight: "Digital Marketing Services",
+	description: "Complete visibility solutions designed to help Virginia businesses outperform competitors statewide.",
+	services: [
+		{
+			icon: "🔍",
+			heading: "Local SEO (Virginia-Wide & City-Specific)",
+			description: "Rank higher in the Virginia Map Pack and attract nearby customers in Richmond, Norfolk, Chesapeake, Virginia Beach, and beyond."
+		},
+		{
+			icon: "🖋️",
+			heading: "On-Page Optimization",
+			description: "From metadata to internal linking and keyword placement, every detail is refined to help Google understand and rank your pages."
+		},
+		{
+			icon: "🌐",
+			heading: "Technical SEO",
+			description: "We fix crawl errors, page speed issues, schema, and site architecture — the foundation of sustainable rankings."
+		},
+		{
+			icon: "💬",
+			heading: "Reputation & Review Management",
+			description: "Turn satisfied customers into powerful SEO assets with review-building systems that increase credibility and click-through rates."
+		},
+		{
+			icon: "📈",
+			heading: "Full Digital Marketing Integration",
+			description: "Content strategy, paid search consulting, and analytics setup to help your brand grow faster across all channels."
+		}
+	]
+};
+
+// Industries We Serve
+const industries = [
+	{
+		heading: "Home Services",
+		description: "Roofing, landscaping, HVAC, junk removal, cleaning — we help Virginia contractors dominate local search and capture high-intent service calls."
+	},
+	{
+		heading: "Healthcare & Wellness",
+		description: "Med spas, chiropractors, dental clinics — we drive qualified patient leads through strategic local SEO and reputation management."
+	},
+	{
+		heading: "Professional Services",
+		description: "Real estate agents, attorneys, consultants — we position your expertise at the top of search results when clients are looking for help."
+	},
+	{
+		heading: "Hospitality & Retail",
+		description: "Restaurants, coffee shops, and local shops — we increase foot traffic and online orders through targeted local search optimization."
+	},
+	{
+		heading: "E-Commerce & Digital Brands",
+		description: "Targeted traffic growth through content marketing, link authority, and conversion-focused SEO strategies that drive sales."
+	}
+];
+
+// What Makes Our Virginia SEO Different
+const differentiators = [
+	{
+		heading: "Statewide Keyword Mapping",
+		description: "We analyze search behavior across Northern, Central, and Coastal Virginia to find growth pockets."
+	},
+	{
+		heading: "Local Business Schema",
+		description: "Structured data that improves how your listings appear in Google Search & Maps."
+	},
+	{
+		heading: "Competitor Intelligence",
+		description: "We dissect the backlink, content, and keyword strategies of top-ranking Virginia businesses."
+	},
+	{
+		heading: "Conversion-First Design",
+		description: "Every campaign focuses on visibility that turns into phone calls and clients."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free SEO audit",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Why do Virginia businesses need SEO?",
+		answer: "Virginia is one of the most competitive digital markets in the U.S. Whether you're competing in Richmond's startup scene, Virginia Beach's hospitality sector, or Northern Virginia's professional services market, SEO is essential to standing out. If you're not in the top 3 search results, you're losing business to competitors who are."
+	},
+	{
+		question: "How long does it take to see results?",
+		answer: "Most Virginia businesses see improvements in local rankings within 30-60 days. Full results — top 3 rankings, consistent leads, and +200% growth in calls and web traffic — typically show within 60-90 days."
+	},
+	{
+		question: "What industries do you work with in Virginia?",
+		answer: "We specialize in home services, healthcare and wellness, professional services (legal, real estate, consulting), hospitality and retail, and e-commerce. Each industry has unique search patterns across Virginia — we know how to dominate them."
+	},
+	{
+		question: "Do you only serve Virginia businesses?",
+		answer: "No — we serve businesses across the United States, with specialized expertise in Virginia, California, and other competitive markets. We tailor every strategy to your specific location and audience."
+	},
+	{
+		question: "What makes your SEO different from other agencies?",
+		answer: "We don't use templates or generic strategies. Every campaign is built on real Virginia search data, competitor analysis, and region-specific buyer behavior. We focus on rankings that drive revenue — not vanity metrics. Plus, our zero-risk guarantee means you don't pay until you see results."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Virginia Today",
+	subtitle: "Book your free SEO audit — we'll show you exactly how to out-rank, out-convert, and out-grow your competitors across the state",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}{hero.titleHighlight && <><br/><span class="text-orange-600">{hero.titleHighlight}</span></>}
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-3">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- SEO Services Section -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-4 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{seoServices.title}<br/><span class="text-orange-600">{seoServices.titleHighlight}</span>
+					</h3>
+					<p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+						{seoServices.description}
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{seoServices.services.map((service) => (
+							<div class="card p-6">
+								<div class="text-4xl mb-4">{service.icon}</div>
+								<h4 class="text-xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{service.heading}</h4>
+								<p class="text-gray-600 text-sm">{service.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Industries We Serve -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries We Serve<br/><span class="text-orange-600">Across Virginia</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{industries.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+					<p class="text-gray-600 text-center mt-8 max-w-3xl mx-auto">
+						From Northern Virginia to Virginia Beach, Richmond, and Norfolk, our team knows what works for each region's search behavior.
+					</p>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-black text-white">
+									<th class="px-6 py-4 text-left font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Feature</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Virginia search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-400">Broad, generic targeting</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with expert optimization</td>
+									<td class="px-6 py-4 text-center text-gray-400">One-size-fits-all templates</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-400">Partial implementation</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-400">Vanity metrics and impressions</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-400">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- What Makes Our Virginia SEO Different -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						What Makes Our<br/><span class="text-orange-600">Virginia SEO Different</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{differentiators.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Services"
+		pages={relatedPages}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Common questions"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

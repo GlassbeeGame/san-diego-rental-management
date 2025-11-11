@@ -1,0 +1,436 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "SEO Expert Los Angeles — Data-Driven SEO That Delivers Results | Glassbee Solutions";
+const pageDescription = "Expert SEO services for Los Angeles businesses. Dominate local search in DTLA, Beverly Hills, Santa Monica & the Valley. AI-powered strategy + transparent results.";
+
+// Schema Markup
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Los Angeles SEO Expert",
+	"description": "Expert SEO and digital marketing services for Los Angeles businesses",
+	"url": "https://glassbee.solutions/locations/los-angeles",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Los Angeles",
+		"addressRegion": "CA",
+		"addressCountry": "US"
+	},
+	"areaServed": [
+		"Los Angeles",
+		"Downtown Los Angeles",
+		"Hollywood",
+		"Beverly Hills",
+		"West Hollywood",
+		"Santa Monica",
+		"Venice",
+		"Culver City",
+		"Pasadena",
+		"Glendale",
+		"Burbank",
+		"San Fernando Valley"
+	],
+	"serviceArea": {
+		"@type": "City",
+		"name": "Los Angeles"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "SEO Expert Los Angeles —",
+	titleHighlight: "Data-Driven SEO That Delivers Calls, Leads, and Long-Term Visibility",
+	description: "Rise Above the Noise with Expert SEO Services Built for LA Businesses",
+	backgroundImage: "https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Our Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200+", label: "Los Angeles Businesses", icon: "properties" },
+	{ value: "200%", label: "Average Traffic Growth", icon: "revenue" },
+	{ value: "Top 3", label: "Google Map Rankings", icon: "occupancy" },
+	{ value: "24hr", label: "Average Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Los Angeles Businesses Choose",
+	titleHighlight: "Glassbee Solutions",
+	leftColumn: {
+		heading: "Results That Drive Real Growth",
+		description: "At Glassbee Solutions, we help Los Angeles businesses rise above the noise. Whether you're a home-service company in the Valley, a med spa in Beverly Hills, or a creative studio in DTLA, our Los Angeles SEO services are built to make your brand impossible to miss on Google.",
+		bullets: [
+			"Local Expertise: Real LA search data and competitor insights to position you above the rest",
+			"AI + Human Optimization: Machine learning pinpoints opportunity — our team executes with precision",
+			"Full SEO Management: Technical fixes, content, backlinks, and Google Business optimization",
+			"Results You Can See: Most clients see over 200% growth in calls and web traffic",
+			"Zero-Risk Start: If you don't see results in the first 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "LA's Competitive Digital Market",
+		description: "LA's digital market is competitive — full of agencies promising results they rarely deliver. We're not one of them. We focus on what actually drives growth: local search intent, customer engagement, and sustained visibility.",
+		revenueSeasons: [
+			{ season: "Average Traffic Growth", price: "+200%", occupancy: "Within 60-90 days" },
+			{ season: "Google Map Rankings", price: "Top 3 Placement", occupancy: "Neighborhood targeting" },
+			{ season: "Greater LA Coverage", price: "All Districts", occupancy: "DTLA to the Valley" }
+		]
+	}
+};
+
+// Los Angeles SEO Services
+const seoServices = {
+	title: "Los Angeles",
+	titleHighlight: "SEO Services",
+	description: "Full-service SEO campaigns tailored to your business type, market, and location.",
+	services: [
+		{
+			heading: "Local SEO",
+			description: "Rank in Google Maps and capture more phone calls across LA neighborhoods like Downtown, Silver Lake, West Hollywood, and Santa Monica."
+		},
+		{
+			heading: "Technical SEO",
+			description: "We fix everything under the hood — page speed, mobile optimization, schema, site structure — so your site performs better and ranks faster."
+		},
+		{
+			heading: "Content Optimization",
+			description: "From landing pages to blog posts, every word is optimized to rank, convert, and reinforce your brand authority."
+		},
+		{
+			heading: "Link Building & Citations",
+			description: "Quality backlinks, local citations, and business listings that increase your authority in Google's eyes."
+		},
+		{
+			heading: "Conversion Tracking",
+			description: "We measure everything that matters — leads, traffic sources, keyword movement, and ROI."
+		}
+	]
+};
+
+// Service Areas
+const serviceAreas = {
+	title: "Where We Work",
+	titleHighlight: "Across Greater Los Angeles",
+	description: "We manage SEO campaigns across the Greater Los Angeles area, including:",
+	areas: [
+		"Downtown LA (DTLA), Hollywood, Silver Lake, Echo Park",
+		"Beverly Hills, West Hollywood, Mid-City, Culver City",
+		"Santa Monica, Venice, Mar Vista, Marina del Rey",
+		"Pasadena, Glendale, Burbank, and the San Fernando Valley"
+	]
+};
+
+// Industries We Serve
+const industries = [
+	{
+		heading: "Home Services",
+		description: "Contractors, roofers, cleaners, landscapers — we help LA home service businesses dominate local search and capture high-intent service calls."
+	},
+	{
+		heading: "Med Spas & Wellness",
+		description: "Clinics, salons, dental and aesthetic professionals — we drive qualified patient leads through strategic local SEO and reputation management."
+	},
+	{
+		heading: "Professional Services",
+		description: "Real estate agents, lawyers, consultants — we position your expertise at the top of search results when clients are looking for help."
+	},
+	{
+		heading: "Restaurants & Hospitality",
+		description: "Cafés, bars, event venues, boutique hotels — we increase foot traffic and online orders through targeted local search optimization."
+	},
+	{
+		heading: "Creative & Digital Brands",
+		description: "Agencies, design studios, e-commerce businesses — we build authority and drive qualified traffic that converts into revenue."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free SEO audit",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Why do Los Angeles businesses need SEO?",
+		answer: "LA is one of the most competitive markets in the world. With thousands of businesses competing for attention, SEO is essential to standing out. If you're not in the top 3 search results for your neighborhood and industry, you're losing business to competitors who are."
+	},
+	{
+		question: "How long does it take to see results?",
+		answer: "Most Los Angeles businesses see improvements in local rankings within 30-60 days. Full results — top 3 rankings, consistent leads, and +200% growth in calls and web traffic — typically show within 60-90 days."
+	},
+	{
+		question: "What industries do you work with in Los Angeles?",
+		answer: "We specialize in home services, med spas and wellness, professional services (legal, real estate, consulting), restaurants and hospitality, and creative/digital brands. Each industry has unique search patterns across LA — we know how to dominate them."
+	},
+	{
+		question: "Do you only serve Los Angeles businesses?",
+		answer: "No — we serve businesses across California and the United States, with specialized expertise in competitive markets like Los Angeles, San Diego, and San Francisco. We tailor every strategy to your specific location and audience."
+	},
+	{
+		question: "What makes your SEO different from other LA agencies?",
+		answer: "We don't use templates or generic strategies. Every campaign is built on real Los Angeles search data, competitor analysis, and neighborhood-specific buyer behavior. We focus on rankings that drive revenue — not vanity metrics. Plus, our zero-risk guarantee means you don't pay until you see results."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Los Angeles Today",
+	subtitle: "Book your free SEO audit — we'll show you where your website stands, uncover growth opportunities, and map out the path to page-one visibility",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-3">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- SEO Services Section -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-4 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{seoServices.title}<br/><span class="text-orange-600">{seoServices.titleHighlight}</span>
+					</h3>
+					<p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+						{seoServices.description}
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{seoServices.services.map((service) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{service.heading}</h4>
+								<p class="text-gray-600 mb-4">{service.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Service Areas Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-4 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{serviceAreas.title}<br/><span class="text-orange-600">{serviceAreas.titleHighlight}</span>
+					</h3>
+					<p class="text-gray-300 mb-6 text-center max-w-3xl mx-auto">
+						{serviceAreas.description}
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+						{serviceAreas.areas.map((area) => (
+							<div class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-200">{area}</span>
+							</div>
+						))}
+					</div>
+					<p class="text-gray-300 mt-6 text-center italic">
+						Wherever you do business — we'll help your customers find you first.
+					</p>
+				</div>
+
+				<!-- Industries We Serve -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+						We specialize in helping service-based and high-value local businesses scale through SEO:
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{industries.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Compares</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-black text-white">
+									<th class="px-6 py-4 text-left font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Feature</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Los Angeles search data and competitive analysis</td>
+									<td class="px-6 py-4 text-center text-gray-400">Broad regional targeting</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines advanced machine learning with expert execution</td>
+									<td class="px-6 py-4 text-center text-gray-400">Generic templates and automation</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-400">Partial or incomplete SEO setup</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-400">Vanity metrics and impressions</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, clear strategy, and full accountability</td>
+									<td class="px-6 py-4 text-center text-gray-400">Automated reports and vague updates</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Services"
+		pages={relatedPages}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Common questions"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

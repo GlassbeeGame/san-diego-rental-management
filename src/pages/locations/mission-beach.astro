@@ -1,0 +1,448 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Mission Beach SEO Experts — Get Found Where Locals and Tourists Search | Glassbee Solutions";
+const pageDescription = "Local SEO for Mission Beach businesses. Dominate search for vacation rentals, restaurants, home services & real estate. AI-driven optimization + hyper-local targeting.";
+
+// Schema Markup
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Mission Beach SEO",
+	"description": "Professional SEO and digital marketing services for Mission Beach businesses",
+	"url": "https://glassbee.solutions/locations/mission-beach",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Mission Beach",
+		"addressRegion": "CA",
+		"addressCountry": "US"
+	},
+	"areaServed": [
+		"Mission Beach",
+		"Mission Bay",
+		"Pacific Beach",
+		"Belmont Park",
+		"South Mission"
+	],
+	"serviceArea": {
+		"@type": "GeoCircle",
+		"geoMidpoint": {
+			"@type": "GeoCoordinates",
+			"latitude": "32.7713",
+			"longitude": "-117.2526"
+		}
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Mission Beach SEO Experts — Get Found",
+	titleHighlight: "Where Locals and Tourists Search",
+	description: "Local SEO That Brings You Real Leads and Long-Term Visibility",
+	backgroundImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Our Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "35+", label: "Mission Beach Businesses", icon: "properties" },
+	{ value: "200%", label: "Growth in Calls & Traffic", icon: "revenue" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "occupancy" },
+	{ value: "24hr", label: "Average Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Mission Beach Businesses Choose",
+	titleHighlight: "Glassbee Solutions",
+	leftColumn: {
+		heading: "Visibility That Drives Revenue",
+		description: "At Glassbee Solutions, we help Mission Beach businesses capture local attention and turn it into consistent revenue. From vacation rental companies and restaurants to real estate offices and home-service contractors, our Mission Beach SEO services are designed to put your business front and center on Google.",
+		bullets: [
+			"Hyper-Local Targeting: Built on real Mission Beach search data and local competitor insights",
+			"AI-Driven Keyword Strategy: Technology that pinpoints what your customers are searching for",
+			"Full Optimization: Google Business profile, citations, backlinks, and content optimization",
+			"Results That Matter: Measurable growth in calls, leads, and rankings — not vanity reports",
+			"Zero-Risk Guarantee: If you don't see results within 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "The Mission Beach SEO Landscape",
+		description: "Mission Beach is saturated with high-traffic searches — from short-term rentals to home services and hospitality. Most local businesses rank below the top 3, meaning they're invisible to 90% of searchers. We fix that.",
+		revenueSeasons: [
+			{ season: "Growth in Calls & Traffic", price: "+200%", occupancy: "Within 30-60 days" },
+			{ season: "Map Pack Rankings", price: "Top 3 Placement", occupancy: "Core MB keywords" },
+			{ season: "Major Visibility Boost", price: "All Districts", occupancy: "Mission to Belmont" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const serviceAreas = {
+	title: "Local Service Areas",
+	titleHighlight: "We Cover",
+	items: [
+		{
+			heading: "Mission Blvd & Ventura Place",
+			description: "Restaurants, retail, vacation rentals — the heart of Mission Beach"
+		},
+		{
+			heading: "Belmont Park & Santa Clara Place",
+			description: "Hospitality, tourism, med spas, and entertainment district"
+		},
+		{
+			heading: "Mission Bay & South Mission",
+			description: "Contractors, cleaning, home services, and waterfront businesses"
+		},
+		{
+			heading: "North Mission & PB Border",
+			description: "Real estate, wellness, local shops, and residential services"
+		}
+	]
+};
+
+// Local Insights Section
+const localInsights = {
+	title: "Local Insights &",
+	titleHighlight: "Seasonal Search Trends",
+	description: "Mission Beach traffic surges in the summer — but year-round visibility is what drives consistent business. We time your SEO to capture both peak and off-season searches.",
+	trends: [
+		"Tourism keywords (\"best restaurants Mission Beach,\" \"vacation rentals near Belmont Park\")",
+		"Home-service searches (pressure washing, junk removal, cleaning before and after summer)",
+		"High-value service terms (real estate, property management, med spas)"
+	]
+};
+
+// Industries We Serve
+const industries = [
+	{
+		heading: "Vacation Rentals & Property Management",
+		description: "Mission Beach is one of San Diego's top vacation destinations. We help you dominate short-term rental searches and booking keywords year-round."
+	},
+	{
+		heading: "Restaurants, Cafés & Local Retailers",
+		description: "Mission Boulevard and Belmont Park attract thousands of visitors monthly. We make sure you're found when locals and tourists search."
+	},
+	{
+		heading: "Home Services & Contractors",
+		description: "From junk removal to cleaning, landscaping, and contracting — Mission Beach property owners search locally first. We make sure you're at the top."
+	},
+	{
+		heading: "Med Spas, Salons & Real Estate",
+		description: "Whether it's wellness services or real estate listings, we help you attract high-intent local clients searching for Mission Beach providers."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "Contact Us",
+		description: "Get your free SEO audit",
+		link: "/contact",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Pacific Beach", description: "SEO for Pacific Beach businesses", href: "/locations/pacific-beach" },
+	{ name: "Ocean Beach", description: "SEO for Ocean Beach businesses", href: "/locations/ocean-beach" },
+	{ name: "La Jolla", description: "SEO for La Jolla businesses", href: "/locations/la-jolla" },
+	{ name: "Point Loma", description: "SEO for Point Loma businesses", href: "/locations/point-loma" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "Why do Mission Beach businesses need SEO?",
+		answer: "Mission Beach has one of the most competitive local economies in San Diego. With new businesses popping up every season, SEO can make or break your visibility. If you're not ranking in the top 3 for neighborhood-specific searches, you're invisible to 90% of potential customers."
+	},
+	{
+		question: "How long does it take to see results?",
+		answer: "Most Mission Beach businesses see improvements in local rankings within 30-60 days. Full results — top 3 rankings, consistent leads, and +200% growth in calls and web traffic — typically show within 90 days."
+	},
+	{
+		question: "What industries do you work with in Mission Beach?",
+		answer: "We specialize in vacation rentals, property management, restaurants, home services, med spas, and real estate. Mission Beach has unique search patterns based on tourism, seasonal cycles, and local demand — we know how to dominate them."
+	},
+	{
+		question: "Do you work with businesses outside of Mission Beach?",
+		answer: "Yes — we serve businesses across San Diego, from Carlsbad to Coronado. But we tailor every strategy to your specific neighborhood and audience."
+	},
+	{
+		question: "What makes your SEO different?",
+		answer: "We don't use templates or generic strategies. Every campaign is built on real Mission Beach search data, competitor analysis, and neighborhood-specific buyer behavior. We focus on rankings that drive revenue — not vanity metrics."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Mission Beach Today",
+	subtitle: "Book your free SEO audit — we'll show you exactly where your visibility is slipping and how to fix it fast",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-3">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-4 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Areas Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{serviceAreas.title}<br/><span class="text-orange-600">{serviceAreas.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{serviceAreas.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Local Insights Section -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{localInsights.title}<br/><span class="text-orange-600">{localInsights.titleHighlight}</span>
+					</h3>
+					<p class="text-gray-600 mb-6 text-center max-w-3xl mx-auto">
+						{localInsights.description}
+					</p>
+					<div class="bg-gray-50 p-8 max-w-3xl mx-auto">
+						<p class="font-bold text-black mb-4">We optimize around:</p>
+						<ul class="space-y-3">
+							{localInsights.trends.map((trend) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{trend}</span>
+								</li>
+							))}
+						</ul>
+						<p class="text-gray-600 mt-6 italic">Our adaptive approach keeps your listings visible every month of the year.</p>
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Compares</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-black text-white">
+									<th class="px-6 py-4 text-left font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Feature</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold uppercase" style="font-family: 'Bebas Neue', sans-serif;">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Mission Beach search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-400">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-400">One-size-fits-all templates</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-400">Partial implementation</td>
+								</tr>
+								<tr class="border-b bg-gray-50">
+									<td class="px-6 py-4 font-bold">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-400">Vanity metrics and impressions</td>
+								</tr>
+								<tr class="border-b">
+									<td class="px-6 py-4 font-bold">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-400">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Industries Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{industries.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Common questions"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

@@ -1,0 +1,488 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "Coronado SEO Experts — Visibility That Turns Searches into Sales | Glassbee Solutions";
+const pageDescription = "Drive real local growth across the island. We help Coronado businesses rise above the noise with SEO built for results that delivers measurable growth fast.";
+
+// Schema Markup for Local Business SEO
+const schemaMarkup = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Glassbee Solutions - Coronado SEO",
+	"description": "Local SEO services for Coronado businesses. We blend precise keyword targeting, AI-driven optimization, and hands-on local expertise to deliver measurable results for island businesses.",
+	"url": "https://www.glassbeesolutions.com/locations/coronado",
+	"areaServed": {
+		"@type": "City",
+		"name": "Coronado",
+		"containedIn": {
+			"@type": "City",
+			"name": "San Diego",
+			"containedIn": "California"
+		}
+	},
+	"serviceArea": [
+		"Coronado",
+		"Orange Avenue",
+		"Ferry Landing",
+		"The Shores",
+		"Strand Way",
+		"Bay View",
+		"Country Club",
+		"Downtown San Diego",
+		"Imperial Beach",
+		"Point Loma"
+	],
+	"priceRange": "$$",
+	"telephone": "+1-951-760-0070",
+	"address": {
+		"@type": "PostalAddress",
+		"addressRegion": "CA",
+		"addressLocality": "San Diego"
+	}
+};
+
+// Hero Section
+const hero = {
+	title: "Coronado SEO Experts",
+	titleHighlight: "Visibility That Turns Searches into Sales",
+	description: "Drive Real Local Growth Across the Island",
+	backgroundImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920",
+	primaryButton: {
+		text: "Get Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "200%+", label: "Traffic & Calls Growth", icon: "properties" },
+	{ value: "Top 3", label: "Map Pack Rankings", icon: "revenue" },
+	{ value: "30 Days", label: "Risk-Free Results", icon: "occupancy" },
+	{ value: "24 Hours", label: "Response Time", icon: "rating" }
+];
+
+// About Section (Two Column Layout)
+const aboutSection = {
+	title: "Why Coronado Businesses",
+	titleHighlight: "Choose Glassbee Solutions",
+	leftColumn: {
+		heading: "SEO Built for Coronado's Unique Market",
+		description: "Coronado's market is unique: smaller in geography, but dense in competition. Businesses here depend on reputation, visibility, and high-intent customers. That's where we come in.",
+		bullets: [
+			"Hyper-Local Targeting: We use real Coronado search data and competitor analysis to drive qualified traffic from the island and beyond",
+			"AI-Driven Strategy: Our data tools uncover valuable low-competition keywords others overlook — then we optimize for them before anyone else",
+			"Full Optimization: From Google Business setup to citations, content, and review strategy, every piece of your SEO ecosystem is handled",
+			"Results That Matter: We focus on calls, bookings, and leads — not meaningless metrics",
+			"Zero-Risk Start: If you don't see results in 30 days, you don't pay until you do"
+		]
+	},
+	rightColumn: {
+		heading: "The Coronado SEO Landscape",
+		description: "Coronado attracts both locals and tourists, meaning your business competes for attention in two search markets — local and travel-driven. Most businesses miss out because their SEO doesn't reflect that dual audience.",
+		revenueSeasons: [
+			{ season: "Typical Client Results", price: "+200% growth", occupancy: "In calls & web traffic (30-60 days)" },
+			{ season: "Google Map Pack", price: "Top-3 ranking", occupancy: "For targeted service keywords" },
+			{ season: "Brand Visibility", price: "Increased presence", occupancy: "Orange Ave, Ferry Landing, Hotel Del" }
+		]
+	}
+};
+
+// Black Box Section (Service Areas)
+const blackBoxSection = {
+	title: "Local Service",
+	titleHighlight: "Areas We Cover",
+	items: [
+		{
+			heading: "Orange Avenue & Ferry Landing",
+			description: "Restaurants, retail, tourism businesses, and boutique shops in Coronado's main commercial district"
+		},
+		{
+			heading: "The Shores & Strand Way",
+			description: "Hospitality, real estate, vacation rentals, and home services serving beachfront properties"
+		},
+		{
+			heading: "Bay View & Country Club Areas",
+			description: "Professional offices, salons, wellness centers, and upscale services"
+		},
+		{
+			heading: "Surrounding Areas",
+			description: "We also serve Downtown San Diego, Imperial Beach, and Point Loma"
+		},
+		{
+			heading: "Response Time",
+			description: "Within 24 hours for all Coronado clients"
+		},
+		{
+			heading: "Local Meetings",
+			description: "We meet clients regularly near Orange Avenue, The Ferry Landing, and Hotel del Coronado. Available for remote strategy sessions at your convenience."
+		}
+	]
+};
+
+// Expertise/Service Cards
+const expertiseCards = [
+	{
+		heading: "Home-Service Contractors",
+		description: "Get more calls for roofing, pressure washing, landscaping, cleaning, HVAC, and other home services. We optimize for Coronado properties and island-wide searches that drive booked jobs year-round."
+	},
+	{
+		heading: "Med Spas, Salons & Wellness Professionals",
+		description: "Stand out in Coronado's upscale wellness market. We target high-intent searches like \"med spa Coronado,\" \"massage near Hotel Del,\" and luxury wellness services that attract affluent clients."
+	},
+	{
+		heading: "Restaurants, Boutiques & Hospitality Brands",
+		description: "Drive reservations and foot traffic for Orange Avenue restaurants, Ferry Landing shops, and hospitality businesses. We optimize for both locals and tourists searching for Coronado experiences."
+	},
+	{
+		heading: "Real Estate Agents & Property Managers",
+		description: "Dominate luxury real estate searches in Coronado. We optimize for buyer, seller, and vacation rental searches that generate qualified leads in one of San Diego's most exclusive markets."
+	},
+	{
+		heading: "Local Professional Offices",
+		description: "Law firms, consultants, designers, accountants, and other professional services — we help you rank for high-intent local searches and capture quality leads across Coronado and the bridge."
+	},
+	{
+		heading: "Businesses Near Local Landmarks",
+		description: "We also serve businesses near Hotel del Coronado, Orange Avenue, and Coronado Ferry Landing."
+	}
+];
+
+// Related Pages
+const relatedPages = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Complete SEO management for your business",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "GBP optimization and management services",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "View All Service Areas",
+		description: "See all San Diego locations we serve",
+		link: "/locations",
+		icon: "contact"
+	}
+];
+
+// Nearby Locations
+const nearbyLocations = [
+	{ name: "Downtown San Diego", description: "Urban business district SEO", href: "/locations/downtown-san-diego" },
+	{ name: "Point Loma", description: "Coastal peninsula SEO", href: "/locations/point-loma" },
+	{ name: "Imperial Beach", description: "Beach community SEO", href: "/locations/imperial-beach" },
+	{ name: "La Jolla", description: "Premium coastal business SEO", href: "/locations/la-jolla" }
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How quickly can I see results from Coronado SEO services?",
+		answer: "Most clients see +200% growth in calls and organic web traffic within 30-60 days. You'll achieve Top-3 Google Map Pack ranking for targeted service and industry keywords, plus increased brand visibility across Orange Avenue, Ferry Landing, and the Hotel del Coronado area. We offer a zero-risk start — if you don't see results in 30 days, you don't pay until you do."
+	},
+	{
+		question: "What makes your Coronado SEO different from other agencies?",
+		answer: "We use real Coronado search data and competitor analysis to drive qualified traffic from the island and beyond. Our AI-driven strategy uncovers valuable low-competition keywords others overlook. We handle full optimization — from Google Business setup to citations, content, and review strategy — and focus on calls, bookings, and leads, not meaningless metrics."
+	},
+	{
+		question: "Do you optimize for both locals and tourists?",
+		answer: "Yes! Coronado attracts both locals and tourists, so your business competes in two search markets. We optimize for local searches (\"Coronado contractor near me\") and travel-driven searches (\"best restaurants Coronado,\" \"things to do in Coronado\"). Most businesses miss out because their SEO doesn't reflect this dual audience."
+	},
+	{
+		question: "What industries do you specialize in for Coronado?",
+		answer: "We specialize in home-service contractors (roofing, pressure washing, landscaping, cleaning), med spas, salons & wellness professionals, restaurants, boutiques & hospitality brands, real estate agents & property managers, and local professional offices (law, consulting, design, accounting)."
+	},
+	{
+		question: "How do seasonal patterns affect Coronado SEO?",
+		answer: "Coronado's business visibility changes with the seasons — tourism peaks, local home projects, and real estate waves all shift search intent. We monitor these changes in real time and optimize around tourism surges, seasonal home services (landscaping, repairs, cleaning, remodeling), and high-value local searches. Our campaigns adapt so you never lose momentum — even in the off-season."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Start Ranking in Coronado Today",
+	subtitle: "Let's make your business the one locals and visitors see first. 📍 Serving Coronado, Downtown San Diego, and the greater coastal area.",
+	primaryButton: {
+		text: "Book Free SEO Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<!-- Schema Markup -->
+	<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- About Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+						At Glassbee Solutions, we help Coronado businesses rise above the noise with SEO built for results. From boutique hotels and restaurants near Orange Avenue to contractors and real estate offices across the bridge, our Coronado SEO services are designed to make your business the one locals — and visitors — find first.
+					</p>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+						We blend precise keyword targeting, AI-driven optimization, and hands-on local expertise to deliver measurable results — fast.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+					<!-- Left Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.leftColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.leftColumn.description}
+						</p>
+						<ul class="space-y-4">
+							{aboutSection.leftColumn.bullets.map((bullet) => (
+								<li class="flex items-start gap-3">
+									<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+									</svg>
+									<span class="text-gray-700">{bullet}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- Right Column -->
+					<div>
+						<h3 class="text-3xl font-bold text-black mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{aboutSection.rightColumn.heading}</h3>
+						<p class="text-gray-600 mb-6 leading-relaxed">
+							{aboutSection.rightColumn.description}
+						</p>
+						<div class="space-y-4">
+							{aboutSection.rightColumn.revenueSeasons.map((season) => (
+								<div class="bg-gray-50 p-4 border-l-4 border-orange-600">
+									<p class="font-bold text-black mb-1">{season.season}</p>
+									<p class="text-gray-600 text-sm">{season.price} | {season.occupancy}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<!-- Black Box Section -->
+				<div class="bg-black text-white p-12 mb-16">
+					<h3 class="text-4xl font-bold mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						{blackBoxSection.title}<br/><span class="text-orange-600">{blackBoxSection.titleHighlight}</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{blackBoxSection.items.map((item) => (
+							<div>
+								<h4 class="text-xl font-bold mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{item.heading}</h4>
+								<p class="text-gray-300 text-sm">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Driving Directions -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Driving Directions &<br/><span class="text-orange-600">Local Meetings</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed">
+							We meet clients regularly near Orange Avenue, The Ferry Landing, and Hotel del Coronado. Whether you're on-island or across the bridge, we're nearby — or available for remote strategy sessions at your convenience.
+						</p>
+					</div>
+				</div>
+
+				<!-- Local Insights -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-6 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Local Insights &<br/><span class="text-orange-600">Seasonal Search Trends</span>
+					</h3>
+					<div class="card p-8">
+						<p class="text-gray-600 text-lg leading-relaxed mb-4">
+							Coronado's business visibility changes with the seasons — tourism peaks, local home projects, and real estate waves all shift search intent. We monitor these changes in real time so your business stays visible year-round. We optimize around:
+						</p>
+						<ul class="space-y-3">
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Tourism surges ("best restaurants Coronado," "things to do in Coronado," "boutiques near Hotel Del")</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">Seasonal home services (landscaping, repairs, cleaning, and remodeling)</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+								</svg>
+								<span class="text-gray-700">High-value local searches for real estate, med spas, and contractors</span>
+							</li>
+						</ul>
+						<p class="text-gray-600 text-lg leading-relaxed mt-4">
+							Our campaigns adapt to your market so you never lose momentum — even in the off-season.
+						</p>
+					</div>
+				</div>
+
+				<!-- Expertise Cards -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						Industries<br/><span class="text-orange-600">We Serve</span>
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{expertiseCards.map((card) => (
+							<div class="card p-8">
+								<h4 class="text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{card.heading}</h4>
+								<p class="text-gray-600 mb-4">{card.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Comparison Table -->
+				<div class="mb-16">
+					<h3 class="text-4xl font-bold text-black mb-8 uppercase text-center" style="font-family: 'Bebas Neue', sans-serif;">
+						How Glassbee Solutions<br/><span class="text-orange-600">Stands Apart</span>
+					</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full card">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-4 text-left font-bold text-black">Feature</th>
+									<th class="px-6 py-4 text-center font-bold text-orange-600">Glassbee Solutions</th>
+									<th class="px-6 py-4 text-center font-bold text-gray-600">Typical SEO Agency</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-gray-200">
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Hyper-Local Precision</td>
+									<td class="px-6 py-4 text-center text-sm">Built on real Coronado search data and competitor analysis</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Generalized San Diego targeting</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Data + AI Strategy</td>
+									<td class="px-6 py-4 text-center text-sm">Combines machine learning insights with human optimization</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">One-size-fits-all templates</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">Full Optimization</td>
+									<td class="px-6 py-4 text-center text-sm">On-page, off-page, citations, and Google Business handled for you</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Partial implementation</td>
+								</tr>
+								<tr class="bg-gray-50">
+									<td class="px-6 py-4 text-gray-700">Results-Driven Focus</td>
+									<td class="px-6 py-4 text-center text-sm">+200% growth in calls & web traffic, tracked transparently</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Vanity metrics and impressions</td>
+								</tr>
+								<tr>
+									<td class="px-6 py-4 text-gray-700">True Partnership</td>
+									<td class="px-6 py-4 text-center text-sm">Direct communication, transparent progress, real accountability</td>
+									<td class="px-6 py-4 text-center text-gray-500 text-sm">Automated monthly reports only</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedPages}
+	/>
+
+	<!-- Nearby Locations -->
+	{nearbyLocations && nearbyLocations.length > 0 && (
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl md:text-5xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						We Also Serve<br/><span class="text-orange-600">Nearby Communities</span>
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					{nearbyLocations.map((location) => (
+						<a href={location.href} class="card p-6 hover:border-orange-600 transition-all group">
+							<h3 class="text-xl font-bold text-black mb-2 uppercase group-hover:text-orange-600" style="font-family: 'Bebas Neue', sans-serif;">{location.name}</h3>
+							<p class="text-gray-600 text-sm">{location.description}</p>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="About Coronado SEO"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor="orange"
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>

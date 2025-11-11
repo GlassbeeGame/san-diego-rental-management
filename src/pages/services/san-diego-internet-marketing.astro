@@ -1,0 +1,685 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "San Diego Internet Marketing Services That Drive Real Results | Glassbee Solutions";
+const pageDescription = "Glassbee Solutions helps San Diego businesses get more leads online with AI-powered Internet Marketing. Local SEO, lead generation, and visibility growth — guaranteed results or you don't pay.";
+
+// Hero Section
+const hero = {
+	title: "San Diego Internet Marketing",
+	titleHighlight: "That Gets You Real Leads",
+	description: "If your business isn't showing up online, you're invisible to the customers searching for you right now.",
+	backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920",
+	primaryButton: {
+		text: "Get Your Free Marketing Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "All Services",
+		link: "/services"
+	}
+};
+
+// Trust Signals Stats
+const trustStats = [
+	{ value: "AI-Powered", label: "Optimization", icon: "revenue" },
+	{ value: "30 Days", label: "To Results", icon: "properties" },
+	{ value: "No Contracts", label: "No Gimmicks", icon: "rating" },
+	{ value: "Local", label: "San Diego Experts", icon: "occupancy" }
+];
+
+// Intro Text Content Section
+const introSection = {
+	title: "San Diego Internet Marketing",
+	titleHighlight: "That Converts",
+	paragraphs: [
+		"If your business isn't showing up online, you're invisible to the customers searching for you right now.",
+		"At Glassbee Solutions, we specialize in Internet Marketing Services for San Diego businesses that convert — not clicks, not traffic, but calls, clients, and booked jobs.",
+		"Whether you're a contractor in North County or a med spa downtown, we help your business rise above competitors and dominate search results, local listings, and maps — all without expensive ads or long-term contracts."
+	]
+};
+
+// Why Choose Section
+const whyChooseSection = {
+	title: "Why San Diego Businesses Choose",
+	titleHighlight: "Glassbee Solutions",
+	subtitle: "",
+	features: [
+		{
+			heading: "AI-Powered Optimization",
+			description: "Our system analyzes thousands of San Diego search terms — like \"internet marketing San Diego CA\" and \"digital marketing agency San Diego\" — to find the fastest paths to visibility and leads.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "Results in 30 Days",
+			description: "We move quickly. You'll start seeing measurable growth in calls, traffic, and leads within 30 days — or you don't pay until you do.",
+			icon: "calendar"
+		},
+		{
+			heading: "No Contracts or Gimmicks",
+			description: "Month-to-month flexibility. No retainers. Just proven performance and transparency.",
+			icon: "settings"
+		},
+		{
+			heading: "Local Expertise",
+			description: "We know the San Diego market — from North County to Chula Vista — and we optimize every campaign for hyper-local intent.",
+			icon: "chart"
+		}
+	]
+};
+
+// What's Included Section
+const featuresSection = {
+	title: "What's Included in Our",
+	titleHighlight: "Internet Marketing Services",
+	subtitle: "",
+	features: [
+		{
+			heading: "1. Local SEO & Visibility Growth",
+			description: "Your business needs to appear when customers search. We optimize your website and Google Business Profile to rank in: Google Maps and the local pack, organic search results, and \"near me\" and service-specific queries. Target keywords include: san diego internet marketing services, san diego digital marketing agency, search engine marketing services, local internet marketing san diego.",
+			icon: "chart"
+		},
+		{
+			heading: "2. Conversion-Optimized Website Updates",
+			description: "We refine your website structure, copy, and design to convert more visitors into customers. Clear CTAs and mobile-first design, fast-loading pages for better engagement, and lead forms and call tracking for measurable ROI.",
+			icon: "settings"
+		},
+		{
+			heading: "3. Review & Reputation Management",
+			description: "Your online reputation is your brand. We help you grow, manage, and respond to reviews on Google, Yelp, and local directories to build credibility and drive clicks.",
+			icon: "document"
+		},
+		{
+			heading: "4. Lead Tracking & Analytics",
+			description: "You'll know exactly what's working. Every campaign includes live tracking dashboards showing search visibility, leads, and calls — updated daily.",
+			icon: "calendar"
+		}
+	]
+};
+
+// Problems We Solve Section
+const problemsSection = {
+	title: "Common Problems",
+	titleHighlight: "We Solve",
+	problems: [
+		{
+			heading: "\"We're not getting leads from our website.\"",
+			description: "We fix the core problem — visibility and conversion — by improving how people find you and what they do once they do.",
+			icon: "chart"
+		},
+		{
+			heading: "\"Competitors are always ahead of us.\"",
+			description: "We reverse-engineer their strategy, then outperform it using faster optimization and stronger content.",
+			icon: "settings"
+		},
+		{
+			heading: "\"We're tired of paying for ads that don't convert.\"",
+			description: "Our Internet Marketing strategy focuses on long-term organic growth and lead generation — not pay-per-click drains.",
+			icon: "lightbulb"
+		},
+		{
+			heading: "\"We don't understand what's working.\"",
+			description: "You'll have clear, transparent reporting that shows you where every call and customer is coming from.",
+			icon: "document"
+		}
+	]
+};
+
+// How It Works Section
+const howItWorksSection = {
+	title: "Our",
+	titleHighlight: "Process",
+	steps: [
+		{
+			number: "1",
+			heading: "Free Visibility Audit",
+			description: "We identify what's stopping your business from showing up in search and build a plan to fix it."
+		},
+		{
+			number: "2",
+			heading: "Immediate Start",
+			description: "We begin optimizing your Google Business Profile and website within 24 hours."
+		},
+		{
+			number: "3",
+			heading: "30-Day Action Plan",
+			description: "We implement high-impact strategies to improve rankings, visibility, and calls."
+		},
+		{
+			number: "4",
+			heading: "Transparent Growth Tracking",
+			description: "You'll see exactly how many people are finding, calling, and booking through your business — no guessing."
+		}
+	]
+};
+
+// Why Internet Marketing Matters Section
+const whyMattersSection = {
+	title: "Why Internet Marketing in",
+	titleHighlight: "San Diego Matters",
+	paragraphs: [
+		"San Diego is one of the most competitive local markets in the U.S. — from downtown to North County, every service-based business is fighting for the same searches.",
+		"That's why our approach is simple:",
+		"• Local-first optimization to dominate high-intent searches.\n• AI-driven marketing that adapts weekly to search trends.\n• Lead-first focus so you see real business growth, not vanity metrics."
+	]
+};
+
+// Industries Section
+const industriesSection = {
+	title: "Industry-Focused",
+	titleHighlight: "Marketing & SEO",
+	subtitle: "Comprehensive marketing systems and SEO strategies built specifically for home service contractors.",
+	services: [
+		{
+			title: "Home Services Marketing Agency",
+			description: "Full-service digital marketing systems for home service companies. AI-driven optimization, hands-free management, and proven results that turn searches into booked jobs.",
+			perfectFor: ["Roofers", "HVAC", "Landscapers", "Plumbers", "Electricians"],
+			link: "/services/home-services-marketing-agency"
+		},
+		{
+			title: "SEO for Home Service Contractors",
+			description: "Specialized SEO strategies that dominate Google Maps and local search. Built exclusively for contractors who need high-intent local leads, not just traffic.",
+			includes: ["Local SEO audit & strategy", "Google Maps optimization", "30-day results guarantee"],
+			link: "/services/seo-for-home-service-contractors"
+		},
+		{
+			title: "San Diego Internet Marketing Services",
+			description: "Complete Internet Marketing solutions that drive real leads. AI-powered optimization, local SEO, conversion-focused website updates, and transparent tracking — all without expensive ads or long-term contracts.",
+			includes: ["Local SEO & visibility growth", "Conversion-optimized website updates", "Review & reputation management", "Lead tracking & analytics"],
+			link: "/services/san-diego-internet-marketing"
+		}
+	]
+};
+
+// Service Areas Section
+const serviceAreasSection = {
+	title: "Service Areas",
+	titleHighlight: "Across San Diego",
+	subtitle: "We proudly serve businesses across San Diego County, including:",
+	areas: [
+		"North County",
+		"La Jolla",
+		"Mission Valley",
+		"Pacific Beach",
+		"Encinitas",
+		"Chula Vista",
+		"Downtown San Diego"
+	]
+};
+
+// Why Choose Glassbee Section
+const whyChooseGlassbeeSection = {
+	title: "Why Choose Glassbee Over",
+	titleHighlight: "Other San Diego Marketing Firms",
+	description: "Most San Diego marketing agencies talk about traffic and impressions. We talk about profit.",
+	text: "We deliver calls, booked jobs, and growth — the things that actually move your business forward.\n\nOur clients see measurable ROI in the first month. We combine data, automation, and hands-on execution to keep your business ranking, visible, and competitive — every single week."
+};
+
+// Related Services
+const relatedServices = [
+	{
+		title: "Local SEO for San Diego Businesses",
+		description: "Deep-dive SEO services for dominating local search",
+		link: "/services/local-seo-for-san-diego-businesses",
+		icon: "services"
+	},
+	{
+		title: "Google Business SEO",
+		description: "Optimize your GBP for local visibility",
+		link: "/services/google-business-seo",
+		icon: "services"
+	},
+	{
+		title: "All Services",
+		description: "View all our services",
+		link: "/services",
+		icon: "services"
+	}
+];
+
+// FAQ Section
+const faqs = [
+	{
+		question: "How is Internet Marketing different from SEO?",
+		answer: "Internet marketing covers your entire online presence — SEO, visibility, reviews, and website performance. SEO is part of the process, but we go beyond it to drive measurable leads."
+	},
+	{
+		question: "How soon will I see results?",
+		answer: "Most clients notice more calls and inquiries within 30 days."
+	},
+	{
+		question: "Do you offer month-to-month options?",
+		answer: "Yes — no contracts, no risk. Continue only if you see results."
+	},
+	{
+		question: "Do you offer PPC or social ads?",
+		answer: "No. We focus exclusively on organic, data-driven strategies that compound over time."
+	},
+	{
+		question: "Can you work with my existing website?",
+		answer: "Yes. We can optimize your current site or rebuild it for better performance and visibility."
+	}
+];
+
+// CTA Banner
+const ctaBanner = {
+	title: "Ready to Get Real Results?",
+	subtitle: "Stop guessing. Start growing. Let's make your business the one customers find first — and trust the most.",
+	primaryButton: {
+		text: "Get Your Free Marketing Audit",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	},
+	backgroundColor: "black"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<div class="max-w-4xl">
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed">
+					{hero.description}
+				</p>
+				<div class="flex flex-wrap gap-4">
+					<a href={hero.primaryButton.link} class="btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wider border-2 transition-all hover:bg-white hover:text-orange-600">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-bold uppercase tracking-wider transition-all hover:bg-white hover:text-black">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals
+		title="Why Choose Glassbee Solutions"
+		subtitle="Proven results that drive real business growth"
+		stats={trustStats}
+	/>
+
+	<!-- Intro Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-gray-50 border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{introSection.title}<br/><span class="text-orange-600">{introSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6 text-center">
+						{introSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{whyChooseSection.title}<br/><span class="text-orange-600">{whyChooseSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{whyChooseSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{featuresSection.title}<br/><span class="text-orange-600">{featuresSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{featuresSection.features.map((feature) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{feature.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{feature.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{feature.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+							{feature.icon === "calendar" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{feature.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{feature.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Problems We Solve Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{problemsSection.title}<br/><span class="text-orange-600">{problemsSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{problemsSection.problems.map((problem) => (
+					<div class="card p-8">
+						<div class="w-16 h-16 bg-orange-600 flex items-center justify-center mb-6">
+							{problem.icon === "lightbulb" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+								</svg>
+							)}
+							{problem.icon === "chart" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							)}
+							{problem.icon === "settings" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+								</svg>
+							)}
+							{problem.icon === "document" && (
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							)}
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{problem.heading}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+							{problem.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{howItWorksSection.title}<br/><span class="text-orange-600">{howItWorksSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					{howItWorksSection.steps.map((step) => (
+						<div class="flex gap-6">
+							<div class="flex-shrink-0">
+								<div class="w-16 h-16 bg-orange-600 flex items-center justify-center text-white text-3xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">{step.number}</div>
+							</div>
+							<div>
+								<h3 class="text-xl md:text-2xl font-bold text-black mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{step.heading}</h3>
+								<p class="text-base md:text-lg text-gray-600 leading-relaxed">
+									{step.description}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Internet Marketing Matters Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="card p-8 md:p-12 bg-white border-l-4 border-orange-600">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							{whyMattersSection.title}<br/><span class="text-orange-600">{whyMattersSection.titleHighlight}</span>
+						</h2>
+						<div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+					</div>
+
+					<div class="space-y-6">
+						{whyMattersSection.paragraphs.map((paragraph) => (
+							<p class="text-base md:text-lg text-gray-700 leading-relaxed" style="white-space: pre-line;">
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Industries Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{industriesSection.title}<br/><span class="text-orange-600">{industriesSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+					{industriesSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				{industriesSection.services.map((service) => (
+					<div class="card p-8 hover:shadow-xl transition-shadow">
+						<h3 class="text-2xl md:text-3xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">{service.title}</h3>
+						<p class="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+							{service.description}
+						</p>
+
+						{service.perfectFor && (
+							<div class="mb-6">
+								<p class="font-bold text-black mb-3">Perfect for:</p>
+								<ul class="space-y-2">
+									{service.perfectFor.map((item) => (
+										<li class="flex items-start gap-2 text-gray-600">
+											<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+											</svg>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
+
+						{service.includes && (
+							<div class="mb-6">
+								<p class="font-bold text-black mb-3">Includes:</p>
+								<ul class="space-y-2">
+									{service.includes.map((item) => (
+										<li class="flex items-start gap-2 text-gray-600">
+											<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+											</svg>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
+
+						<a href={service.link} class="inline-flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700 transition-colors">
+							Learn More
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</a>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+					{serviceAreasSection.title}<br/><span class="text-orange-600">{serviceAreasSection.titleHighlight}</span>
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+				<p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+					{serviceAreasSection.subtitle}
+				</p>
+			</div>
+
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+					{serviceAreasSection.areas.map((area) => (
+						<div class="card p-6 text-center hover:shadow-lg transition-shadow">
+							<svg class="w-8 h-8 text-orange-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+							<p class="font-bold text-black text-sm md:text-base">{area}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Glassbee Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-gradient-to-br from-black to-gray-900 rounded-none p-12 md:p-16 text-white relative overflow-hidden">
+					<div class="absolute top-0 right-0 w-64 h-64 bg-orange-600 opacity-10 rounded-full -mr-32 -mt-32"></div>
+					<div class="absolute bottom-0 left-0 w-48 h-48 bg-orange-600 opacity-10 rounded-full -ml-24 -mb-24"></div>
+
+					<div class="relative z-10">
+						<div class="text-center mb-8">
+							<h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								{whyChooseGlassbeeSection.title}<br/><span class="text-orange-600">{whyChooseGlassbeeSection.titleHighlight}</span>
+							</h2>
+							<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+							<p class="text-xl md:text-2xl text-white/95">
+								{whyChooseGlassbeeSection.description}
+							</p>
+						</div>
+
+						<div class="space-y-6 text-lg md:text-xl leading-relaxed">
+							<div class="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-none p-6 md:p-8">
+								<p class="text-white/95 leading-relaxed" style="white-space: pre-line;">
+									{whyChooseGlassbeeSection.text}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<RelatedPages
+		title="Related Services"
+		pages={relatedServices}
+	/>
+
+	<!-- FAQ Section -->
+	<FAQ
+		title="Frequently Asked Questions"
+		subtitle="Everything you need to know about this service"
+		faqs={faqs}
+	/>
+
+	<!-- CTA Banner -->
+	<CTABanner
+		backgroundColor={ctaBanner.backgroundColor}
+		title={ctaBanner.title}
+		subtitle={ctaBanner.subtitle}
+		primaryButtonText={ctaBanner.primaryButton.text}
+		primaryButtonLink={ctaBanner.primaryButton.link}
+		secondaryButtonText={ctaBanner.secondaryButton.text}
+		secondaryButtonLink={ctaBanner.secondaryButton.link}
+	/>
+
+	<Footer />
+</Layout>
