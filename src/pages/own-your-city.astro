@@ -1,0 +1,1039 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// SEO & Page Info
+const pageTitle = "OWN YOUR CITY™ System | 45-Day Results | 60-Day Guarantee | San Diego";
+const pageDescription = "The only local domination system designed specifically for San Diego home service companies. See results in 45 days — backed by a 60-day domination guarantee. Exclusively for San Diego home service businesses.";
+
+// Hero Section
+const hero = {
+	title: "OWN YOUR CITY™",
+	titleHighlight: "SYSTEM",
+	subtitle: "See Results in 45 Days — Backed by a 60-Day Domination Guarantee",
+	description: "Exclusively for San Diego Home Service Businesses",
+	backgroundImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1920",
+	primaryButton: {
+		text: "Claim Your Founding Member Spot",
+		link: "/contact"
+	},
+	secondaryButton: {
+		text: "Call (951) 760-0070",
+		link: "tel:+19517600070"
+	}
+};
+
+// Trust Signals Stats
+const trustStats: Array<{
+	value: string;
+	label: string;
+	icon: 'properties' | 'rating' | 'revenue' | 'years' | 'occupancy';
+}> = [
+	{ value: "45 Days", label: "To Results", icon: "properties" },
+	{ value: "60 Day", label: "Money-Back Guarantee", icon: "revenue" },
+	{ value: "$56,500", label: "Real-World Value", icon: "rating" },
+	{ value: "3 Spots", label: "Founding Members Left", icon: "occupancy" }
+];
+---
+
+<Layout
+	title={pageTitle}
+	description={pageDescription}
+	keywords="San Diego SEO, local SEO domination, home service SEO, San Diego home service marketing, local SEO guarantee"
+>
+	<Header />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Service",
+				"@id": "https://sandiegorentals.com/own-your-city#service",
+				"name": "OWN YOUR CITY™ System",
+				"description": pageDescription,
+				"serviceType": "Local SEO Domination System",
+				"provider": {
+					"@type": "LocalBusiness",
+					"@id": "https://sandiegorentals.com#organization",
+					"name": "Glassbee Solutions",
+					"description": "San Diego's premier localized SEO agency",
+					"address": {
+						"@type": "PostalAddress",
+						"addressLocality": "San Diego",
+						"addressRegion": "CA",
+						"addressCountry": "US"
+					},
+					"telephone": "+19517600070",
+					"email": "info@glassbeesolutions.org",
+					"url": "https://sandiegorentals.com"
+				},
+				"areaServed": {
+					"@type": "City",
+					"name": "San Diego",
+					"containedIn": {
+						"@type": "State",
+						"name": "California"
+					}
+				},
+				"offers": {
+					"@type": "Offer",
+					"name": "Founding Member Offer",
+					"price": "1500",
+					"priceCurrency": "USD",
+					"priceSpecification": {
+						"@type": "UnitPriceSpecification",
+						"price": "1500",
+						"priceCurrency": "USD",
+						"billingDuration": "P1M",
+						"billingIncrement": 1
+					},
+					"availability": "https://schema.org/InStock",
+					"availabilityStarts": "2025-01-01",
+					"description": "Founding Member Pricing: $1,500/month (locked for 12 months, 6-month minimum)"
+				},
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"ratingValue": "5",
+					"reviewCount": "1",
+					"bestRating": "5",
+					"worstRating": "1"
+				}
+			},
+			{
+				"@type": "FAQPage",
+				"@id": "https://sandiegorentals.com/own-your-city#faq",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "How quickly will I see results?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "You will see results in 45 days, with early movement beginning in 7-20 days. This is backed by our 60-day domination guarantee."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What is included in the OWN YOUR CITY™ System?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "The system includes: Authority Website Engine ($8,000 value), Advanced Local SEO Architecture ($5,000 value), GBP Overhaul ($3,000 value), Citations & Trust Signals ($3,000 value), Content & Optimization for 12 months ($24,000/year value), and Fast Revenue Head Start ($10,000 minimum captured). Total value: $56,500/year."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What is the 60-Day Domination Guarantee?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "If you're not ranking higher AND getting more calls by Day 60, you receive a 100% refund and keep everything including the website, all pages, citations, schema, tech SEO, and GBP upgrades."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What is the founding member pricing?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Founding Member Price is $1,500/month (locked for 12 months, 6-month minimum). Only 3 founding member spots are available. After these spots are filled, the price increases to $2,500/month."
+						}
+					}
+				]
+			},
+			{
+				"@type": "Organization",
+				"@id": "https://sandiegorentals.com#organization",
+				"name": "Glassbee Solutions",
+				"url": "https://sandiegorentals.com",
+				"logo": "https://sandiegorentals.com/favicon.svg",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+19517600070",
+					"contactType": "Customer Service",
+					"areaServed": "US",
+					"availableLanguage": "English"
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "San Diego",
+					"addressRegion": "CA",
+					"addressCountry": "US"
+				}
+			}
+		]
+	})} />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-[90vh] flex items-center bg-cover bg-center" style={`background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('${hero.backgroundImage}');`}>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32">
+			<div class="max-w-5xl">
+				<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+					Founding Member Offer
+				</div>
+				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase tracking-wide leading-tight" style="font-family: 'Bebas Neue', sans-serif;">
+					{hero.title}<br/><span class="text-orange-600">{hero.titleHighlight}</span>
+				</h1>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl md:text-3xl text-gray-200 mb-4 font-semibold">
+					{hero.subtitle}
+				</p>
+				<p class="text-xl text-gray-300 mb-12">
+					{hero.description}
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a href={hero.primaryButton.link} class="btn btn-primary px-10 py-4 text-lg text-center font-bold">
+						{hero.primaryButton.text}
+					</a>
+					<a href={hero.secondaryButton.link} class="btn px-10 py-4 text-lg text-center bg-white text-black border-2 border-white hover:bg-gray-100 hover:border-gray-100 font-bold">
+						{hero.secondaryButton.text}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Signals -->
+	<TrustSignals stats={trustStats} />
+
+	<!-- THE PROBLEM Section -->
+	<section class="py-20 md:py-28 bg-black text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+					The Problem
+				</div>
+				<h2 class="text-5xl md:text-6xl font-bold mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					When Homeowners Search for Your Service…<br/>They're Not Seeing You
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-300 mb-8 leading-relaxed">
+					They're seeing:
+				</p>
+				<ul class="space-y-4 mb-12 text-xl text-gray-300">
+					<li class="flex items-start gap-4">
+						<span class="text-orange-600 text-3xl font-bold">•</span>
+						<span>Your slower competitors</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-orange-600 text-3xl font-bold">•</span>
+						<span>Your cheaper competitors</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-orange-600 text-3xl font-bold">•</span>
+						<span>Your worse competitors</span>
+					</li>
+				</ul>
+				<p class="text-2xl text-gray-300 mb-8 leading-relaxed">
+					And they're stealing:
+				</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+					<div class="bg-gray-900 border-2 border-orange-600 p-6">
+						<p class="text-4xl font-bold text-orange-600 mb-2">10–30</p>
+						<p class="text-lg text-gray-300">customers/month</p>
+					</div>
+					<div class="bg-gray-900 border-2 border-orange-600 p-6">
+						<p class="text-4xl font-bold text-orange-600 mb-2">$5K–$30K</p>
+						<p class="text-lg text-gray-300">in revenue</p>
+					</div>
+					<div class="bg-gray-900 border-2 border-orange-600 p-6">
+						<p class="text-lg text-gray-300">Your credibility,<br/>one search at a time</p>
+					</div>
+				</div>
+				<div class="bg-orange-600 p-8 text-center">
+					<p class="text-2xl md:text-3xl font-bold mb-4">
+						Not because they're better —<br/>because Google trusts them more.
+					</p>
+					<p class="text-xl font-semibold">
+						We fix that in 45 days.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- THE SOLUTION Section -->
+	<section class="py-20 md:py-28 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+					The Solution
+				</div>
+				<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					The Own Your City™ System
+				</h2>
+				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
+				<p class="text-2xl text-gray-700 mb-8 leading-relaxed">
+					The only local domination system designed specifically for San Diego home service companies.
+				</p>
+				<div class="bg-gray-50 border-l-4 border-orange-600 p-6 mb-8">
+					<p class="text-lg text-gray-700 mb-2"><strong>No waiting 6 months.</strong></p>
+					<p class="text-lg text-gray-700 mb-2"><strong>No "trust the process."</strong></p>
+					<p class="text-lg text-gray-700"><strong>No excuses.</strong></p>
+				</div>
+				<p class="text-xl text-gray-700 mb-8 leading-relaxed">
+					Just rapid, predictable results in 45 days with a full 60-day guarantee.
+				</p>
+				<div class="bg-black text-white p-8 mb-8">
+					<h3 class="text-3xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+						You Will:
+					</h3>
+					<ul class="space-y-4 text-lg">
+						<li class="flex items-start gap-4">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Look like the premium provider instantly</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Dominate 10–20 neighborhoods</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Break into top spots on Google Maps</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Generate 20–40+ more calls monthly</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Make competitors freak out trying to figure out what changed</span>
+						</li>
+					</ul>
+				</div>
+				<p class="text-2xl text-gray-900 font-bold text-center">
+					This is not "marketing."<br/>This is territory possession.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- WHAT YOU GET Section -->
+	<section class="py-20 md:py-28 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						What You Get
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Everything Below is Engineered to Create<br/>Unshakable Local Authority
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				</div>
+
+				<!-- Component #1 -->
+				<div class="bg-white border-2 border-gray-200 mb-8 p-8 lg:p-12">
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+						<div class="flex-1">
+							<h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								Component #1: The Authority Website Engine
+							</h3>
+							<p class="text-2xl font-bold text-orange-600 mb-4">Value: $8,000</p>
+							<p class="text-lg text-gray-700 mb-6">A complete, high-performance rebuild:</p>
+						</div>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<ul class="space-y-3 text-gray-700">
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Technical SEO overhaul</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Full schema (business, service, FAQ)</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>15+ high-authority service pages</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>20+ neighborhood pages with SD-specific content</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>2,000+ word pillar page</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Emergency + informational blogs</span>
+							</li>
+						</ul>
+						<ul class="space-y-3 text-gray-700">
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Strategic internal linking</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>WebP, lazy loading, speed optimization</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Mobile-first conversion design</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Emergency service landing page</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Trust stacking (badges, guarantees, FAQs)</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>SEO-powered footer architecture</span>
+							</li>
+						</ul>
+					</div>
+					<p class="text-lg font-semibold text-gray-900 mt-6 italic">
+						Your new digital headquarters — built to dominate.
+					</p>
+				</div>
+
+				<!-- Component #2 -->
+				<div class="bg-white border-2 border-gray-200 mb-8 p-8 lg:p-12">
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+						<div class="flex-1">
+							<h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								Component #2: Advanced Local SEO Architecture
+							</h3>
+							<p class="text-2xl font-bold text-orange-600 mb-4">Value: $5,000</p>
+							<p class="text-lg text-gray-700 mb-6">The invisible engine Google rewards:</p>
+						</div>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<ul class="space-y-3 text-gray-700">
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Index sculpting + crawl control</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Tiered internal architecture</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>AI keyword clustering</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Neighborhood-first URL structure</span>
+							</li>
+						</ul>
+						<ul class="space-y-3 text-gray-700">
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Schema designed for rich results</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Accelerated indexing setup in Search Console</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Strong geo & proximity signals</span>
+							</li>
+						</ul>
+					</div>
+					<p class="text-lg font-semibold text-gray-900 mt-6 italic">
+						Agencies don't build this. We do.
+					</p>
+				</div>
+
+				<!-- Component #3 -->
+				<div class="bg-white border-2 border-gray-200 mb-8 p-8 lg:p-12">
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+						<div class="flex-1">
+							<h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								Component #3: GBP Overhaul
+							</h3>
+							<p class="text-2xl font-bold text-orange-600 mb-4">Value: $3,000</p>
+							<p class="text-lg text-gray-700 mb-6">Your Google Business Profile rebuilt for speed.</p>
+						</div>
+					</div>
+					<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Category optimization</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Keyword-based descriptions</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Conversion-engineered service list</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Review strategy</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Weekly Google Posts</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Geo-tagged photos & videos</span>
+						</li>
+					</ul>
+					<p class="text-lg font-semibold text-gray-900 mt-6 italic">
+						Expect movement in 7–14 days.
+					</p>
+				</div>
+
+				<!-- Component #4 -->
+				<div class="bg-white border-2 border-gray-200 mb-8 p-8 lg:p-12">
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+						<div class="flex-1">
+							<h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								Component #4: Citations & Trust Signals
+							</h3>
+							<p class="text-2xl font-bold text-orange-600 mb-4">Value: $3,000</p>
+							<p class="text-lg text-gray-700 mb-6">Google needs to trust you more than competitors.</p>
+						</div>
+					</div>
+					<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>100+ citations</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>NAP cleanup</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Industry directories</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>BBB, Yelp, Angi</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Chamber listings</span>
+						</li>
+					</ul>
+					<p class="text-lg font-semibold text-gray-900 mt-6 italic">
+						Strong trust signals = map pack momentum.
+					</p>
+				</div>
+
+				<!-- Component #5 -->
+				<div class="bg-white border-2 border-gray-200 mb-8 p-8 lg:p-12">
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+						<div class="flex-1">
+							<h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								Component #5: Content & Optimization (12 Months)
+							</h3>
+							<p class="text-2xl font-bold text-orange-600 mb-4">Value: $24,000/year</p>
+							<p class="text-lg text-gray-700 mb-6">Authority compounds:</p>
+						</div>
+					</div>
+					<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>3 new blogs monthly</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Ongoing keyword tuning</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Competitor counter-ops</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Monthly technical adjustments</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Ranking + revenue-impact reporting</span>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Component #6 -->
+				<div class="bg-black text-white border-2 border-orange-600 mb-8 p-8 lg:p-12">
+					<div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+						<div class="flex-1">
+							<h3 class="text-3xl md:text-4xl font-bold mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+								Component #6: Fast Revenue Head Start™
+							</h3>
+							<p class="text-2xl font-bold text-orange-600 mb-4">Value: $10,000 (minimum captured)</p>
+						</div>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+						<div>
+							<p class="text-lg font-semibold mb-4 text-gray-300">Agencies:</p>
+							<ul class="space-y-2 text-gray-300">
+								<li>6 months waiting</li>
+								<li>$18K burned</li>
+							</ul>
+						</div>
+						<div>
+							<p class="text-lg font-semibold mb-4 text-orange-600">You:</p>
+							<ul class="space-y-2 text-gray-300">
+								<li>45 days to visible results</li>
+								<li>Early movement in 7–20 days</li>
+							</ul>
+						</div>
+					</div>
+					<p class="text-xl font-bold text-orange-600">
+						You take 4–5 months of revenue competitors lose forever.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- YOUR INVESTMENT Section -->
+	<section class="py-20 md:py-28 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						Your Investment
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Founding Member Pricing
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				</div>
+
+				<div class="bg-gray-50 border-2 border-gray-200 p-8 lg:p-12 mb-8">
+					<div class="text-center mb-8">
+						<p class="text-2xl text-gray-600 mb-2">Real-World Value:</p>
+						<p class="text-5xl font-bold text-gray-900 mb-8">$56,500/year</p>
+						<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+						<p class="text-3xl font-bold text-orange-600 mb-2">Founding Member Price:</p>
+						<p class="text-6xl font-bold text-gray-900 mb-8">$1,500/month</p>
+					</div>
+					<ul class="space-y-4 text-lg text-gray-700 mb-8">
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Locked for 12 months</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>6-month minimum</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Month-to-month afterward</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<span>Only 3 founding member spots available</span>
+						</li>
+					</ul>
+					<div class="bg-orange-600 text-white p-6 text-center">
+						<p class="text-xl font-bold">
+							After the next 3 spots are filled, the price increases to $2,500/month.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- THE 60-DAY DOMINATION GUARANTEE Section -->
+	<section class="py-20 md:py-28 bg-black text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						The Guarantee
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						The 60-Day Domination Guarantee
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				</div>
+
+				<div class="bg-gray-900 border-2 border-orange-600 p-8 lg:p-12 mb-8">
+					<p class="text-2xl text-gray-300 mb-8 text-center leading-relaxed">
+						You see results by Day 45 — guaranteed through Day 60.
+					</p>
+					<p class="text-3xl font-bold text-center mb-8 text-orange-600">
+						If you're not ranking higher AND getting more calls by Day 60:
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						<div class="bg-black p-6 border border-orange-600">
+							<p class="text-4xl font-bold text-orange-600 mb-2">100%</p>
+							<p class="text-xl text-gray-300">Refund</p>
+						</div>
+						<div class="bg-black p-6 border border-orange-600">
+							<p class="text-xl font-bold text-orange-600 mb-2">You Keep</p>
+							<p class="text-xl text-gray-300">Everything</p>
+						</div>
+					</div>
+					<div class="bg-black p-6 mb-6">
+						<p class="text-lg font-semibold text-gray-300 mb-4">Including:</p>
+						<ul class="space-y-2 text-gray-300">
+							<li class="flex items-start gap-3">
+								<span class="text-orange-600">•</span>
+								<span>The $8,000 authority website</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<span class="text-orange-600">•</span>
+								<span>All 35+ pages of content</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<span class="text-orange-600">•</span>
+								<span>All citations, schema, tech SEO</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<span class="text-orange-600">•</span>
+								<span>All GBP upgrades</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<span class="text-orange-600">•</span>
+								<span>Every improvement to your online presence</span>
+							</li>
+						</ul>
+					</div>
+					<div class="text-center">
+						<p class="text-2xl font-bold text-orange-600 mb-2">Zero downside.</p>
+						<p class="text-xl text-gray-300">I take all the risk.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- EXCLUSIVE BONUSES Section -->
+	<section class="py-20 md:py-28 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						Exclusive Bonuses
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Founding Member Bonuses
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<div class="bg-white border-2 border-gray-200 p-8">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Bonus #1: Competitor Crusher Report
+						</h3>
+						<p class="text-xl font-bold text-orange-600 mb-4">Value: $1,500</p>
+						<p class="text-lg text-gray-700 mb-4">Delivered Day 3–5:</p>
+						<ul class="space-y-2 text-gray-700">
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Why competitors rank</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Weak spots</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Exact strategy to beat them</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white border-2 border-gray-200 p-8">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
+							Bonus #2: Revenue Tracking Reports
+						</h3>
+						<p class="text-xl font-bold text-orange-600 mb-4">Value: $500</p>
+						<p class="text-lg text-gray-700 mb-4">Monthly reports showing:</p>
+						<ul class="space-y-2 text-gray-700">
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Calls</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Leads</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Rankings</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>ROI clarity</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="bg-orange-600 text-white p-8 text-center">
+					<p class="text-2xl font-bold mb-2">Total Bonus Value: $2,000</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- THE TIMELINE Section -->
+	<section class="py-20 md:py-28 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						The Timeline
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						Days, Not Weeks
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				</div>
+
+				<div class="space-y-6">
+					<div class="bg-gray-50 border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold text-gray-900 mb-2">Day 1–2:</h3>
+						<p class="text-gray-700">Website live + GBP rebuilt | Search Console synced</p>
+					</div>
+					<div class="bg-gray-50 border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold text-gray-900 mb-2">Day 3–7:</h3>
+						<p class="text-gray-700">10+ pages published | Competitor Crusher Report | Early GBP movement</p>
+					</div>
+					<div class="bg-gray-50 border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold text-gray-900 mb-2">Day 8–14:</h3>
+						<p class="text-gray-700">Citations building | Neighborhood pages discovered | Keyword movement begins</p>
+					</div>
+					<div class="bg-gray-50 border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold text-gray-900 mb-2">Day 15–25:</h3>
+						<p class="text-gray-700">All pages live | Authority structure complete | Ranking momentum</p>
+					</div>
+					<div class="bg-gray-50 border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold text-gray-900 mb-2">Day 26–35:</h3>
+						<p class="text-gray-700">Maps traction | More calls | Mid-cycle optimizations</p>
+					</div>
+					<div class="bg-gray-50 border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold text-gray-900 mb-2">Day 36–45:</h3>
+						<p class="text-gray-700">Visible, measurable results | Keyword jumps + more calls</p>
+					</div>
+					<div class="bg-black text-white border-l-4 border-orange-600 p-6">
+						<h3 class="text-xl font-bold mb-2">Day 60:</h3>
+						<p class="text-orange-600 font-semibold">Domination guarantee checkpoint</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- WHY NOW Section -->
+	<section class="py-20 md:py-28 bg-black text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
+						Why Now?
+					</div>
+					<h2 class="text-5xl md:text-6xl font-bold mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+						The Perfect Time to Dominate
+					</h2>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-8"></div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+					<div class="bg-gray-900 p-6 border border-orange-600">
+						<p class="text-lg font-semibold text-orange-600 mb-2">Holidays =</p>
+						<p class="text-xl text-gray-300">emergency service surges</p>
+					</div>
+					<div class="bg-gray-900 p-6 border border-orange-600">
+						<p class="text-lg font-semibold text-orange-600 mb-2">January =</p>
+						<p class="text-xl text-gray-300">home improvement boom</p>
+					</div>
+					<div class="bg-gray-900 p-6 border border-orange-600">
+						<p class="text-lg font-semibold text-orange-600 mb-2">Q1 =</p>
+						<p class="text-xl text-gray-300">annual vendor selection</p>
+					</div>
+					<div class="bg-gray-900 p-6 border border-orange-600">
+						<p class="text-lg font-semibold text-orange-600 mb-2">Competitors</p>
+						<p class="text-xl text-gray-300">slow down — perfect time to pass them</p>
+					</div>
+				</div>
+
+				<div class="bg-orange-600 p-8 text-center">
+					<p class="text-2xl md:text-3xl font-bold mb-4">
+						2025's winners are being decided now.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- NEXT STEPS Section -->
+	<section class="py-20 md:py-28 bg-orange-600 text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-block px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest mb-6">
+					Next Steps
+				</div>
+				<h2 class="text-5xl md:text-6xl font-bold mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
+					Claim Your Founding Member Spot
+				</h2>
+				<div class="w-24 h-1 bg-white mx-auto mb-12"></div>
+
+				<div class="bg-black p-8 lg:p-12 mb-8">
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+						<div>
+							<p class="text-sm font-semibold text-gray-400 mb-2 uppercase">Initial Payment</p>
+							<p class="text-3xl font-bold">$1,500</p>
+						</div>
+						<div>
+							<p class="text-sm font-semibold text-gray-400 mb-2 uppercase">Start</p>
+							<p class="text-2xl font-bold">Immediately</p>
+						</div>
+						<div>
+							<p class="text-sm font-semibold text-gray-400 mb-2 uppercase">Results</p>
+							<p class="text-2xl font-bold">First movement in 7–20 days</p>
+						</div>
+					</div>
+					<div class="border-t border-gray-700 pt-8">
+						<p class="text-xl font-bold mb-4">Contact: Tony Murphy</p>
+						<a href="tel:+19517600070" class="text-3xl font-bold text-orange-600 hover:text-orange-500 transition-colors">
+							951-760-0070
+						</a>
+					</div>
+				</div>
+
+				<div class="bg-white text-black p-6">
+					<p class="text-lg font-bold">
+						Once the next 3 spots are filled, price increases to $2,500/month.
+					</p>
+				</div>
+
+				<div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+					<a
+						href="/contact"
+						class="inline-flex items-center justify-center px-10 py-4 bg-black text-white font-bold hover:bg-gray-800 transition-colors border-2 border-black text-lg"
+					>
+						Claim Your Spot Now
+						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+						</svg>
+					</a>
+					<a
+						href="tel:+19517600070"
+						class="inline-flex items-center justify-center px-10 py-4 bg-white text-orange-600 font-bold hover:bg-gray-100 transition-colors border-2 border-white text-lg"
+					>
+						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+						</svg>
+						Call (951) 760-0070
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+

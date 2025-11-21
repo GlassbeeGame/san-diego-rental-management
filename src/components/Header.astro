@@ -14,9 +14,9 @@ const navItems = [
 
 <header class="bg-black border-b-4 border-orange-600 fixed w-full top-0 z-50 shadow-lg">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
+    <div class="flex justify-between items-center h-20 gap-4">
       <!-- Logo -->
-      <a href="/" class="flex items-center group">
+      <a href="/" class="flex items-center group flex-shrink-0">
         <div class="flex flex-col">
           <span class="font-bold text-3xl text-white tracking-wider" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.1em;">GLASSBEE</span>
           <span class="text-xs text-orange-600 font-bold tracking-widest -mt-2">SOLUTIONS</span>
@@ -24,11 +24,11 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-10">
+      <div class="hidden md:flex items-center flex-1 justify-center gap-6 lg:gap-8 xl:gap-10">
         {navItems.map(item => (
           <a
             href={item.href}
-            class={`text-sm font-bold uppercase tracking-wider transition-colors ${
+            class={`text-sm font-bold uppercase tracking-wider transition-colors whitespace-nowrap ${
               currentPath === item.href || 
               (item.href === '/services' && currentPath.startsWith('/services/')) ||
               (item.href === '/industries' && currentPath.startsWith('/industries/')) ||
@@ -44,12 +44,12 @@ const navItems = [
       </div>
 
       <!-- CTA Button -->
-      <div class="hidden md:block">
+      <div class="hidden md:flex items-center flex-shrink-0 ml-4 lg:ml-6">
         <a
-          href="/contact"
-          class="btn btn-primary px-8 py-3 text-sm"
+          href="/own-your-city"
+          class="btn btn-primary px-6 py-2 text-sm whitespace-nowrap"
         >
-          Get Started
+          Our Offer
         </a>
       </div>
 
@@ -86,10 +86,10 @@ const navItems = [
         </a>
       ))}
       <a
-        href="/contact"
+        href="/own-your-city"
         class="block mt-2 mx-4 text-center btn btn-primary px-6 py-3 text-sm"
       >
-        Get Started
+        Our Offer
       </a>
     </div>
   </nav>

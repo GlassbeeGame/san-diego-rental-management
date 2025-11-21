@@ -71,7 +71,7 @@ A modern, SEO-optimized website for a San Diego short-term rental management com
    npm run dev
    ```
 
-   Open [http://localhost:4321](http://localhost:4321) in your browser
+   Open [http://localhost:1234](http://localhost:1234) in your browser
 
 ## 📝 Available Scripts
 
