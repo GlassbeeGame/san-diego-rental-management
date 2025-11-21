@@ -264,9 +264,14 @@ const ctaBanner = {
 			<div class="max-w-6xl mx-auto">
 				<div class="text-center mb-16">
 					<h2 class="text-5xl md:text-6xl font-bold text-black mb-4 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
-						{aboutSection.title}<br/><span class="text-orange-600">{aboutSection.titleHighlight}</span>
+						{aboutSection.title}
 					</h2>
-					<div class="w-24 h-1 bg-orange-600 mx-auto mb-6"></div>
+					<div class="w-24 h-1 bg-orange-600 mx-auto mb-4"></div>
+					{aboutSection.titleHighlight && (
+						<p class="text-2xl md:text-3xl font-bold text-orange-600 uppercase mt-6" style="font-family: 'Bebas Neue', sans-serif;">
+							{aboutSection.titleHighlight}
+						</p>
+					)}
 					<p class="text-xl text-gray-600 max-w-3xl mx-auto">
 						At Glassbee Solutions, we help Del Mar businesses dominate search results across San Diego's coastal corridor. From beachfront restaurants to high-end real-estate teams, our Del Mar SEO services are built to increase visibility, traffic, and conversions — turning Google searches into paying clients.
 					</p>
