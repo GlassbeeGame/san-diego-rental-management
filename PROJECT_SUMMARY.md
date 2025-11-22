@@ -151,7 +151,7 @@ All content was extracted and adapted from **glassbeesolutions.org**:
 ### Immediate Actions
 
 1. **Update Contact Information**
-   - Change phone number from (951) 760-0070 to your actual number
+   - Change phone number from (619) 273-3218 to your actual number
    - Update email from info@sandiegorentals.com
    - Add your actual San Diego office address
    - Files to edit:
