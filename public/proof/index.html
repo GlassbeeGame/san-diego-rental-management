@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlassBee Solutions — Real Results, Zero Ad Spend</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #0D0D0D;
+    --ink2:    #1A1A1A;
+    --ink3:    #262626;
+    --paper:   #FAF7F2;
+    --muted:   #6B6860;
+    --faint:   #E8E4DC;
+    --gold:    #C9922A;
+    --gold-lt: #F5D99A;
+    --green:   #2A7A4B;
+    --green-lt:#D4EDDF;
+    --red-lt:  #FDECEA;
+    --red:     #C0392B;
+    --serif:   'Fraunces', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+    --rule:    1px solid var(--faint);
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 36px 0 28px;
+    border-bottom: var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--ink);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-mark svg { width: 20px; height: 20px; }
+  .logo-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+  .logo-text span { color: var(--gold); }
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .verified-pill {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--green-lt);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  .verified-pill svg { width: 12px; height: 12px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 0 64px;
+    border-bottom: var(--rule);
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5.5vw, 60px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    margin-bottom: 28px;
+    max-width: 700px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 500; }
+  .hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .hero-proof span { display: flex; align-items: center; gap: 6px; }
+  .dot-sep { color: var(--faint); }
+
+  /* ── KEY NUMBER ── */
+  .key-number-bar {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px;
+    margin: 64px 0;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+  .kn-item {
+    padding: 0 32px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .kn-item:first-child { padding-left: 0; }
+  .kn-item:last-child { border: none; }
+  .kn-number {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 900;
+    color: var(--gold-lt);
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .kn-label {
+    font-size: 13px;
+    color: rgba(250,247,242,0.5);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .kn-source {
+    font-size: 10px;
+    color: rgba(250,247,242,0.3);
+    margin-top: 6px;
+    font-weight: 400;
+  }
+
+  /* ── SECTION ── */
+  section { padding: 64px 0; border-bottom: var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .body-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 620px;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .body-text strong { color: var(--ink); font-weight: 500; }
+
+  /* ── STATS TABLE ── */
+  .stats-table {
+    border: var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    padding: 20px 24px;
+    border-bottom: var(--rule);
+    align-items: center;
+    transition: background 0.15s;
+  }
+  .stat-row:last-child { border: none; }
+  .stat-row:hover { background: rgba(201,146,42,0.04); }
+  .stat-row-label {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .stat-row-label strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 2px; }
+  .stat-row-value {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: right;
+    letter-spacing: -0.5px;
+  }
+  .stat-row-value .delta {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--green);
+    display: block;
+    text-align: right;
+    margin-top: 2px;
+  }
+  .stat-row-value .delta.neg { color: var(--red); }
+
+  /* ── BEFORE/AFTER ── */
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 0;
+  }
+  .ba-card {
+    border: var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ba-header {
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: var(--rule);
+  }
+  .ba-header.before { background: var(--red-lt); color: var(--red); }
+  .ba-header.after  { background: var(--green-lt); color: var(--green); }
+  .ba-list { list-style: none; }
+  .ba-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    border-bottom: var(--rule);
+    line-height: 1.5;
+  }
+  .ba-list li:last-child { border: none; }
+  .ba-list li strong { color: var(--ink); font-weight: 500; }
+  .ba-icon { flex-shrink: 0; margin-top: 1px; }
+
+  /* ── RANKING SNAPSHOT ── */
+  .ranking-board {
+    border: var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+  .rb-header {
+    padding: 14px 20px;
+    background: var(--ink);
+    display: grid;
+    grid-template-columns: 60px 1fr 80px 80px;
+    gap: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.4);
+  }
+  .rb-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 80px 80px;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: var(--rule);
+    align-items: center;
+    transition: background 0.15s;
+  }
+  .rb-row:last-child { border: none; }
+  .rb-row:hover { background: rgba(201,146,42,0.04); }
+  .rb-pos {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: -0.5px;
+  }
+  .rb-pos.p2 { color: var(--muted); font-size: 18px; }
+  .rb-keyword { font-size: 13px; color: var(--ink); font-weight: 500; }
+  .rb-intent {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .rb-vol { font-size: 13px; color: var(--muted); text-align: right; }
+  .rb-trend {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+  }
+  .rb-trend.up { color: var(--green); }
+  .rb-trend.p2 { color: var(--gold); }
+  .rb-trend.steady { color: var(--muted); }
+  .page-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .page-badge.pg1 { background: var(--green-lt); color: var(--green); }
+  .page-badge.pg2 { background: #FFF3CD; color: #856404; }
+
+  /* ── REVENUE ── */
+  .revenue-banner {
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgba(201,146,42,0.04) 0%, transparent 60%);
+  }
+  .revenue-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .revenue-big {
+    font-family: var(--serif);
+    font-size: clamp(56px, 10vw, 88px);
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -3px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .revenue-sub {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 400px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .revenue-sub strong { color: var(--ink); font-weight: 500; }
+  .monthly-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .month-cell {
+    border: var(--rule);
+    border-radius: 8px;
+    padding: 14px 10px;
+    background: white;
+  }
+  .month-name {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .month-val {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: -0.5px;
+  }
+
+  /* ── ZERO SPEND CALLOUT ── */
+  .zero-spend {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin: 36px 0 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .zs-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201,146,42,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .zs-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--gold-lt);
+  }
+  .zs-body {
+    font-size: 13px;
+    color: rgba(250,247,242,0.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .zs-body strong { color: var(--paper); font-weight: 500; }
+
+  /* ── SITE HEALTH ── */
+  .health-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .health-card {
+    border: var(--rule);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .health-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .health-val {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: var(--green);
+  }
+  .health-val.warn { color: var(--gold); }
+  .health-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ── HOW ── */
+  .how-steps {
+    counter-reset: steps;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .how-step {
+    padding: 28px 32px;
+    border-bottom: var(--rule);
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: background 0.15s;
+  }
+  .how-step:last-child { border: none; }
+  .how-step:hover { background: rgba(201,146,42,0.03); }
+  .step-n {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--faint);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+    padding-top: 2px;
+  }
+  .step-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .service-item {
+    padding: 20px;
+    border: var(--rule);
+    border-radius: 10px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: background 0.15s;
+  }
+  .service-item:hover { background: rgba(201,146,42,0.04); }
+  .si-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--ink);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--gold-lt);
+  }
+  .si-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .si-desc { font-size: 12px; color: var(--muted); line-height: 1.5; font-weight: 300; }
+
+  /* ── SCALE CALLOUT ── */
+  .scale-callout {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    background: rgba(201,146,42,0.04);
+    border-radius: 0 10px 10px 0;
+    margin: 36px 0 0;
+  }
+  .scale-callout p {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .scale-callout cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* ── CTA ── */
+  .cta-block {
+    padding: 80px 0;
+    text-align: center;
+    border-top: var(--rule);
+  }
+  .cta-block h2 { max-width: 520px; margin: 0 auto 20px; }
+  .cta-block .body-text { margin: 0 auto 40px; text-align: center; max-width: 440px; }
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #FF6B35;
+    transition: background 0.15s, border-color 0.15s, transform 0.12s;
+  }
+  .btn-primary:hover { background: #E55527; border-color: #E55527; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    border: var(--rule);
+    border-color: var(--faint);
+    transition: background 0.15s, transform 0.12s;
+  }
+  .btn-secondary:hover { background: var(--faint); transform: translateY(-1px); }
+  .cta-note {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .trust-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: var(--rule);
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .trust-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px 0;
+    border-top: var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    background: rgba(107,104,96,0.06);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 0 20px; }
+    .key-number-bar { grid-template-columns: 1fr; padding: 32px 28px; }
+    .kn-item { padding: 16px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .kn-item:last-child { border: none; }
+    .ba-grid, .monthly-grid, .health-grid, .services-grid { grid-template-columns: 1fr; }
+    .monthly-grid { max-width: 100%; }
+    .rb-header, .rb-row { grid-template-columns: 50px 1fr 60px; }
+    .rb-header > *:nth-child(4), .rb-row > *:nth-child(4) { display: none; }
+    .hero { padding: 52px 0 44px; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <a href="/" style="text-decoration:none;display:flex;flex-direction:column;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#0D0D0D;letter-spacing:0.1em;line-height:1;">GLASSBEE</span>
+      <span style="font-family:'Poppins',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#FF6B35;margin-top:-2px;">SOLUTIONS</span>
+    </a>
+    <div class="header-meta">
+      <div class="verified-pill">
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#2A7A4B" stroke-width="1.2"/><path d="M3.5 6l2 2 3-3" stroke="#2A7A4B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        SEMrush &amp; GSC Verified
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Case Study — Local SEO · San Diego, CA</div>
+    <h1>We took a brand-new website from zero to <em>264 Google rankings</em> in 45 days. Without spending a dollar on ads.</h1>
+    <p class="hero-sub">
+      A San Diego junk removal company had no web presence. We built their site from scratch and drove
+      <strong>$3,500+ in booked jobs through organic search alone</strong> — with an average ticket of $150.
+      Here's every verified number.
+    </p>
+    <div class="hero-proof">
+      <span>📍 San Diego, CA</span>
+      <span class="dot-sep">·</span>
+      <span>🏗️ Industry: Junk Removal</span>
+      <span class="dot-sep">·</span>
+      <span>📅 Timeframe: 45 days</span>
+      <span class="dot-sep">·</span>
+      <span>💰 Paid ads: $0</span>
+    </div>
+  </div>
+
+  <!-- KEY NUMBERS -->
+  <div class="key-number-bar">
+    <div class="kn-item">
+      <div class="kn-number">+1,625%</div>
+      <div class="kn-label">Organic traffic growth since launch</div>
+      <div class="kn-source">Source: SEMrush</div>
+    </div>
+    <div class="kn-item">
+      <div class="kn-number">264</div>
+      <div class="kn-label">Keywords ranking on Google (+267%)</div>
+      <div class="kn-source">Source: SEMrush</div>
+    </div>
+    <div class="kn-item">
+      <div class="kn-number">$3,500+</div>
+      <div class="kn-label">Jobs booked from organic search</div>
+      <div class="kn-source">Source: Job tracker spreadsheet</div>
+    </div>
+  </div>
+
+  <!-- BEFORE / AFTER -->
+  <section>
+    <div class="eyebrow">The Before &amp; After</div>
+    <h2>Starting from scratch in a competitive market.</h2>
+    <p class="body-text">
+      Junk removal in San Diego is crowded. Established players have years of SEO history and thousands of reviews.
+      We had a brand-new domain, no existing authority, and zero rankings. Here's what changed.
+    </p>
+
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-header before">Day 1 — Starting point</div>
+        <ul class="ba-list">
+          <li><span class="ba-icon">✗</span> 0 keywords ranking anywhere on Google</li>
+          <li><span class="ba-icon">✗</span> 0 backlinks, 0 referring domains</li>
+          <li><span class="ba-icon">✗</span> No organic traffic, no inbound calls</li>
+          <li><span class="ba-icon">✗</span> Brand-new domain, no authority</li>
+          <li><span class="ba-icon">✗</span> 100% dependent on paid ads to get any leads</li>
+        </ul>
+      </div>
+      <div class="ba-card">
+        <div class="ba-header after">Day 45 — Where we are</div>
+        <ul class="ba-list">
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>264 keywords</strong> ranking on Google</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>222 backlinks</strong> from 25 referring domains</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>33,100 impressions</strong> in 90 days (Google Search Console)</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>Site health score: 95%</strong> (SEMrush audit)</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$3,500+ in jobs</strong> booked through organic leads</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANKINGS BREAKDOWN -->
+  <section>
+    <div class="eyebrow">Live Rankings Snapshot</div>
+    <h2>264 keywords — and climbing every week.</h2>
+    <p class="body-text">
+      A 45-day-old domain competing with businesses that have had 5–10 years of SEO momentum.
+      <strong>Several keywords are already on page 1.</strong> The page 2 rankings below are the ones we're actively pushing over the line — and the position trend on every single one is moving upward.
+    </p>
+
+    <div class="ranking-board">
+      <div class="rb-header">
+        <div>Pos.</div>
+        <div>Keyword</div>
+        <div style="text-align:right">Volume</div>
+        <div style="text-align:right">Trend</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">6</div>
+        <div><div class="rb-keyword">estate cleanout carmel valley <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Transactional · buyer ready</div></div>
+        <div class="rb-vol">20/mo</div>
+        <div class="rb-trend up">↑ +1</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">7</div>
+        <div><div class="rb-keyword">estate cleanout la jolla <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Transactional · high value area</div></div>
+        <div class="rb-vol">10/mo</div>
+        <div class="rb-trend up">↑ +4</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">9</div>
+        <div><div class="rb-keyword">junk hauling hillcrest <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Transactional · local intent</div></div>
+        <div class="rb-vol">10/mo</div>
+        <div class="rb-trend up">↑ new</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos p2">15</div>
+        <div><div class="rb-keyword">emergency junk removal san diego <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">Urgent transactional · high intent</div></div>
+        <div class="rb-vol">50/mo</div>
+        <div class="rb-trend p2">→ climbing</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos p2">16</div>
+        <div><div class="rb-keyword">junk removal mira mesa <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">Local transactional</div></div>
+        <div class="rb-vol">20/mo</div>
+        <div class="rb-trend p2">→ climbing</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos p2">18</div>
+        <div><div class="rb-keyword">junk removal kearny mesa <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">Local transactional</div></div>
+        <div class="rb-vol">0/mo</div>
+        <div class="rb-trend steady">→ steady</div>
+      </div>
+    </div>
+
+    <div class="zero-spend" style="margin-top:20px;">
+      <div class="zs-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 7H17L12 11L14 17L9 13L4 17L6 11L1 7H7L9 1Z" fill="#F5D99A"/></svg>
+      </div>
+      <div>
+        <div class="zs-title">Why page 2 rankings still matter right now</div>
+        <div class="zs-body">
+          Page 2 positions on a 45-day domain are genuinely impressive — most new sites don't rank anywhere for 6–12 months.
+          <strong>The average position improved from 83 → 66 in the last 4 weeks alone</strong> and is still moving.
+          Every page-2 keyword is weeks away from page 1, not months.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVENUE -->
+  <section>
+    <div class="eyebrow">The Revenue Impact</div>
+    <h2>Real jobs. Real money. Zero ad spend.</h2>
+    <p class="body-text">
+      The junk removal space has an average ticket of ~$150. Small jobs.
+      <strong>We still generated $3,500+ in revenue from organic search in under 60 days.</strong>
+      Now imagine the same framework applied to a business with a $1,000 or $5,000 average job value.
+    </p>
+
+    <div class="revenue-banner">
+      <div class="revenue-eyebrow">Google-sourced revenue · Dec 2025 – Mar 2026</div>
+      <div class="revenue-big">$3,500+</div>
+      <div class="revenue-sub">In booked jobs sourced directly through Google organic search. <strong>No paid ads. No boosted posts.</strong> Just rankings.</div>
+      <div class="monthly-grid">
+        <div class="month-cell"><div class="month-name">Dec</div><div class="month-val">$1,730</div></div>
+        <div class="month-cell"><div class="month-name">Jan</div><div class="month-val">$3,180</div></div>
+        <div class="month-cell"><div class="month-name">Feb</div><div class="month-val">$2,210</div></div>
+        <div class="month-cell"><div class="month-name">Mar</div><div class="month-val">$1,120+</div></div>
+      </div>
+    </div>
+
+    <div class="scale-callout">
+      <p>"This was our first client, with a $150 average job size, in a crowded market, on a brand-new domain. Scale the ticket size to $1,000 or $10,000 — the framework is the same. The results are not."</p>
+      <cite>— GlassBee Solutions · San Diego, CA</cite>
+    </div>
+  </section>
+
+  <!-- TECHNICAL HEALTH -->
+  <section>
+    <div class="eyebrow">Site Health</div>
+    <h2>The foundation most agencies ignore.</h2>
+    <p class="body-text">
+      Rankings are only sustainable when the technical foundation is solid. We monitor and improve site health continuously — because Google's algorithm rewards sites that are fast, error-free, and properly structured.
+    </p>
+    <div class="health-grid">
+      <div class="health-card">
+        <div class="health-label">Health Score</div>
+        <div class="health-val">95%</div>
+        <div class="health-note">SEMrush audit · up +3 points this period</div>
+      </div>
+      <div class="health-card">
+        <div class="health-label">Critical Errors</div>
+        <div class="health-val" style="color:var(--green)">1</div>
+        <div class="health-note">Down from 5 — actively resolved</div>
+      </div>
+      <div class="health-card">
+        <div class="health-label">Pages Crawled</div>
+        <div class="health-val warn">62</div>
+        <div class="health-note">56 warnings identified &amp; being addressed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section>
+    <div class="eyebrow">How We Do It</div>
+    <h2>Three things that separate a ranking site from a pretty one.</h2>
+
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">Build for search, not just looks</div>
+          <div class="step-desc">Every page is engineered around a specific buying intent. Fast load times, clean structure, proper schema markup. The site doesn't just look good — it communicates to Google exactly what it is and who it serves.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">Build authority nobody can buy overnight</div>
+          <div class="step-desc">222 backlinks from 25 referring domains in 60 days. This is the moat. We build the kind of off-page credibility that tells Google this business is established, trusted, and locally relevant. Competitors can't copy it overnight.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">Target people with their wallets out</div>
+          <div class="step-desc">We chase transactional keywords — the searches where someone is ready to book right now. Not curiosity searches. Not blog traffic. The person searching "emergency junk removal San Diego" is calling someone in the next 10 minutes. We put you in front of them.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="eyebrow">What You Get</div>
+    <h2>Everything the ranking requires. Nothing you don't need.</h2>
+    <div class="services-grid" style="margin-top:0">
+      <div class="service-item">
+        <div class="si-icon">🌐</div>
+        <div><div class="si-title">Custom website build</div><div class="si-desc">Fast, technically sound, built for local SEO from day one. Not a template.</div></div>
+      </div>
+      <div class="service-item">
+        <div class="si-icon">🔍</div>
+        <div><div class="si-title">Keyword strategy</div><div class="si-desc">Full research into what your customers are actually searching — by intent and location.</div></div>
+      </div>
+      <div class="service-item">
+        <div class="si-icon">🔗</div>
+        <div><div class="si-title">Link building</div><div class="si-desc">Real backlinks from real domains. No spam. No shortcuts. The kind that compound over time.</div></div>
+      </div>
+      <div class="service-item">
+        <div class="si-icon">📊</div>
+        <div><div class="si-title">Monthly reporting</div><div class="si-desc">Clear data on what moved, what's next, and what it's worth in real revenue terms.</div></div>
+      </div>
+      <div class="service-item">
+        <div class="si-icon">✍️</div>
+        <div><div class="si-title">SEO content</div><div class="si-desc">Service pages and location pages that capture the searches your competitors are missing.</div></div>
+      </div>
+      <div class="service-item">
+        <div class="si-icon">⚙️</div>
+        <div><div class="si-title">Ongoing site management</div><div class="si-desc">Technical health, speed optimization, error resolution. We treat your site like it's our own.</div></div>
+      </div>
+    </div>
+
+    <div class="stats-table" style="margin-top:24px;">
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Organic traffic growth</strong>Verified via SEMrush</div>
+        <div class="stat-row-value">+1,625%<span class="delta">Since launch</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Keywords ranking</strong>264 total, climbing weekly</div>
+        <div class="stat-row-value">+267%<span class="delta">Growth in 45 days</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Backlinks built</strong>From 25 referring domains</div>
+        <div class="stat-row-value">222<span class="delta">$0 paid for links</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Google impressions</strong>Google Search Console · 90 days</div>
+        <div class="stat-row-value">33.1K<span class="delta">Still growing</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Revenue generated</strong>Google-sourced jobs only</div>
+        <div class="stat-row-value">$3,500+<span class="delta">$0 ad spend</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <div class="eyebrow" style="text-align:center">Work With Us</div>
+    <h2>Your competitors are on page 1. Your customers are searching right now.</h2>
+    <p class="body-text">
+      We'll run a free audit of your online presence, show you exactly which keywords you should own, and what it would realistically take to get there.
+    </p>
+    <div class="cta-buttons">
+      <a href="/contact" class="btn-primary">Book a Free Audit →</a>
+      <a href="tel:+16192733218" class="btn-secondary">Call (619) 273-3218</a>
+    </div>
+    <div class="cta-note">Free 30-min audit · No pitch · Real data about your market</div>
+    <div class="trust-row">
+      <div class="trust-item"><div class="trust-dot"></div>San Diego–based</div>
+      <div class="trust-item"><div class="trust-dot"></div>All results SEMrush + GSC verified</div>
+      <div class="trust-item"><div class="trust-dot"></div>Zero ad spend required</div>
+      <div class="trust-item"><div class="trust-dot"></div>Month-to-month — no contracts</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>GlassBee Solutions · San Diego, CA · glassbeesolutions.com</div>
+    <div>Case study data: SEMrush &amp; Google Search Console · Severin Hauling · March 2026</div>
+  </footer>
+
+  <div class="disclaimer">
+    All metrics sourced from SEMrush and Google Search Console for severinhauling.com. Data reflects organic search performance from site launch through March 2026. Revenue figures reflect jobs booked through Google organic leads only, verified via internal job tracker. No paid advertising was used to generate these results. Individual results vary based on industry, market, competition, and timeline.
+  </div>
+  <div style="height:40px"></div>
+
+</div>
+</body>
+</html>
