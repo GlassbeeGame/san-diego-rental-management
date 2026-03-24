@@ -595,35 +595,23 @@
     font-weight: 400;
   }
 
-  /* ── SERVICES ── */
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-  .service-item {
-    padding: 22px;
-    border: var(--rule);
-    border-radius: 10px;
+  /* ── DELIVERABLES (chips under each step) ── */
+  .step-chips {
     display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    transition: background 0.15s;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
   }
-  .service-item:hover { background: rgba(201,146,42,0.04); }
-  .si-icon {
-    width: 32px;
-    height: 32px;
-    background: var(--ink);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 14px;
+  .step-chip {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    background: rgba(201,146,42,0.07);
+    border: 1px solid rgba(201,146,42,0.18);
+    border-radius: 20px;
+    padding: 4px 12px;
+    white-space: nowrap;
   }
-  .si-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
-  .si-desc { font-size: 14px; color: var(--muted); line-height: 1.55; font-weight: 400; }
 
   /* ── CTA ── */
   .cta-block {
@@ -1124,89 +1112,63 @@
     </div>
   </section>
 
-  <!-- HOW WE DO IT -->
+  <!-- HOW WE DO IT + WHAT YOU GET (merged) -->
   <section>
-    <div class="eyebrow">How We Do It</div>
+    <div class="eyebrow">How It Works</div>
     <h2>Three things that turn a website into a lead machine.</h2>
 
     <div class="how-steps">
       <div class="how-step">
         <div class="step-n">01</div>
         <div>
-          <div class="step-title">A website built to get found — not just look good</div>
-          <div class="step-desc">Every page is engineered around what your customers are actually searching. Fast load times, clean structure, proper technical setup. The site communicates to Google exactly what you do, where you do it, and who you serve. Most agency sites look nice and rank nowhere. Ours rank.</div>
+          <div class="step-title">A site built to get found — not just look good</div>
+          <div class="step-desc">Every page is engineered around what your customers are actually searching. Fast load times, clean structure, proper technical setup. The site tells Google exactly what you do, where you do it, and who you serve. Most agency sites look nice and rank nowhere. Ours rank.</div>
+          <div class="step-chips">
+            <span class="step-chip">Custom website</span>
+            <span class="step-chip">Buyer-intent keyword research</span>
+            <span class="step-chip">Service &amp; location pages</span>
+          </div>
         </div>
       </div>
       <div class="how-step">
         <div class="step-n">02</div>
         <div>
           <div class="step-title">Authority your competitors can't buy overnight</div>
-          <div class="step-desc">222 backlinks from 25 referring domains in 60 days. This is the moat. We build the kind of local credibility that signals to Google this is an established, trusted business in your market. Your competitors can't copy this next week. It takes time — which is exactly why starting now matters.</div>
+          <div class="step-desc">222 backlinks from 25 referring domains in 60 days. This is the moat. Real local credibility that signals to Google this is an established, trusted business. Your competitors can't copy it next week — which is exactly why starting now matters.</div>
+          <div class="step-chips">
+            <span class="step-chip">Link building</span>
+            <span class="step-chip">Local citations</span>
+            <span class="step-chip">Technical SEO</span>
+          </div>
         </div>
       </div>
       <div class="how-step">
         <div class="step-n">03</div>
         <div>
-          <div class="step-title">In front of people ready to book, not just browse</div>
-          <div class="step-desc">We target transactional searches — the ones where someone has a problem right now and needs it solved today. Not curiosity traffic. Not tire-kickers. The person searching "emergency junk removal San Diego" is calling someone in the next 10 minutes. We put you in front of them first.</div>
+          <div class="step-title">In front of buyers ready to book, not just browse</div>
+          <div class="step-desc">We target transactional searches — the ones where someone has a problem right now and needs it solved today. The person searching "emergency junk removal San Diego" is calling someone in the next 10 minutes. We put you in front of them first.</div>
+          <div class="step-chips">
+            <span class="step-chip">Ongoing management</span>
+            <span class="step-chip">Monthly ROI reporting</span>
+            <span class="step-chip">Rankings monitored</span>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section>
-    <div class="eyebrow">What You Get</div>
-    <h2>Everything the result requires. Nothing you don't need.</h2>
-
-    <div class="services-grid" style="margin-top:0">
-      <div class="service-item">
-        <div class="si-icon">🌐</div>
-        <div><div class="si-title">Website built to convert</div><div class="si-desc">Fast, technically sound, built to rank and convert from day one. Not a template. Not a drag-and-drop page.</div></div>
-      </div>
-      <div class="service-item">
-        <div class="si-icon">🔍</div>
-        <div><div class="si-title">Finding where your buyers search</div><div class="si-desc">Full research into every search your customers make — by intent, by location, by urgency. We target the ones that book jobs.</div></div>
-      </div>
-      <div class="service-item">
-        <div class="si-icon">🔗</div>
-        <div><div class="si-title">Authority that compounds over time</div><div class="si-desc">Real backlinks from real domains. The kind that build a moat around your rankings that competitors can't dismantle next quarter.</div></div>
-      </div>
-      <div class="service-item">
-        <div class="si-icon">📊</div>
-        <div><div class="si-title">Clear ROI reporting</div><div class="si-desc">Plain-English data every month — what moved, what it's worth in booked jobs, and what's coming next. No vanity metrics.</div></div>
-      </div>
-      <div class="service-item">
-        <div class="si-icon">✍️</div>
-        <div><div class="si-title">Content that captures every search</div><div class="si-desc">Service and location pages that show up for searches your competitors are completely missing. Every neighborhood, every service.</div></div>
-      </div>
-      <div class="service-item">
-        <div class="si-icon">⚙️</div>
-        <div><div class="si-title">Ongoing management</div><div class="si-desc">Technical health, speed, errors resolved, rankings monitored. We treat your site like it's our own business on the line.</div></div>
       </div>
     </div>
 
     <!-- VERIFIED STATS TABLE -->
     <div class="stats-table" style="margin-top:28px;">
       <div class="stat-row">
-        <div class="stat-row-label"><strong>Organic traffic growth</strong>Verified via SEMrush</div>
-        <div class="stat-row-value">+1,625%<span class="delta">Since launch</span></div>
+        <div class="stat-row-label"><strong>Revenue generated</strong>Google-sourced jobs only · 60 days</div>
+        <div class="stat-row-value">$4,000+<span class="delta">$0 ad spend</span></div>
       </div>
       <div class="stat-row">
         <div class="stat-row-label"><strong>Keywords ranking</strong>264 total · 140 in top 100 · 9 on page 1</div>
         <div class="stat-row-value">+267%<span class="delta">Growth in 60 days</span></div>
       </div>
       <div class="stat-row">
-        <div class="stat-row-label"><strong>Backlinks built</strong>From 25 referring domains</div>
-        <div class="stat-row-value">222<span class="delta">$0 paid for links</span></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-row-label"><strong>Google impressions</strong>Google Search Console · 90 days</div>
-        <div class="stat-row-value">25.1K<span class="delta">Still growing</span></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-row-label"><strong>Revenue generated</strong>Google-sourced jobs only · 60 days</div>
-        <div class="stat-row-value">$4,000+<span class="delta">$0 ad spend</span></div>
+        <div class="stat-row-label"><strong>Organic traffic growth</strong>Verified via SEMrush</div>
+        <div class="stat-row-value">+1,625%<span class="delta">Since launch</span></div>
       </div>
     </div>
   </section>
