@@ -223,21 +223,14 @@
   .stat-row-value .delta.neg { color: var(--red); }
 
   /* ── BEFORE/AFTER ── */
-  .ba-grid {
+  .ba-table {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
     border: var(--rule);
     border-radius: 12px;
     overflow: hidden;
   }
-  .ba-card {
-    /* no individual border — grid handles it */
-  }
-  .ba-card:first-child {
-    border-right: var(--rule);
-  }
-  .ba-header {
+  .ba-col-head {
     padding: 14px 20px;
     font-size: 13px;
     font-weight: 700;
@@ -245,10 +238,16 @@
     text-transform: uppercase;
     border-bottom: var(--rule);
   }
-  .ba-header.before { background: var(--red-lt); color: var(--red); }
-  .ba-header.after  { background: var(--green-lt); color: var(--green); }
-  .ba-list { list-style: none; }
-  .ba-list li {
+  .ba-col-head.before {
+    background: var(--red-lt);
+    color: var(--red);
+    border-right: var(--rule);
+  }
+  .ba-col-head.after {
+    background: var(--green-lt);
+    color: var(--green);
+  }
+  .ba-cell {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -256,28 +255,23 @@
     font-size: 15px;
     color: var(--muted);
     border-bottom: var(--rule);
-    line-height: 1.5;
-    min-height: 64px;
+    line-height: 1.55;
   }
-  .ba-list li:last-child { border: none; }
-  .ba-list li strong { color: var(--ink); font-weight: 600; }
-  .ba-icon { flex-shrink: 0; margin-top: 2px; font-style: normal; }
+  .ba-cell.before-cell { border-right: var(--rule); }
+  /* remove bottom border from last row (both cells) */
+  .ba-table > .ba-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .ba-cell strong { color: var(--ink); font-weight: 600; }
+  .ba-icon { flex-shrink: 0; margin-top: 2px; }
 
-  /* Mobile: stack before/after vertically */
   @media (max-width: 600px) {
-    .ba-grid {
-      grid-template-columns: 1fr;
-    }
-    .ba-card:first-child {
-      border-right: none;
-      border-bottom: var(--rule);
-    }
-    .ba-list li {
-      min-height: unset;
-      font-size: 14px;
-      padding: 14px 16px;
-    }
-    .ba-header { font-size: 12px; padding: 12px 16px; }
+    .ba-table { grid-template-columns: 1fr; }
+    .ba-col-head.before { border-right: none; }
+    .ba-cell.before-cell { border-right: none; }
+    /* on mobile last row is only 1 cell wide, so reset and re-target */
+    .ba-table > .ba-cell:nth-last-child(-n+2) { border-bottom: var(--rule); }
+    .ba-table > .ba-cell:last-child { border-bottom: none; }
+    .ba-cell { font-size: 14px; padding: 14px 16px; }
+    .ba-col-head { font-size: 12px; padding: 12px 16px; }
   }
 
   /* ── RANKING BOARD ── */
@@ -908,27 +902,30 @@
       <strong>Here's exactly what changed in 60 days.</strong>
     </p>
 
-    <div class="ba-grid">
-      <div class="ba-card">
-        <div class="ba-header before">Day 1 — Starting from zero</div>
-        <ul class="ba-list">
-          <li><span class="ba-icon" style="color:var(--red)">✗</span> No website, no Google presence</li>
-          <li><span class="ba-icon" style="color:var(--red)">✗</span> 100% reliant on referrals &amp; paid ads</li>
-          <li><span class="ba-icon" style="color:var(--red)">✗</span> Invisible when local buyers searched</li>
-          <li><span class="ba-icon" style="color:var(--red)">✗</span> No trust signals — competing on price alone</li>
-          <li><span class="ba-icon" style="color:var(--red)">✗</span> Every new job required manual hustle</li>
-        </ul>
-      </div>
-      <div class="ba-card">
-        <div class="ba-header after">Day 60 — Phones ringing from Google</div>
-        <ul class="ba-list">
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$4,000+</strong> in booked jobs from Google</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>264 searches</strong> where customers find them</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>25,100 impressions</strong> — real buyers seeing them</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>9 keywords on page 1</strong> of Google</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$0 in paid ads</strong> — 100% organic</li>
-        </ul>
-      </div>
+    <div class="ba-table">
+      <!-- Column headers -->
+      <div class="ba-col-head before">Day 1 — Starting from zero</div>
+      <div class="ba-col-head after">Day 60 — Phones ringing</div>
+
+      <!-- Row 1 -->
+      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> No website, no Google presence</div>
+      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$4,000+</strong> in booked jobs from Google</div>
+
+      <!-- Row 2 -->
+      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> 100% reliant on referrals &amp; paid ads</div>
+      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>264 searches</strong> where customers now find them</div>
+
+      <!-- Row 3 -->
+      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> Invisible when local buyers searched Google</div>
+      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>25,100 impressions</strong> from real local buyers</div>
+
+      <!-- Row 4 -->
+      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> No trust signals — competing on price alone</div>
+      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>9 keywords on page 1</strong> of Google</div>
+
+      <!-- Row 5 -->
+      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> Every new job required manual hustle</div>
+      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$0 in paid ads</strong> — 100% organic search</div>
     </div>
   </section>
 
