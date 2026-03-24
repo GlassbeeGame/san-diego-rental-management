@@ -693,6 +693,59 @@
     gap: 12px;
   }
 
+  /* ── MID-PAGE CTA ── */
+  .midpage-cta {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 36px 44px;
+    margin: 0 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .midpage-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+  }
+  .midpage-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .midpage-text {
+    flex: 1;
+    min-width: 260px;
+  }
+  .midpage-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+  .midpage-text p {
+    font-size: 16px;
+    color: rgba(250,247,242,0.75);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  .midpage-text p strong { color: var(--paper); font-weight: 600; }
+  .midpage-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  @media (max-width: 560px) {
+    .midpage-cta { padding: 28px 24px; }
+    .midpage-inner { flex-direction: column; align-items: stretch; }
+    .midpage-btn { text-align: center; }
+  }
+
   /* ── DISCLAIMER ── */
   .disclaimer {
     background: rgba(107,104,96,0.06);
@@ -998,6 +1051,20 @@
       <cite>— GlassBee Solutions · San Diego, CA</cite>
     </div>
   </section>
+
+  <!-- MID-PAGE CTA -->
+  <div class="midpage-cta" style="margin:0 0 56px;">
+    <div class="midpage-inner">
+      <div class="midpage-text">
+        <span class="midpage-label">Seen enough?</span>
+        <p>We'll audit your market for free — show you <strong>exactly which searches your competitors own</strong> that you're invisible for, and what it would take to start booking jobs from Google in the next 60 days.</p>
+      </div>
+      <div style="flex-shrink:0;text-align:center;">
+        <a href="/contact" class="btn-primary midpage-btn">Book a Free Audit →</a>
+        <div style="margin-top:10px;font-size:13px;color:rgba(250,247,242,0.4);font-weight:400;">or keep reading ↓</div>
+      </div>
+    </div>
+  </div>
 
   <!-- SITE PERFORMANCE -->
   <section>
