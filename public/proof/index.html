@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlassBee Solutions — Real Results, Zero Ad Spend</title>
+<title>GlassBee Solutions — $4,000 in 60 Days. Zero Ad Spend.</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,7 @@
     --green-lt:#D4EDDF;
     --red-lt:  #FDECEA;
     --red:     #C0392B;
+    --orange:  #FF6B35;
     --serif:   'Fraunces', Georgia, serif;
     --sans:    'DM Sans', system-ui, sans-serif;
     --rule:    1px solid var(--faint);
@@ -119,7 +120,7 @@
   .hero-proof span { display: flex; align-items: center; gap: 6px; }
   .dot-sep { color: var(--faint); }
 
-  /* ── KEY NUMBER ── */
+  /* ── KEY NUMBER BAR ── */
   .key-number-bar {
     background: var(--ink);
     color: var(--paper);
@@ -258,7 +259,7 @@
   .ba-list li strong { color: var(--ink); font-weight: 600; }
   .ba-icon { flex-shrink: 0; margin-top: 1px; }
 
-  /* ── RANKING SNAPSHOT ── */
+  /* ── RANKING BOARD ── */
   .ranking-board {
     border: var(--rule);
     border-radius: 12px;
@@ -297,17 +298,9 @@
   }
   .rb-pos.p2 { color: var(--muted); font-size: 22px; }
   .rb-keyword { font-size: 15px; color: var(--ink); font-weight: 600; }
-  .rb-intent {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 3px;
-  }
+  .rb-intent { font-size: 13px; color: var(--muted); margin-top: 3px; }
   .rb-vol { font-size: 14px; color: var(--muted); text-align: right; }
-  .rb-trend {
-    font-size: 14px;
-    font-weight: 600;
-    text-align: right;
-  }
+  .rb-trend { font-size: 14px; font-weight: 600; text-align: right; }
   .rb-trend.up { color: var(--green); }
   .rb-trend.p2 { color: var(--gold); }
   .rb-trend.steady { color: var(--muted); }
@@ -325,78 +318,13 @@
   .page-badge.pg1 { background: var(--green-lt); color: var(--green); }
   .page-badge.pg2 { background: #FFF3CD; color: #856404; }
 
-  /* ── REVENUE ── */
-  .revenue-banner {
-    border: 2px solid var(--gold);
-    border-radius: 16px;
-    padding: 48px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(160deg, rgba(201,146,42,0.04) 0%, transparent 60%);
-  }
-  .revenue-eyebrow {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .revenue-big {
-    font-family: var(--serif);
-    font-size: clamp(56px, 10vw, 88px);
-    font-weight: 900;
-    color: var(--ink);
-    letter-spacing: -3px;
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-  .revenue-sub {
-    font-size: 17px;
-    color: var(--muted);
-    font-weight: 400;
-    max-width: 400px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
-  }
-  .revenue-sub strong { color: var(--ink); font-weight: 600; }
-  .monthly-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-  .month-cell {
-    border: var(--rule);
-    border-radius: 8px;
-    padding: 16px 10px;
-    background: white;
-  }
-  .month-name {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .month-val {
-    font-family: var(--serif);
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--green);
-    letter-spacing: -0.5px;
-  }
-
   /* ── ZERO SPEND CALLOUT ── */
   .zero-spend {
     background: var(--ink);
     color: var(--paper);
     border-radius: 12px;
     padding: 32px 36px;
-    margin: 36px 0 0;
+    margin: 24px 0 0;
     display: flex;
     align-items: flex-start;
     gap: 20px;
@@ -426,48 +354,195 @@
   }
   .zs-body strong { color: var(--paper); font-weight: 600; }
 
-  /* ── SITE HEALTH ── */
-  .health-grid {
+  /* ── REVENUE ── */
+  .revenue-banner {
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgba(201,146,42,0.05) 0%, transparent 60%);
+  }
+  .revenue-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .revenue-big {
+    font-family: var(--serif);
+    font-size: clamp(64px, 12vw, 100px);
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -4px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .revenue-sub {
+    font-size: 17px;
+    color: var(--muted);
+    font-weight: 400;
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .revenue-sub strong { color: var(--ink); font-weight: 600; }
+
+  /* ── COMPOUND CALLOUT ── */
+  .compound-callout {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 40px 44px;
+    margin: 32px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .compound-callout::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--orange));
+  }
+  .compound-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-lt);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .compound-body {
+    font-size: 16px;
+    color: rgba(250,247,242,0.72);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+  .compound-body strong { color: var(--paper); font-weight: 600; }
+  .compound-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
-    margin-bottom: 24px;
+    margin-top: 28px;
   }
-  .health-card {
-    border: var(--rule);
+  .compound-stat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 10px;
-    padding: 24px;
+    padding: 20px;
   }
-  .health-label {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
-  }
-  .health-val {
+  .compound-stat-val {
     font-family: var(--serif);
-    font-size: 42px;
+    font-size: 28px;
     font-weight: 900;
-    letter-spacing: -1px;
+    color: var(--gold-lt);
+    letter-spacing: -0.5px;
     line-height: 1;
-    color: var(--green);
+    margin-bottom: 6px;
   }
-  .health-val.warn { color: var(--gold); }
-  .health-note {
+  .compound-stat-label {
+    font-size: 13px;
+    color: rgba(250,247,242,0.5);
+    line-height: 1.4;
+  }
+
+  /* ── SCALE CALLOUT ── */
+  .scale-callout {
+    border-left: 3px solid var(--gold);
+    padding: 22px 28px;
+    background: rgba(201,146,42,0.04);
+    border-radius: 0 10px 10px 0;
+    margin: 32px 0 0;
+  }
+  .scale-callout p {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .scale-callout cite {
+    display: block;
+    margin-top: 12px;
     font-size: 14px;
     color: var(--muted);
-    margin-top: 8px;
-    line-height: 1.5;
+    font-style: normal;
   }
+
+  /* ── LIGHTHOUSE GRID ── */
+  .lighthouse-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .lighthouse-card {
+    border: var(--rule);
+    border-radius: 10px;
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .lighthouse-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--green);
+    opacity: 0.4;
+  }
+  .lighthouse-card.near::after { background: var(--gold); }
+  .lighthouse-score {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .lighthouse-card.near .lighthouse-score { color: var(--gold); }
+  .lighthouse-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── BUILT BY ── */
+  .built-by {
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: rgba(13,13,13,0.02);
+  }
+  .built-by-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .built-by-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .built-by-text strong { color: var(--ink); font-weight: 600; }
 
   /* ── HOW ── */
   .how-steps {
-    counter-reset: steps;
     display: flex;
     flex-direction: column;
-    gap: 0;
     border: var(--rule);
     border-radius: 12px;
     overflow: hidden;
@@ -531,34 +606,9 @@
     justify-content: center;
     flex-shrink: 0;
     font-size: 14px;
-    color: var(--gold-lt);
   }
   .si-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
   .si-desc { font-size: 14px; color: var(--muted); line-height: 1.55; font-weight: 400; }
-
-  /* ── SCALE CALLOUT ── */
-  .scale-callout {
-    border-left: 3px solid var(--gold);
-    padding: 22px 28px;
-    background: rgba(201,146,42,0.04);
-    border-radius: 0 10px 10px 0;
-    margin: 36px 0 0;
-  }
-  .scale-callout p {
-    font-family: var(--serif);
-    font-size: 21px;
-    font-style: italic;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.55;
-  }
-  .scale-callout cite {
-    display: block;
-    margin-top: 12px;
-    font-size: 14px;
-    color: var(--muted);
-    font-style: normal;
-  }
 
   /* ── CTA ── */
   .cta-block {
@@ -566,8 +616,8 @@
     text-align: center;
     border-top: var(--rule);
   }
-  .cta-block h2 { max-width: 520px; margin: 0 auto 20px; }
-  .cta-block .body-text { margin: 0 auto 40px; text-align: center; max-width: 440px; }
+  .cta-block h2 { max-width: 560px; margin: 0 auto 20px; }
+  .cta-block .body-text { margin: 0 auto 40px; text-align: center; max-width: 460px; }
   .cta-buttons {
     display: flex;
     gap: 14px;
@@ -576,7 +626,7 @@
     margin-bottom: 20px;
   }
   .btn-primary {
-    background: #FF6B35;
+    background: var(--orange);
     color: #fff;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -587,7 +637,7 @@
     border-radius: 8px;
     text-decoration: none;
     display: inline-block;
-    border: 2px solid #FF6B35;
+    border: 2px solid var(--orange);
     transition: background 0.15s, border-color 0.15s, transform 0.12s;
   }
   .btn-primary:hover { background: #E55527; border-color: #E55527; transform: translateY(-1px); }
@@ -604,10 +654,7 @@
     transition: background 0.15s, transform 0.12s;
   }
   .btn-secondary:hover { background: var(--faint); transform: translateY(-1px); }
-  .cta-note {
-    font-size: 14px;
-    color: var(--muted);
-  }
+  .cta-note { font-size: 14px; color: var(--muted); }
   .trust-row {
     display: flex;
     align-items: center;
@@ -662,9 +709,9 @@
     .page { padding: 0 24px; }
     .key-number-bar { padding: 36px 32px; gap: 0; }
     .kn-item { padding: 0 24px; }
-    .health-grid { grid-template-columns: 1fr 1fr; }
+    .lighthouse-grid { grid-template-columns: repeat(2, 1fr); }
+    .compound-grid { grid-template-columns: 1fr 1fr; }
     .revenue-banner { padding: 36px 24px; }
-    .monthly-grid { max-width: 100%; }
     .how-step { padding: 24px 24px; }
     .stat-row { grid-template-columns: 1fr 140px; }
   }
@@ -691,9 +738,9 @@
     .kn-item:first-child { padding-top: 0; }
 
     .ba-grid { grid-template-columns: 1fr; }
-    .health-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
-    .monthly-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+    .lighthouse-grid { grid-template-columns: repeat(2, 1fr); }
+    .compound-grid { grid-template-columns: 1fr; }
 
     .rb-header { grid-template-columns: 48px 1fr 72px; font-size: 11px; }
     .rb-row { grid-template-columns: 48px 1fr 72px; }
@@ -702,7 +749,9 @@
     .rb-intent { font-size: 12px; }
 
     .zero-spend { flex-direction: column; gap: 14px; padding: 24px; }
+    .compound-callout { padding: 28px 24px; }
     .revenue-banner { padding: 28px 20px; }
+    .built-by { flex-direction: column; gap: 12px; }
 
     .stat-row { grid-template-columns: 1fr; gap: 6px; }
     .stat-row-value { text-align: left; }
@@ -736,89 +785,94 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="eyebrow">Case Study — Local SEO · San Diego, CA</div>
-    <h1>We took a brand-new website from zero to <em>264 Google rankings</em> in 45 days. Without spending a dollar on ads.</h1>
+    <div class="eyebrow">Case Study — Home Services · San Diego, CA</div>
+    <h1>A brand-new business. <em>$4,000 in booked jobs.</em> 60 days. Zero ad spend.</h1>
     <p class="hero-sub">
-      A San Diego junk removal company had no web presence. We built their site from scratch and drove
-      <strong>$3,500+ in booked jobs through organic search alone</strong> — with an average ticket of $150.
+      We built their website from scratch and had customers calling from Google
+      before most agencies finish their onboarding paperwork.
+      <strong>No lead-gen platforms. No paid ads.</strong>
+      Just a site that shows up when serious buyers are ready to book — and compounds from there.
       Here's every verified number.
     </p>
     <div class="hero-proof">
       <span>📍 San Diego, CA</span>
       <span class="dot-sep">·</span>
-      <span>🏗️ Industry: Junk Removal</span>
+      <span>🔨 Home Services</span>
       <span class="dot-sep">·</span>
-      <span>📅 Timeframe: 45 days</span>
+      <span>📅 60 days</span>
       <span class="dot-sep">·</span>
-      <span>💰 Paid ads: $0</span>
+      <span>💰 $0 ad spend</span>
     </div>
   </div>
 
   <!-- KEY NUMBERS -->
   <div class="key-number-bar">
     <div class="kn-item">
-      <div class="kn-number">+1,625%</div>
-      <div class="kn-label">Organic traffic growth since launch</div>
-      <div class="kn-source">Source: SEMrush</div>
+      <div class="kn-number">$4,000+</div>
+      <div class="kn-label">Booked from Google in 60 days</div>
+      <div class="kn-source">Source: Job tracker · verified</div>
     </div>
     <div class="kn-item">
       <div class="kn-number">264</div>
-      <div class="kn-label">Keywords ranking on Google (+267%)</div>
-      <div class="kn-source">Source: SEMrush</div>
+      <div class="kn-label">Searches where customers find them</div>
+      <div class="kn-source">Source: SEMrush · +267% growth</div>
     </div>
     <div class="kn-item">
-      <div class="kn-number">$4,000+</div>
-      <div class="kn-label">Jobs booked from organic search</div>
-      <div class="kn-source">Source: Job tracker spreadsheet</div>
+      <div class="kn-number">$0</div>
+      <div class="kn-label">Spent on ads or lead-gen services</div>
+      <div class="kn-source">Verified: zero paid campaigns</div>
     </div>
   </div>
 
   <!-- BEFORE / AFTER -->
   <section>
     <div class="eyebrow">The Before &amp; After</div>
-    <h2>Starting from scratch in a competitive market.</h2>
+    <h2>No online presence. 60 days later — phones ringing from Google.</h2>
     <p class="body-text">
-      Junk removal in San Diego is crowded. Established players have years of SEO history and thousands of reviews.
-      We had a brand-new domain, no existing authority, and zero rankings. Here's what changed.
+      Home service markets are crowded. Established players have years of Google history, hundreds of reviews, and existing authority.
+      We had a brand-new domain, zero rankings, and zero existing presence.
+      <strong>Here's exactly what changed in 60 days.</strong>
     </p>
 
     <div class="ba-grid">
       <div class="ba-card">
-        <div class="ba-header before">Day 1 — Starting point</div>
+        <div class="ba-header before">Day 1 — No online presence</div>
         <ul class="ba-list">
-          <li><span class="ba-icon">✗</span> 0 keywords ranking anywhere on Google</li>
-          <li><span class="ba-icon">✗</span> 0 backlinks, 0 referring domains</li>
-          <li><span class="ba-icon">✗</span> No organic traffic, no inbound calls</li>
-          <li><span class="ba-icon">✗</span> Brand-new domain, no authority</li>
-          <li><span class="ba-icon">✗</span> 100% dependent on paid ads to get any leads</li>
+          <li><span class="ba-icon">✗</span> No website, no Google presence</li>
+          <li><span class="ba-icon">✗</span> 100% reliant on referrals or paid ads</li>
+          <li><span class="ba-icon">✗</span> Invisible when local buyers searched</li>
+          <li><span class="ba-icon">✗</span> Competing on price — no trust signals online</li>
+          <li><span class="ba-icon">✗</span> Every new job required manual hustle</li>
         </ul>
       </div>
       <div class="ba-card">
-        <div class="ba-header after">Day 45 — Where we are</div>
+        <div class="ba-header after">Day 60 — Phones ringing from Google</div>
         <ul class="ba-list">
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>264 keywords</strong> ranking on Google</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>222 backlinks</strong> from 25 referring domains</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>33,100 impressions</strong> in 90 days (Google Search Console)</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>Site health score: 95%</strong> (SEMrush audit)</li>
-          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$4,000+ in jobs</strong> booked through organic leads in 60 days</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$4,000+</strong> in booked jobs from Google alone</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>264 searches</strong> where customers find them</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>25,100 impressions</strong> — real people seeing the business</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>9 keywords on page 1</strong> of Google</li>
+          <li><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$0 in paid ads</strong> — every job came from organic search</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- RANKINGS BREAKDOWN -->
+  <!-- RANKINGS -->
   <section>
-    <div class="eyebrow">Live Rankings Snapshot</div>
-    <h2>264 keywords — with 9 already on page 1.</h2>
+    <div class="eyebrow">Where Customers Found Them</div>
+    <h2>264 searches. Real buyers. Ready to book.</h2>
     <p class="body-text">
-      A 60-day-old domain competing with businesses that have had 5–10 years of SEO momentum.
-      <strong>9 keywords are already on page 1</strong>, with 140 in the top 100 total. The page 2 rankings below are weeks away from crossing over — every position trend is moving up.
+      Each row below is a real search — someone with a problem and a credit card, looking for a business to call.
+      In 60 days, this brand-new site was showing up for 264 of them.
+      <strong>9 of those searches already land on page 1 of Google.</strong>
+      The rest are weeks away from crossing over — and every position trend is moving upward.
     </p>
 
     <div class="ranking-board">
       <div class="rb-header">
         <div>Pos.</div>
-        <div>Keyword</div>
+        <div>Search</div>
         <div style="text-align:right">Volume</div>
         <div style="text-align:right">Trend</div>
       </div>
@@ -835,6 +889,12 @@
         <div class="rb-trend up">↑ pg 1</div>
       </div>
       <div class="rb-row">
+        <div class="rb-pos">8</div>
+        <div><div class="rb-keyword">estate cleanout la jolla <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Transactional · high-value area</div></div>
+        <div class="rb-vol">10/mo</div>
+        <div class="rb-trend up">↑ +2</div>
+      </div>
+      <div class="rb-row">
         <div class="rb-pos">9</div>
         <div><div class="rb-keyword">miramar landfill prices <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Transactional · local intent</div></div>
         <div class="rb-vol">170/mo</div>
@@ -842,15 +902,9 @@
       </div>
       <div class="rb-row">
         <div class="rb-pos">10</div>
-        <div><div class="rb-keyword">emergency junk removal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Urgent · high intent buyer</div></div>
+        <div><div class="rb-keyword">emergency junk removal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Urgent · high-intent buyer</div></div>
         <div class="rb-vol">50/mo</div>
         <div class="rb-trend up">↑ +1</div>
-      </div>
-      <div class="rb-row">
-        <div class="rb-pos">8</div>
-        <div><div class="rb-keyword">estate cleanout la jolla <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Transactional · high value area</div></div>
-        <div class="rb-vol">10/mo</div>
-        <div class="rb-trend up">↑ +2</div>
       </div>
       <div class="rb-row">
         <div class="rb-pos p2">12</div>
@@ -872,22 +926,22 @@
       </div>
       <div class="rb-row">
         <div class="rb-pos p2">24</div>
-        <div><div class="rb-keyword">scrap metal recycling san diego <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">Informational · high volume</div></div>
+        <div><div class="rb-keyword">scrap metal recycling san diego <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">High volume · new ranking</div></div>
         <div class="rb-vol">260/mo</div>
         <div class="rb-trend up">↑ new</div>
       </div>
     </div>
 
-    <div class="zero-spend" style="margin-top:20px;">
+    <div class="zero-spend" style="margin-top:24px;">
       <div class="zs-icon">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 7H17L12 11L14 17L9 13L4 17L6 11L1 7H7L9 1Z" fill="#F5D99A"/></svg>
       </div>
       <div>
-        <div class="zs-title">Why page 2 rankings still matter right now</div>
+        <div class="zs-title">Why page 2 rankings on a 60-day domain are significant</div>
         <div class="zs-body">
-          Page 2 positions on a 45-day domain are genuinely impressive — most new sites don't rank anywhere for 6–12 months.
-          <strong>The average position improved from 83 → 66 in the last 4 weeks alone</strong> and is still moving.
-          Every page-2 keyword is weeks away from page 1, not months.
+          Most new sites don't rank for anything for 6–12 months. Page 2 positions at 60 days means the foundation is working.
+          <strong>Average position improved from 83 → 66 in the last 4 weeks alone</strong> — every page 2 keyword
+          is weeks away from page 1, not months.
         </div>
       </div>
     </div>
@@ -895,83 +949,121 @@
 
   <!-- REVENUE -->
   <section>
-    <div class="eyebrow">The Revenue Impact</div>
-    <h2>Real jobs. Real money. Zero ad spend.</h2>
+    <div class="eyebrow">The Revenue</div>
+    <h2>$4,000 in 60 days. And it's just getting started.</h2>
     <p class="body-text">
-      The junk removal space has an average ticket of ~$150. Small jobs.
-      <strong>We still generated $4,000+ in revenue from organic search in under 60 days.</strong>
-      Now imagine the same framework applied to a business with a $1,000 or $5,000 average job value.
+      This is a home service business with an average job value of ~$150. Small tickets.
+      <strong>We still generated $4,000+ in booked revenue from organic search alone in under 60 days.</strong>
+      Now imagine the same framework applied to a business with a $1,000, $5,000, or $20,000 average job.
     </p>
 
     <div class="revenue-banner">
-      <div class="revenue-eyebrow">Google-sourced revenue · Jan – Mar 2026</div>
+      <div class="revenue-eyebrow">Google-sourced revenue · Verified · 60 days</div>
       <div class="revenue-big">$4,000+</div>
-      <div class="revenue-sub">In booked jobs sourced directly through Google organic search in 60 days. <strong>No paid ads. No boosted posts.</strong> Just rankings.</div>
-      <div class="monthly-grid">
-        <div class="month-cell"><div class="month-name">Jan</div><div class="month-val">$1,480</div></div>
-        <div class="month-cell"><div class="month-name">Feb</div><div class="month-val">$1,390</div></div>
-        <div class="month-cell"><div class="month-name">Mar</div><div class="month-val">$1,340+</div></div>
-        <div class="month-cell"><div class="month-name">Total</div><div class="month-val">$4k+</div></div>
+      <div class="revenue-sub">
+        In booked jobs sourced directly through Google organic search.
+        <strong>No paid ads. No lead-gen platforms. No referrals.</strong>
+        Just a site that shows up when buyers are ready.
+      </div>
+    </div>
+
+    <div class="compound-callout">
+      <div class="compound-title">This revenue compounds. Here's what that means for you.</div>
+      <div class="compound-body">
+        Paid ads stop the moment you stop paying. Organic search is different —
+        <strong>it's an asset you build permanently.</strong>
+        Every month the site earns more authority. Rankings on page 2 move to page 1.
+        New searches get captured. The business that generated $4,000 in its first 60 days
+        won't stay at $4,000. The curve only goes one direction.
+        And unlike ad spend, <strong>you own it.</strong>
+      </div>
+      <div class="compound-grid">
+        <div class="compound-stat">
+          <div class="compound-stat-val">Month 1</div>
+          <div class="compound-stat-label">Site launches. First rankings appear. First calls come in.</div>
+        </div>
+        <div class="compound-stat">
+          <div class="compound-stat-val">Month 3</div>
+          <div class="compound-stat-label">Page 2 rankings cross to page 1. Revenue accelerates.</div>
+        </div>
+        <div class="compound-stat">
+          <div class="compound-stat-val">Month 6+</div>
+          <div class="compound-stat-label">Authority compounds. Competitors can't catch up overnight.</div>
+        </div>
       </div>
     </div>
 
     <div class="scale-callout">
-      <p>"This was our first client, with a $150 average job size, in a crowded market, on a brand-new domain. Scale the ticket size to $1,000 or $10,000 — the framework is the same. The results are not."</p>
+      <p>"This was our first client — $150 average job, crowded market, brand-new domain. Scale the ticket to $1,000 or $10,000 and the framework is identical. The revenue is not."</p>
       <cite>— GlassBee Solutions · San Diego, CA</cite>
     </div>
   </section>
 
-  <!-- TECHNICAL HEALTH -->
+  <!-- SITE PERFORMANCE -->
   <section>
-    <div class="eyebrow">Site Health</div>
-    <h2>The foundation most agencies ignore.</h2>
+    <div class="eyebrow">Site Performance</div>
+    <h2>The foundation most agencies skip.</h2>
     <p class="body-text">
-      Rankings are only sustainable when the technical foundation is solid. We monitor and improve site health continuously — because Google's algorithm rewards sites that are fast, error-free, and properly structured.
+      Rankings are only sustainable when the technical foundation is perfect.
+      We build sites that Google trusts — fast, accessible, error-free, and properly structured.
+      These are verified Lighthouse scores for the client site.
     </p>
-    <div class="health-grid">
-      <div class="health-card">
-        <div class="health-label">Health Score</div>
-        <div class="health-val">95%</div>
-        <div class="health-note">SEMrush audit · up +3 points this period</div>
+
+    <div class="lighthouse-grid">
+      <div class="lighthouse-card near">
+        <div class="lighthouse-score" style="color:var(--gold)">99</div>
+        <div class="lighthouse-label">Performance</div>
       </div>
-      <div class="health-card">
-        <div class="health-label">Critical Errors</div>
-        <div class="health-val" style="color:var(--green)">1</div>
-        <div class="health-note">Down from 5 — actively resolved</div>
+      <div class="lighthouse-card near">
+        <div class="lighthouse-score" style="color:var(--gold)">96</div>
+        <div class="lighthouse-label">Accessibility</div>
       </div>
-      <div class="health-card">
-        <div class="health-label">Pages Crawled</div>
-        <div class="health-val warn">62</div>
-        <div class="health-note">56 warnings identified &amp; being addressed</div>
+      <div class="lighthouse-card">
+        <div class="lighthouse-score">100</div>
+        <div class="lighthouse-label">Best Practices</div>
+      </div>
+      <div class="lighthouse-card">
+        <div class="lighthouse-score">100</div>
+        <div class="lighthouse-label">SEO</div>
+      </div>
+    </div>
+
+    <div class="built-by">
+      <div class="built-by-icon">👁</div>
+      <div class="built-by-text">
+        <strong>You're looking at our work right now.</strong>
+        This page was designed and built by GlassBee Solutions — the layout, the speed, the structure, the details.
+        Every client website we build is held to this same standard.
+        When your site looks credible and loads fast, customers trust you before they've spoken to you.
       </div>
     </div>
   </section>
 
-  <!-- HOW -->
+  <!-- HOW WE DO IT -->
   <section>
     <div class="eyebrow">How We Do It</div>
-    <h2>Three things that separate a ranking site from a pretty one.</h2>
+    <h2>Three things that turn a website into a lead machine.</h2>
 
     <div class="how-steps">
       <div class="how-step">
         <div class="step-n">01</div>
         <div>
-          <div class="step-title">Build for search, not just looks</div>
-          <div class="step-desc">Every page is engineered around a specific buying intent. Fast load times, clean structure, proper schema markup. The site doesn't just look good — it communicates to Google exactly what it is and who it serves.</div>
+          <div class="step-title">A website built to get found — not just look good</div>
+          <div class="step-desc">Every page is engineered around what your customers are actually searching. Fast load times, clean structure, proper technical setup. The site communicates to Google exactly what you do, where you do it, and who you serve. Most agency sites look nice and rank nowhere. Ours rank.</div>
         </div>
       </div>
       <div class="how-step">
         <div class="step-n">02</div>
         <div>
-          <div class="step-title">Build authority nobody can buy overnight</div>
-          <div class="step-desc">222 backlinks from 25 referring domains in 60 days. This is the moat. We build the kind of off-page credibility that tells Google this business is established, trusted, and locally relevant. Competitors can't copy it overnight.</div>
+          <div class="step-title">Authority your competitors can't buy overnight</div>
+          <div class="step-desc">222 backlinks from 25 referring domains in 60 days. This is the moat. We build the kind of local credibility that signals to Google this is an established, trusted business in your market. Your competitors can't copy this next week. It takes time — which is exactly why starting now matters.</div>
         </div>
       </div>
       <div class="how-step">
         <div class="step-n">03</div>
         <div>
-          <div class="step-title">Target people with their wallets out</div>
-          <div class="step-desc">We chase transactional keywords — the searches where someone is ready to book right now. Not curiosity searches. Not blog traffic. The person searching "emergency junk removal San Diego" is calling someone in the next 10 minutes. We put you in front of them.</div>
+          <div class="step-title">In front of people ready to book, not just browse</div>
+          <div class="step-desc">We target transactional searches — the ones where someone has a problem right now and needs it solved today. Not curiosity traffic. Not tire-kickers. The person searching "emergency junk removal San Diego" is calling someone in the next 10 minutes. We put you in front of them first.</div>
         </div>
       </div>
     </div>
@@ -980,42 +1072,44 @@
   <!-- SERVICES -->
   <section>
     <div class="eyebrow">What You Get</div>
-    <h2>Everything the ranking requires. Nothing you don't need.</h2>
+    <h2>Everything the result requires. Nothing you don't need.</h2>
+
     <div class="services-grid" style="margin-top:0">
       <div class="service-item">
         <div class="si-icon">🌐</div>
-        <div><div class="si-title">Custom website build</div><div class="si-desc">Fast, technically sound, built for local SEO from day one. Not a template.</div></div>
+        <div><div class="si-title">Website built to convert</div><div class="si-desc">Fast, technically sound, built to rank and convert from day one. Not a template. Not a drag-and-drop page.</div></div>
       </div>
       <div class="service-item">
         <div class="si-icon">🔍</div>
-        <div><div class="si-title">Keyword strategy</div><div class="si-desc">Full research into what your customers are actually searching — by intent and location.</div></div>
+        <div><div class="si-title">Finding where your buyers search</div><div class="si-desc">Full research into every search your customers make — by intent, by location, by urgency. We target the ones that book jobs.</div></div>
       </div>
       <div class="service-item">
         <div class="si-icon">🔗</div>
-        <div><div class="si-title">Link building</div><div class="si-desc">Real backlinks from real domains. No spam. No shortcuts. The kind that compound over time.</div></div>
+        <div><div class="si-title">Authority that compounds over time</div><div class="si-desc">Real backlinks from real domains. The kind that build a moat around your rankings that competitors can't dismantle next quarter.</div></div>
       </div>
       <div class="service-item">
         <div class="si-icon">📊</div>
-        <div><div class="si-title">Monthly reporting</div><div class="si-desc">Clear data on what moved, what's next, and what it's worth in real revenue terms.</div></div>
+        <div><div class="si-title">Clear ROI reporting</div><div class="si-desc">Plain-English data every month — what moved, what it's worth in booked jobs, and what's coming next. No vanity metrics.</div></div>
       </div>
       <div class="service-item">
         <div class="si-icon">✍️</div>
-        <div><div class="si-title">SEO content</div><div class="si-desc">Service pages and location pages that capture the searches your competitors are missing.</div></div>
+        <div><div class="si-title">Content that captures every search</div><div class="si-desc">Service and location pages that show up for searches your competitors are completely missing. Every neighborhood, every service.</div></div>
       </div>
       <div class="service-item">
         <div class="si-icon">⚙️</div>
-        <div><div class="si-title">Ongoing site management</div><div class="si-desc">Technical health, speed optimization, error resolution. We treat your site like it's our own.</div></div>
+        <div><div class="si-title">Ongoing management</div><div class="si-desc">Technical health, speed, errors resolved, rankings monitored. We treat your site like it's our own business on the line.</div></div>
       </div>
     </div>
 
-    <div class="stats-table" style="margin-top:24px;">
+    <!-- VERIFIED STATS TABLE -->
+    <div class="stats-table" style="margin-top:28px;">
       <div class="stat-row">
         <div class="stat-row-label"><strong>Organic traffic growth</strong>Verified via SEMrush</div>
         <div class="stat-row-value">+1,625%<span class="delta">Since launch</span></div>
       </div>
       <div class="stat-row">
-        <div class="stat-row-label"><strong>Keywords ranking</strong>264 total, climbing weekly</div>
-        <div class="stat-row-value">+267%<span class="delta">Growth in 45 days</span></div>
+        <div class="stat-row-label"><strong>Keywords ranking</strong>264 total · 140 in top 100 · 9 on page 1</div>
+        <div class="stat-row-value">+267%<span class="delta">Growth in 60 days</span></div>
       </div>
       <div class="stat-row">
         <div class="stat-row-label"><strong>Backlinks built</strong>From 25 referring domains</div>
@@ -1023,7 +1117,7 @@
       </div>
       <div class="stat-row">
         <div class="stat-row-label"><strong>Google impressions</strong>Google Search Console · 90 days</div>
-        <div class="stat-row-value">33.1K<span class="delta">Still growing</span></div>
+        <div class="stat-row-value">25.1K<span class="delta">Still growing</span></div>
       </div>
       <div class="stat-row">
         <div class="stat-row-label"><strong>Revenue generated</strong>Google-sourced jobs only · 60 days</div>
@@ -1035,9 +1129,11 @@
   <!-- CTA -->
   <div class="cta-block">
     <div class="eyebrow" style="text-align:center">Work With Us</div>
-    <h2>Your competitors are on page 1. Your customers are searching right now.</h2>
+    <h2>Stop losing jobs to competitors who show up on Google. You don't.</h2>
     <p class="body-text">
-      We'll run a free audit of your online presence, show you exactly which keywords you should own, and what it would realistically take to get there.
+      We'll audit your current online presence, show you exactly which searches you're invisible for,
+      and tell you plainly what it would take to start booking jobs from Google — at zero ad spend.
+      No pitch. No jargon. Just real data about your market.
     </p>
     <div class="cta-buttons">
       <a href="/contact" class="btn-primary">Book a Free Audit →</a>
@@ -1055,13 +1151,13 @@
   <!-- FOOTER -->
   <footer>
     <div>GlassBee Solutions · San Diego, CA · glassbeesolutions.com</div>
-    <div>Case study data: SEMrush &amp; Google Search Console · Severin Hauling · March 2026</div>
+    <div>Case study data: SEMrush &amp; Google Search Console · March 2026</div>
   </footer>
 
   <div class="disclaimer">
     All metrics sourced from SEMrush and Google Search Console for severinhauling.com. Data reflects organic search performance from site launch through March 2026. Revenue figures reflect jobs booked through Google organic leads only, verified via internal job tracker. No paid advertising was used to generate these results. Individual results vary based on industry, market, competition, and timeline.
   </div>
-  <div style="height:40px"></div>
+  <div style="height:48px"></div>
 
 </div>
 </body>
