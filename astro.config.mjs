@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://glassbeesolutions.com',
+  site: 'https://www.glassbeesolutions.org',
   integrations: [
     tailwind({
       applyBaseStyles: false
