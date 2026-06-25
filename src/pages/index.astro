@@ -1,233 +1,412 @@
----
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GlassBee Solutions — Web Design & Growth Partner · San Diego</title>
+<meta name="description" content="I help local businesses, nonprofits, and brands grow online with beautiful websites and organic search that actually books work. See recent work and a verified case study." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<Layout
-	title="San Diego Local SEO Services | Glassbee Solutions"
-	description="Maximize your San Diego online visibility with Glassbee Solutions. Expert SEO services, optimized local rankings, and 24/7 support for local businesses."
->
-	<Header />
+  :root {
+    --ink:     #0D0D0D;
+    --ink2:    #1A1A1A;
+    --paper:   #FAF7F2;
+    --muted:   #6B6860;
+    --faint:   #E8E4DC;
+    --gold:    #C9922A;
+    --gold-lt: #F5D99A;
+    --green:   #2A7A4B;
+    --green-lt:#D4EDDF;
+    --orange:  #FF6B35;
+    --serif:   'Playfair Display', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+    --rule:    1px solid var(--faint);
+  }
 
-	<!-- Hero Section -->
-	<section class="relative min-h-[90vh] flex items-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/homepage.jpg');">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32">
-			<div class="max-w-4xl">
-				<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 uppercase tracking-wide leading-tight" style="font-family: 'Bebas Neue', sans-serif;">
-					San Diego's Premier<br/>Local SEO Agency
-				</h1>
-				<div class="w-24 h-1 bg-orange-600 mb-8"></div>
-				<p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl leading-relaxed">
-					Expert home service online marketing that drives qualified leads and grows your business with proven SEO strategies.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-4">
-					<a href="/contact" class="btn btn-primary px-10 py-4 text-base text-center">
-						Get Started Today
-					</a>
-					<a href="tel:+16192733218" class="btn px-10 py-4 text-base text-center bg-white text-black border-2 border-white hover:bg-gray-100 hover:border-gray-100">
-						Call (619) 273-3218
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-	<!-- Services Overview -->
-	<section class="py-20 md:py-28 bg-white">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-16">
-				<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
-					Our Services
-				</div>
-				<h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
-					Comprehensive SEO Services
-				</h2>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					We handle every aspect of your local SEO so you can focus on your business while we drive qualified leads
-				</p>
-			</div>
+  .page { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 680px; }
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-				<!-- Service 1 -->
-				<div class="card p-8 hover:border-orange-600">
-					<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
-						<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em;">
-						Local SEO Optimization
-					</h3>
-					<p class="text-gray-600 text-sm leading-relaxed">
-						Data-driven SEO strategies tailored to San Diego's competitive markets, maximizing your visibility year-round.
-					</p>
-				</div>
+  a { color: inherit; }
 
-				<!-- Service 2 -->
-				<div class="card p-8 hover:border-orange-600">
-					<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
-						<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em;">
-						Google Business SEO
-					</h3>
-					<p class="text-gray-600 text-sm leading-relaxed">
-						Proactive optimization, regular updates, and profile management ensure your business stays visible to local customers.
-					</p>
-				</div>
+  /* HEADER */
+  header {
+    padding: 32px 0 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: var(--rule);
+  }
+  .logo { text-decoration: none; display: flex; flex-direction: column; }
+  .logo .l1 { font-family: 'Bebas Neue', sans-serif; font-size: 27px; color: var(--ink); letter-spacing: 0.1em; line-height: 1; }
+  .logo .l2 { font-family: 'Poppins', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-top: -1px; }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a { font-size: 15px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+  .nav a:hover { color: var(--ink); }
+  .nav a.cta { color: var(--ink); font-weight: 600; }
+  @media (max-width: 560px) { .nav { gap: 18px; } .nav a.hide-sm { display: none; } }
 
-				<!-- Service 3 -->
-				<div class="card p-8 hover:border-orange-600">
-					<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
-						<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em;">
-						Content Marketing
-					</h3>
-					<p class="text-gray-600 text-sm leading-relaxed">
-						24/7 content creation and optimization handling everything from blog posts to local citations, ensuring top rankings.
-					</p>
-				</div>
+  /* HERO */
+  .hero { padding: 96px 0 80px; text-align: center; }
+  .eyebrow {
+    font-size: 13px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 26px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6.5vw, 76px);
+    font-weight: 900; line-height: 1.04; letter-spacing: -2px;
+    color: var(--ink); margin: 0 auto 30px; max-width: 880px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 20px; color: var(--muted); line-height: 1.75;
+    max-width: 600px; margin: 0 auto 44px; font-weight: 400;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-				<!-- Service 4 -->
-				<div class="card p-8 hover:border-orange-600">
-					<div class="w-14 h-14 bg-black flex items-center justify-center mb-6">
-						<svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-3 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em;">
-						Ranking Management
-					</h3>
-					<p class="text-gray-600 text-sm leading-relaxed">
-						Seamless management across Google, Bing, and other search engines with automated reporting and optimization.
-					</p>
-				</div>
-			</div>
+  /* BUTTONS */
+  .btn-primary {
+    background: var(--orange); color: #fff;
+    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 17px 38px; border-radius: 8px; text-decoration: none;
+    display: inline-block; border: 2px solid var(--orange);
+    transition: background 0.15s, border-color 0.15s, transform 0.12s;
+  }
+  .btn-primary:hover { background: #E55527; border-color: #E55527; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--ink); font-weight: 500; font-size: 15px;
+    padding: 17px 34px; border-radius: 8px; text-decoration: none;
+    display: inline-block; border: 1px solid var(--faint);
+    transition: background 0.15s, transform 0.12s;
+  }
+  .btn-secondary:hover { background: var(--faint); transform: translateY(-1px); }
 
-			<div class="text-center mt-16">
-				<a href="/services" class="btn btn-secondary px-10 py-4 text-base">
-					View All Services →
-				</a>
-			</div>
-		</div>
-	</section>
+  /* SECTION */
+  section { padding: 72px 0; border-top: var(--rule); }
+  .sec-head { margin-bottom: 40px; }
+  .sec-head.center { text-align: center; }
+  h2 {
+    font-family: var(--serif); font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -0.8px; color: var(--ink);
+  }
+  .sec-sub { font-size: 17px; color: var(--muted); line-height: 1.8; margin-top: 14px; max-width: 620px; }
+  .sec-head.center .sec-sub { margin-left: auto; margin-right: auto; }
 
-	<!-- Why Choose Us -->
-	<section class="py-20 md:py-28 bg-black text-white">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="mb-16">
-				<div class="inline-block px-4 py-2 bg-orange-600 text-white text-xs font-bold uppercase tracking-widest mb-6">
-					Why Choose Us
-				</div>
-				<h2 class="text-5xl md:text-6xl font-bold mb-6 uppercase max-w-4xl" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
-					Why San Diego Businesses Choose Us
-				</h2>
-				<p class="text-xl text-gray-300 max-w-3xl">
-					Our localized expertise and performance-driven approach deliver exceptional SEO results
-				</p>
-			</div>
+  /* FEATURED CASE STUDY */
+  .featured {
+    display: block; text-decoration: none;
+    background: var(--ink); color: var(--paper);
+    border-radius: 18px; padding: 52px 48px; position: relative; overflow: hidden;
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .featured:hover { transform: translateY(-3px); box-shadow: 0 24px 60px rgba(13,13,13,0.22); }
+  .featured::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--orange));
+  }
+  .featured-tag {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-lt); margin-bottom: 18px;
+  }
+  .featured-big {
+    font-family: var(--serif); font-size: clamp(44px, 7vw, 76px);
+    font-weight: 900; letter-spacing: -2.5px; line-height: 1; color: var(--paper); margin-bottom: 8px;
+  }
+  .featured-big span { color: var(--gold-lt); }
+  .featured-line { font-size: 18px; color: rgba(250,247,242,0.78); line-height: 1.7; max-width: 560px; margin-bottom: 28px; }
+  .featured-line strong { color: var(--paper); font-weight: 600; }
+  .featured-row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .featured-link {
+    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink);
+    background: var(--gold-lt); padding: 15px 30px; border-radius: 8px;
+    transition: transform 0.12s, background 0.15s;
+  }
+  .featured:hover .featured-link { background: #fff; }
+  .featured-meta { display: flex; gap: 18px; font-size: 14px; color: rgba(250,247,242,0.55); flex-wrap: wrap; }
+  .featured-meta span { display: flex; align-items: center; gap: 7px; }
+  @media (max-width: 560px) { .featured { padding: 36px 26px; } }
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl">
-				<div class="flex gap-6 p-8 border-2 border-gray-800 hover:border-orange-600 transition-all">
-					<div class="flex-shrink-0">
-						<div class="w-14 h-14 bg-orange-600 flex items-center justify-center">
-							<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-						</div>
-					</div>
-					<div>
-						<h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
-							San Diego Market Expertise
-						</h3>
-						<p class="text-gray-400 text-sm">
-							Deep understanding of San Diego's unique neighborhoods, local search trends, and what attracts customers.
-						</p>
-					</div>
-				</div>
+  /* WORK GROUPS */
+  .work-group { margin-top: 44px; }
+  .work-group:first-of-type { margin-top: 0; }
+  .group-label {
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+  }
+  .group-label::after { content: ''; flex: 1; height: 1px; background: var(--faint); }
 
-				<div class="flex gap-6 p-8 border-2 border-gray-800 hover:border-orange-600 transition-all">
-					<div class="flex-shrink-0">
-						<div class="w-14 h-14 bg-orange-600 flex items-center justify-center">
-							<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-							</svg>
-						</div>
-					</div>
-					<div>
-						<h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
-							Performance-Focused
-						</h3>
-						<p class="text-gray-400 text-sm">
-							Quarterly reports with market insights to optimize your online visibility through data-driven SEO decisions.
-						</p>
-					</div>
-				</div>
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 760px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .work-grid { grid-template-columns: 1fr; } }
 
-				<div class="flex gap-6 p-8 border-2 border-gray-800 hover:border-orange-600 transition-all">
-					<div class="flex-shrink-0">
-						<div class="w-14 h-14 bg-orange-600 flex items-center justify-center">
-							<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-							</svg>
-						</div>
-					</div>
-					<div>
-						<h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
-							Personalized Solutions
-						</h3>
-						<p class="text-gray-400 text-sm">
-							Flexible service plans tailored to your specific business and SEO goals.
-						</p>
-					</div>
-				</div>
+  .work-card {
+    display: flex; flex-direction: column; justify-content: space-between;
+    text-decoration: none; color: var(--ink);
+    border: var(--rule); border-radius: 14px; padding: 26px 24px; min-height: 168px;
+    background: #fff; position: relative; overflow: hidden;
+    transition: transform 0.16s, box-shadow 0.16s, border-color 0.16s;
+  }
+  .work-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(13,13,13,0.10); border-color: var(--gold-lt); }
+  .work-mono {
+    font-family: var(--serif); font-size: 30px; font-weight: 900; line-height: 1;
+    width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    background: rgba(201,146,42,0.10); color: var(--gold); margin-bottom: 20px;
+  }
+  .work-name { font-family: var(--serif); font-size: 21px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 4px; }
+  .work-domain { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .work-domain .arrow { color: var(--gold); transition: transform 0.16s; }
+  .work-card:hover .work-domain .arrow { transform: translate(2px,-2px); }
 
-				<div class="flex gap-6 p-8 border-2 border-gray-800 hover:border-orange-600 transition-all">
-					<div class="flex-shrink-0">
-						<div class="w-14 h-14 bg-orange-600 flex items-center justify-center">
-							<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-							</svg>
-						</div>
-					</div>
-					<div>
-						<h3 class="text-xl font-bold mb-2 uppercase" style="font-family: 'Bebas Neue', sans-serif;">
-							Transparent Communication
-						</h3>
-						<p class="text-gray-400 text-sm">
-							Regular updates, responsive support, and complete transparency about your website's SEO performance.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  /* APPROACH STRIP */
+  .approach { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 700px) { .approach { grid-template-columns: 1fr; } }
+  .approach-card { border: var(--rule); border-radius: 14px; padding: 28px 26px; background: #fff; }
+  .approach-card h3 { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .approach-card p { font-size: 15px; color: var(--muted); line-height: 1.7; }
 
-	<!-- CTA Section -->
-	<section class="py-20 md:py-28 bg-orange-600 text-white">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h2 class="text-5xl md:text-6xl font-bold mb-8 uppercase" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em;">
-				Ready to Maximize Your Online Visibility?
-			</h2>
-			<p class="text-xl mb-12 max-w-3xl mx-auto">
-				La Jolla • Pacific Beach • Downtown • Coronado • Mission Beach • North Park • Ocean Beach • Gaslamp Quarter
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<a href="/contact" class="btn px-10 py-4 text-base bg-black text-white border-2 border-black hover:bg-white hover:text-black hover:border-white">
-					Get Free Consultation
-				</a>
-				<a href="tel:+16192733218" class="btn px-10 py-4 text-base bg-white text-orange-600 border-2 border-white hover:bg-gray-100 hover:text-orange-700">
-					Call (619) 273-3218
-				</a>
-			</div>
-		</div>
-	</section>
+  /* MISSION */
+  .mission {
+    background: var(--ink); color: var(--paper); border-radius: 18px;
+    padding: 56px 52px; position: relative; overflow: hidden;
+  }
+  .mission::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--orange));
+  }
+  .mission .eyebrow { color: var(--gold-lt); }
+  .mission blockquote {
+    font-family: var(--serif); font-size: clamp(20px, 2.6vw, 27px);
+    font-weight: 700; font-style: italic; line-height: 1.5; color: var(--paper); max-width: 760px;
+  }
+  .mission cite { display: block; margin-top: 24px; font-size: 15px; color: var(--gold-lt); font-style: normal; font-weight: 600; }
+  @media (max-width: 560px) { .mission { padding: 38px 28px; } }
 
-	<Footer />
-</Layout>
+  /* CLOSING CTA */
+  .closing { text-align: center; padding: 96px 0; border-top: var(--rule); }
+  .closing h2 { max-width: 620px; margin: 0 auto 22px; }
+  .closing p { font-size: 17px; color: var(--muted); max-width: 460px; margin: 0 auto 38px; line-height: 1.7; }
+  .closing-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .closing-note { font-size: 14px; color: var(--muted); margin-top: 22px; }
+
+  /* FOOTER */
+  footer {
+    padding: 30px 0; border-top: var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--muted); flex-wrap: wrap; gap: 12px;
+  }
+
+  @media (max-width: 560px) {
+    .page { padding: 0 20px; }
+    .hero { padding: 60px 0 52px; }
+    section { padding: 52px 0; }
+    .closing { padding: 64px 0; }
+    .hero-actions, .closing-actions { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { text-align: center; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <a href="/" class="logo">
+      <span class="l1">GLASSBEE</span>
+      <span class="l2">Solutions</span>
+    </a>
+    <nav class="nav">
+      <a href="#work" class="hide-sm">Work</a>
+      <a href="/proof">Case study</a>
+      <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="cta">Book a call</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Web Design &amp; Growth · San Diego</div>
+    <h1>I help you grow the thing <em>you're already building.</em></h1>
+    <p class="hero-sub">
+      Part consultant, part partner. Whether you're after <strong>more clients</strong>, a website you're
+      actually proud to send people to, or a newsletter you want to grow, I plug into what you're building
+      and push it forward. And I make it beautiful, because how it looks is how people decide whether to trust you.
+    </p>
+    <div class="hero-actions">
+      <a href="/proof" class="btn-primary">See the case study →</a>
+      <a href="#work" class="btn-secondary">View recent work</a>
+    </div>
+  </div>
+
+  <!-- FEATURED CASE STUDY -->
+  <section style="border-top:none;padding-top:8px;">
+    <a href="/proof" class="featured">
+      <div class="featured-tag">Verified case study</div>
+      <div class="featured-big"><span>$20,985</span> in 4 months</div>
+      <p class="featured-line">
+        A San Diego home service business, from invisible to a <strong>$4K to $5K monthly run rate</strong>
+        on organic search alone. Brand-new domain. Zero ad spend. Every dollar verified.
+      </p>
+      <div class="featured-row">
+        <span class="featured-link">Read the full case study →</span>
+        <div class="featured-meta">
+          <span>489 clicks / 28 days</span>
+          <span>15 keywords at #1</span>
+          <span>$0 on ads</span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- RECENT WORK -->
+  <section id="work">
+    <div class="sec-head">
+      <h2>A few things I've built.</h2>
+      <p class="sec-sub">Local services, nonprofits, and brands. Different goals, same standard: fast, credible, and built to actually do a job.</p>
+    </div>
+
+    <div class="work-group">
+      <div class="group-label">Recent work</div>
+      <div class="work-grid">
+        <a href="https://severinhauling.com" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">S</div>
+          <div>
+            <div class="work-name">Severin Hauling</div>
+            <div class="work-domain">Junk removal &amp; hauling <span class="arrow">↗</span></div>
+          </div>
+        </a>
+        <a href="https://severindetailing.com" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">S</div>
+          <div>
+            <div class="work-name">Severin Detailing</div>
+            <div class="work-domain">Auto detailing <span class="arrow">↗</span></div>
+          </div>
+        </a>
+        <a href="https://rennenautostyling.com/" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">R</div>
+          <div>
+            <div class="work-name">Rennen Auto Styling</div>
+            <div class="work-domain">Automotive styling <span class="arrow">↗</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="work-group">
+      <div class="group-label">Nonprofit sites</div>
+      <div class="work-grid">
+        <a href="https://www.greenmeansgive.org/" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">G</div>
+          <div>
+            <div class="work-name">Green Means Give</div>
+            <div class="work-domain">Nonprofit <span class="arrow">↗</span></div>
+          </div>
+        </a>
+        <a href="https://naturally-san-diego.vercel.app/" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">N</div>
+          <div>
+            <div class="work-name">Naturally San Diego</div>
+            <div class="work-domain">Nonprofit <span class="arrow">↗</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="work-group">
+      <div class="group-label">Special projects</div>
+      <div class="work-grid">
+        <a href="https://www.revivelleink.com/" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">R</div>
+          <div>
+            <div class="work-name">Revivelle Ink</div>
+            <div class="work-domain">Brand site <span class="arrow">↗</span></div>
+          </div>
+        </a>
+        <a href="https://www.4pillarsdevelopment.com/" target="_blank" rel="noopener" class="work-card">
+          <div class="work-mono">4</div>
+          <div>
+            <div class="work-name">4 Pillars Development</div>
+            <div class="work-domain">Brand site <span class="arrow">↗</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section>
+    <div class="sec-head center">
+      <h2>What I actually do.</h2>
+      <p class="sec-sub">However you'd say it, the job is the same: take what you're building and make more of it.</p>
+    </div>
+    <div class="approach">
+      <div class="approach-card">
+        <h3>Bring in more clients</h3>
+        <p>Websites and organic search built around the exact things your buyers type right before they reach out. Found, then booked.</p>
+      </div>
+      <div class="approach-card">
+        <h3>Build a reputation</h3>
+        <p>A site that looks credible and loads fast, so people trust you before they ever pick up the phone or send the first message.</p>
+      </div>
+      <div class="approach-card">
+        <h3>Grow what you've got</h3>
+        <p>An audience, a newsletter, a community. If you're trying to grow it, I help you build the system that compounds it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section>
+    <div class="mission">
+      <div class="eyebrow">Why I do this</div>
+      <blockquote>
+        "As long as you're growing something you care about and giving back to your community, you're
+        building in the right direction. I started GlassBee after years of growing businesses myself,
+        feeling the growing pains firsthand of trying to establish an online presence while staying focused
+        on the work that actually matters. There's a real gap between local service businesses and the
+        technology that could carry them, and as we move into an AI world, my goal is to be the bridge
+        between those two."
+      </blockquote>
+      <cite>Tony · GlassBee Solutions · San Diego, CA</cite>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <div class="closing">
+    <h2>Let's build something worth growing.</h2>
+    <p>Free 30-minute call. Tell me what you're working on, and I'll tell you plainly how I'd help and what it would take.</p>
+    <div class="closing-actions">
+      <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary">Book a free call →</a>
+      <a href="tel:+19517600070" class="btn-secondary">Call (951) 760-0070</a>
+    </div>
+    <div class="closing-note">San Diego based · Web design, SEO, and growth</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>GlassBee Solutions · San Diego, CA · glassbeesolutions.com</div>
+    <div><a href="/proof" style="color:var(--muted);text-decoration:none;">View the case study →</a></div>
+  </footer>
+
+  <div style="height:40px"></div>
+
+</div>
+</body>
+</html>

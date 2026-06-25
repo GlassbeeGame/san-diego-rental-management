@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlassBee Solutions — $5,000 in 60 Days. Zero Ad Spend.</title>
+<title>GlassBee Solutions — Case Study: $4K to $5K/Month from Google. Zero Ad Spend.</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,7 +41,7 @@
     padding: 0 32px;
   }
 
-  /* ── HEADER ── */
+  /* HEADER */
   header {
     padding: 36px 0 28px;
     border-bottom: var(--rule);
@@ -73,7 +73,7 @@
   }
   .verified-pill svg { width: 14px; height: 14px; }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     padding: 72px 0 56px;
     border-bottom: var(--rule);
@@ -94,7 +94,7 @@
     letter-spacing: -1.5px;
     color: var(--ink);
     margin-bottom: 28px;
-    max-width: 700px;
+    max-width: 720px;
   }
   h1 em {
     font-style: italic;
@@ -104,11 +104,21 @@
     font-size: 19px;
     font-weight: 400;
     color: var(--muted);
-    max-width: 580px;
+    max-width: 600px;
     line-height: 1.8;
     margin-bottom: 36px;
   }
   .hero-sub strong { color: var(--ink); font-weight: 600; }
+  .hero-kicker {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
   .hero-proof {
     display: flex;
     align-items: center;
@@ -120,7 +130,7 @@
   .hero-proof span { display: flex; align-items: center; gap: 6px; }
   .dot-sep { color: var(--faint); }
 
-  /* ── KEY NUMBER BAR ── */
+  /* KEY NUMBER BAR */
   .key-number-bar {
     background: var(--ink);
     color: var(--paper);
@@ -159,7 +169,7 @@
     font-weight: 400;
   }
 
-  /* ── SECTION ── */
+  /* SECTION */
   section { padding: 64px 0; border-bottom: var(--rule); }
   section:last-of-type { border-bottom: none; }
   h2 {
@@ -181,7 +191,7 @@
   }
   .body-text strong { color: var(--ink); font-weight: 600; }
 
-  /* ── STATS TABLE ── */
+  /* STATS / MONTH TABLE */
   .stats-table {
     border: var(--rule);
     border-radius: 12px;
@@ -197,12 +207,16 @@
   }
   .stat-row:last-child { border: none; }
   .stat-row:hover { background: rgba(201,146,42,0.04); }
+  .stat-row.total { background: var(--ink); }
+  .stat-row.total:hover { background: var(--ink); }
   .stat-row-label {
     font-size: 16px;
     color: var(--muted);
     font-weight: 400;
   }
   .stat-row-label strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 3px; }
+  .stat-row.total .stat-row-label { color: rgba(250,247,242,0.6); }
+  .stat-row.total .stat-row-label strong { color: var(--paper); }
   .stat-row-value {
     font-family: var(--serif);
     font-size: 24px;
@@ -211,6 +225,7 @@
     text-align: right;
     letter-spacing: -0.5px;
   }
+  .stat-row.total .stat-row-value { color: var(--gold-lt); }
   .stat-row-value .delta {
     font-family: var(--sans);
     font-size: 13px;
@@ -222,62 +237,16 @@
   }
   .stat-row-value .delta.neg { color: var(--red); }
 
-  /* ── BEFORE/AFTER ── */
-  .ba-table {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: var(--rule);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .ba-col-head {
-    padding: 14px 20px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-bottom: var(--rule);
-  }
-  .ba-col-head.before {
-    background: var(--red-lt);
-    color: var(--red);
-    border-right: var(--rule);
-  }
-  .ba-col-head.after {
-    background: var(--green-lt);
-    color: var(--green);
-  }
-  .ba-cell {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px 20px;
-    font-size: 15px;
+  .section-note {
+    font-size: 14px;
     color: var(--muted);
-    border-bottom: var(--rule);
-    line-height: 1.55;
+    margin-top: 18px;
+    line-height: 1.75;
+    max-width: 620px;
   }
-  .ba-cell.before-cell { border-right: var(--rule); }
-  /* remove bottom border from last row (both cells) */
-  .ba-table > .ba-cell:nth-last-child(-n+2) { border-bottom: none; }
-  .ba-cell strong { color: var(--ink); font-weight: 600; }
-  .ba-icon { flex-shrink: 0; margin-top: 2px; }
+  .section-note strong { color: var(--ink); font-weight: 600; }
 
-  @media (max-width: 600px) {
-    .ba-table { grid-template-columns: 1fr; }
-    .ba-col-head.before { border-right: none; }
-    .ba-col-head.after { border-top: var(--rule); }
-    .ba-cell.before-cell { border-right: none; }
-    /* on mobile last row is only 1 cell wide, so reset and re-target */
-    .ba-table > .ba-cell:nth-last-child(-n+2) { border-bottom: var(--rule); }
-    .ba-table > .ba-cell:last-child { border-bottom: none; }
-    .ba-cell { font-size: 14px; padding: 14px 16px; }
-    .ba-col-head { font-size: 12px; padding: 12px 16px; }
-    /* group each before/after pair with a top border on every before-cell after the first */
-    .ba-cell.before-cell ~ .ba-cell.before-cell { border-top: 3px solid var(--faint); }
-  }
-
-  /* ── RANKING BOARD ── */
+  /* RANKING BOARD */
   .ranking-board {
     border: var(--rule);
     border-radius: 12px;
@@ -336,7 +305,7 @@
   .page-badge.pg1 { background: var(--green-lt); color: var(--green); }
   .page-badge.pg2 { background: #FFF3CD; color: #856404; }
 
-  /* ── ZERO SPEND CALLOUT ── */
+  /* DARK CALLOUT */
   .zero-spend {
     background: var(--ink);
     color: var(--paper);
@@ -372,44 +341,7 @@
   }
   .zs-body strong { color: var(--paper); font-weight: 600; }
 
-  /* ── REVENUE ── */
-  .revenue-banner {
-    border: 2px solid var(--gold);
-    border-radius: 16px;
-    padding: 48px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(160deg, rgba(201,146,42,0.05) 0%, transparent 60%);
-  }
-  .revenue-eyebrow {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .revenue-big {
-    font-family: var(--serif);
-    font-size: clamp(64px, 12vw, 100px);
-    font-weight: 900;
-    color: var(--ink);
-    letter-spacing: -4px;
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-  .revenue-sub {
-    font-size: 17px;
-    color: var(--muted);
-    font-weight: 400;
-    max-width: 420px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-  .revenue-sub strong { color: var(--ink); font-weight: 600; }
-
-  /* ── COMPOUND CALLOUT ── */
+  /* TRANSFER CALLOUT */
   .compound-callout {
     background: var(--ink);
     border-radius: 16px;
@@ -459,15 +391,15 @@
     color: var(--gold-lt);
     letter-spacing: -0.5px;
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .compound-stat-label {
     font-size: 13px;
     color: rgba(250,247,242,0.5);
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
-  /* ── SCALE CALLOUT ── */
+  /* QUOTE CALLOUT */
   .scale-callout {
     border-left: 3px solid var(--gold);
     padding: 22px 28px;
@@ -483,15 +415,16 @@
     color: var(--ink);
     line-height: 1.55;
   }
+  .scale-callout.mission p { font-size: 19px; line-height: 1.6; }
   .scale-callout cite {
     display: block;
-    margin-top: 12px;
+    margin-top: 14px;
     font-size: 14px;
     color: var(--muted);
     font-style: normal;
   }
 
-  /* ── LIGHTHOUSE GRID ── */
+  /* LIGHTHOUSE GRID */
   .lighthouse-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -534,7 +467,7 @@
     line-height: 1.4;
   }
 
-  /* ── BUILT BY ── */
+  /* BUILT BY */
   .built-by {
     border: 2px solid var(--ink);
     border-radius: 12px;
@@ -557,7 +490,7 @@
   }
   .built-by-text strong { color: var(--ink); font-weight: 600; }
 
-  /* ── HOW ── */
+  /* HOW */
   .how-steps {
     display: flex;
     flex-direction: column;
@@ -598,7 +531,6 @@
     font-weight: 400;
   }
 
-  /* ── DELIVERABLES (chips under each step) ── */
   .step-chips {
     display: flex;
     flex-wrap: wrap;
@@ -616,14 +548,71 @@
     white-space: nowrap;
   }
 
-  /* ── CTA ── */
+  /* FAQ */
+  .faq-list {
+    border: var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-item {
+    padding: 26px 30px;
+    border-bottom: var(--rule);
+  }
+  .faq-item:last-child { border: none; }
+  .faq-q {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .faq-a {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  .faq-a strong { color: var(--ink); font-weight: 600; }
+
+  /* GET / FIT LIST */
+  .get-list {
+    border: var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .get-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px 24px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+    border-bottom: var(--rule);
+    transition: background 0.15s;
+  }
+  .get-item:last-child { border: none; }
+  .get-item:hover { background: rgba(201,146,42,0.03); }
+  .get-check { color: var(--green); flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+  .get-item strong { color: var(--ink); font-weight: 600; }
+  .list-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 32px 0 14px;
+  }
+
+  /* CTA */
   .cta-block {
     padding: 80px 0;
     text-align: center;
     border-top: var(--rule);
   }
   .cta-block h2 { max-width: 560px; margin: 0 auto 20px; }
-  .cta-block .body-text { margin: 0 auto 40px; text-align: center; max-width: 460px; }
+  .cta-block .body-text { margin: 0 auto 40px; text-align: center; max-width: 480px; }
   .cta-buttons {
     display: flex;
     gap: 14px;
@@ -686,7 +675,7 @@
     flex-shrink: 0;
   }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     padding: 24px 0;
     border-top: var(--rule);
@@ -699,7 +688,7 @@
     gap: 12px;
   }
 
-  /* ── MID-PAGE CTA ── */
+  /* MID-PAGE CTA */
   .midpage-cta {
     background: var(--ink);
     border-radius: 16px;
@@ -752,7 +741,7 @@
     .midpage-btn { text-align: center; }
   }
 
-  /* ── JOBS GRID ── */
+  /* JOBS GRID */
   .jobs-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -767,6 +756,7 @@
     overflow: hidden;
     transition: background 0.15s;
   }
+  .job-card.wide { grid-column: 1 / -1; }
   .job-card:hover { background: rgba(201,146,42,0.03); }
   .job-card::before {
     content: '';
@@ -827,7 +817,7 @@
     .jobs-grid { grid-template-columns: 1fr; }
   }
 
-  /* ── DISCLAIMER ── */
+  /* DISCLAIMER */
   .disclaimer {
     background: rgba(107,104,96,0.06);
     border-radius: 8px;
@@ -838,19 +828,18 @@
     margin-top: 32px;
   }
 
-  /* ── TABLET ── */
+  /* TABLET */
   @media (max-width: 768px) {
     .page { padding: 0 24px; }
     .key-number-bar { padding: 36px 32px; gap: 0; }
     .kn-item { padding: 0 24px; }
     .lighthouse-grid { grid-template-columns: repeat(2, 1fr); }
     .compound-grid { grid-template-columns: 1fr 1fr; }
-    .revenue-banner { padding: 36px 24px; }
     .how-step { padding: 24px 24px; }
     .stat-row { grid-template-columns: 1fr 140px; }
   }
 
-  /* ── MOBILE ── */
+  /* MOBILE */
   @media (max-width: 560px) {
     .page { padding: 0 18px; }
     header { padding: 24px 0 20px; }
@@ -871,8 +860,6 @@
     .kn-item:last-child { border: none; padding-bottom: 0; }
     .kn-item:first-child { padding-top: 0; }
 
-    .ba-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
     .lighthouse-grid { grid-template-columns: repeat(2, 1fr); }
     .compound-grid { grid-template-columns: 1fr; }
 
@@ -884,12 +871,14 @@
 
     .zero-spend { flex-direction: column; gap: 14px; padding: 24px; }
     .compound-callout { padding: 28px 24px; }
-    .revenue-banner { padding: 28px 20px; }
     .built-by { flex-direction: column; gap: 12px; }
 
     .stat-row { grid-template-columns: 1fr; gap: 6px; }
     .stat-row-value { text-align: left; }
     .stat-row-value .delta { text-align: left; }
+
+    .faq-item { padding: 22px 22px; }
+    .get-item { padding: 16px 20px; }
 
     .cta-buttons { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-secondary { text-align: center; }
@@ -912,28 +901,27 @@
     <div class="header-meta">
       <div class="verified-pill">
         <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#2A7A4B" stroke-width="1.2"/><path d="M3.5 6l2 2 3-3" stroke="#2A7A4B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Verified by Google
+        Verified · GSC &amp; SEMrush
       </div>
     </div>
   </header>
 
   <!-- HERO -->
   <div class="hero">
-    <div class="eyebrow">Case Study — Home Services · San Diego, CA</div>
-    <h1>A brand-new website. <em>$5,000 in 60 days.</em> Zero ad spend.</h1>
+    <div class="eyebrow">Case Study · Home Services · San Diego, CA</div>
+    <h1>A brand-new domain. <em>$4K to $5K a month from Google.</em> Zero ad spend.</h1>
     <p class="hero-sub">
-      I'm a San Diego local. I built this site for a fellow San Diego service business — brand-new domain, crowded market, zero head start.
-      The first month was about getting found. The second month, the phone started ringing.
-      <strong>No ads. No lead-gen platforms. No agency.</strong>
-      Just Google, doing the work — and every month it compounds.
-      Here's every verified number.
+      Brand-new domain. One of the most crowded service markets in the country. Zero head start.
+      Four months later, this site is booking <strong>$4K to $5K every month from organic search</strong>. $20,985 so far, with the most recent month breaking out higher.
+      No ads. No lead-gen platforms. No agency. Every dollar verified against the owner's job tracker.
     </p>
+    <p class="hero-kicker">The interesting part isn't any single number. It's the slope.</p>
     <div class="hero-proof">
       <span>San Diego, CA</span>
       <span class="dot-sep">·</span>
       <span>Home Services</span>
       <span class="dot-sep">·</span>
-      <span>60-day build</span>
+      <span>Brand-new domain</span>
       <span class="dot-sep">·</span>
       <span>$0 ad spend</span>
     </div>
@@ -942,14 +930,14 @@
   <!-- KEY NUMBERS -->
   <div class="key-number-bar">
     <div class="kn-item">
-      <div class="kn-number">$5,000+</div>
-      <div class="kn-label">Booked from Google in 60 days</div>
-      <div class="kn-source">Source: Job tracker · verified · and growing</div>
+      <div class="kn-number" style="font-size:clamp(28px,3.4vw,40px);">$4K to $5K<span style="font-size:0.45em;">/mo</span></div>
+      <div class="kn-label">Steady monthly run rate from organic search</div>
+      <div class="kn-source">$20,985 cumulative over 4 months · verified</div>
     </div>
     <div class="kn-item">
-      <div class="kn-number">342</div>
-      <div class="kn-label">Real clicks from Google in 60 days</div>
-      <div class="kn-source">Source: Google Search Console · 60K impressions</div>
+      <div class="kn-number">489</div>
+      <div class="kn-label">Clicks from Google in the last 28 days</div>
+      <div class="kn-source">65,400 impressions · Google Search Console</div>
     </div>
     <div class="kn-item">
       <div class="kn-number">$0</div>
@@ -958,52 +946,54 @@
     </div>
   </div>
 
-  <!-- BEFORE / AFTER -->
+  <!-- THE SLOPE -->
   <section>
-    <div class="eyebrow">The Before &amp; After</div>
-    <h2>No online presence. 60 days later — phones ringing from Google.</h2>
+    <div class="eyebrow">The Slope</div>
+    <h2>Most new domains are invisible for 6 to 12 months. This one was booking four-figure months by month two.</h2>
     <p class="body-text">
-      San Diego's home service market is crowded. Established players have years of Google history, hundreds of reviews, and existing authority.
-      I had a brand-new domain, a blank slate, and a system I've built specifically for this market.
-      <strong>Here's exactly what changed in 60 days.</strong>
+      Here's what makes these numbers worth reading: the difficulty. Brand-new domain. No history with Google.
+      A San Diego market stacked with established players who have years of reviews and authority.
+      By every rule, this site shouldn't have shown up for the better part of a year.
+      <strong>Instead, it was indexed in week 1, ranking on page 1 by month 3, and producing four-figure months from month 2 onward.</strong>
+      Watch the trajectory.
     </p>
 
-    <div class="ba-table">
-      <!-- Column headers -->
-      <div class="ba-col-head before">Day 1 — Starting from zero</div>
-      <div class="ba-col-head after">Day 60 — Phones ringing</div>
-
-      <!-- Row 1 -->
-      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> No website, no Google presence</div>
-      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$5,000+</strong> in booked jobs from Google in 60 days</div>
-
-      <!-- Row 2 -->
-      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> 100% reliant on referrals &amp; paid ads</div>
-      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>Showing up for 290 searches</strong> where customers are ready to hire</div>
-
-      <!-- Row 3 -->
-      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> Invisible when local buyers searched Google</div>
-      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>Seen 60,000 times on Google</strong> — 342 people clicked through</div>
-
-      <!-- Row 4 -->
-      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> No trust signals — competing on price alone</div>
-      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>First page of Google</strong> for 38 searches — first result for 15 of them</div>
-
-      <!-- Row 5 -->
-      <div class="ba-cell before-cell"><span class="ba-icon" style="color:var(--red)">✗</span> Every new job required manual hustle</div>
-      <div class="ba-cell"><span class="ba-icon" style="color:var(--green)">✓</span> <strong>$0 in paid ads</strong> — 100% organic search</div>
+    <div class="stats-table">
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Month 1</strong>Getting indexed and found</div>
+        <div class="stat-row-value">$1,370</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Month 2</strong>The phone starts ringing</div>
+        <div class="stat-row-value">$4,400</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Month 3</strong>Page 1 rankings land</div>
+        <div class="stat-row-value">$4,230</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-label"><strong>Month 4</strong>Breakout as more keywords hit page 1</div>
+        <div class="stat-row-value">$10,985</div>
+      </div>
+      <div class="stat-row total">
+        <div class="stat-row-label"><strong>4-month total</strong>Booked from Google · verified</div>
+        <div class="stat-row-value">$20,985</div>
+      </div>
     </div>
+
+    <p class="section-note">
+      Most months sit in the $4K to $5K range. The most recent broke out to $10,985 as more keywords crossed onto page 1.
+      <strong>The run rate isn't flat. It's climbing.</strong>
+    </p>
   </section>
 
   <!-- RANKINGS -->
   <section>
     <div class="eyebrow">Where Customers Found Them</div>
-    <h2>290 searches. Real buyers. Ready to book.</h2>
+    <h2>140 keywords tracked. 38 on page 1. 15 sitting at #1.</h2>
     <p class="body-text">
-      Each row below is a real search — someone with a problem and a credit card, looking for a business to call.
-      In 60 days, this brand-new site was showing up for 290 of them.
-      <strong>38 of those searches already land on page 1 of Google — including 15 at position #1.</strong>
-      The clicks from Google are accelerating week over week. The rest are crossing over soon — and nothing in the data suggests it's slowing down.
+      Each row below is a real search: someone with a problem, looking for someone to call.
+      These aren't vanity keywords. They're the exact phrases a customer types right before they pick up the phone.
     </p>
 
     <div class="ranking-board">
@@ -1015,8 +1005,32 @@
       </div>
       <div class="rb-row">
         <div class="rb-pos">1</div>
-        <div><div class="rb-keyword">furniture disposal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Someone who needs furniture gone — 210 searches every month</div></div>
+        <div><div class="rb-keyword">furniture disposal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Someone who needs furniture gone today</div></div>
         <div class="rb-vol">210/mo</div>
+        <div class="rb-trend up">↑ #1</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">1</div>
+        <div><div class="rb-keyword">couch removal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">A couch to get rid of, ready to book</div></div>
+        <div class="rb-vol">170/mo</div>
+        <div class="rb-trend up">↑ #1</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">1</div>
+        <div><div class="rb-keyword">junk removal poway <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Homeowner in Poway who needs a haul</div></div>
+        <div class="rb-vol">170/mo</div>
+        <div class="rb-trend up">↑ #1</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">1</div>
+        <div><div class="rb-keyword">san diego dump fees <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Pricing a job before they pick up the phone</div></div>
+        <div class="rb-vol">210/mo</div>
+        <div class="rb-trend up">↑ #1</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">1</div>
+        <div><div class="rb-keyword">deceased estate cleanup san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Family handling a loved one's property</div></div>
+        <div class="rb-vol">30/mo</div>
         <div class="rb-trend up">↑ #1</div>
       </div>
       <div class="rb-row">
@@ -1026,45 +1040,27 @@
         <div class="rb-trend up">↑ #1</div>
       </div>
       <div class="rb-row">
-        <div class="rb-pos">2</div>
-        <div><div class="rb-keyword">estate sale cleanout san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Someone clearing out a home after a sale or estate</div></div>
+        <div class="rb-pos">1</div>
+        <div><div class="rb-keyword">estate cleanout la jolla <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">High-value neighborhood, high-value job</div></div>
         <div class="rb-vol">10/mo</div>
+        <div class="rb-trend up">↑ #1</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-pos">3</div>
+        <div><div class="rb-keyword">san diego landfill prices <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Comparing costs before hiring out</div></div>
+        <div class="rb-vol">140/mo</div>
         <div class="rb-trend up">↑ pg 1</div>
       </div>
       <div class="rb-row">
         <div class="rb-pos">4</div>
-        <div><div class="rb-keyword">san diego dump fees <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Someone pricing a job before they pick up the phone</div></div>
-        <div class="rb-vol">210/mo</div>
-        <div class="rb-trend up">↑ pg 1</div>
-      </div>
-      <div class="rb-row">
-        <div class="rb-pos">4</div>
-        <div><div class="rb-keyword">couch removal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Someone who needs a couch gone — 170 searches every month</div></div>
-        <div class="rb-vol">170/mo</div>
-        <div class="rb-trend up">↑ pg 1</div>
-      </div>
-      <div class="rb-row">
-        <div class="rb-pos">7</div>
-        <div><div class="rb-keyword">deceased estate cleanup san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Family handling a loved one's property — ready to hire</div></div>
-        <div class="rb-vol">30/mo</div>
+        <div><div class="rb-keyword">construction debris removal san diego <span class="page-badge pg1">PG 1</span></div><div class="rb-intent">Contractor with a site to clear</div></div>
+        <div class="rb-vol">20/mo</div>
         <div class="rb-trend up">↑ pg 1</div>
       </div>
       <div class="rb-row">
         <div class="rb-pos p2">12</div>
-        <div><div class="rb-keyword">san diego dump <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">1,000 people search this every month — weeks from page 1</div></div>
+        <div><div class="rb-keyword">san diego dump <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">1,000 people a month, weeks from page 1</div></div>
         <div class="rb-vol">1,000/mo</div>
-        <div class="rb-trend up">↑ climbing</div>
-      </div>
-      <div class="rb-row">
-        <div class="rb-pos p2">19</div>
-        <div><div class="rb-keyword">junk removal poway <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">Homeowner in Poway who needs a haul — 170 searches/mo</div></div>
-        <div class="rb-vol">170/mo</div>
-        <div class="rb-trend up">↑ climbing</div>
-      </div>
-      <div class="rb-row">
-        <div class="rb-pos p2">47</div>
-        <div><div class="rb-keyword">furniture removal san diego <span class="page-badge pg2">PG 2</span></div><div class="rb-intent">High-volume search — 260 people a month, position improving fast</div></div>
-        <div class="rb-vol">260/mo</div>
         <div class="rb-trend up">↑ climbing</div>
       </div>
     </div>
@@ -1074,75 +1070,24 @@
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 7H17L12 11L14 17L9 13L4 17L6 11L1 7H7L9 1Z" fill="#F5D99A"/></svg>
       </div>
       <div>
-        <div class="zs-title">15 searches at position #1. On a domain that didn't exist 60 days ago.</div>
+        <div class="zs-title">"san diego dump," 1,000 searches a month, is still sitting on page 2.</div>
         <div class="zs-body">
-          Most new websites don't show up on Google at all for the first 6–12 months. This one was the first result people see for 15 different searches — on a site that didn't exist 60 days ago.
-          <strong>Google has been moving them higher every single week. In the last 7 days alone, they jumped 9 spots closer to the top.</strong>
-          It's not slowing down — it's picking up speed. The searches where they're on page 2 right now will be page 1 within weeks.
+          That single search is 1,000 people every month. Right now it's on page 2, so most of them never see this business.
+          <strong>When it crosses to page 1, and the trend says weeks not months, the monthly run rate moves with it.</strong>
+          The growth you're looking at hasn't even priced in the biggest keyword yet.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVENUE -->
+  <!-- REAL CONVERSATIONS -->
   <section>
-    <div class="eyebrow">The Revenue</div>
-    <h2>$5,000 in 60 days. And the second month was bigger than the first.</h2>
+    <div class="eyebrow">Real Revenue, Real Conversations</div>
+    <h2>The run rate isn't a projection. Here's where it came from.</h2>
     <p class="body-text">
-      Most jobs run $80 to $400. The occasional big cleanout hits $1,500.
-      <strong>In 60 days: $5,000+ in booked revenue, with zero spent on ads.</strong>
-      The second month brought in more than the first. The third month will beat the second. That's not a prediction — that's how this works.
-      Now imagine the same framework applied to a business with a $2,000, $5,000, or $20,000 average job.
-    </p>
-
-    <div class="revenue-banner">
-      <div class="revenue-eyebrow">Google-sourced revenue · 60 days · Verified</div>
-      <div class="revenue-big">$5,000+</div>
-      <div class="revenue-sub">
-        In booked jobs sourced directly through Google — in 60 days.
-        <strong>No paid ads. No lead-gen platforms. No referrals.</strong>
-        Month 2 was bigger than month 1. Month 3 will be bigger still.
-      </div>
-    </div>
-
-    <div class="compound-callout">
-      <div class="compound-title">This is a machine that gets more valuable every month — without spending more.</div>
-      <div class="compound-body">
-        Paid ads are a faucet. Turn off the spend and the calls stop that same day.
-        This is different. Every month the site shows up for more searches, ranks higher on the ones it already has, and brings in more revenue than the month before —
-        <strong>without touching an ad budget, because there isn't one.</strong>
-        Google is already showing this business to 60,000 people a month. As they move toward the top of those results, more of those 60,000 people call. Same searches. More phone calls. Every month, automatically.
-      </div>
-      <div class="compound-grid">
-        <div class="compound-stat">
-          <div class="compound-stat-val">Month 1</div>
-          <div class="compound-stat-label">Site goes live. First calls start coming in. Foundation is being built.</div>
-        </div>
-        <div class="compound-stat">
-          <div class="compound-stat-val">Month 2</div>
-          <div class="compound-stat-label">$5,000+ in booked jobs. 38 searches on page 1. Google moving them higher every week.</div>
-        </div>
-        <div class="compound-stat">
-          <div class="compound-stat-val">Month 3+</div>
-          <div class="compound-stat-label">"san diego dump" — 1,000 searches/month — about to hit page 1. Revenue keeps climbing.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scale-callout">
-      <p>"This was my first client — crowded market, brand-new domain, zero head start. If $5,000 in 60 days comes from junk removal jobs, think about what the same framework does for a business with a $2,000 or $10,000 average ticket."</p>
-      <cite>— Mitchell · GlassBee Solutions · San Diego, CA</cite>
-    </div>
-  </section>
-
-  <!-- REAL JOBS -->
-  <section>
-    <div class="eyebrow">Real Jobs. Real Calls.</div>
-    <h2>A $1,500 property cleanout. An $80 couch pickup. Everything in between.</h2>
-    <p class="body-text">
-      These aren't projections. These are actual jobs — booked through real conversations,
-      with real people who found this business on Google and reached out.
-      <strong>Every one started with someone searching. Every one ended with a booked job.</strong>
+      These aren't curated highlights. They're the actual text threads behind the numbers,
+      real people who found this business on Google and booked.
+      <strong>Every one started with a search. Every one ended with a job.</strong>
     </p>
 
     <div class="jobs-grid">
@@ -1150,17 +1095,17 @@
       <div class="job-card">
         <div class="job-amount">$1,500</div>
         <div class="job-type">Full property cleanout</div>
-        <div class="job-location">San Diego, CA</div>
-        <div class="job-quote">"We talked over the quote and came to a conclusion of $1,500 for everything. Send me over some photos of the trash at your main house and we can work something out."</div>
+        <div class="job-location">Mitchell · San Diego, CA</div>
+        <div class="job-quote">"We talked over the quote and came to a conclusion of $1,500 for everything."</div>
         <div class="job-source">Booked over text · inbound from Google</div>
       </div>
 
       <div class="job-card">
         <div class="job-amount">$1,450</div>
-        <div class="job-type">Yard debris & scrap removal</div>
-        <div class="job-location">San Diego, CA</div>
-        <div class="job-quote">"For everything we saw in the back yesterday — the steel pile, the wood pile, and all other miscellaneous items — we can do $1,450 for it all."</div>
-        <div class="job-source">Booked on-site visit · inbound from Google</div>
+        <div class="job-type">2nd load: steel, wood &amp; scrap</div>
+        <div class="job-location">Same customer · on-site visit</div>
+        <div class="job-quote">"For everything we saw in the back yesterday, the steel pile, the wood pile, and miscellaneous items, we can do $1,450 for it all."</div>
+        <div class="job-source">Repeat customer · one first touch → two jobs · $2,950 total</div>
       </div>
 
       <div class="job-card">
@@ -1168,17 +1113,58 @@
         <div class="job-type">Furniture pickup</div>
         <div class="job-location">Carlsbad, CA</div>
         <div class="job-quote">"I'll leave it on the driveway in the morning. You can send me the Venmo info after."</div>
-        <div class="job-source">Booked same day · customer paid after pickup</div>
+        <div class="job-source">Booked same day · paid after pickup</div>
       </div>
 
       <div class="job-card">
-        <div class="job-amount">$80</div>
-        <div class="job-type">Couch removal — repeat customer</div>
-        <div class="job-location">Carlsbad, CA</div>
-        <div class="job-quote">"I also have this one if you're able to take it?" — came back the next day to book a second couch, then again for a mattress pickup.</div>
-        <div class="job-source">Booked same day · returned for 2 more jobs</div>
+        <div class="job-amount">$80+</div>
+        <div class="job-type">Couch, then a mattress</div>
+        <div class="job-location">Same customer · came back twice</div>
+        <div class="job-quote">"I also have this one if you're able to take it?" Back the next day for a second couch, then again for a mattress.</div>
+        <div class="job-source">One first touch → three jobs · this is the compounding part</div>
       </div>
 
+      <div class="job-card wide">
+        <div class="job-amount">$2,000</div>
+        <div class="job-type">Repeat commercial contractor · 5 separate jobs</div>
+        <div class="job-location">North Park, San Diego, CA</div>
+        <div class="job-quote">"Hauling job in north park."</div>
+        <div class="job-source">First contact in April · still booking jobs months later</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT THIS PROVES -->
+  <section>
+    <div class="eyebrow">What This Actually Proves</div>
+    <h2>This isn't a $20K windfall. It's a $4K to $5K monthly machine, and the math transfers.</h2>
+    <p class="body-text">
+      So what does a junk-removal case study have to do with your business? The framework, not the niche.
+      This is a $4K to $5K monthly organic search engine built on a brand-new domain in a saturated market,
+      four months in and still picking up speed. Now run the same machine at a different ticket size.
+    </p>
+
+    <div class="compound-callout">
+      <div class="compound-title">The numbers transfer. The slope is portable.</div>
+      <div class="compound-body">
+        The case study runs on a $250 average ticket. Most jobs are $80 to $400, with the occasional $1,500 cleanout.
+        That's the <strong>floor</strong> for what this framework does, and the funnel math only gets better as the ticket goes up.
+      </div>
+      <div class="compound-grid">
+        <div class="compound-stat">
+          <div class="compound-stat-val">$500</div>
+          <div class="compound-stat-label">Average ticket instead of $250 means roughly double the monthly run rate per close.</div>
+        </div>
+        <div class="compound-stat">
+          <div class="compound-stat-val">$5,000+</div>
+          <div class="compound-stat-label">HVAC, roofing, remodels: one or two booked jobs a month covers a year of the engagement.</div>
+        </div>
+        <div class="compound-stat">
+          <div class="compound-stat-val">The slope</div>
+          <div class="compound-stat-label">Same framework, any local market. The headline was never the number. It's the trajectory.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1187,23 +1173,91 @@
     <div class="midpage-inner">
       <div class="midpage-text">
         <span class="midpage-label">Seen enough?</span>
-        <p>I'll audit your market for free — show you <strong>exactly which searches your competitors own</strong> that you're invisible for, and what it would take to start booking jobs from Google in the next 60 days.</p>
+        <p>I'll audit your market for free and show you <strong>exactly which searches your competitors own</strong> that you're invisible for, plus what it would take to start booking jobs from Google.</p>
       </div>
       <div style="flex-shrink:0;text-align:center;">
-        <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary midpage-btn">Book a Free Audit →</a>
+        <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary midpage-btn">Book Your Free Market Audit →</a>
         <div style="margin-top:10px;font-size:13px;color:rgba(250,247,242,0.4);font-weight:400;">or keep reading ↓</div>
       </div>
     </div>
   </div>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="eyebrow">How It Works</div>
+    <h2>Here's exactly how the machine gets built.</h2>
+
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">A site built to get found, not just to look good</div>
+          <div class="step-desc">Custom build, not a template. Every page is mapped to a real buyer-intent search in your market, not vanity keywords. Fast load (verified 99 Lighthouse Performance), proper technical SEO, schema markup, sitemap submission. The site tells Google clearly what you do, where you do it, and who you serve. Most agency sites look nice and rank nowhere. Mine rank.</div>
+          <div class="step-chips">
+            <span class="step-chip">Custom build</span>
+            <span class="step-chip">Buyer-intent page architecture</span>
+            <span class="step-chip">Technical SEO + schema</span>
+          </div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">Authority that compounds</div>
+          <div class="step-desc">236 referring domains in the first 90 days: local directories, industry sites, community pages. Strategic link building, not bought and not spammed. Google starts treating the business as established within weeks, not years. Your competitors can't copy this overnight, and that's the moat.</div>
+          <div class="step-chips">
+            <span class="step-chip">236 referring domains in 90 days</span>
+            <span class="step-chip">Strategic, not spammed</span>
+            <span class="step-chip">The moat</span>
+          </div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">In front of buyers ready to book, not just browse</div>
+          <div class="step-desc">I target searches where someone has a problem right now. "Emergency junk removal San Diego" is someone calling in 10 minutes. "Junk removal Poway" is a homeowner researching and calling today. Not "what is a dumpster," which is info only, no buyer intent.</div>
+          <div class="step-chips">
+            <span class="step-chip">Buyer intent only</span>
+            <span class="step-chip">Problem-now searches</span>
+            <span class="step-chip">No vanity traffic</span>
+          </div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">04</div>
+        <div>
+          <div class="step-title">Monthly reporting + active management</div>
+          <div class="step-desc">SEMrush + GSC dashboards reviewed monthly with the owner. Specific keyword improvements every 30 days. New service or location pages added as opportunities surface. This is not set-it-and-forget-it SEO.</div>
+          <div class="step-chips">
+            <span class="step-chip">Monthly owner review</span>
+            <span class="step-chip">30-day keyword gains</span>
+            <span class="step-chip">Pages added as they open up</span>
+          </div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">05</div>
+        <div>
+          <div class="step-title">The funnel beyond the click</div>
+          <div class="step-desc">This is what most agencies skip. Lead-by-lead tracking against actual booked revenue. Response-time analysis (real data: leads answered in under 20 minutes close at meaningfully higher rates than leads sitting for hours). Quote-to-close coaching: written quotes, voicemail SLA, missed-call auto-text, 48-hour re-engagement on cold quotes. Every missed opportunity flagged with the recoverable revenue estimate. I don't just rank you. I build a process around what happens after the click, because that's where most of the money actually leaks.</div>
+          <div class="step-chips">
+            <span class="step-chip">Lead-by-lead attribution</span>
+            <span class="step-chip">Response-time coaching</span>
+            <span class="step-chip">Quote-to-close process</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SITE PERFORMANCE -->
   <section>
     <div class="eyebrow">Site Performance</div>
     <h2>The foundation most agencies skip.</h2>
     <p class="body-text">
-      Rankings are only sustainable when the technical foundation is perfect.
-      I build sites that Google trusts — fast, accessible, error-free, and properly structured.
-      These are Google's own quality scores for the client site — 100 is a perfect score.
+      Rankings are only sustainable when the technical foundation is right.
+      These are Google's own quality scores for the client site. 100 is a perfect score.
     </p>
 
     <div class="lighthouse-grid">
@@ -1230,113 +1284,129 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
       </div>
       <div class="built-by-text">
-        <strong>You're looking at my work right now.</strong>
-        I designed and built this page — the layout, the speed, the structure, every detail.
-        Every site I build for a San Diego service business is held to this same standard.
-        When your site looks credible and loads fast, customers trust you before they've even called.
+        <strong>You're reading this page on the same architecture I'd build for you.</strong>
+        I designed and built it: the layout, the speed, the structure, every detail.
+        When your site looks credible and loads fast, customers trust you before they ever call.
       </div>
     </div>
   </section>
 
-  <!-- HOW WE DO IT + WHAT YOU GET (merged) -->
+  <!-- FAQ -->
   <section>
-    <div class="eyebrow">How It Works</div>
-    <h2>Here's exactly how I do it.</h2>
+    <div class="eyebrow">What Clients Ask Me</div>
+    <h2>The questions everyone asks before they say yes.</h2>
 
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="step-n">01</div>
-        <div>
-          <div class="step-title">A site built to get found — not just look good</div>
-          <div class="step-desc">I build every page around what your customers are actually searching in San Diego. Fast load times, clean structure, proper technical setup. The site tells Google exactly what you do, where you do it, and who you serve. Most agency sites look nice and rank nowhere. Mine rank.</div>
-          <div class="step-chips">
-            <span class="step-chip">Custom website</span>
-            <span class="step-chip">Research into what buyers search for</span>
-            <span class="step-chip">Service &amp; location pages</span>
-          </div>
-        </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How fast does this start working?</div>
+        <div class="faq-a">First impressions on Google: 14 to 21 days. First booked job: typically 30 to 60 days. The compounding starts in month 2 and doesn't stop. <strong>If you don't see active ranking on Google by day 30, I keep working at no charge until you do.</strong></div>
       </div>
-      <div class="how-step">
-        <div class="step-n">02</div>
-        <div>
-          <div class="step-title">Authority your competitors can't buy overnight</div>
-          <div class="step-desc">In 60 days, I got 236 other websites linking back to theirs — local directories, industry sites, community pages. Google sees that and treats the business as established and trusted. I know this market. Your competitors can't copy this overnight — which is exactly why starting now matters.</div>
-          <div class="step-chips">
-            <span class="step-chip">Directory &amp; listing placements</span>
-            <span class="step-chip">Other sites linking back to yours</span>
-            <span class="step-chip">Site structure &amp; speed</span>
-          </div>
-        </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I'm not in San Diego?</div>
+        <div class="faq-a">The framework is location-agnostic. It works in any local market where customers search Google. I built it for San Diego junk removal because that was my first client, but the same machine plugs into HVAC in Phoenix, plumbing in Austin, or moving in Denver.</div>
       </div>
-      <div class="how-step">
-        <div class="step-n">03</div>
-        <div>
-          <div class="step-title">In front of buyers ready to book, not just browse</div>
-          <div class="step-desc">I focus on searches where someone in San Diego has a problem right now and needs it solved today. The person searching "emergency junk removal San Diego" is calling someone in the next 10 minutes. I put you in front of them first.</div>
-          <div class="step-chips">
-            <span class="step-chip">Ongoing management</span>
-            <span class="step-chip">Monthly results report</span>
-            <span class="step-chip">Rankings monitored</span>
-          </div>
-        </div>
+      <div class="faq-item">
+        <div class="faq-q">What if my average ticket is smaller?</div>
+        <div class="faq-a">The funnel math still works at $80 tickets, and the case study proves it. It only gets better at higher tickets, because fewer jobs are needed to ROI the engagement.</div>
       </div>
-    </div>
-
-    <!-- VERIFIED STATS TABLE -->
-    <div class="stats-table" style="margin-top:28px;">
-      <div class="stat-row">
-        <div class="stat-row-label"><strong>Revenue generated</strong>Google-sourced jobs only · 60 days</div>
-        <div class="stat-row-value">$5,000+<span class="delta">$0 ad spend</span></div>
+      <div class="faq-item">
+        <div class="faq-q">How much does it cost?</div>
+        <div class="faq-a">Most clients invest <strong>$1,500 to $3,000 a month</strong> and recoup it in the first 30 to 60 days. Beyond that, every dollar of growth is incremental, compounding, and not dependent on continued ad spend.</div>
       </div>
-      <div class="stat-row">
-        <div class="stat-row-label"><strong>Showing up on Google for</strong>First page of results for 38 searches · first result for 15</div>
-        <div class="stat-row-value">140+<span class="delta">total searches they appear in</span></div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if I stop?</div>
+        <div class="faq-a">Paid ads stop the day you turn them off. SEO doesn't. The rankings, the authority, and the site stay yours. The compound effect just decelerates instead of accelerating. That's the difference between renting traffic and owning it.</div>
       </div>
-      <div class="stat-row">
-        <div class="stat-row-label"><strong>Seen by 60,000 people on Google</strong>342 clicked through to the site · verified by Google</div>
-        <div class="stat-row-value">342<span class="delta">real visits from Google</span></div>
+      <div class="faq-item">
+        <div class="faq-q">Why should I trust the numbers?</div>
+        <div class="faq-a">Every dollar in this case study is tied to a specific text thread, GHL record, or paid invoice the owner can verify himself. The rankings are pulled live from SEMrush. The click and impression data come straight from Google Search Console. <strong>Everything here is what I'd want to see if I were the buyer.</strong></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta-block">
-    <div class="eyebrow" style="text-align:center">Work With Me</div>
-    <h2>Stop losing jobs to competitors who show up on Google. You don't.</h2>
+  <!-- WORK WITH ME -->
+  <section>
+    <div class="eyebrow">Work With Me</div>
+    <h2>I take 3 new clients per quarter. That's the model.</h2>
     <p class="body-text">
-      I'll audit your current online presence, show you exactly which searches you're invisible for,
-      and tell you plainly what it would take to start booking jobs from Google — at zero ad spend.
-      No pitch. No jargon. Just real data about your market.
+      I do it this way because each engagement is hands-on: keyword strategy, content build, technical setup,
+      monthly reporting, and lead-quality coaching. Volume isn't the business.
+      <strong>Compounding for the right businesses is.</strong>
     </p>
-    <div class="cta-buttons">
-      <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary">Book a Free Audit →</a>
-      <a href="tel:+19517600070" class="btn-secondary">Call (951) 760-0070</a>
-    </div>
-    <div class="cta-note">Free 30-min audit · No pitch · Real data about your market</div>
 
-    <div class="scale-callout" style="text-align:left;margin:32px 0 0;">
-      <p>30-Day Guarantee</p>
+    <div class="list-label">This is for you if</div>
+    <div class="get-list">
+      <div class="get-item"><span class="get-check">✓</span> <span>You're a local service business with a <strong>$200+ average ticket</strong></span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>You're in a <strong>crowded local market</strong> where customers search Google</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>You're an owner who <strong>actually picks up the phone</strong></span></div>
+    </div>
+
+    <div class="list-label">What you get when we work together</div>
+    <div class="get-list">
+      <div class="get-item"><span class="get-check">✓</span> <span><strong>Custom-built website</strong> (or audit and rebuild of yours)</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Service and location page architecture mapped to your market's <strong>real search demand</strong></span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Technical SEO + speed + accessibility baked in</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Authority building: <strong>200+ referring domains in the first 90 days</strong></span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Monthly strategy call + ranking report</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Lead-by-lead attribution: which keywords bring in which customers</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Funnel coaching: which leads ghost, why, and what to do about it</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span><strong>30-day ranking guarantee:</strong> active on Google by day 30 or I work for free until you are</span></div>
+    </div>
+
+    <div class="scale-callout" style="margin:32px 0 0;">
+      <p>30-Day Ranking Guarantee</p>
       <cite style="font-size:15px;color:var(--muted);margin-top:8px;display:block;line-height:1.7;">
         If I don't have your site actively ranking on Google within 30 days, I keep working at no charge until you do. No exceptions. No excuses.
       </cite>
     </div>
+  </section>
+
+  <!-- THE FIRST STEP / CTA -->
+  <div class="cta-block">
+    <div class="eyebrow" style="text-align:center">The First Step</div>
+    <h2>Free 30-minute market audit.</h2>
+    <p class="body-text">
+      I pull your top 25 competitors, show you exactly which searches they own that you're invisible for,
+      and tell you plainly what it would take to start booking jobs from Google.
+      No pitch. No jargon. Real data about your market, yours to keep whether we work together or not.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary">Book Your Free Market Audit →</a>
+      <a href="tel:+19517600070" class="btn-secondary">Call (951) 760-0070</a>
+    </div>
+    <div class="cta-note">2 audit slots remaining this month · No pitch · Real data about your market</div>
 
     <div class="trust-row">
-      <div class="trust-item"><div class="trust-dot"></div>San Diego–based</div>
+      <div class="trust-item"><div class="trust-dot"></div>San Diego based</div>
       <div class="trust-item"><div class="trust-dot"></div>All results verified by Google</div>
       <div class="trust-item"><div class="trust-dot"></div>Zero ad spend required</div>
       <div class="trust-item"><div class="trust-dot"></div>30-day ranking guarantee</div>
     </div>
   </div>
 
+  <!-- ABOUT ME -->
+  <section style="border-bottom:none;">
+    <div class="eyebrow">About Me</div>
+    <h2>Tony · GlassBee Solutions</h2>
+    <p class="body-text">
+      San Diego based. I built and run GlassBee Solutions, and I take 3 clients a quarter so each one gets my full attention.
+      Every result on this page is real, verified, and tied to a specific customer the business owner can name.
+    </p>
+
+    <div class="scale-callout mission">
+      <p>"It's my belief that as long as you're growing something you care about and giving back to your community, you're building in the right direction. I started GlassBee after years of growing businesses myself, feeling the growing pains firsthand of trying to establish an online presence while staying focused on the work that actually matters. So I built a business in this space to give other owners the tools they need to succeed. There's a real gap between local service businesses and the technology that could carry them, and as we move into an AI world, my goal is to be the bridge between those two."</p>
+      <cite>Tony · GlassBee Solutions · San Diego, CA</cite>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div>GlassBee Solutions · San Diego, CA · glassbeesolutions.com</div>
-    <div>Case study data: SEMrush &amp; Google Search Console · March 2026</div>
+    <div>Case study data: SEMrush &amp; Google Search Console · 4-month rolling window</div>
   </footer>
 
   <div class="disclaimer">
-    All metrics sourced from SEMrush and Google Search Console for severinhauling.com. Data reflects organic search performance from site launch through March 2026. Revenue figures reflect jobs booked through Google organic leads only, verified via internal job tracker. No paid advertising was used to generate these results. Individual results vary based on industry, market, competition, and timeline.
+    All metrics sourced from SEMrush and Google Search Console for severinhauling.com. Data reflects organic search performance over a 4-month rolling window from site launch. Revenue figures reflect jobs booked through Google organic leads only, verified via internal job tracker. No paid advertising was used to generate these results. Individual results vary based on industry, market, competition, and timeline.
   </div>
   <div style="height:48px"></div>
 
