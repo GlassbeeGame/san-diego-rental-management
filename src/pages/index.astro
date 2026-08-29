@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="GlassBee Solutions · Web Design & Growth · San Diego" />
 <meta name="twitter:description" content="Web design and growth for businesses, nonprofits, and brands. San Diego." />
 <meta name="twitter:image" content="https://www.glassbeesolutions.org/og-home.jpg" />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 <style is:global>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -35,7 +35,7 @@
     --gold-lt:  #F3D89A;
     --orange:   #FF6B35;
     --green:    #5BD08A;
-    --serif:    'Fraunces', Georgia, serif;
+    --serif:    'Bricolage Grotesque', system-ui, sans-serif;
     --sans:     'DM Sans', system-ui, sans-serif;
     --ease:     cubic-bezier(0.16, 1, 0.3, 1);
     --accent:   linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
@@ -162,7 +162,7 @@
     font-size: clamp(42px, 6.4vw, 76px); line-height: 1.14; letter-spacing: -1.8px;
     margin: 0 auto 28px; max-width: 940px; text-wrap: balance; padding-bottom: 0.08em;
   }
-  .hero h1 em { font-style: italic; color: transparent; background: var(--accent); -webkit-background-clip: text; background-clip: text; }
+  .hero h1 em { font-style: normal; color: transparent; background: var(--accent); -webkit-background-clip: text; background-clip: text; }
   .hero-sub { font-size: 19.5px; color: var(--muted); line-height: 1.75; max-width: 600px; margin: 0 auto 42px; text-wrap: pretty; }
   .hero-sub strong { color: var(--text); font-weight: 600; }
   .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -174,7 +174,7 @@
     overflow: hidden; }
   .marquee-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
   .marquee:hover .marquee-track { animation-play-state: paused; }
-  .marquee-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 28px; font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--faint); white-space: nowrap; }
+  .marquee-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 28px; font-family: var(--serif); font-style: normal; font-weight: 600; font-size: 18px; color: var(--faint); white-space: nowrap; }
   .marquee-item::before { content: '✦'; font-style: normal; font-size: 11px; color: var(--gold); }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -238,7 +238,7 @@
   .mission { position: relative; overflow: hidden; background: linear-gradient(160deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 20px; padding: 56px 52px; }
   .mission::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); }
   .mission .sec-eyebrow { color: var(--gold-lt); }
-  .mission blockquote { font-family: var(--serif); font-size: clamp(20px, 2.5vw, 27px); font-weight: 700; font-style: italic; line-height: 1.5; max-width: 780px; }
+  .mission blockquote { font-family: var(--serif); font-size: clamp(20px, 2.5vw, 27px); font-weight: 700; font-style: normal; line-height: 1.5; max-width: 780px; }
   .mission cite { display: block; margin-top: 24px; font-size: 15px; color: var(--gold-lt); font-style: normal; font-weight: 600; }
   @media (max-width: 560px) { .mission { padding: 38px 26px; } }
 
@@ -413,9 +413,9 @@
             <div class="shot"><img src="/work/4-pillars.jpg" alt="4 Pillars Development website" loading="lazy" width="1280" height="800" /></div>
             <div class="work-body"><div class="work-cat">Real estate</div><div class="work-name">4 Pillars Development</div><p class="work-blurb">A real estate development brand, built to read as established and credible.</p><span class="work-visit arrow-link">Visit site</span></div>
           </a>
-          <a href="https://foodspectrum.com" target="_blank" rel="noopener" class="work-card reveal d2">
+          <a href="https://food-spectrum.vercel.app/" target="_blank" rel="noopener" class="work-card reveal d2">
             <div class="shot"><img src="/work/food-spectrum.jpg" alt="Food Spectrum website" loading="lazy" width="1280" height="800" /></div>
-            <div class="work-body"><div class="work-cat">Consulting</div><div class="work-name">Food Spectrum</div><p class="work-blurb">A food-industry consulting firm's site: business and technology expertise for retailers, processors, and service providers.</p><span class="work-visit arrow-link">Visit site</span></div>
+            <div class="work-body"><div class="work-cat">Consulting</div><div class="work-name">Food Spectrum</div><p class="work-blurb">A founder-led food-innovation consultancy site: helping companies, investors, and boards turn innovation into commercial growth.</p><span class="work-visit arrow-link">Visit site</span></div>
           </a>
         </div>
       </div>
