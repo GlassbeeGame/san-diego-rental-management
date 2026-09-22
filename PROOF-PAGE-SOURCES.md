@@ -18,4 +18,6 @@ Facts that constrain the copy:
 - The homepage strip (`src/pages/index.astro`) and `public/og-proof.jpg` repeat "$20,985 in 4 months"; change all three together if the headline number ever changes.
 - Copy rules: first person, plain, no em or en dashes, every stat carries its source and window.
 
-Last refresh: 2026-09-22 (branch `proof-refresh-2026-09-22`).
+Offer copy (rework v2, 2026-09-22): the page sells the $2,500/month service. How It Works step 05 covers Google Business Profile, the review engine, and the monthly AI-search check; step 06 is the original funnel step. The lead system appears only as "missed-call auto-text" (step 06) and "Missed-call text-back" (what you get). When the capture system is live, switch the step 06 phrase to "a voicemail that asks questions and texts missed callers back within seconds". The Launch Guarantee (Option A) replaced the 30-day ranking guarantee in the FAQ, the what-you-get list, the guarantee box, and the trust bar. Ticket floor $1,000+ is a placeholder Tony sets. The v1 rework (separate capture offer + /missed-calls page) was reverted the same day; it lives in git history at 694df09.
+
+Last refresh: 2026-09-22 (rework v2 on master).
