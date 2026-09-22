@@ -18,6 +18,4 @@ Facts that constrain the copy:
 - The homepage strip (`src/pages/index.astro`) and `public/og-proof.jpg` repeat "$20,985 in 4 months"; change all three together if the headline number ever changes.
 - Copy rules: first person, plain, no em or en dashes, every stat carries its source and window.
 
-Offer copy (added 2026-09-22 rework): The Leak, The Fix (interactive voicemail), two paths, Launch Guarantee, two audits. Pricing ($297 Recover, $497 Answer, $500 to $1,000 setup, builds from $2,500/month) comes from Tony's rework brief and matches `~/builds/lead-capture-system/docs/offer-sheet.html`. Both CTAs currently point at the same Calendly 30-minute link. Placeholders resolved conservatively: Answer tier has no launch month ("Next to launch"), the build ticket floor is $1,000+, no texting-from-your-number claim, no unanswered-call stat line. Companion ads page: `public/missed-calls/index.html` (calculator uses only visitor input).
-
-Last refresh: 2026-09-22 (rework on master).
+Last refresh: 2026-09-22 (branch `proof-refresh-2026-09-22`).
