@@ -199,6 +199,34 @@
   .stats-table.compact .stat-row-label { font-size: 14px; }
   .stats-table.compact .stat-row-label strong { display: inline; margin-right: 8px; }
   .stats-table.compact .stat-row.total .stat-row-value { font-size: 22px; }
+  .body-text.tight { margin-bottom: 18px; }
+  .faq-a p + p { margin-top: 10px; }
+  /* PRICE TABLE (voicemail) */
+  .price-table .stat-row { grid-template-columns: 1fr; padding: 20px 24px; }
+  .price-table .stat-row::before, .price-table .stat-row::after { display: none; }
+  .price-table .stat-row-label strong { font-family: var(--serif); font-size: 18px; letter-spacing: -0.2px; margin-bottom: 4px; }
+  .fix-close { margin-top: 32px; text-align: center; padding: 32px 28px; background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 16px; }
+  .fix-close-line { font-family: var(--serif); font-size: 24px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .fix-close-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  /* TWO PATHS */
+  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+  .path-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px; display: flex; flex-direction: column; }
+  .path-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+  .path-title { font-family: var(--serif); font-size: 22px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.25; }
+  .path-card .list-label { margin: 18px 0 10px; }
+  .path-card .get-item { padding: 12px 16px; font-size: 14px; }
+  .path-get { font-size: 14px; color: var(--muted); line-height: 1.7; margin-top: 16px; }
+  .path-get strong { color: var(--text); font-weight: 600; }
+  .path-price { font-size: 15px; color: var(--muted); margin: 18px 0 16px; line-height: 1.6; }
+  .path-price strong { color: var(--text); font-weight: 600; }
+  .path-btn { margin-top: auto; text-align: center; display: block; white-space: normal; }
+  /* TWO AUDITS */
+  .audits { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; text-align: left; margin-top: 8px; }
+  .audit-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; display: flex; flex-direction: column; }
+  .audit-title { font-family: var(--serif); font-size: 20px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 10px; }
+  .audit-desc { font-size: 14.5px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+  .audit-btn { margin-top: auto; text-align: center; display: block; white-space: normal; }
+  @media (max-width: 768px) { .paths, .audits { grid-template-columns: 1fr; } }
 
   /* RANKING BOARD */
   .ranking-board { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); }
@@ -609,11 +637,90 @@
         </div>
         <div style="flex-shrink:0;text-align:center;">
           <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary midpage-btn">Book Your Free Market Audit →</a>
-          <div style="margin-top:10px;font-size:13px;color:var(--faint);">or keep reading ↓</div>
+          <div style="margin-top:10px;font-size:13px;color:var(--faint);">or see where the money was still leaking ↓</div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- THE LEAK -->
+  <section>
+    <div class="eyebrow reveal">The Leak</div>
+    <h2 class="reveal d1">The rankings worked. Then I found where the money was leaking.</h2>
+    <p class="body-text tight reveal d2">
+      Tracking every lead against booked revenue shows something rankings never will: <strong>speed decides who gets the job.</strong>
+      On this site, leads answered in under 20 minutes closed at meaningfully higher rates than leads that sat for hours. And some leads never got answered at all.
+    </p>
+    <p class="body-text tight reveal d2">
+      That's not the owner's fault. He's on a job. His hands are full. The phone rings, the caller hits voicemail, hangs up, and calls the next company on Google.
+      The site did its job. The job still went to someone else.
+    </p>
+    <p class="body-text reveal d3">
+      That isn't a marketing problem. The marketing worked. It's a capture problem. <strong>So I built the fix.</strong>
+    </p>
+  </section>
+
+  <!-- THE INTERACTIVE VOICEMAIL -->
+  <section>
+    <div class="eyebrow reveal">The Fix</div>
+    <h2 class="reveal d1">Your voicemail loses jobs. Mine asks questions, texts them back, and books them.</h2>
+    <p class="body-text tight reveal d2">
+      When you can't pick up, the call doesn't die in voicemail. It goes to a voicemail that talks. It asks a few questions about the job so the message arrives complete.
+      Within seconds, it texts the caller to keep the conversation going, grab a photo, and find a time. Emergencies ring your phone directly.
+      Your whole team sees every conversation in one inbox. And every Monday you get a plain email: how many calls you missed, and how many turned into jobs.
+    </p>
+    <p class="body-text reveal d2">
+      <strong>You keep your number.</strong> Nothing changes for your customers, except someone finally answers.
+    </p>
+
+    <div class="how-steps reveal">
+      <div class="how-step">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">The call you can't take</div>
+          <div class="step-desc">It goes to the interactive voicemail, not a dead end.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">It asks, then texts</div>
+          <div class="step-desc">A few questions about the job, then a text within seconds for photos and timing.</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">You get the job</div>
+          <div class="step-desc">Booked on your calendar, or your phone rings if it's urgent.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-label reveal">What you get</div>
+    <div class="get-list reveal">
+      <div class="get-item"><span class="get-check">✓</span> <span>Your existing number, <strong>unchanged</strong></span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>The interactive voicemail, scripted for your trade</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Instant text-back with photo collection</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>A service-area check before it wastes your time</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>Booking, or a direct ring to you for emergencies</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>One shared inbox for your whole team</span></div>
+      <div class="get-item"><span class="get-check">✓</span> <span>The Monday email: calls missed, jobs recovered</span></div>
+    </div>
+
+    <div class="list-label reveal">Pricing</div>
+    <div class="stats-table price-table reveal">
+      <div class="stat-row"><div class="stat-row-label"><strong>Recover · $297/month</strong>The interactive voicemail, instant text-back, booking, shared inbox, and the Monday email.</div></div>
+      <div class="stat-row"><div class="stat-row-label"><strong>Answer · $497/month</strong>Everything in Recover, plus live AI voice answering. Next to launch. Founding clients move up at their locked rate.</div></div>
+      <div class="stat-row"><div class="stat-row-label"><strong>Setup · $500 to $1,000</strong>Your number, carrier registration, scripts for your trade, and 30 days of me listening to your calls and fixing what's wrong.</div></div>
+    </div>
+
+    <div class="fix-close reveal">
+      <div class="fix-close-line">One recovered job pays the month.</div>
+      <div class="fix-close-sub">Now onboarding founding clients. Founding clients lock in their rate.</div>
+      <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary">Get your free missed-call audit →</a>
+    </div>
+  </section>
 
   <!-- HOW IT WORKS -->
   <section>
@@ -656,9 +763,9 @@
       <div class="how-step">
         <div class="step-n">05</div>
         <div>
-          <div class="step-title">The funnel beyond the click</div>
-          <div class="step-desc">This is what most agencies skip. Lead-by-lead tracking against actual booked revenue. Response-time analysis (real data: leads answered in under 20 minutes close at meaningfully higher rates than leads sitting for hours). Quote-to-close coaching: written quotes, voicemail SLA, missed-call auto-text, 48-hour re-engagement on cold quotes. Every missed opportunity flagged with the recoverable revenue estimate. I don't just rank you. I build a process around what happens after the click, because that's where most of the money actually leaks.</div>
-          <div class="step-chips"><span class="step-chip">Lead-by-lead attribution</span><span class="step-chip">Response-time coaching</span><span class="step-chip">Quote-to-close process</span></div>
+          <div class="step-title">Every call answered</div>
+          <div class="step-desc">Rankings get the phone to ring. That's half the job. Every build includes the interactive voicemail: missed calls get answered, qualified, and texted back within seconds, and every lead is tracked against booked revenue. Response-time analysis, quote follow-up, and a flag on every missed opportunity with what it was worth. I don't just rank you. I make sure the phone gets answered.</div>
+          <div class="step-chips"><span class="step-chip">Interactive voicemail included</span><span class="step-chip">Lead-by-lead attribution</span><span class="step-chip">Every missed call flagged</span></div>
         </div>
       </div>
     </div>
@@ -695,10 +802,13 @@
     <h2 class="reveal d1">The questions everyone asks before they say yes.</h2>
 
     <div class="faq-list reveal">
-      <div class="faq-item"><div class="faq-q">How fast does this start working?</div><div class="faq-a">First impressions on Google: 14 to 21 days. First booked job: typically 30 to 60 days. The compounding starts in month 2 and doesn't stop. <strong>If you don't see active ranking on Google by day 30, I keep working at no charge until you do.</strong></div></div>
+      <div class="faq-item"><div class="faq-q">How fast does this start working?</div><div class="faq-a">The interactive voicemail works the day it goes live. The next call you miss gets answered. For search: first impressions on Google in 14 to 21 days, first booked job typically 30 to 60 days, and <strong>the compounding starts in month two.</strong></div></div>
+      <div class="faq-item"><div class="faq-q">What's the interactive voicemail?</div><div class="faq-a">When you can't pick up, it answers instead of a dead-end voicemail. It asks a few questions about the job, texts the caller within seconds to keep the conversation going, and either books them or rings your phone if it's urgent. It answers as your voicemail, not as a fake receptionist. <strong>Your customers just finally get an answer.</strong></div></div>
+      <div class="faq-item"><div class="faq-q">Why not use a $49 AI receptionist?</div><div class="faq-a"><p>You can, and if you want to set it up yourself, you should. The cheap tools hand you the software and leave the rest to you: writing the scripts, defining your service area, deciding what counts as an emergency, connecting your calendar, setting up forwarding. Then when someone calls at 2am with a burst pipe and it books them for Thursday, that's yours to catch.</p><p>I build it around how your business actually runs, listen to your calls for the first 30 days, and fix what breaks before it costs you a job. <strong>You're not paying for software. You're paying for it to work.</strong></p></div></div>
+      <div class="faq-item"><div class="faq-q">Do I keep my number?</div><div class="faq-a">Yes. Your number stays exactly where it is: on your trucks, your listings, your cards. Calls you can't answer get forwarded to the interactive voicemail.</div></div>
       <div class="faq-item"><div class="faq-q">What if I'm not in San Diego?</div><div class="faq-a">The framework is location-agnostic. It works in any local market where customers search Google. I built it for San Diego junk removal because that was my first client, but the same machine plugs into HVAC in Phoenix, plumbing in Austin, or moving in Denver.</div></div>
-      <div class="faq-item"><div class="faq-q">What if my average ticket is smaller?</div><div class="faq-a">The funnel math still works at $80 tickets, and the case study proves it. It only gets better at higher tickets, because fewer jobs are needed to ROI the engagement.</div></div>
-      <div class="faq-item"><div class="faq-q">How much does it cost?</div><div class="faq-a">It depends on your market, how competitive your space is, and the scope of the build. Every engagement is priced to pay for itself, and most clients recoup the investment inside the first 30 to 60 days. From there the growth compounds and doesn't depend on continued ad spend. <strong>I'll give you a clear number on the free audit call.</strong></div></div>
+      <div class="faq-item"><div class="faq-q">What if my average ticket is smaller?</div><div class="faq-a">Start with the interactive voicemail. At $297 a month, one or two recovered jobs covers it at a $250 average ticket, which is exactly what the case study above runs on. <strong>Full builds make the most sense at higher tickets,</strong> where one or two booked jobs a month covers the whole engagement.</div></div>
+      <div class="faq-item"><div class="faq-q">How much does it cost?</div><div class="faq-a">The interactive voicemail is $297 a month, or $497 with live AI voice, plus a one-time setup. Full builds start at $2,500 a month and depend on your market and scope. <strong>I'll give you a clear number on the audit call.</strong> Every engagement is priced to pay for itself.</div></div>
       <div class="faq-item"><div class="faq-q">Do I have to run ads too?</div><div class="faq-a">No. The first $20,985 in this case study came with $0 in ads. Ads are an optional layer for the searches organic hasn't closed yet, like the 2,400-a-month head term here, and they get their own tracking so you always know what each dollar bought. <strong>If your market has a gap worth buying, I'll tell you. If it doesn't, we won't.</strong></div></div>
       <div class="faq-item"><div class="faq-q">Why should I trust the numbers?</div><div class="faq-a">Every dollar in this case study is tied to a specific text thread, GHL record, or paid invoice the owner can verify himself. The rankings come from Semrush Position Tracking set to San Diego, organic results only, using the weekly median so one lucky day can't inflate a number. The click and impression data come straight from Google Search Console. Paid leads have their own conversion tags and are kept out of every revenue figure here. <strong>Everything here is what I'd want to see if I were the buyer.</strong></div></div>
     </div>
@@ -707,35 +817,39 @@
   <!-- WORK WITH ME -->
   <section>
     <div class="eyebrow reveal">Work With Me</div>
-    <h2 class="reveal d1">I take 3 new clients per quarter. That's the model.</h2>
-    <p class="body-text reveal d2">
-      I do it this way because each engagement is hands-on: keyword strategy, content build, technical setup,
-      monthly reporting, and lead-quality coaching. Volume isn't the business.
-      <strong>Compounding for the right businesses is.</strong>
-    </p>
+    <h2 class="reveal d1">Two ways in.</h2>
 
-    <div class="list-label reveal">This is for you if</div>
-    <div class="get-list reveal">
-      <div class="get-item"><span class="get-check">✓</span> <span>You're a local service business with a <strong>$200+ average ticket</strong></span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>You're in a <strong>crowded local market</strong> where customers search Google</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>You're an owner who <strong>actually picks up the phone</strong></span></div>
-    </div>
-
-    <div class="list-label reveal">What you get when we work together</div>
-    <div class="get-list reveal">
-      <div class="get-item"><span class="get-check">✓</span> <span><strong>Custom-built website</strong> (or audit and rebuild of yours)</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>Service and location page architecture mapped to your market's <strong>real search demand</strong></span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>Technical SEO + speed + accessibility baked in</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>Authority building: <strong>a referring-domain count that climbs every month</strong> (18 to 168 on the case study)</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>Monthly strategy call + ranking report</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>Lead-by-lead attribution: which keywords bring in which customers</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span>Funnel coaching: which leads ghost, why, and what to do about it</span></div>
-      <div class="get-item"><span class="get-check">✓</span> <span><strong>30-day ranking guarantee:</strong> active on Google by day 30 or I work for free until you are</span></div>
+    <div class="paths reveal">
+      <div class="path-card">
+        <div class="path-kicker">Path one</div>
+        <h3 class="path-title">Start with capture: the interactive voicemail</h3>
+        <div class="list-label">This is for you if</div>
+        <div class="get-list">
+          <div class="get-item"><span class="get-check">✓</span> <span>You're <strong>busy enough to miss calls</strong></span></div>
+          <div class="get-item"><span class="get-check">✓</span> <span>Your phone is how jobs come in</span></div>
+          <div class="get-item"><span class="get-check">✓</span> <span>You'd rather it just work than set it up yourself</span></div>
+        </div>
+        <div class="path-price"><strong>From $297/month.</strong> Now onboarding founding clients.</div>
+        <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary path-btn">Get your free missed-call audit →</a>
+      </div>
+      <div class="path-card">
+        <div class="path-kicker">Path two</div>
+        <h3 class="path-title">Build the whole machine</h3>
+        <div class="list-label">This is for you if</div>
+        <div class="get-list">
+          <div class="get-item"><span class="get-check">✓</span> <span>Your average ticket is <strong>$1,000+</strong></span></div>
+          <div class="get-item"><span class="get-check">✓</span> <span>You're in a <strong>crowded local market</strong> where customers search Google</span></div>
+          <div class="get-item"><span class="get-check">✓</span> <span>You're an owner who <strong>actually picks up the phone</strong></span></div>
+        </div>
+        <p class="path-get"><strong>What you get:</strong> custom site, service and location pages mapped to real search demand, technical SEO, authority building, Google Business Profile, reviews, monthly strategy and attribution, and the interactive voicemail included. Google Ads available.</p>
+        <div class="path-price"><strong>From $2,500/month.</strong> I take 3 build clients per quarter. Each one is hands-on.</div>
+        <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-secondary path-btn">Get your free market audit →</a>
+      </div>
     </div>
 
     <div class="quote-callout reveal" style="margin:32px 0 0;">
-      <p style="font-size:19px;font-style:normal;">30-Day Ranking Guarantee</p>
-      <cite style="color:var(--muted);font-weight:400;line-height:1.7;font-size:15px;">If I don't have your site actively ranking on Google within 30 days, I keep working at no charge until you do. No exceptions. No excuses.</cite>
+      <p style="font-size:19px;font-style:normal;">The Launch Guarantee</p>
+      <cite style="color:var(--muted);font-weight:400;line-height:1.7;font-size:15px;">Your site is live within 21 days of receiving your content, or your build fee comes back. And you don't pay a monthly fee for the interactive voicemail until it's live and answering your calls.<br><br>I guarantee what I control: the build, the timeline, the setup, the reporting. Not what Google controls. Anyone promising you rankings on a deadline is guessing. I'd rather show you the slope.</cite>
     </div>
   </section>
 
@@ -745,23 +859,30 @@
   <div class="cta-block">
     <div class="page">
       <div class="eyebrow reveal" style="justify-content:center;">The First Step</div>
-      <h2 class="reveal d1">Free 30-minute market audit.</h2>
-      <p class="body-text reveal d2">
-        I pull your top 25 competitors, show you exactly which searches they own that you're invisible for,
-        and tell you plainly what it would take to start booking jobs from Google.
-        No pitch. No jargon. Real data about your market, yours to keep whether we work together or not.
-      </p>
-      <div class="cta-buttons reveal">
-        <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary">Book Your Free Market Audit →</a>
+      <h2 class="reveal d1">Two free audits. Pick the one that fits.</h2>
+
+      <div class="audits reveal">
+        <div class="audit-card">
+          <div class="audit-title">Free Market Audit · 30 minutes</div>
+          <p class="audit-desc">Your top 25 competitors, the searches they own that you're invisible for, and what it would take to start booking jobs from Google. Real data about your market, yours to keep.</p>
+          <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-secondary audit-btn">Book your market audit →</a>
+        </div>
+        <div class="audit-card">
+          <div class="audit-title">Free Missed-Call Audit</div>
+          <p class="audit-desc">How your phone actually gets answered, during the day and after hours, and what the calls you're missing are worth.</p>
+          <a href="https://calendly.com/tm-glassbeesolutions/30min" target="_blank" rel="noopener" class="btn-primary audit-btn">Book your missed-call audit →</a>
+        </div>
+      </div>
+
+      <div class="cta-buttons reveal" style="margin-top:22px;">
         <a href="tel:+19517600070" class="btn-secondary">Call (951) 760-0070</a>
       </div>
-      <div class="cta-note reveal">2 audit slots remaining this month · No pitch · Real data about your market</div>
 
       <div class="trust-row reveal">
         <div class="trust-item"><div class="trust-dot"></div>San Diego based</div>
-        <div class="trust-item"><div class="trust-dot"></div>All results verified by Google</div>
-        <div class="trust-item"><div class="trust-dot"></div>Zero ad spend required</div>
-        <div class="trust-item"><div class="trust-dot"></div>30-day ranking guarantee</div>
+        <div class="trust-item"><div class="trust-dot"></div>Every figure sourced and verifiable</div>
+        <div class="trust-item"><div class="trust-dot"></div>Live in 21 days or your build fee back</div>
+        <div class="trust-item"><div class="trust-dot"></div>No monthly fee until it's live</div>
       </div>
     </div>
   </div>
@@ -773,7 +894,7 @@
     <div class="eyebrow reveal">About Me</div>
     <h2 class="reveal d1">Tony · GlassBee Solutions</h2>
     <p class="body-text reveal d2">
-      San Diego based. I built and run GlassBee Solutions, and I take 3 clients a quarter so each one gets my full attention.
+      San Diego based. I built and run GlassBee Solutions, and I take 3 build clients a quarter so each one gets my full attention.
       Every result on this page is real, verified, and tied to a specific customer the business owner can name.
     </p>
 
